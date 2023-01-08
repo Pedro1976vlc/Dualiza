@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.2.- Primeros pasos. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-158"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_control_de_versiones.html" class="current-page-parent daddy">2.- Sistemas de control de versiones.</a>
+   <ul>
+      <li class="current-page-parent"><a href="21_git.html" class="current-page-parent daddy">2.1.- Git.</a>
+      <ul>
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li id="active"><a href="212_primeros_pasos.html" class="active no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="211_instalacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="213_ramas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.1.2.- Primeros pasos.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id391">
+<div class="iDevice emphasis0">
+<div id="ta391_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id392">
+<div class="iDevice emphasis0">
+<div id="ta392_154" class="block iDevice_content">
+<p><span style="font-weight: 400;"><strong>Git</strong> se basa en la utilización de <strong>comandos</strong> desde el terminal para la gestión de proyectos. Las tareas más comunes en local que se realizan desde <strong>Git</strong> son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Crear el repositorio.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Añadir ficheros al repositorio.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ver el estado de los ficheros.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Realizar una confirmación/commit.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gestionar confirmaciones/commits.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ignorar carpetas y/o ficheros.</span></li>
+</ul>
+<div class="exe-fx exe-accordion">
+<h2>Crear un repositorio</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para iniciar o crear el repositorio, en la carpeta en la que se encuentra el proyecto ejecutar el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git init</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este comando crea una carpeta oculta .git que contiene todo lo necesario para la gestión del repositorio, como las instantáneas.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 801px;"><img src="UD5_4_1_2_Comando_git_init.png" alt="Comando git init" title="Comando git init" width="801" height="296" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><span class="title"><em>Comando git init</em></span></figcaption>
+</figure>
+<h2>Añadiendo ficheros al repositorio</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Ya sea para un proyecto existente o uno nuevo, se le ha de indicar al repositorio los ficheros o carpetas a gestionar por el repositorio. Para ello se utiliza <em><strong>git add</strong></em>, cada vez que se desee añadir un nuevo fichero o un conjunto se ha de ejecutar para que estos sean gestionados por <strong>Git</strong>. Un ejemplo de uso:</span><img src="UD5_4_1_2_Comando_git_add.png" alt="Comando git add" title="Comando git add" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<figure class="exe-figure exe-image position-center" style="text-align: center;">
+<figcaption class="figcaption"><span class="title"><em>Comando git add</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">En fichero ya se encuentra en el repositorio, pero se encuentra en el área de trabajo, es decir preparado , pero los cambios no se encuentran en el repositorio.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 800px;"><img src="UD5_4_1_2_Git_lifecycle.png" alt=" El ciclo de vida del estado de tus archivos" title=" El ciclo de vida del estado de tus archivos" width="800" height="330" />
+<figcaption class="figcaption"><a href="https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio" target="_blank" class="author" rel="noopener">git-scm</a>. <span class="title"><em> El ciclo de vida del estado de tus archivos</em></span></figcaption>
+</figure>
+<h2>Ver el estado de los ficheros</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es posible consultar el estado del proyecto en un instante para ver en qué situación se encuentran los diferentes ficheros que lo componen utilizando el comando <strong>git status.</strong></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_4_1_2_Comando_git_status.png" alt="Comando git status" title="Comando git status" width="800" height="305" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la imagen anterior se puede ver que existe un fichero pendiente para ser añadido al área de preparación para pasar al directorio git y otro que no es controlado por el repositorio.</span></p>
+<h2>Realizar commit</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para hacer los cambios permanentes, es decir pasar los ficheros desde el área de preparación al directorio <strong>git</strong> se ha de realizar una confirmación o <em><strong>“commit”</strong></em>, existen diferentes formas de ejecutar la confirmación, la más usual es:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git commit -m “mensaje”</code></pre>
+</div>
+</div>
+<figure class="exe-figure exe-image position-center" style="width: 661px;"><img src="UD5_3_1_2__5_Comando_git_commit-m.png" alt="Comando git commit -m " title="Comando git commit -m" width="661" height="128" />
+<figcaption class="figcaption"><span class="title"><em>Comando git commit -m</em></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">En el que con el parámetro <strong>-m</strong> y un texto permite describir la confirmación.</span></p>
+<p><span style="font-weight: 400;">Si se vuelve a ejecutar <strong>git status</strong> se puede ver que el fichero pendiente de confirmar ha desaparecido:</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 973px;"><img src="UD5_3_1_2__6_Comando_git_status.png" alt="Comando git status" title="Comando git status" width="973" height="191" />
+<figcaption class="figcaption"><span class="title"><em>Comando git status</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es necesario indicar la persona que realiza la confirmación, configurando <strong>git</strong> con el mail del usuario y el nombre del usuario que realiza el <strong>commit</strong>, en caso de que no se encuentre configurado.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 956px;"><img src="UD5_3_1_2__7_Comando_git_config.png" alt="Comando git config" title="Comando git config" width="956" height="83" />
+<figcaption class="figcaption"><span class="title"><em>Comando git config</em></span></figcaption>
+</figure>
+<h2>Gestionar confirmaciones/commits</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los proyectos van creciendo añadiendo nuevos ficheros, cada cierto tiempo o punto se añaden nuevas confirmaciones, pero puede suceder que se desee por cualquier razón volver a una confirmación anterior.</span></p>
+<p><span style="font-weight: 400;">Es posible ver los <strong>commits</strong> realizados con el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git log</code></pre>
+</div>
+</div>
+<p><img src="UD5_3_1_2__8_Comando_git_log.png" alt="Comando git log" title="Comando git log" style="display: block; margin-left: auto; margin-right: auto;" width="974" height="738" /><br /><br /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la imagen anterior se puede ver que se han realizado cuatro 4 confirmaciones además de la inicial, en cada confirmación se puede ver la función resumen de los ficheros.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para volver a una confirmación anterior ejecutar:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git checkout hash</code>nterior para volver al segun</pre>
+</div>
+</div>
+<p><span style="font-size: 16.8px;"><span style="font-weight: 400;">En el anterior para volver al segundo commit:</span></span></p>
+<figure class="exe-figure exe-image position-center" style="width: 974px;"><img src="UD5_3_1_2__9_Comando_git_checkout_hash.png" alt="Comando git checkout hash" title="Comando git checkout hash" width="974" height="513" />
+<figcaption class="figcaption"><span class="title"><em>Comando git checkout hash</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-size: 16.8px;">Si se listan los ficheros o se abre alguno de los modificados se puede observar como se ha vuelto a un estado anterior. Es posible volver a una confirmación posterior con el HASH al que se quiera cambiar.</span></p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id393">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta393_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/xbMleco5wiI" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo educativo de la Universidad Politécnica de Madrid, donde se introduce al uso del software de control de versiones Git. El vídeo forma parte de un tutorial sobre DevOps<span style="background-color: #f7f7f7; color: #333333; font-size: 16.8px; font-weight: normal;">.</span></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id394">
+<div class="iDevice emphasis0">
+<div id="ta394_154" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>Ignorar carpetas y/o ficheros</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los proyectos suelen tener ficheros de código fuente, ficheros auxiliares como imágenes, fuentes, librerías o ejecutables generados. Solo algunos ficheros son interesantes para ser gestionados por el repositorio, y otros no se han de gestionar, por ejemplo los ejecutables generados en cada compilación  o las librerías externas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para indicar a git que no gestiona ciertos ficheros o directorios, se ha de crear el archivo oculto .gitignore, en el que se especifican los ficheros y directorios excluidos.</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id395">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta395_129" class="block iDevice_content">
+<p><a href="https://github.com/github/gitignore"><span style="font-weight: 400;">Repositorio en GitHub</span></a><span style="font-weight: 400;"> con ficheros <em><strong>.gitignore</strong></em> para la mayor parte de los lenguajes de programación y <em>frameworks</em> actuales.</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id396">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta396_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">A cerca del fichero </span><a href="https://git-scm.com/docs/gitignore"><span style="font-weight: 400;">.gitignore</span></a><span style="font-weight: 400;">. Se recomienda visitar la página oficial de GIT en la que se puede consultar una amplia documentación.</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper SeleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id474">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<div id="actitity-474_136">
+<form name="multi-select-form-474_136" action="#" class="activity-form multi-select-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion474_136" class="block question iDevice_content">
+<p><span style="font-weight: 400;">Señale cuáles son los tres principales estados en los que se puede encontrar un fichero en Git.</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1360" class="sr-av"><a href="#answer-474_139">Opción 1</a></label><input type="checkbox" id="op474_1360" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_139"><div id="taans474_139" class="block iDevice_content">
+<p><span style="font-weight: 400;">Confirmado.</span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1360" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1361" class="sr-av"><a href="#answer-474_2559">Opción 2</a></label><input type="checkbox" id="op474_1361" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2559"><div id="taans474_2559" class="block iDevice_content">
+<p><span style="font-weight: 400;">Bloqueado.</span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1361" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1362" class="sr-av"><a href="#answer-474_2561">Opción 3</a></label><input type="checkbox" id="op474_1362" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2561"><div id="taans474_2561" class="block iDevice_content">
+<p><span style="font-weight: 400;">Ejecución.</span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1362" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1363" class="sr-av"><a href="#answer-474_2563">Opción 4</a></label><input type="checkbox" id="op474_1363" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2563"><div id="taans474_2563" class="block iDevice_content">
+<p><span style="font-weight: 400;"></span></p>
+<p><span style="font-weight: 400;">Eliminado.</span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1363" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1364" class="sr-av"><a href="#answer-474_2565">Opción 5</a></label><input type="checkbox" id="op474_1364" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2565"><div id="taans474_2565" class="block iDevice_content">
+<p><span style="font-weight: 400;"></span></p>
+<p><span style="font-weight: 400;">Modificado.</span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1364" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1365" class="sr-av"><a href="#answer-474_2567">Opción 6</a></label><input type="checkbox" id="op474_1365" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2567"><div id="taans474_2567" class="block iDevice_content">
+<p><span style="font-weight: 400;">Preparado. </span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1365" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op474_1366" class="sr-av"><a href="#answer-474_2569">Opción 7</a></label><input type="checkbox" id="op474_1366" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-474_2569"><div id="taans474_2569" class="block iDevice_content">
+<p><span style="font-weight: 400;">Suspendido.</span></p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-474_1366" style="display:none"></section>
+</section>
+</section>
+<div class="block iDevice_buttons feedback-button js-required">
+<p>
+<input type="button" name="submitSelect" class="feedbackbutton multi-select-feedback-toggler" value="Mostrar retroalimentación" id="multi-select-feedback-toggler-7-474_136" /> 
+</p>
+</div>
+<section id="f474_136" class="js-hidden js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+
+<div id="tafeedback474_136" class="feedback iDevice_content">
+<p style="text-align: justify;"><span>Git tiene tres <strong>estados principales</strong> en los que se pueden encontrar los archivos: <strong>confirmado</strong> (<em>committed</em>), <strong>modificado</strong> (<em>modified</em>), y <strong>preparado</strong> (<em>staged</em>). </span></p>
+</div>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-474_139" class="right">Correcto</a></li>
+<li><a href="#answer-474_2559" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-474_2561" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-474_2563" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-474_2565" class="right">Correcto</a></li>
+<li><a href="#answer-474_2567" class="right">Correcto</a></li>
+<li><a href="#answer-474_2569" class="wrong">Incorrecto</a></li>
+</ol>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="211_instalacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="213_ramas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.- Integración continua y automatización de pruebas. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-143"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="active no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="31_construyendo_un_proyecto_con_gradle.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.- Integración continua y automatización de pruebas.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id456">
+<div class="iDevice emphasis0">
+<div id="ta456_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">En el mundo del desarrollo de software cada vez es más habitual emplear técnicas que favorezcan la comunicación e integración entre desarrolladores y operadores IT. Las nuevas metodologías como <em><strong>DevOps</strong></em> se centran en: favorecer la comunicación e integración de los equipos, reducir los tiempos y costes; a la vez que se aumenta la calidad y agilidad en los procesos de desarrollo. El objetivo de la </span><b>integración y la implementación continuas (CI/CD)</b><span style="font-weight: 400;"> es permitir que los equipos de desarrollo puedan hacer llegar a los usuarios finales un software funcional, de calidad y libre de errores en el menor tiempo posible.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el desarrollo moderno de aplicaciones, los distintos equipos de trabajo trabajan de forma simultánea sobre distintas áreas y funciones del software. Los desarrolladores integran periódicamente su código en el repositorio central (como GitHub) en lugar de realizarlo de forma aislada al final del ciclo de producción. Mediante la </span><b>integración continua</b><span style="font-weight: 400;"> estos desarrolladores pueden integrar y probar las distintas modificaciones evitando que entren en conflicto con los cambios introducidos por otros desarrolladores. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La </span><b>entrega continua CI/CD</b><span style="font-weight: 400;"> (continuous delivery) está relacionada con la integración continua. Tiene como objetivo principal conseguir que la entrega de los nuevos cambios o actualizaciones del software a los clientes se realicen de forma ágil y fiable. Las pruebas son fundamentales para poder garantizar la calidad de los productos elaborados. Además, es indispensable contar con un sistema automatizado que ayude a gestionar el proceso de integración de código y las pruebas. Esto último, es muy importante porque permite asegurar la calidad del código. Si los errores se  detectan de forma temprana y se realiza una adecuada retroalimentación, es posible corregir y mejorar el código de una manera más rápida. La entrega continua acelera la entrega de software a los usuarios realizando entregas con una periodicidad (diaria, semanal, mensual) que dependerá de las características de cada proyecto.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Con el </span><b>despliegue continuo</b><span style="font-weight: 400;"> se va un paso más allá de la entrega continua (</span><b><i>continuous deployment</i></b><span style="font-weight: 400;">), automatizando todo el proceso de entrega de software al usuario, eliminando la intervención humana necesaria en la entrega continua. De este modo se libera a los equipos de operaciones de los procesos manuales, que son la principal causa de retrasos en la distribución de aplicaciones.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id457">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Herramientas de integración continua</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta457_456_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">Existe una amplia variedad de herramientas de <strong>integración continua (CI)</strong>, cada una de las cuales tiene sus características particulares. A la hora de seleccionar y escoger una de ellas para nuestros proyectos es necesario tener en cuenta:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>Configuración sencilla:</b><span style="font-weight: 400;"> La instalación y configuración de la herramienta CI debe ser lo más sencilla posible para que su puesta en marcha sea lo más rápida posible, para que los miembros del equipo de desarrollo puedan empezar a utilizarla de inmediato.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Facilidad de uso:</b><span style="font-weight: 400;"> Preferentemente, el uso de la herramientas de integración debería ser lo más transparente y discreto posible. Los desarrolladores únicamente deberían aprender cómo registrarse y cómo consultar los resultados de construcción e implementación.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Compatibilidad con plataformas en la nube</b><span style="font-weight: 400;">, como <strong>Microsoft Azure</strong>, <strong>Google Cloud</strong> o <strong>AWS</strong>: este tipo de integración es realmente importante para reducir el tiempo de carga de las aplicaciones en la nube.</span></li>
+<li style="font-weight: 400;" aria-level="1"><strong>Arquitectura extensible: </strong>Capacidad para incorporar nuevos complemento y funcionalidades a las herramientas de integración continua automatizada.</li>
+</ul>
+<div class="exe-fx exe-accordion">
+<h2>Jenkins</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Jenkins,</strong> fue fundada en 2006 con el nombre de “Hudson”, es un servidor de integración continua, gratuito, open-source y uno de los más utilizados en la actualidad. De este servidor destaca principalmente su </span><b>facilidad de uso</b><span style="font-weight: 400;">, está </span><b>perfectamente integrada</b><span style="font-weight: 400;"> con herramientas de control de versiones como </span><b>CVS</b><span style="font-weight: 400;">, </span><b>Subversion</b><span style="font-weight: 400;">, </span><b>Git</b><span style="font-weight: 400;">, </span><b>Mercurial</b><span style="font-weight: 400;">, </span><b>Perforce</b><span style="font-weight: 400;"> y </span><b>Clearcase</b><span style="font-weight: 400;">. Dispone de multitud de plugins que permiten extender las funcionalidades del servidor. Es utilizada por portales web muy influyentes como: Facebook, Pinterest, LinkedIn, eBay o Netflix.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La herramienta y una abundante documentación se encuentra disponible en su </span><a href="https://www.jenkins.io/"><span style="font-weight: 400;">sitio oficial</span></a><span style="font-weight: 400;">.</span></p>
+<h2>Bamboo</h2>
+<p style="text-align: justify;"><a href="https://www.atlassian.com/es/software/bamboo"><span style="font-weight: 400;">Bamboo</span></a><span style="font-weight: 400;"> es  la otra gran alternativa para la integración, implementación y entrega continua. Permite crear planes de compilación en varias etapas, configurar <em>triggers</em> para iniciar compilaciones. También permite ejecutar pruebas automatizadas para hacer una regresión completa de las aplicaciones después de introducir nuevas modificaciones. </span></p>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id458">
+<div class="iDevice emphasis0">
+<div id="ta458_154" class="block iDevice_content">
+<h2>Instalación y configuración de Jenkins en Windows:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">El proyecto Jenkins produce dos líneas de lanzamiento:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>Estable (LTS).</b><span style="font-weight: 400;"> Se trata de la versión de <em><strong>Jenkins Long-Term Support</strong></em>, o <strong>LTS</strong>. El concepto es muy similar a los conceptos LTS en Ubuntu. Cada 4 semanas se publican versiones estables que incluyen versiones posteriores de corrección de errores y seguridad.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Regular (Weekly).</b><span style="font-weight: 400;"> La línea de lanzamiento semanal de Jenkins ofrece correcciones de errores y nuevas funciones rápidamente a los usuarios y desarrolladores de complementos que las necesitan. Estos lanzamientos generalmente se entregan con una cadencia semanal, de ahí el nombre. </span></li>
+</ul>
+<p style="text-align: justify;">Jenkins se distribuye como archivos WAR, paquetes nativos, instaladores e imágenes de Docker. Y está disponible para multitud de sistemas operativos como <a href="https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/." style="font-size: 1.1em;"><span>Windows</span></a><span style="font-weight: 400;">, Linux o macOS. Además, muchos proveedores de servicios en la nube (</span><a href="https://aws.amazon.com/es/blogs/devops/setting-up-a-ci-cd-pipeline-by-integrating-jenkins-with-aws-codebuild-and-aws-codedeploy/" style="font-size: 1.1em;"><span>AWS</span></a><span style="font-weight: 400;">, </span><a href="https://docs.microsoft.com/en-us/azure/developer/jenkins/" style="font-size: 1.1em;"><span>Azure,</span></a><span style="color: #333333; font-size: 1.1em;"> </span><a href="https://cloud.google.com/jenkins" style="font-size: 1.1em;"><span>Google Cloud</span></a><span style="font-weight: 400;">, </span><a href="https://cloud.ibm.com/catalog/content/jenkins" style="font-size: 1.1em;"><span>IBM Cloud</span></a><span style="font-weight: 400;">, </span><a href="https://docs.oracle.com/en/solutions/jenkins-master-agent-mode/#GUID-DA12CF46-CD5F-4D51-8652-93E9E7977939" style="font-size: 1.1em;"><span>Oracle</span></a><span style="font-weight: 400;">, </span><a href="https://bitnami.com/stack/jenkins/cloud" style="font-size: 1.1em;"><span>bitnami by VMWare</span></a><span style="font-weight: 400;">) proporcionan sus propias guías y paquetes de instalación de Jenkins.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">A continuación, se muestra de forma resumida el proceso de instalación y configuración de Jenkins en Windows:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_5__1_Descarga_instalador_MSI_Win_Jenkins.png" alt="Descarga del instalador MSI para Windows de Jenkins" title="Descarga del instalador MSI para Windows de Jenkins" width="800" height="431" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez instalado, el primer paso antes de poder utilizar Jenkins es necesario desbloquear las restricciones de seguridad impuestas por el Administrador de Jenkins.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_5__2_Unlock_Jenkins.png" alt="Unlock Jenkins" title="Unlock Jenkins" width="800" height="588" /></span></p>
+<p><span style="font-weight: 400;">La clave que se debe introducir se encuentra disponible en el fichero </span><b><i>initialAdminPassword</i></b><span style="font-weight: 400;"> accesible desde el Explorador del sistema de archivos en la siguiente ruta: </span><b>C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword.</b></p>
+<p><b><img src="UD5_5__3_initialAdminPasswords.png" alt="C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword" title="C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword" width="800" height="299" style="display: block; margin-left: auto; margin-right: auto;" /></b></p>
+<p style="text-align: justify;"><b><span style="font-weight: 400;">Se introducen los datos de registro para la creación del primer usuario Administrador:</span></b></p>
+<p><b><span style="font-weight: 400;"><img src="UD5_5__4_Jenkins_Create_First_Admin_User.png" alt="Jenkins: Create First Admin User" title="Jenkins: Create First Admin User" width="800" height="620" style="display: block; margin-left: auto; margin-right: auto;" /></span></b></p>
+<p style="text-align: justify;"><b><span style="font-weight: 400;">Se configura la URL del servidor Jenkins: <a href="http://localhost:8080/">http://localhost:8080/</a></span></b></p>
+<p style="text-align: center;"><b><span style="font-weight: 400;"><img src="UD5_5__5_Jenkins_Instance_URL_Configuration.png" alt="Jenkins: Instance URL Configuration" title="Jenkins: Instance URL Configuration" width="799" height="609" /></span></b></p>
+<p style="text-align: justify;"><b><span style="font-weight: 400;">Una vez completada la configuración Jenkins está listo para ser utilizado:</span></b></p>
+<p><b><span style="font-weight: 400;"><img src="UD5_5__6_Jenkins_is_ready.png" alt="Jenkins is ready!" title="Jenkins is ready!" width="800" height="618" style="display: block; margin-left: auto; margin-right: auto;" /></span></b></p>
+<p style="text-align: center;"><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id459">
+<div class="iDevice emphasis0">
+<div id="ta459_154" class="block iDevice_content">
+<h2><span style="font-weight: 400;">Primeros pasos con Jenkins. Guía básica de funcionamiento:</span></h2>
+<p><span style="font-weight: 400;">Una vez instalado la  pantalla principal de bienvenida que aparece tiene una vista similar esta:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_5__7_Panel_de_Control_-_Bienvenido_a__Jenkins.png" alt="Panel de Control - ¡Bienvenido a Jenkins!" title="Panel de Control - ¡Bienvenido a Jenkins!" width="800" height="428" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Jenkins se basa en </span><b>tareas (Jobs)</b><span style="font-weight: 400;">. Como su nombre indica una tarea es un trabajo o un conjunto de instrucciones que podemos programar para que ocurran con una determinada acción. Por tanto, cuando se empieza a trabajar con Jenkins, el primer paso es </span><b>crear una nueva tarea.</b><span style="font-weight: 400;"> </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_5__8_Panel_de_Control_-_Jenkins_crear_nueva_tarea.png" alt="Panel de Control -Jenkins crear nueva tarea" title="Panel de Control -Jenkins crear nueva tarea" width="800" height="428" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el siguiente paso es escoger el tipo de tarea que desea crear:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Proyecto de estilo libre:</b><span style="font-weight: 400;"><em> Jenkins</em> conecta un sistema de gestión de versiones con sistema de <em>build</em>.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Pipeline:</b><span style="font-weight: 400;"> aquí se crea un cauce a través de varios agentes de compilación.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Proyecto multiconfiguración:</b><span style="font-weight: 400;"> En caso de trabajar con proyecto que necesita de diferentes posibilidades de configuración, porque utiliza diversos entornos de prueba, debe escogerse esta opción.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Carpeta:</b><span style="font-weight: 400;"> una carpeta es un contenedor en el que puedes almacenar objetos anidados.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Organización GitHub:</b><span style="font-weight: 400;"> esta opción conecta con los repositorios de una cuenta en GitHub.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Multibranch</b> <b>Pipeline:</b><span style="font-weight: 400;"> permite crear directamente varias canalizaciones.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Jenkins está pensado principalmente para </span><b>proyectos de estilo libre</b><span style="font-weight: 400;">, por lo que en este primer ejemplo se va a crear una tarea de este tipo. Esta tarea de ejemplo denominada </span><b><i>“Hola mundo”</i></b><span style="font-weight: 400;"> servirá para ilustrar el funcionamiento del sistema.</span></p>
+<p><span style="font-weight: 400;">Es posible incorporar información descriptiva sobre la estructura y funcionamiento de la tarea:</span></p>
+<p><span style="font-weight: 400;"><img src="UD5_5__9_Descripcion_General_Tarea_Jenkins.png" alt="Pestaña General - Descripción Tarea Jenkins" title="Pestaña General - Descripción Tarea Jenkins" width="800" height="433" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-weight: 400;"> </span></p>
+<p><span style="font-weight: 400;">El apartado </span><b>“Configurar el origen del código fuente” </b><span style="font-weight: 400;">permite especificar el origen remoto del repositorio (como por ejemplo Git, GitHub o Mercurial) donde se encuentran alojados los ficheros de código fuente del proyecto. En este sencillo ejemplo no es necesario indicar ningún repositorio. Por tanto el origen será </span><b>Ninguno.</b></p>
+<p style="text-align: center;"><b><img src="UD5_5__10_Configurar_origen_codigo_fuente.png" alt="Configurar el origen del código fuente" title="Configurar el origen del código fuente" width="800" height="507" /></b></p>
+<p><span style="font-weight: 400;">En el apartado </span><b>Ejecutar (</b><b><i>Build</i></b><b>)</b><span style="font-weight: 400;"> es posible determinar el modo como se va construir y ejecutar el programa. En este caso se elige </span><b>Ejecutar comandos de Windows.</b><span style="font-weight: 400;"> En el cuadro de de texto que se habilita para especificar el código se introduce:</span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>echo “Hola mundo”
+pause
+
+</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="UD5_5__11_Ejecutar_comandos_de_Windows_Hola_mundo.png" alt="Apartado Ejecutar Jenkins - Ejecutar comandos Windows" title="Apartado Ejecutar Jenkins - Ejecutar comandos Windows" width="801" height="430" /><br /><br /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez completada la configuración de la primera tarea presionamos el </span><b>botón Guardar</b><span style="font-weight: 400;">. </span><span style="font-weight: 400;">Mediante estos sencillos pasos se ha completado la configuración del primera tarea.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para ejecutarla, simplemente hay que lanzarla manualmente desde la opción de menú <b><i>“Construir ahora” (Schedule a build for Hola mundo)</i></b>.</span></p>
+<p><span style="font-weight: 400;"><img src="UD5_5__12_Schedule_Build_Hola_mundo.png" alt="Schedule a Build for Hola Mundo" title="Schedule a Build for Hola Mundo" width="800" height="257" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez ejecutada, pinchando sobre el </span><b>Nombre de la tarea</b><span style="font-weight: 400;"> se puede  ver el resultado de su ejecución. </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_5__13_Estado_Actual_Proyecto_Hola_mundo.png" alt="Estado Actual Proyecto Hola Mundo" title="Estado Actual Proyecto Hola Mundo" width="801" height="375" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Incluso es posible conocer los detalles sobre la compilación/ejecución como: el <em><b>status, </b></em>o la <b>salida de la consola</b>. </span></p>
+<p><span style="font-weight: 400;"> <img src="UD5_5__14_Salida_de_consola_Hola_mundo.png" alt="Salida de Consola Hola mundo" title="Salida de Consola Hola mundo" width="800" height="286" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id460">
+<div class="iDevice emphasis0">
+<div id="ta460_154" class="block iDevice_content">
+<h2><span style="font-weight: 400;">Ejemplo de compilación y ejecución con Jenkins de un Proyecto Java:</span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">En este ejemplo se crea un nuevo trabajo en Jenkins que toma una aplicación simple Hola Mundo de un repositorio Git y a partir de un fichero Gradle visto anteriormente, construye, prueba y ejecuta el programa Java. Se deben de seguir la siguiente secuencia de pasos para garantizar que la compilación y ejecución se realizan con éxito.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En primer lugar, desde el panel de control de Jenkins y haga clic en </span><b>“Nueva Tarea”. </b><span style="font-weight: 400;">Se debe introducir el nombre del nuevo elemento: </span><b>Proyecto Gradle. </b><span style="font-weight: 400;">Se trata de </span><b>crear un proyecto de estilo libre</b><span style="font-weight: 400;">.</span></p>
+<p style="text-align: center;"><img src="UD5_5__15_Nueva_Tarea_Jenkins_Proyecto_Gradle.png" alt="Nueva Tarea Jenkins Proyecto Gradle" title="Nueva Tarea Jenkins Proyecto Gradle" width="800" height="474" /></p>
+<p style="text-align: justify;"><span>Una vez creado el proyecto, es necesario configurar algunas opciones como el repositorio (prestar atención a la rama a utilizar) o la herramienta de generación automática a usar, en este caso Gradle.</span></p>
+<p style="text-align: center;"><span><img src="UD5_5__16_Configurar_origen_codigo_fuente_Proyecto_Gradle.png" alt="Configurar origen código fuente Proyecto Gradle" title="Configurar origen código fuente Proyecto Gradle" width="800" height="479" /></span></p>
+<p style="text-align: justify;"><span><span style="font-weight: 400;">Para configurar correctamente la ejecución es necesario indicar que se va a </span><b><i>“Invocar un script Gradle”</i></b><span style="font-weight: 400;">.</span></span></p>
+<p style="text-align: center;"><span><img src="UD5_5__17_Ejecutar_-_Invoke_Gradle_script.png" alt="Ejecutar - Invoke Gradle script" title="Ejecutar - Invoke Gradle script" width="799" height="251" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Además, se puede especificar las distintas tareas del <em>script Gradle</em> que se desean ejecutar.</span></p>
+<p style="text-align: center;"><span><img src="UD5_5__18_Ejecutar_-_Invoke_Gradle_script_-_Tasks.png" alt="Ejecutar - Invoke Gradle script - Tasks" title="Ejecutar - Invoke Gradle script - Tasks" width="800" height="479" /></span></p>
+<p style="text-align: justify;"><span><span style="font-weight: 400;">Una vez configurado, simplemente, ir a la página principal del proyecto y seleccionar la opción construir ahora, en la parte izquierda aparece la tarea numerada y el resumen de la ejecución.</span></span></p>
+<p style="text-align: center;"><span><span style="font-weight: 400;"><img src="UD5_5__19_Construir_ahora_Proyecto_Gradle.png" alt="Construir ahora Proyecto Gradle" title="Construir ahora Proyecto Gradle" width="800" height="654" /></span></span></p>
+<p style="text-align: justify;"><span><span style="font-weight: 400;">Al finalizar (o durante la ejecución), pulsando sobre la tarea se puede obtener información ampliada de la ejecución, siendo la salida de consola la más importante:</span></span></p>
+<p style="text-align: center;"><span><span style="font-weight: 400;"><img src="UD5_5__20_Salida_de_consola_Proyecto_Glade.png" alt="Salida de consola Proyecto Gradle" title="Salida de consola Proyecto Gradle" width="800" height="515" /></span></span></p>
+<p style="text-align: justify;"><span><span style="font-weight: 400;"></span></span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="31_construyendo_un_proyecto_con_gradle.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.4.- Trabajando en remoto. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-160"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_control_de_versiones.html" class="current-page-parent daddy">2.- Sistemas de control de versiones.</a>
+   <ul>
+      <li class="current-page-parent"><a href="21_git.html" class="current-page-parent daddy">2.1.- Git.</a>
+      <ul>
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li id="active"><a href="214_trabajando_en_remoto.html" class="active no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="213_ramas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="215_gitflow.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.1.4.- Trabajando en remoto.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id398">
+<div class="iDevice emphasis0">
+<div id="ta398_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">La gestión del código con un repositorio local en ocasiones no cumple con los requerimientos del proyecto, por ejemplo trabajar un grupo de desarrolladores, copias de seguridad o publicar el proyecto para que esté disponible para otras personas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Git</strong> permite gestionar los proyectos tanto en repositorios locales como remotos, realizando en uno y otro las acciones vistas en los puntos anteriores. Las tareas comunes al trabajar con repositorios remotos son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Registrar el repositorio remoto.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gestionar las ramas en remoto.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Publicar los cambios en local en el repositorio remoto.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Descargar los cambios del repositorio remoto en el repositorio local.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Si bien es posible instalar repositorios en remoto gestionados por la propia empresa como <strong>GitLab</strong> también se puede optar por repositorios de empresas como <strong>GitHub</strong>, <strong>Bitbucket</strong> o el servicio que ofrece también <strong>GitLab</strong>. Existen cuentas gratuitas con limitaciones y empresariales.</span></p>
+<p><span style="font-weight: 400;">Al estar disponible en Internet, estas empresas han añadido mecanismos de <strong>autenticación</strong> y <strong>autorización</strong> a los repositorios que se alojan en esta. </span></p>
+<p><span style="font-weight: 400;">Para la autenticación se ofrecen diferentes alternativas dependiendo del proveedor del servicio, por ejemplo <strong>GitHub</strong> permite:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Credenciales con usuario y contraseña.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Certificado para ssh.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Acceso mediante token.</span></li>
+</ul>
+<div class="exe-fx exe-accordion">
+<h2>Registrar el repositorio remoto</h2>
+<p><span style="font-weight: 400;">Se trabaja con <strong>GitHub</strong> aunque es posible trabajar con otros proveedores de estos servicios. </span><span style="font-weight: 400;">Se supone que existe un repositorio en local ya sea vacío o con código y confirmaciones. Usando la interfaz web de <strong>GitHub</strong> crear un repositorio, en este caso privado, para que solicite validación.</span></p>
+<p><span style="font-weight: 400;"></span></p>
+<figure class="exe-figure exe-image position-center" style="width: 974px;"><img src="UD5_3_1_4__1_create_a_new_repository.png" alt="Creación de un nuevo repositorio" title="Creación de un nuevo repositorio" width="974" height="1058" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><span class="title"><em>Creación de un nuevo repositorio</em></span></figcaption>
+</figure>
+<p><br /><br /></p>
+<p><span style="font-weight: 400;">Para ver los repositorios remotos configurados en local ejecutar el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Que debe estar vacío.</span></p>
+<p><span style="font-weight: 400;">Para añadir un repositorio remoto ejecutar:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote add [nombre_local] [url]
+
+</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">El nombre_local permite identificar el repositorio más fácilmente. Un ejemplo:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote add ppse <a href="https://github.com/epdroasntiago/ppseejemplo.git">https://github.com/epdroasntiago/ppseejemplo.git</a>.
+
+</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Para traer el código que se encuentra en remoto a local ejecutar:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git fetch [nombre_local]</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Al ser un repositorio privado solicita las credenciales, en el caso de usar un sistema con interfaz gráfica aparece una ventana en el que da la opción de:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Validación con navegador:</strong> Usuario y contraseña.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Token:</strong> Obtener de la web de GitHub.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center" style="width: 554px;"><img src="UD5_3_1_4__2_conect_to_git_hub.png" alt="Conectar a Git Hub" title="Conectar a Git Hub" width="554" height="488" />
+<figcaption class="figcaption"><span class="title"><em>Conectar a Git Hub</em></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">Ir a la cuenta de GitHub y generar un token con los permisos para el mismo.</span></p>
+<p><span style="font-weight: 400;">El resultado desde la línea de comandos es:</span></p>
+<p><span style="font-weight: 400;"> <img src="UD5_3_1_4__3_git_fetch_ppse.png" alt="git fetch ppse" title="git fetch ppse" width="798" height="235" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-weight: 400;">Si se clona el repositorio, se añade de forma automática el repositorio con el nombre <strong><em>origin</em></strong>.</span></p>
+<p><span style="font-weight: 400;">Para ver la información del remoto:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote show [nombre_remoto]</code></pre>
+</div>
+</div>
+<p><br /><img src="UD5_3_1_4__4_git_remote_ppse.png" alt="git remote show ppse" title="git remote show ppse" width="800" height="189" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><span style="font-weight: 400;">Por último indicar que se pueden eliminar remotos con el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote rm [nombre_remoto]</code></pre>
+</div>
+</div>
+<h2><b>Publicar los cambios en local en el repositorio remoto</b></h2>
+<p><span style="font-weight: 400;">El proyecto avanza, se realiza un <strong>commit</strong> y se desea subir a uno de los servidores remotos, para ello simplemente ejecutar el comando</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git push [nombre_repositorio] [rama]</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Para conocer las ramas que tiene el remoto con </span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git remote show [nombre_remoto]</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Recordar realizar un <em><strong>commit</strong></em> antes de actualizar el servidor remoto. Una secuencia completa:</span></p>
+<p><span style="font-weight: 400;"><img src="UD5_3_1_4__5_ejemplosgitppse.png" alt="Ejemplo git pps" title="Ejemplo git pps" width="799" height="388" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<h2><b>Descargar los cambios del repositorio remoto en el repositorio local</b></h2>
+<p style="text-align: justify;">También se puede dar el caso de realizar cambios en otro equipo o por otra persona, que estos se suban al repositorio remoto y que sea necesario descargarlos al local, para descargarlo usar el comando:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git pull [nombre_remoto] [rama]</code></pre>
+</div>
+</div>
+<p><img src="UD5_3_1_4__6_git_pull_ppse_master.png" alt="Comando git pull" title="Comando git pull" width="765" height="357" style="display: block; margin-left: auto; margin-right: auto;" /><br /><span> </span></p>
+<h2>Gestionar las ramas en remoto</h2>
+<p style="text-align: justify;">Una situación usual en el desarrollo de un proyecto es que varias personas trabajen sobre el mismo repositorio remoto y sobre la misma rama, al trabajar en paralelo los repositorios locales de los desarrolladores y el remoto al subir los cambios se encuentran en estados diferentes y puede ser conflictivo.</p>
+<p style="text-align: justify;">Al realizar un push en el servidor remoto en el que previamente otra persona ha realizado otra actualización da error por conflictos.</p>
+<p><img src="UD5_3_1_4__7_git_push_ppse_master.png" alt="Comando git push" title="Comando git push" width="801" height="190" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es necesario realizar un proceso de sincronización que consiste en obtener los cambios con pull, unirlos y ahora hacer si hacer un push.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se ejecuta el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git pull [nombre_remoto] [rama]</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">En las líneas en que detecta los conflictos pueden suceder 2 casos:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Que consiga resolver los conflictos de forma automática.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Que no consiga resolver los conflictos e inserte comentarios en el fichero para resolver los conflictos.</span></li>
+</ul>
+<p><span style="font-weight: 400;"><img src="UD5_3_1_4__8_git_pull_ppse_master.png" alt="Comando git pull" title="Comando git pull" width="799" height="312" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Resolver los conflictos seleccionado en el código  lo que está entre &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD y ======= que es contenido que se encuentra en el remoto o entre ======= y &gt;&gt;&gt;&gt;&gt;&gt;&gt; contenido que se encuentra en local.</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdmodifIdevice em_iDevice em_iDevice_reflexionfpd" id="id399">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta399_121" class="block iDevice_content">
+<p><span style="font-weight: 400;">¿Se ha tratado en algún punto del curso la generación de <em><strong>token</strong></em>? ¿Qué formato crees que utiliza para almacenar los permisos? ¿Lo almacén en el propio <em><strong>token</strong></em> o en el servidor?</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="213_ramas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="215_gitflow.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

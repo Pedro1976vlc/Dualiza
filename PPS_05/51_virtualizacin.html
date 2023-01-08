@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1.- Virtualización | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-165"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li class="current-page-parent"><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="current-page-parent daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul>
+      <li id="active"><a href="51_virtualizacin.html" class="active no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_contenedores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.1.- Virtualización</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id411">
+<div class="iDevice emphasis0">
+<div id="ta411_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">La <strong>virtualización</strong> simula normalmente sistemas hardware por software, esto es debido a que los equipos hardware son cada vez más potentes y permiten la ejecución de diferentes sistemas virtualizados (sistemas operativos, routers, switch…). Esta virtualización ofrece una serie de ventajas que solucionan los problemas de un único servidor visto en el punto anterior:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Facilidad de replicación.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Copias de seguridad.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Configuración.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Tolerancia ante fallos.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Ahorro de costes.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por supuesto no todo son ventajas, existiendo las siguientes desventajas:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Menor rendimiento.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Complejidad para optimización.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">En un sistema de virtualización se pueden distinguir 2 elementos principales:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Anfitrión:</strong> Sistema operativo que se encuentra directamente sobre el hardware.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Huésped:</strong> Sistema operativo que se encuentra sobre el anfitrión o sobre el software de virtaulización.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para dar soporte a la <strong>virtualización</strong> y que funcione de forma adecuada no es suficiente con un procesador potente ya que el sistema operativo anfitrión no permite el acceso a ciertas funcionalidades y elementos del procesador por seguridad. Algunos sistemas operativos poseen diferentes anillos con permisos en los que se localiza el software en función de su importancia, por ejemplo, no tiene sentido que un procesador de texto pueda acceder al área de memoria en que se almacena la tabla de procesos. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el anillo 0 solo tiene acceso el núcleo y da opción a usar la funciones más importantes del procesador, no pudiendo el resto de programas acceder al mismo, implicando menos rendimiento. La solución es crear el anillo -1 para el núcleo anfitrión y los núcleos virtualizados en el anillo 0.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las principales tecnologías desarrolladas son:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">VT Intel (VT).</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">AMD-V.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es necesario activar las tecnologías en la BIOS/UEFI del equipo:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_6_1__1_UEFI-Virtualization.png" alt="Activación Virtualización UEFI BIOS" title="Activación Virtualización UEFI BIOS" width="600" height="402" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez activada se puede observar en el Administrador de tareas del sistema operaivo que aparece la característica <b><i>Virtualization </i></b> como <em>“Enabled”</em> (habilitado).</span></p>
+<p><span style="font-weight: 400;"><img src="UD5_6_1__2_Task_Manager-Virtualization.png" alt="Task Manager Virtualización Enabled" title="Task Manager Virtualización Enabled" width="599" height="338" style="display: block; margin-left: auto; margin-right: auto;" /></span><span style="font-weight: 400;">Existen dos tipos de máquinas virtuales:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>De Sistema / Hardware</h2>
+<p>Máquina física dividida entre varias virtuales. Capa de software encargado de la gestión → HYPERVISOR.</p>
+<p>Existen dos tipos de hipervisores:</p>
+<ul>
+<li><strong>Tipo 1:</strong> El hipervisor corre directamente sobre el hardware, no necesita <strong>sistema operativo anfitrión</strong>.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 673px;"><img src="UD5_6_1__3_Hipervisor-Tipo_I.png" alt="Hipervisor Tipo I" title="Hipervisor Tipo I" width="673" height="462" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:VMM-Type1.JPG" target="_blank" class="author" rel="noopener">Qingqing Chen</a>. <span class="title"><em>Virtual Machine Monitor Type I</em></span> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<ul>
+<li><strong>Tipo 2:</strong> El hipervisor corre sobre un <strong>sistema operativo anfitrión</strong> y sobre estos dos los <strong>sistemas operativos huéspedes</strong>.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 677px;"><img src="UD5_6_1__4_Hipervisor-Tipo_II.png" alt="Hipervisor Tipo II" title="Hipervisor Tipo II" width="677" height="538" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:VMM-Type2.JPG" target="_blank" class="author" rel="noopener">Qingqing Chen</a>. <span class="title"><em>Virtual Machine Monitor Type II</em></span> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>De Proceso</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La máquina virtual se ejecuta como un proceso normal. Objetivo entorno de ejecución independiente de la plataforma donde se ejecuta. Ejemplo JVM o máquina virtual de JAVA.</span></p>
+</div>
+<p><span style="font-weight: 400;">Existen diferentes <strong>técnicas de virtualización</strong> como son:</span></p>
+<ul>
+<li><span style="font-weight: 400;"><strong>Completa del <em>hardware</em></strong> o <em><strong>nativa</strong></em>. Múltiples máquinas virtuales distintas funcionando al mismo tiempo. Los sistemas operativos deben tener la misma arquitectura (x86, ARM, …).</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 254px;"><img src="UD5_6_1__5_Xen_architecture.png" alt="Español: Arquitectura que usa Xen para realizar la virtualización" title="Español: Arquitectura que usa Xen para realizar la virtualización" width="254" height="217" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:Xen_architecture.png" target="_blank" class="author" rel="noopener">Fercufer</a>. <span class="title"><em>Español: Arquitectura que usa Xen para realizar la virtualización</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Emulación de <em>hardware</em></strong> o <em><strong>no nativa.</strong></em> Se simula el hardware compatible con el sistema operativo o software a ejecutar. Por ejemplo  el <strong>emulador  MAME</strong> o más recientemente el <strong>motor .NET</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Nivel del sistema operativo.</strong>  Dividir la máquina en compartimentos independientes. Actualmente en desuso.</span></li>
+</ul>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id412">
+<div class="iDevice emphasis0">
+<div id="ta412_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Existe multitud de <strong>software de virtualización</strong> con <strong>hipervisores de nivel 1</strong> y <strong>nivel 2</strong>, los más conocidos son:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Virtualbox</h2>
+<figure class="exe-figure exe-image position-center license-gnu-gpl" style="width: 250px;"><img src="UD5_6_1__1_Virtualbox_logo.png" alt="Logotipo VirtualBox" title="Logotipo VirtualBox" width="250" height="250" />
+<figcaption class="figcaption"><a href="https://en.wikipedia.org/wiki/Oracle_Corporation" target="_blank" class="author" rel="noopener">Wikipedia / Oracle Corporation</a>. <a href="https://commons.wikimedia.org/wiki/File:Virtualbox_logo.png" target="_blank" class="title" rel="noopener"><em>Logotipo VirtualBox</em></a> <span class="license"><span class="sep">(</span><a href="http://www.gnu.org/licenses/gpl.html" rel="license nofollow noopener" target="_blank">GNU/GPL</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es un software de <strong>virtualización</strong> sencillo y gratuito creado originalmente por una empresa llamada <em>Innotek</em>. Esta empresa fue adquirida inicialmente por <em>Sun Microsystems</em> que, a su vez, ahora es propiedad de </span><b>Oracle</b><span style="font-weight: 400;">. La solución de virtualización preferida por la mayoría de los usuarios de sistemas de escritorio. </span><a href="https://www.virtualbox.org/"><b>VirtualBox</b></a><span style="font-weight: 400;"> se instala como cualquier aplicación sobre un sistema operativo anfitrión. Una vez instalada la aplicación, permite la ejecución, sobre ella, de casi cualquier sistema operativo. Como todas las máquinas virtuales usan controladores de dispositivos virtuales, son independientes del hardware del anfitrión, por lo que son fáciles de transportar a un host diferente cuando sea necesario.</span></p>
+<h2>VMWare</h2>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 190px;"><img src="UD5_6_1__2_Logotipo_VMWare.png" alt="Logotipo de VMWare" title="Logotipo de VMWare" width="190" height="31" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:Vmware.svg" target="_blank" class="author" rel="noopener">Wikipedia/VMWare Inc.</a>. <a href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg" target="_blank" class="title" rel="noopener"><em>Logotipo de VMWare</em></a> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">La empresa de referencia en el mundo de la virtualización. Dispone de dos líneas de producto diferentes:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>Las versiones de escritorio:</b><span style="font-weight: 400;"> Pueden utilizar como sistema operativo anfitrión a cualquiera de los tres sistemas operativos de escritorio más extendidos Microsoft Windows, GNU/Linux y Apple Mac OS X. En las máquinas virtuales que creemos, podremos instalar cualquier sistema operativo que sea compatible con la arquitectura x86 o x86-64. Vmware comercializa tres productos diferentes en este segmento:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>VMware Workstation</strong>, que es la versión comercial, para sistemas de escritorio que se instala sobre Microsoft Windows y GNU/Linux.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>VMware Fusion</strong>, que ofrece una funcionalidad similar en sistemas de Apple que se ejecuten sobre procesadores Intel.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>VMware Player,</strong> es la versión gratuita, con menos funcionalidad, orientada a un uso no comercial. </span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1"><b>Las versiones empresariales:</b><span style="font-weight: 400;"> Están orientadas a implantaciones de mayor envergadura. Dada la <strong>gran cantidad de soluciones y versiones</strong> que podemos encontrar en VMware, se recomienda consultar la web oficial para profundizar en las mismas: </span><a href="https://www.vmware.com/es.html"><span style="font-weight: 400;">https://www.vmware.com/es.html</span></a></li>
+</ul>
+<h2 style="text-align: justify;">KVM</h2>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 499px;"><img src="UD5_6_1__3_Logotipo_KVN.png" alt="Logotipo KVM" title="Logotipo KVM" width="499" height="158" />
+<figcaption class="figcaption"><a href="https://es.wikipedia.org/wiki/Archivo:Kvmbanner-logo2_1.png" target="_blank" class="author" rel="noopener">Wikipedia /O.T.S.U</a>. <a href="https://upload.wikimedia.org/wikipedia/commons/7/70/Kvmbanner-logo2_1.png" target="_blank" class="title" rel="noopener"><em>Logotipo KVM</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p><b>Kernel-based Virtual Machine (KVM)</b><span style="font-weight: 400;">, es una tecnología de virtualización integrada completamente con el sistema operativo Linux. Está formada por un módulo del núcleo y herramientas en el espacio de usuario. Se trata de una solución de virtualización que es en su totalidad software libre.</span></p>
+<h2>Xen</h2>
+<figure class="exe-figure exe-image position-center license-CC-BY-NC" style="width: 500px;"><img src="UD5_6_1__4_Logotipo_Xen_Project.png" alt="Logotipo Xen Project" title="Logotipo Xen Project" width="500" height="208" />
+<figcaption class="figcaption"><a href="https://xenproject.org/footer/logos-mascots/" target="_blank" class="author" rel="noopener">THE LINUX FOUNDATION</a>. <span class="title"><em>Logotipo Xen Project</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-NC">CC BY-NC</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Xen es un software de virtualización (hipervisor de tipo I) creado originalmente en el Laboratorio de Informática de la Universidad de Cambridge, pero desde 2010 es mantenido por la comunidad Xen, que lo desarrolla y lo mantiene bajo licencia GPLv2.</span></p>
+<h2>Hyper-V</h2>
+<p>Es la respuesta de Microsoft en el mundo de los servidores de virtualización. Se trata de un hipervisor de tipo 2.</p>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 760px;"><img src="UD5_6_1__5_Hyper_V.png" alt="Hyper V" title="Hyper V" width="760" height="570" />
+<figcaption class="figcaption"><span class="author">Terendo</span>. <span class="title"><em>Hyper-V</em></span> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Proxmox VE</h2>
+<p style="text-align: justify;"><span class=""><a href="https://www.proxmox.com/en/proxmox-ve"><strong>Proxmox VE</strong></a> es una plataforma de administración de servidores de código abierto completa para la virtualización empresarial.<span> </span></span><span class="">Integra estrechamente el hipervisor KVM y los contenedores de Linux (LXC).</span></p>
+</div>
+<ul></ul>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id415">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta415_128" class="block iDevice_content">
+<blockquote class="exe-quote-cite styled-qc" lang="en">
+<p>An introduction to Virtual Machines (VMs), technology for building virtualized computing environments and the foundation of the first generation of cloud computing.</p>
+<cite lang="en"><a href="https://www.ibm.com/cloud/learn/virtual-machines?utm_medium=OSocial&amp;utm_source=Youtube&amp;utm_content=000005UJ&amp;utm_term=10002434&amp;utm_id=YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&amp;cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_PLT+Cloud+Platform+F2F-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&amp;cm_mmca1=000005UJ&amp;cm_mmca2=10002434">IBM Cloud Education - Virtual Machines</a></cite></blockquote>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_contenedores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

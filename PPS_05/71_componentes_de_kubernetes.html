@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.1.- Componentes de Kubernetes. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-172"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_orquestacin_de_contenedores.html" class="current-page-parent daddy">7.- Orquestación de contenedores.</a>
+   <ul>
+      <li id="active"><a href="71_componentes_de_kubernetes.html" class="active no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="7_orquestacin_de_contenedores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="72_objetos_kubernetes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">7.1.- Componentes de Kubernetes.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id443">
+<div class="iDevice emphasis0">
+<div id="ta443_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Kubernetes</strong> separa los elementos encargados de la gestión del <strong><span style="color: #0000ff;"><a href="#t44fbb81b-23db-14d1-d3c5-b8382e93bee9" id="link44fbb81b-23db-14d1-d3c5-b8382e93bee9" class="exe-tooltip definition-tt titled-tt" title="Cluster | Glosario" style="color: #0000ff;">clúster</a></span></strong>, agrupándolos en el plano de control de los elementos de trabajo en cada nodo, siendo estos:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Plano de control:</strong> Estos toman las decisiones globales sobre el <strong>clúster</strong>, detectando y actuando ante cambios en el mismo. Se pueden ejecutar en cualquier nodo, de hecho se ejecutan en varios garantizando la alta disponibilidad. Compuesto a su vez de:</span>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><em><strong>Kube-apisever.</strong></em> Expone la API, recibe peticiones y actualiza su estado.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><em><strong>Etcd.</strong></em> Sistema de almacenamiento persistente de tipo clave-valor en que se almacenan los datos del clúster cada cierto tiempo.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><em><strong>Kube-scheduler.</strong></em> Planifica y controla la ejecución de cada nodo, por ejemplo mantiene el número correcto de <em><strong>Pods</strong></em> replicando si es necesario.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><span style="text-decoration: underline;"><strong>cloud-controller-manager.</strong></span> Interactúa con el proveedor de la nube, entre otras funciones detecta y actúa cuando un nodo deja de responder, balancea la carga y gestiona los volúmenes, estandarizando el acceso al proveedor independientemente de cuál sea.</span></li>
+</ul>
+</li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Componentes de nodo.</strong> Su función es mantener los <strong><em>pods</em></strong> funcionando, para ello posee:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>Kubelet.</strong></em> Proceso en cada nodo que controla la ejecución de los contenedores en el <em><strong>pod</strong></em> a partir de las especificaciones de este.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong><em>Kube-proxy</em></strong>. Gestión de las conexiones TCP/IP reenviando el tráfico en función de las necesidades.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong><em>Runtime</em> de contenedores.</strong> Software que ejecuta los contenedores, existiendo para diferentes tipos, aunque los más usados son los de Docker.</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un nodo es una máquina de trabajo, pudiendo ser física o virtual, y posee los servicios necesarios para ejecutar los <strong><em>pods</em></strong> asignados. Un nodo se definen con:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Las direcciones.</strong> El nombre del <em>host</em>, la dirección IP externa y la dirección IP interna (al clúster).</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Los estados:</strong> Define las condiciones del nodo en modo ejecución (<em>running</em>) y como se encuentra en un momento dado, por ejemplo si puede aceptar nuevos <strong><em>pods</em></strong>.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Capacidad:</strong> Procesador, memoria y <strong>número máximo</strong> de <strong><em>pods</em></strong> que puede gestionar.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Información:</strong> Otra información como versión del <strong><em>Kernel</em></strong>, <strong>Docker, </strong>...</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>Addons.</strong></em> <em>Pods</em> con funciones necesarias en un clúster, los más usados son DNS, Dashboard (interfaz web para la gestión) o monitor de recursos entre otros.</span></li>
+</ul>
+<div id="t44fbb81b-23db-14d1-d3c5-b8382e93bee9" class="exe-tooltip-text">
+<p>Conjunto de computadoras unidas entre sí y que desde el exterior se tratan como un único sistema.</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="7_orquestacin_de_contenedores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="72_objetos_kubernetes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

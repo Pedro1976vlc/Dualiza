@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Sistemas de automatización de construcción (build). | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-142"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="active daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul>
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="216_hook__ganchos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_construyendo_un_proyecto_con_gradle.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.- Sistemas de automatización de construcción (build).</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id404">
+<div class="iDevice emphasis0">
+<div id="ta404_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Pasar del código fuente a una versión ejecutable es una tarea que requiere tiempo y capacidad de cómputo, además de realizar otras tareas como movimiento de ficheros y carpetas, generación automática de documentación o análisis de cumplimiento de normas de codificación. Esta tarea se encuentra dentro de la <span style="color: #0000ff;"><a href="#t5b5692cc-aaa7-6312-7457-52e4d90762d8" id="link5b5692cc-aaa7-6312-7457-52e4d90762d8" title="Integración continua (CI) | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong>integración continua</strong> <strong>(CI)</strong></a></span> que se basa en <strong>automatizar</strong> la <strong>compilación</strong> y el <strong>empaquetamiento</strong>.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Junto con Unix y el lenguaje C nace la primera herramienta de automatización de construcción, el famoso Make, que por defecto utiliza el fichero <em><strong>makefile</strong></em> que se encuentre en la ruta en que se ejecute el comando, en este fichero se indica el proceso para la generación del código objeto y el ejecutable.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Si bien <strong>make</strong> es una herramienta muy potente no se pensó para la gestión de dependencias, llegando a ser compleja la inclusión de los elementos externos necesarios para la construcción de la aplicación al realizarse de forma manual, la inclusión de versiones concretas de librerías y paquetes, la generación de documentación o realización de pruebas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Con la popularización de Java aparece </span><a href="http://ant.apache.org/"><span style="font-weight: 400;">Apache Ant</span></a><span style="font-weight: 400;"> similar a make pero multiplataforma y usando formato XML para describir el proceso de compilación, la siguiente evolución fue </span><a href="http://maven.apache.org/"><span style="font-weight: 400;">Maven</span></a><span style="font-weight: 400;"> en la que también se define el proceso de gestión, compilación y construcción de un proyecto Java en formato XML, añadiendo nuevos conceptos como un repositorio desde el cual se pueden descargar plugins y librerías necesarias, incluso indicar la versión que se desea, con lo que teniendo el código fuentes y el fichero de configuración el proceso de construcción se simplifica de forma exponencial, además establece un ciclo de vida para los proyectos Maven.</span></p>
+<div id="t5b5692cc-aaa7-6312-7457-52e4d90762d8" class="exe-tooltip-text">
+<p>Es la práctica en la que las versiones de código son continuamente integrados en un solo repositorio. Así el nuevo código es testeado de manera inmediata y se corrigen errores más rápido.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id405">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta405_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Manuales de Maven. </span><strong><a href="https://www.arquitecturajava.com/maven-y-dependencias/">https://www.arquitecturajava.com/maven-y-dependencias/</a></strong></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id406">
+<div class="iDevice emphasis0">
+<div id="ta406_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Actualmente prácticamente cada lenguaje de programación tiene asociado un sistema de automatización de construcción, siendo su funcionalidad muy similar entre estos, en concreto:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Definición de proyecto en fichero con formato estructurado: XML y/o JSON.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gestión de repositorios externos para librerías de terceros.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gestión con línea de comandos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Posibilidad de integrar otras herramientas o fases como ejecución de pruebas o desplegado de aplicaciones.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 800px;"></figure>
+<p><span style="font-weight: 400;">Algunas de las <strong>herramientas de automatización</strong> de construcción:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Gradle</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong> <a href="https://gradle.org/">Gradle</a> Build Tool.</strong> Evolución de <strong>Ant</strong> y <strong>Maven</strong>, define su propio lenguaje para definir cómo construir el proyecto. Diseñado para grandes proyectos, en especial el desarrollo y despliegue. Usado por AndroidStudio, inicialmente centrado en Java y lenguajes relacionados como <strong>Google</strong> o <strong>Scala</strong> aunque se ha ampliado a otros como <strong>C++</strong> o <strong>Swift</strong>.</span></p>
+<h2>NPM</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong><a href="https://www.npmjs.com/">NPM (Naicely Pointed Mandibles)</a>.</strong> Sistema de gestión de paquetes para <strong>Node.js</strong>, aunque también se utiliza en el desarrollo de aplicaciones web en cliente, se basa en el análisis y ejecución del fichero <strong>package.json</strong> en el que se define información del proyecto.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD5_4_Logotipo_NPM.png" alt="Logotipo NPM" title="Logotipo NPM" width="800" height="311" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" /><a href="https://commons.wikimedia.org/wiki/File:Npm-logo.svg" target="_blank" class="author" rel="noopener">Boboss</a>. <span class="title"><em>Logotipo NPM</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span> </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Algunas de las <strong>secciones</strong> del fichero <strong>package.json</strong>:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>licence:</strong> Tipo de licencia del proyecto.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>files:</strong> Similar a <em><strong>.gtiinore</strong></em>, pero en este caso se indican los ficheros o directorios a incluir.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>bin:</strong> Ficheros ejecutables necesarios para el proyecto que se incluyen en el <strong>PATH</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>scripts:</strong> Permite definir pequeños guiones para la automatización de ciertas tareas, como limpiar datos temporales o general la aplicación para producción en el caso de <strong>Angular.</strong></span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>Dependecies:</strong> Esta sección define las dependencias de librerías externas necesarias para construir el proyecto, por ejemplo, al clonar un proyecto en <strong>GitHub</strong> es necesario instalar las dependencias indicadas en esta sección del fichero, en concreto el comando <em><strong>npm install</strong></em>.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 1.1em;">Además provee de una interfaz de línea de </span><strong style="font-size: 1.1em;">comandos CLI</strong><span style="font-size: 1.1em;"> para la gestión del proyecto, en concreto el manejo del fichero </span><strong style="font-size: 1.1em;">package.json</strong><span style="font-size: 1.1em;"> con </span><strong style="font-size: 1.1em;">comandos</strong><span style="font-size: 1.1em;"> como:</span><br /><span></span></p>
+<ul>
+<li aria-level="2"><span><strong>npm install.</strong> Instala las dependencias.</span></li>
+<li aria-level="2"><span><strong>npm upate.</strong> Actualiza las librerías.</span></li>
+<li aria-level="2"><span><strong>npm exec.</strong> Ejecuta el guión identificado por el nombre que se le facilita como parámetro.</span></li>
+<li aria-level="2"><span><strong>npm init.</strong> Crea fichero y esqueleto del fichero <em><strong>package.json</strong></em>.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+</div>
+<ul></ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id407">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta407_128" class="block iDevice_content">
+<p><span style="font-weight: 400;">Descripción de fichero <strong>package.json: </strong></span><a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json"><span style="font-weight: 400;">https://docs.npmjs.com/cli/v7/configuring-npm/package-json</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id408">
+<div class="iDevice emphasis0">
+<div id="ta408_154" class="block iDevice_content">
+<p>Más herramientas automatizadas:</p>
+<div class="exe-fx exe-accordion">
+<h2>Composer</h2>
+<p style="text-align: justify;"><a href="https://getcomposer.org/"><span style="font-weight: 400;"><strong>Composer</strong></span></a><span style="font-weight: 400;"> es el equivalente a <strong>Npm </strong>para <strong>PHP</strong>. Se centra también en la gestión de paquetes. La configuración se encuentra en <strong>composer.json</strong>  y es muy similar a <strong>Npm</strong>, posee sección de <strong>dependencias</strong>, <strong>línea de comandos y definición</strong> y <strong>ejecución de <em>scripts</em></strong>.</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 469px;"><img src="UD5_4__2_Logotipo_Composer.png" alt="Logotipo Composer" title="Logotipo Composer" width="469" height="556" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:Logo-composer-transparent.png" target="_blank" class="author" rel="noopener">Wiikipedia</a>. <a href="https://getcomposer.org/img/logo-composer-transparent.png" target="_blank" class="title" rel="noopener"><em>Logotipo Composer</em></a> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia MIT</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Nuget</h2>
+<p style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/nuget/"><span style="font-weight: 400;"><strong>Nuget</strong></span></a> <span style="font-weight: 400;">es usado por la plataforma <strong>.NET</strong> para crear, compartir y construir aplicaciones, se centra en la gestión de dependencias y paquetes, en especial de las diferentes versiones de los mismos. Entre sus características destaca la de poder crear y administrar repositorios privados. Usa <strong>ficheros XML</strong> con formato muy similar a <strong>NPM</strong>. Al igual que los anteriores posee una <strong>interfaz de comandos</strong>.</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="216_hook__ganchos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_construyendo_un_proyecto_con_gradle.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

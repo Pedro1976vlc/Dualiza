@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.- Herramientas de simulación de fallos. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-150"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="8_herramientas_de_simulacin_de_fallos.html" class="active no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="72_objetos_kubernetes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">8.- Herramientas de simulación de fallos.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id462">
+<div class="iDevice emphasis0">
+<div id="ta462_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">La </span><b>ingeniería del caos</b><span style="font-weight: 400;"> es una disciplina que se centra en experimentar sobre un sistema software en producción con el objeto  de generar confianza en la capacidad del sistema para responder y hacer frente ante situaciones turbulentas e inesperadas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Como consecuencia del enorme auge y expansión de los microservicios y las arquitecturas distribuidas en la nube, las aplicaciones software y sus requerimientos de seguridad se han vuelto cada vez más complejos. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Muchos son los beneficios que aporta la <strong>ingeniería del caos</strong>, a continuación se destacan algunos de los más importantes:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Reducción de las pérdidas económicas ocasionadas por la aparición de problemas críticos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Contribuye a garantizar la calidad y alta disponibilidad de los servicios ofrecidos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ayuda a comprender mejor el funcionamiento de los propios sistemas y generar confianza.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Organizaciones tan populares como <strong><em>Netflix</em></strong>, <em><strong>LinkedIn</strong></em> o <em><strong>Facebook</strong></em> realizan ingeniería del caos con objeto de mejorar la comprensión de sus sistemas distribuidos.  Esta resulta especialmente útil para encontrar nuevos problemas  y corregirlos antes que fallos en sus sistemas afecten a sus usuarios y repercutan negativamente sobre la productividad y prestigio de la propia organización.</span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id463">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta463_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/ocvFr7PWCDE" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">¿Qué es la ingeniería del caos? Vídeo educativo donde se muestran los conceptos básicos sobre la ingeniería del caoss y sus principios fundamentales. Se analizan la ventajas e inconvenientes que introduce el uso de la ingeniería del caos en los en el desarrollo y puesta en producción de los sistemas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id464">
+<div class="iDevice emphasis0">
+<div id="ta464_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">A continuación, se presentan algunas de las herramientas más populares utilizadas en la ingeniería del caos para simulación de fallos:</span></p>
+<div class="exe-fx exe-accordion">
+<h2><em>Simian Army</em></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es un conjunto de herramientas o <em>“monos”</em> desarrollado por el equipo técnico de <em><strong>Netflix</strong></em> para comprobar la salud y las medidas contra fallos de sus sistemas informáticos. Siempre hay un primer recluta, y ese fue </span><a href="https://netflix.github.io/chaosmonkey/"><b>Chaos Monkey</b></a><span style="font-weight: 400;">, una herramienta que sabotea los servidores de producción de forma aleatoria, con la finalidad de que los equipos de mantenimiento no sean capaces de predecir cuándo y cómo tendrá lugar el sabotaje. Para utilizar </span><b>Chaos Monkey</b><span style="font-weight: 400;"> es necesario instalar</span><a href="https://spinnaker.io/"><span style="font-weight: 400;"> Spinnaker</span></a><span style="font-weight: 400;">, la plataforma de entrega continua utilizada por Netflix.</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 352px;"><img src="UD5_9__1_Logotipo_Chaos_Monkey.png" alt="Logotipo Chaos Monkey" title="Logotipo Chaos Monkey" width="352" height="355" />
+<figcaption class="figcaption"><a href="https://github.com/Netflix/chaosmonkey/blob/master/docs/logo.png" target="_blank" class="author" rel="noopener">Nerflix</a>. <span class="title"><em>Logotipo Chaos Monkey</em></span> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia Apache 2.0</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Chaos Toolkit</h2>
+<p style="text-align: justify;">Es un framework desarrollado en Python, se trata un proyecto cuya misión es proporcionar un kit de herramientas y una API gratuitos, abiertos y dirigidos por la comunidad a todas las diversas formas de herramientas de ingeniería del caos que la comunidad necesita.</p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 604px;"><img src="UD5_9__2_Chaos_Toolkit.png" alt="Chaos Toolkit" title="Chaos Toolkit" width="604" height="339" />
+<figcaption class="figcaption"><a href="https://chaostoolkit.org/" target="_blank" class="author" rel="noopener">Chaos Toolkit team</a>. <span class="title"><em>Chaos Toolkit</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Chaos Kube</h2>
+<p>E<span style="font-weight: 400;">s un herramienta para la generación de  caos de código abierto que mata pods en clúster de Kubernetes, periódicamente de forma aleatoria. Se pueden filtrar los <em><strong>pods</strong></em> de destino en </span><a href="https://github.com/linki/chaoskube"><span style="font-weight: 400;">Chaoskube</span></a><span style="font-weight: 400;"> usando espacios de nombres, etiquetas, anotaciones, ...</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 388px;"><img src="UD5_9__3_Logotipo_Chaoskube.png" alt="Logotipo Chaoskube" title="Logotipo Chaoskube" width="388" height="388" />
+<figcaption class="figcaption"><a href="https://github.com/linki/chaoskube/blob/master/chaoskube.png" target="_blank" class="author" rel="noopener">Chaoskube</a>. <span class="title"><em>Logotipo Chaoskube</em></span> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia MIT</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Simmy</h2>
+<p style="text-align: justify;">E<span style="font-weight: 400;">s una herramienta de ingeniería del caos e inyección de fallos inspirada en <em>Simian Army</em> , pero que se integra con el proyecto de resiliencia </span><a href="http://www.thepollyproject.org"><b>Polly de .NET</b></a><span style="font-weight: 400;">. Permite crear multitud políticas de inyección de caos a través de <em>Polly</em>: provoca excepciones,  comportamientos  inesperados en el sistema o añades latencias a la ejecución de los distintos procesos.</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 406px;"><img src="UD5_9__4_Simmy_Logo.png" alt="Logotipo Simmy" title="Logotipo Simmy" width="406" height="306" />
+<figcaption class="figcaption"><a href="https://github.com/Polly-Contrib/Simmy/blob/master/Simmy.png" target="_blank" class="author" rel="noopener">Joel Hulen</a>. <a href="https://github.com/Polly-Contrib/Simmy" target="_blank" class="title" rel="noopener"><em>Logotipo Simmy</em></a> <span class="license"><span class="sep">(</span><span class="custom-license">Nueva Licencia BSD 3</span><span class="sep">)</span></span></figcaption>
+<span style="font-weight: 400;"></span></figure>
+<h2>Chaos Mesh</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es una plataforma de ingeniería del caos de código abierto que permite  simular situaciones de caos en entornos de <strong>Kubernetes</strong>. Admite gran variedad de fallos: caídas en la ejecución de los <strong><em>pods</em></strong>, fallas de contenedor, fallas del sistema de archivos, errores en las transmisiones de red, alteraciones de tiempo en sistema y fallos del kernel.</span></p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 211px;"><img src="UD5_9__5_Chaos_Mesh_Logo.png" alt="Logotipo Chaos Mesh" title="Logotipo Chaos Mesh" width="211" height="214" />
+<figcaption class="figcaption"><a href="https://chaos-mesh.org/" target="_blank" class="author" rel="noopener">Chaos Mesh (R)</a>. <span class="title"><em>A Powerful Chaos Engineering Platform for Kubernetes</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Gremlin</h2>
+<p style="text-align: justify;">E<span style="font-weight: 400;">s una herramienta comercial, disponible a través de una plataforma </span><b>SaaS</b><span style="font-weight: 400;">, o como ellos denominan </span><b>FaaS (</b><b><i>Failure as a Service</i></b><b>)</b><span style="font-weight: 400;">, que  permite experimentar en sobre gran variedad de sistemas, incluidos servidores </span><i><span style="font-weight: 400;">baremetal</span></i><span style="font-weight: 400;">, los proveedores de <em>cloud</em>, contenedores, kubernetes, e incluso servicios <em>serverless</em>. Permite inyectar multitud de fallos como: introducir, latencias, provocar la pérdida de tráfico de red, manipular la hora del sistema, apagar o reiniciar <em>hosts</em> y matar procesadores.</span></p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 431px;"><img src="UD5_9__6_GremlinLogo.png" alt="Logotipo Gremlin" title="Logotipo Gremlin" width="431" height="347" />
+<figcaption class="figcaption"><a href="https://www.gremlin.com/" target="_blank" class="author" rel="noopener">Gremlin Inc</a>. <span class="title"><em>Gremlin's Chaos Engineering platform</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id465">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta465_148" class="block story iDevice_content">
+<p><span style="font-weight: 400;">Como ya se ha visto el <strong>ejército de simios</strong> es un conjunto de herramientas introducidas por <em><strong>Netflix</strong></em> para producir ingeniería del caos y estudiar los efectos de los fallos sobre sus sistemas. Las herramientas se inspiran en el éxito de un <em>“primer soldado”</em> conocido como <strong>Chaos Monkey</strong>.</span></p>
+</section>
+<section id="taquesQuestion0b465" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Hoy en día, el ejército de monos está compuesto por varios soldados, cada uno de ellos con una función muy específica. Investiga y describe cada una de las herramientas que componen el ejército de simios: Latency Monkey, Conformity Monkey, Security Monkey, Doctor Monkey, …</span></p>
+</section>
+<form name="feedback-form-quesFeedback0b465" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b465text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b465" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b465" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>Latency Monkey:</b><span style="font-weight: 400;"> Introduce retrasos artificiales en la capa de comunicación cliente-servidor para simular la degradación del servicio y mide si los servicios responden adecuadamente.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Conformity Monkey:</b><span style="font-weight: 400;"> Busca servidores que no se adhieren a las mejores prácticas y los cierra.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Security Monkey:</b><span style="font-weight: 400;"> Es una extensión de Conformity Monkey. Encuentra violaciones de seguridad o vulnerabilidades y finaliza las instancias infractoras. También revisa los certificados SSL y DRM. </span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Doctor Monkey:</b><span style="font-weight: 400;"> Monitoriza el funcionamiento de los servidores, comprobando el nivel de carga de la CPU,  para detectar instancias poco saludables.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>10-18 Monkey:</b><span style="font-weight: 400;"> Detecta problemas de configuración y tiempo de ejecución en instancias que atienden a clientes en múltiples regiones geográficas, utilizando diferentes idiomas y conjuntos de caracteres.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Chaos Gorilla es similar a Chaos Monkey:</b><span style="font-weight: 400;"> Pero simula una interrupción de toda una zona de disponibilidad de Amazon. Comprueba que los servicios se re-equilibren automáticamente en las zonas de disponibilidad funcional sin impacto visible para el usuario.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b style="color: #333333; font-size: 1.1em;">Janitor Monkey:</b><span style="font-weight: 400;"> Asegura que el entorno  de ejecución está libre de basura.  Busca los recursos no utilizados y los libera.</span></li>
+</ul></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id466">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta466_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/O92v-QwRtek" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Vídeo introductorio a las posibilidades y características que ofrece Gremlin, un servicio para ejecutar Experimentos de Caos de forma segura, segura y sencilla sin interrupciones.</span></p>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Mucha más información disponible sobre Gremlin en:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Sitio web: </span><a href="https://gremlin.com"><span style="font-weight: 400;">https://gremlin.com</span></a></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Documentación: </span><a href="https://gremlin.com/docs"><span style="font-weight: 400;">https://gremlin.com/docs</span></a></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Como instalar y usar Gremlin con Kubernetes: </span><a href="https://www.gremlin.com/community/tutorials/how-to-install-and-use-gremlin-with-kubernetes/"><span style="font-weight: 400;">https://www.gremlin.com/community/tutorials/how-to-install-and-use-gremlin-with-kubernetes/</span></a><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Desde las web de la plataforma Gremlin enseñan como instalar y usar </span><b><i>“The Simian Army”</i></b> <a href="https://www.gremlin.com/chaos-monkey/the-simian-army/"><span style="font-weight: 400;">https://www.gremlin.com/chaos-monkey/the-simian-army/</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="72_objetos_kubernetes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

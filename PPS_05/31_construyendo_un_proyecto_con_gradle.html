@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.- Construyendo un proyecto con Gradle | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-164"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="current-page-parent daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul>
+      <li id="active"><a href="31_construyendo_un_proyecto_con_gradle.html" class="active no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.- Construyendo un proyecto con Gradle</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id409">
+<div class="iDevice emphasis0">
+<div id="ta409_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Conocer y dominar todas las herramientas anteriores y otras muchas que no se han tratado es complicado, se puede realizar configuraciones y construcciones sencillas, pero construir y desplegar aplicaciones grandes y complejas implica controlar en profundidad la herramienta y sus opciones.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En este punto se realiza un ejemplo con la herramienta <strong>Gradle</strong> especializada en <strong>Java</strong> y el resto de lenguajes que se ejecutan sobre la <strong>JVM</strong>.</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 799px;"><img src="UD5_4_1_1_Logo-Gradle.png" alt="Logotipo Gradle" title="Logotipo Gradle" width="799" height="279" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><a href="https://raw.githubusercontent.com/gradle/gradle/35ed534acf7b97ff40ffabf5a3e156ea0b772437/gradle.png" target="_blank" class="author" rel="noopener">Gradle</a>. <a href="https://raw.githubusercontent.com/gradle/gradle/35ed534acf7b97ff40ffabf5a3e156ea0b772437/gradle.png" target="_blank" class="title" rel="noopener"><em>Logotipo Gradle</em></a> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia Apache 2.0</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2 style="text-align: justify;"><strong>Instalación</strong></h2>
+<p><span style="font-weight: 400; font-size: 12pt;">Es necesario tener instalado el SDK de Java en su versión 8 o superior. Existen diferentes formas de instalarlo:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-size: 12pt;"><span style="font-weight: 400;">Usando la aplicación </span><a href="https://sdkman.io/"><span style="font-weight: 400;">SDKMAN</span></a><span style="font-weight: 400;">.</span></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-size: 12pt;"><span style="font-weight: 400;">Con el gestor de paquete </span><a href="https://brew.sh/"><span style="font-weight: 400;">Homebrew</span></a><span style="font-weight: 400;">.</span></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-size: 12pt;"><span style="font-weight: 400;">Instalación manual, que se puede encontrar en: </span><a href="https://gradle.org/releases/"><span style="font-weight: 400;">https://gradle.org/releases/</span></a><span style="font-weight: 400;">. Descomprimir en el directorio que se desee y En el caso de Windows descargar, descomprimir y actualizar el path. Para comprobar ejecutar el comando gradle -v</span></span></li>
+</ul>
+<h2><strong>Creación de proyecto</strong></h2>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Crear el directorio que aloja el proyecto.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Dentro del directorio ejecutar:</span></li>
+</ul>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>gradle init</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Responder a las preguntas que plantea el comando, como el tipo de proyecto, el lenguaje a utilizar, si contendrá <strong>subproyectos</strong>, el <strong>lenguaje  <span style="color: #0000ff;"><a href="#tb8e81e2d-9ec5-ab1b-ce3d-4980dce96e46" id="linkb8e81e2d-9ec5-ab1b-ce3d-4980dce96e46" title="SDL | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;">SDL</a></span></strong> para los guiones y el framework de pruebas.</span></li>
+</ul>
+<p><span style="font-weight: 400;"><img src="C__Users_Jos_C3_A9_Gaspar_Desktop_PePS_UD_5__imagenes_UD5_4_1_2_Comando_Gradle_init.png" alt="Comando gradle init" title="Comando gradle init" width="974" height="846" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p>Al listar el directorio se puede observar los diferentes ficheros y carpetas creados:</p>
+<p style="text-align: center;"><img src="C__Users_Jos_C3_A9_Gaspar_Desktop_PePS_UD_5__imagenes_UD5_4_1_3_Listado_ficheros_Gradle.png" alt="Listado ficheros Gradle" title="Listado ficheros Gradle" width="559" height="1455" /></p>
+<p><span style="font-weight: 400;">Algunos de los ficheros más destacados:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>settings.grandle.kts.</strong></em> Indica el nombre de la aplicación y qué elementos lo componen.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>app/buid.grandle.kts.</strong></em> Contiene diferentes secciones en el que se indica los plugins, los repositorios, las dependencias del proyecto( librerías externas y el método principal de la aplicación.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Para <strong>ejecutar la aplicación</strong> simplemente ejecutar el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>gradle run
+
+</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Para <strong>construir la aplicación</strong>:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>gradle build
+
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Observar como dentro de la <strong>carpeta</strong> <em><strong>app</strong></em> ha creado la <strong>carpeta <em>build</em></strong> que contiene el proyecto construido, incluso versiones de distribución en la <strong>carpeta <em>distributions</em></strong>.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para añadir librerías modificar el fichero <em><strong>build.grandle.kts</strong></em> y añadir las dependencias necesarias, por ejemplo la librerías <strong>JavaFX</strong> para diseño de interfaces:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>plugins {
+        id("org.openjfx.javafxplugin") version "0.0.10"
+        application
+}
+
+repositories {
+         mavenCentral()
+}
+
+dependencies {
+   testImplementation("junit:junit:4.13.2")  // This dependency is used by the application.
+   implementation("com.google.guava:guava:30.1-jre")
+}
+
+javafx {
+      version = "16"
+      modules("javafx.controls", "javafx.fxml")
+}
+
+application {
+     mainClass.set("ppse_gradle3.App")
+}
+</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Existen multitud de comandos y acciones a ejecutar, algunas de las más destacadas:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">run </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">build.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">jar.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">distTar</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">distzip.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">installdist.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">javadoc.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">test.</span></li>
+</ul>
+<p></p>
+<div id="tb8e81e2d-9ec5-ab1b-ce3d-4980dce96e46" class="exe-tooltip-text">
+<p>Lenguaje de programación en un ámbito de aplicación específico.</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

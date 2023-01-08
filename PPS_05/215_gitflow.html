@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.5.- GitFlow | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-162"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_control_de_versiones.html" class="current-page-parent daddy">2.- Sistemas de control de versiones.</a>
+   <ul>
+      <li class="current-page-parent"><a href="21_git.html" class="current-page-parent daddy">2.1.- Git.</a>
+      <ul>
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li id="active"><a href="215_gitflow.html" class="active no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="214_trabajando_en_remoto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="216_hook__ganchos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.1.5.- GitFlow</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id400">
+<div class="iDevice emphasis0">
+<div id="ta400_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">La gestión de código en repositorios puede convertirse en una tarea complicada y enrevesada, con diferentes ramas, usuarios, confirmaciones, conflictos… Se ha establecido una metodología de trabajo o flujo de trabajo para estandarizar el desarrollo de un proyecto usando <strong>Git</strong> denominado <strong>GitFlow</strong>, pensado para grandes proyectos aunque puede ser usado en proyectos de cualquier tipo.</span></p>
+<p><span style="font-weight: 400;">Para iniciar un repositorio con <strong>GitFlow</strong> ejecutar el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git flow init</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="UD5_3_1_5__8_git_flow_init.png" alt="Comando git flow init" title="Comando git flow init" width="776" height="414" /><br /><br /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este flujo de trabajo define un conjunto de ramas en el que cada una de ellas, al inicial el proyecto se crean:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Rama master:</strong> Almacena el historial de publicación oficial. Se  recomienda etiquetar las confirmaciones de la rama master con un número de versión</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Rama develop:</strong> Rama de integración. </span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Establece además el nombre para otras ramas usadas en el desarrollo:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Feature:</strong> Se utilizan para desarrollar funcionalidades, cuando se finaliza la funcionalidad se fusionan en la rama <strong>develop</strong>. Para crear una rama de función usar:</span></li>
+</ul>
+<div class="highlighted-code code-style-2 language-markup">
+<div style="text-align: justify;">
+<pre><code>git flow feature start feature_branch</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Release.</strong> Rama usada en el caso de disponer de una versión de desarrollo madura o alcanzado un <strong>item de entrega</strong>. Se crea a partir de la rama develop actual. En esta rama no se añade nuevo contenido proveniente de la <strong>rama develop</strong>, únicamente se solucionan errores, añade documentación u otras tareas relacionadas con la publicación. Cuando estas tareas se han realizado, se fusiona con la rama master. La creación de una <strong>rama release</strong>:</span></li>
+</ul>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git flow release start 0.1.0</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Y para fusionar con el master:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git flow release finish '0.1.0'</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Hotfix.</strong> Usada para el mantenimiento y la corrección de las versiones publicadas en producción, por tanto toma como referencia la rama <strong>master</strong>. Para crear una rama de corrección:</span></li>
+</ul>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git flow hotfix start hotfix_branch</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Y para fusionar, teniendo en cuenta que son correcciones y se ha de realizar tanto en <strong>develop</strong> como <strong>master</strong>:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>git flow hotfix finish hotfix_branch</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Bugfix.</strong> También usada para la corrección, pero referida en este caso a las <strong>ramas <em>features</em></strong>, son errores que pueden esperar a la próxima <em>release</em>, por ejemplo una palabra de la interfaz gráfica que debía tener acento.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Support.</strong> En desarrollo, desaconsejado su uso, en el caso de proyectos con varios clientes y alguno de ellos necesita una funcionalidad muy específica que afecta al resto.</span></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id402">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta402_128" class="block iDevice_content">
+<figure class="exe-figure exe-media position-center license-CC-BY-NC-SA" style="width: 560px;"><iframe width="560" height="314" src="https://www.youtube.com/embed/mp2F2PJl0AM" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe>
+<figcaption class="figcaption"><a href="https://www.youtube.com/channel/UCrGqCf3_i_4JRh4V3DkaAyg" target="_blank" class="author" rel="noopener">UPV/EHU</a>. <a href="https://youtu.be/mp2F2PJl0AM" target="_blank" class="title" rel="noopener"><em>Workflows para equipos de desarrollo con Git</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-NC-SA">CC BY-NC-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;"><span>Charla donde se profundiza sobre el trabajo en equipo con GIT para grupos de desarrollo grandes con varias ramas y workflows diferentes.</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="214_trabajando_en_remoto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="216_hook__ganchos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

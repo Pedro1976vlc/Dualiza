@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejercicio resuelto | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-174"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li class="current-page-parent"><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="current-page-parent daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul>
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li class="current-page-parent"><a href="52_contenedores.html" class="current-page-parent daddy">5.2.- Contenedores</a>
+      <ul>
+         <li class="current-page-parent"><a href="521_docker.html" class="current-page-parent daddy">5.2.1.- Docker</a>
+         <ul>
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li id="active"><a href="ejercicio_resuelto.html" class="active no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="5213_persistencia_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5214_dockfile.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejercicio resuelto</h1></header>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id452">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta452_148" class="block story iDevice_content">
+<h2><span style="font-weight: 400;">Instalación de una imagen del servidor nginx.</span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se desea crear un contenedor para dar soporte al desarrollo de una aplicación web realizada con PHP.</span></p>
+</section>
+<section id="taquesQuestion0b452" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Se busca en el repositorio una imagen que soporte PHP, en este caso <em><strong>webdevops/php-nginx</strong></em> con un servidor <em><strong>nginx</strong></em>.</span></p>
+</section>
+<form name="feedback-form-quesFeedback0b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_1_docker_search_php.png" alt="Comando docker search php" title="Comando docker search php" width="798" height="186" /></p></section>
+</form>
+<section id="taquesQuestion1b452" class="block iDevice_content">
+<p>Se descarga la imagen:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker pull webdevops/php-nginx
+
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span>Y viendo como se encuentra en local.</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker image ls</code></pre>
+</div>
+</div>
+</section>
+<form name="feedback-form-quesFeedback1b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback1b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback1b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback1b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_2_docker_image_ls.png" alt="Comando docker image ls" title="Comando docker image ls" width="797" height="90" /></p></section>
+</form>
+<section id="taquesQuestion2b452" class="block iDevice_content">
+<p style="text-align: justify;">Se instancia el contenedor con:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker run  -p 80:80 webdevops/php-nginx</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Y  desde el navegador web, entrando en la <strong>URL</strong> se tiene:</p>
+</section>
+<form name="feedback-form-quesFeedback2b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback2b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback2b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback2b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_3_nginx_403_Forbidden.png" alt="Navegador web: nginx 403 Forbidden" title="Navegador web: nginx 403 Forbidden" width="598" height="331" /></p></section>
+</form>
+<section id="taquesQuestion3b452" class="block iDevice_content">
+<p style="text-align: justify;">Ahora es necesario copiar los ficheros de la web al contenedor con el comando <em><strong>cp</strong></em>, en la carpeta <em><strong>tempo</strong></em> se encuentra un fichero <strong>HTML</strong> sencillo llamado <em><strong>index.html:</strong></em></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker cp ./tempo affectionate_davinci:./app
+
+ </code></pre>
+</div>
+</div>
+<p>Al entrar en la web se tiene:</p>
+</section>
+<form name="feedback-form-quesFeedback3b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback3b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback3b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback3b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_4_HTML_Ejemplo_contenedor_PPSE.png" alt="HTML Ejemplo contenedor PPSE" title="HTML Ejemplo contenedor PPSE" width="634" height="217" /></p></section>
+</form>
+<section id="taquesQuestion4b452" class="block iDevice_content">
+<p style="text-align: justify;">Los <strong>contenedores</strong> son elementos <strong>no persistentes</strong>, que pueden ser eliminados en cualquier momento, además si se levanta otro contenedor a partir de la imagen, esta no contendrá los datos del contenedor anterior. La solución es usar <strong>volúmenes</strong>, de forma que se puedan compartir entre contenedores. Se crea un simple fichero <strong>PHP</strong> que almacena datos de la petición en formato <span><a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas"><strong>csv</strong> </a>(podrían ser ficheros de configuración, base de datos…). </span></p>
+<p style="text-align: justify;"><span>Para crear un volumen ejecutar:</span></p>
+</section>
+<form name="feedback-form-quesFeedback4b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback4b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback4b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback4b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker volume create  datos</code></pre>
+</div>
+</div></section>
+</form>
+<section id="taquesQuestion5b452" class="block iDevice_content">
+<p style="text-align: justify;">Instanciar un nuevo contenedor a partir de la imagen, indicando que el volumen a usar con la ruta de anfitrión y la ruta que tendrá en el contenedor:</p>
+<p></p>
+<p> </p>
+</section>
+<form name="feedback-form-quesFeedback5b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback5b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback5b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback5b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker run  -p 81:80 -v datos:/datos webdevops/php-nginx &amp;</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><br /><br /></p></section>
+</form>
+<section id="taquesQuestion6b452" class="block iDevice_content">
+<p style="text-align: justify;">Se copian los ficheros de la aplicación de igual forma que el anterior contenedor (obtener el nombre del contenedor con <em><strong>docker container ls</strong></em>):</p>
+</section>
+<form name="feedback-form-quesFeedback6b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback6b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback6b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback6b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="pre-code">
+<div>
+<pre><code>docker cp ./tempo/index.php interesting_zhukovsky:./app</code></pre>
+</div>
+</div>
+<p style="text-align: center;"></p></section>
+</form>
+<section id="taquesQuestion7b452" class="block iDevice_content">
+<p style="text-align: justify;">El código <strong>PHP</strong> es sencillo:</p>
+</section>
+<form name="feedback-form-quesFeedback7b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback7b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback7b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback7b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="highlighted-code language-php line-numbers">
+<div>
+<pre><code>&lt;?php
+$fp = fopen('/datos/datos.csv', 'a+');
+fwrite($fp,  "'".date("Y-m-d H:i:s")."';'".$_SERVER['REMOTE_ADDR']."';'".$_SERVER['HTTP_USER_AGENT']."'\n");
+fclose($fp);
+
+
+echo "Almacenando los datos en volumen /datos";
+?&gt;
+</code></pre>
+</div>
+</div>
+<p></p></section>
+</form>
+<section id="taquesQuestion8b452" class="block iDevice_content">
+<p>Se puede ver el fichero entrando en el contenedor:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker exec -it 8622274c5576 bash
+
+</code></pre>
+</div>
+</div>
+<p><br />Los volúmenes son almacenados en el anfitrión en:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>/var/lib/docker</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Se ejecuta el comando que permite visualizar el <strong>c</strong>ontenido del <strong>a</strong>rchivo de <strong>t</strong>exto <em><strong>datos.csv</strong></em>:<br /><br /></p>
+</section>
+<form name="feedback-form-quesFeedback8b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback8b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback8b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback8b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_5_cat_datos_csv.png" alt="Comando cat datos.csv" title="Comando cat datos.csv" width="797" height="27" /></p></section>
+</form>
+<section id="taquesQuestion9b452" class="block iDevice_content">
+<p style="text-align: justify;">Si se borra el contenedor, se puede comprobar que el volumen con los datos permanece, de igual forma si se crea un nuevo contenedor con esa u otra imagen, y si se asocia el volumen los datos estarán disponibles:</p>
+</section>
+<form name="feedback-form-quesFeedback9b452" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback9b452text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback9b452" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback9b452" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: center;"><img src="UD5_6_2_1_3__ER_6_docker_container_rm.png" alt="Comando docker container rm" title="Comando docker container rm" width="798" height="173" /></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id454">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Vídeo solución al ejercicio resuelto.</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta454_453_2" class="block iDevice_content">
+<div class="exe-text"><p><video width="640" height="480" style="display: block; margin-left: auto; margin-right: auto;" controls="controls" class="mediaelement">
+<source src="docker_basico.mp4" type="video/mp4" /></video></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>solución al ejercicio resuelto conectándose a servidor utilizando SSH.</p>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="5213_persistencia_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5214_dockfile.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

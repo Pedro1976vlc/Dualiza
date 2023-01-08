@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.- Git. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-156"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_control_de_versiones.html" class="current-page-parent daddy">2.- Sistemas de control de versiones.</a>
+   <ul>
+      <li id="active"><a href="21_git.html" class="active daddy">2.1.- Git.</a>
+      <ul>
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="2_sistemas_de_control_de_versiones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="211_instalacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.1.- Git.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id387">
+<div class="iDevice emphasis0">
+<div id="ta387_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Git</strong> es el protocolo estándar de facto en la actualidad para el control de versiones, siendo su uso <strong>hegemónico</strong> en la industria informática, incluso ha traspasado estas utilizando para otros usos como la creación de documentos (la mayor parte de las aplicaciones de procesador de texto utilizan sistemas similares para la gestión de las diferentes versiones de los documentos).</span></p>
+<p><span style="font-weight: 400;">Fue creado por <strong>Linus Torvalds</strong> con la idea de ser un motor de bajo nivel sobre el cual se utilizará una interfaz de usuario, aunque su uso actual prescinde de dicho interfaz de usuario (muchos <strong>IDE</strong> proveen de herramientas gráficas, aunque a bajo nivel ejecutan comandos).</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id388">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta388_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/2G6KKQcZdME" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p style="text-align: justify;">Vídeo educativo donde se explica qué es Git, para qué sirve  y  que ventajas ofrece este Sistema de Control de Versiones.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id389">
+<div class="iDevice emphasis0">
+<div id="ta389_154" class="block iDevice_content">
+<p><b><span style="font-weight: 400;">Git en los siguientes conceptos:</span></b></p>
+<div class="exe-fx exe-accordion">
+<h2>Repositorio</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">No existe una  arquitectura  cliente/servidor centralizada al que subir el código, pueden existir diferentes repositorios que pueden hacer tanto de cliente como de servidor, es decir un sistema distribuido,  por ejemplo, tener un repositorio en cada equipo de los desarrolladores, el servidor o servidores de pruebas, uno o varios repositorios para las prueba, otras tanto para la producción o  cualquier otro que se considere, pudiendo sincronizarse entre estos.</span></p>
+<h2>Ramas</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se puede definir una rama como una bifurcación en el código a partir de un punto concreto, de forma que a partir de dicha bifurcación el código puede y normalmente es diferente, un ejemplo clásico de uso de ramas se da en el caso de una aplicación que se personaliza para cada empresa a la que se vende, cada empresa tiene sus peculiaridades pero existe un punto en común, cada una de estas ramas incluye la parte del código de personalización. Las diferentes ramas pueden volver a unirse en caso de ser necesario.</span></p>
+<h2>Estados</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los archivos en Git se pueden encontrar en 3 estados.</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Confirmado:</strong> Indica que los cambios están almacenados de forma segura en git.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Modificado:</strong> Se ha modificado el fichero pero los cambios no se han hecho permanentes </span><span style="font-weight: 400;">y no se han marcado para la próxima actualización.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Preparado:</strong> Se ha marcado para que los cambios se añadan al repositorio pero aún no se ha realizado.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Estos estados definen tres secciones en los que se encuentra un proyecto en Git:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Directorio de trabajo.</strong> Para ficheros en el caso de  modificado.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Directorio de Git.</strong> Para ficheros confirmados.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Área de preparación:</strong> Caso de ficheros preparados.</span></li>
+</ul>
+<h2>Servicios externos</h2>
+<p style="text-align: justify;"><b></b><span style="font-weight: 400;">Existen ciertos <strong>servicios externos</strong> que utilizan el protocolo <strong>Git</strong>, además amplían la funcionalidad con <strong>entornos web</strong>, <strong>gestión de usuarios</strong> y <strong>permisos</strong>, destacando:</span></p>
+<ul>
+<li style="text-align: justify;"><a href="https://github.com/"><span style="font-weight: 400;">GitHub</span></a><span style="font-weight: 400;">: Forja de proyectos a nivel mundial en que se puede alojar de forma remota proyectos, encontrándose en la actualidad desde proyectos de un simple fichero de una página web hasta los mayores y más grandes del software libre. Permite crear proyectos públicos y privados así como gestión de usuarios, perfiles y permisos.</span></li>
+<li style="text-align: justify;"><a href="https://bitbucket.org/" style="font-size: 16.8px; text-align: left;"><span>Bitbucket</span></a><span style="font-weight: 400;">: Servicio de control de versiones basado en <strong>Git</strong>, con planes comerciales y gratuitos (en el caso de gratuitos limitado a un número máximo de repositorios privados. Permite la gestión de usuarios, perfiles y permisos.</span></li>
+<li style="text-align: justify;"><a href="https://about.gitlab.com/" style="font-size: 16.8px; text-align: left;"><span>GitLab</span></a><span style="font-weight: 400;">. Otro de los grandes servicios web de control de versiones, ofrece servicios casí idénticos a los anteriores, pero en esta ocasión es posible instalar un servidor GitLab en la empresa, sin necesidad de poseer cuentas en <strong>GitHub</strong> o <strong>Bitbucket</strong>.</span></li>
+</ul>
+</div>
+<p></p>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="2_sistemas_de_control_de_versiones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="211_instalacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

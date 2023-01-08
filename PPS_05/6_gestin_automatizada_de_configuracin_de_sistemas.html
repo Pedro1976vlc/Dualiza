@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.- Gestión automatizada de configuración de sistemas. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-148"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="active daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul>
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="5214_dockfile.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicio_resuelto0.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.- Gestión automatizada de configuración de sistemas.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id432">
+<div class="iDevice emphasis0">
+<div id="ta432_154" class="block iDevice_content">
+<p style="text-align: justify;">En el punto anterior se han tratado los <strong>comandos básicos</strong> para la gestión de contenedores, aunque existen muchos otros. La configuración de forma manual de los contenedores puede ser una tarea laboriosa, repetitiva y en la cual se pueden olvidar algunos pasos al realizarlas varias veces.<br />La primera idea que viene a la mente es la de la creación de un guión que ejecute los comandos de forma automática, si bien no es una mala práctica tiene varios inconvenientes como la <strong>portabilidad</strong> o la <strong>falta de estandarización</strong>.<br /><strong>Docker</strong> posee una herramienta que permite la gestión automatizada de la configuración de los contenedores <strong><a href="https://docs.docker.com/compose/">Docker Compose</a>,</strong> esta facilita la configuración de contenedores usando un fichero en formato <strong><span style="color: #0000ff;"><a href="#t0af2246a-490d-373c-acdc-5aa2167fd451" id="link0af2246a-490d-373c-acdc-5aa2167fd451" class="exe-tooltip definition-tt titled-tt" title="YAML (YAML Ain't Markup Language) | Glosario" style="color: #0000ff;">YAML</a></span>. <span style="font-weight: 400;">Un ejemplo típico es la de una aplicación web que posee un servidor web, una base de datos y un servidor de correo para la gestión de usuarios/contraseñas, en el que cada uno de ellos se ejecuta en un contenedor diferenciado, pero que forman parte de la misma aplicación, gracias a <strong>Compose</strong>, poner en marcha los contenedores se realiza ejecutando únicamente un comando.</span></strong></p>
+<div id="t0af2246a-490d-373c-acdc-5aa2167fd451" class="exe-tooltip-text">
+<p>Es un lenguaje de serialización de datos similar a XML y JSON, amigable para los humanos. Es muy útil para las necesidades de programación que van desde archivos de configuración hasta mensajería de Internet, persistencia de objetos y auditoría de datos.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id433">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta433_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/o9pT9cWzbnI" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">En este vídeo explicativo se presentan los fundamentos de YALM, su sintaxis y otros aspectos básicos relacionados.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id436">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Instalar Docker Compose</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta436_436_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">En <strong>Windows</strong> y <strong>MAC</strong> viene incluido con <strong>Docker</strong> por lo que no es necesario realizar ninguna acción, en <strong>Linux</strong> se han de ejecutar los siguientes comandos:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por último comprobar que funciona se ha instalado correctamente con el comando:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker-compose --version
+</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id447">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Formato fichero docker-compose.ylm</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta447_447_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">El fichero que especifica los servicios a levantar y sus características se encuentra escrito en formato <strong>YAML</strong>, tal y como se ha comentado. La especificación del fichero se puede encontrar en: </span><strong><a href="https://github.com/compose-spec/compose-spec/blob/master/spec.md">https://github.com/compose-spec/compose-spec/blob/master/spec.md.</a></strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">El elemento principal es el servicio, el cual se define dentro de la <strong>propiedad <em>services</em></strong> del fichero. Estos servicios son una definición abstracta de un recurso informático dentro de una aplicación. Estos se encuentran respaldados por contenedores que se ejecutan en función a los requisitos de la aplicación.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Cada servicio posee un nombre que lo identifica además de decenas de propiedades para su configuración, algunas de ellas son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>image:</strong> Indica la base a usar.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>deploy:</strong> Permite configurar el despliegue del servicio, posee propiedades como:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>Endpoint_mode</strong></em> para indicar cómo los clientes se conectan al servicio.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>Labels</strong> para añadir meta-información al servicio, <em><strong>mode</strong></em> que indica cómo se realiza la replicación en caso de ser necesario.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><span style="text-decoration: underline;"><strong>Constrains</strong></span> para fijar requisitos de ejecución de la plataforma como que el dispositivo de almacenamiento sea ssd.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>Replicas</strong> para especificar el número de contenedores que han de ejecutarse al mismo tiempo.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>Resource.</strong></em> Requisitos normalmente hardware para el servicio, como el número de CPUS o la memoria, se puede indicar los límites y establecer reservas.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>Restart_policy</strong></em>. Configurar como se reinician los contenedores, indicando si existe un retraso (<em>delay</em>), un número máximo de intentos (<em>max_attempts</em>)</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><span style="text-decoration: underline;"><strong>blkio_config:</strong></span></em> Establece los límites de los dispositivos de entrada/salida de bloques, con las propiedades <em><span style="text-decoration: underline;"><strong>path</strong></span></em> y <em><span style="text-decoration: underline;"><strong>rate.</strong></span></em></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><span style="text-decoration: underline;"><strong>weight:</strong></span></em> Limita el ancho de banda.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><span style="text-decoration: underline;"><strong>container_name:</strong></span></em> Fija el nombre del contenedor.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>depends_on.</strong></em> Orden de inicio y arranque en función de otros servicios, por ejemplo el servicio de base de datos se ha de iniciar previamente al del servidor web.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>loggins:</strong></em> Permite configurar el <strong><em>log</em> del contenedor</strong>, por ejemplo definir el sistema <em><strong>syslog</strong></em> e indicar la <em><strong>url</strong></em> en el que se almacenan los <em><strong>logs</strong></em>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>network:</strong></em> Se utiliza para establecer la comunicación entre los servicios. Se especifican con un nombre. A su vez posee diferentes propiedades como la IPv4 e IPv6 o la prioridad.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>ports:</strong></em> Puertos en los que el servicio se encuentra escuchando, posee diferentes formatos (rango de puertos, <strong>ip</strong> o <strong>tcp</strong>/<strong>udp</strong>).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>read_only</strong></em>. El sistema de ficheros del contenedor es de solo lectura.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><span style="text-decoration: underline;"><strong>volumes:</strong></span></em> Define los volúmenes a usar por el contenedor y en qué lugar se almacenan el el anfitrión. Es posible compartir volúmenes en varios servicios. Algunas de las propiedades son:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>type:</strong></em> Tipo de montaje, <strong><em>bind, tmpfs</em></strong> o <em><strong>npipe.</strong></em></span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>source:</strong></em> Directorio del <em>host</em> anfitrión.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>target:</strong></em> Ruta en el que se montará en el contenedor.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>read_only:</strong></em> Indica que el volumen es de solo lectura.</span></li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id448">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta448_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Documentación oficial de las propiedades en <strong>ficheros YAML</strong> de <em><strong>Docker Compose. </strong></em></span><a href="https://docs.docker.com/compose/compose-file/compose-file-v3/"><span style="font-weight: 400;">https://docs.docker.com/compose/compose-file/compose-file-v3/</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id449">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Comando docker-compose</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta449_449_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Una vez creado el fichero se ejecuta el comando <em><strong>docker-compose</strong></em> para la gestión de esa configuración, las diferentes opciones del <strong>CLI</strong> se pueden encontrar en: </span><strong><a href="https://docs.docker.com/compose/reference/">https://docs.docker.com/compose/reference/</a></strong><span style="font-weight: 400;"><strong>.</strong> Las más usuales:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="color: #666666; font-size: 0.95em; text-align: left;"><strong>docker-compose up:</strong> A partir de <em>docker-compose.yaml</em> crea los contenedores y los inicia.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>docker-compose down:</strong> apaga los servicios levantados.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>docker-compose ps:</strong> Equivalente al comando <strong>ps </strong>del sistema operativo.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>docker-compose exec:</strong> Similar al comando <strong>exe</strong> de <strong>Docker.</strong></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>docker-compose log:</strong> Permite ver los <em><strong>logs</strong></em> de los servicios.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>docker-composer rm:</strong> Borra un servicio (contenedor) previamente parado.</span></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="5214_dockfile.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicio_resuelto0.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

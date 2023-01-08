@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.2.- Objetos Kubernetes. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-173"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_orquestacin_de_contenedores.html" class="current-page-parent daddy">7.- Orquestación de contenedores.</a>
+   <ul>
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li id="active"><a href="72_objetos_kubernetes.html" class="active no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="71_componentes_de_kubernetes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="8_herramientas_de_simulacin_de_fallos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">7.2.- Objetos Kubernetes.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id444">
+<div class="iDevice emphasis0">
+<div id="ta444_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los </span><b>objetos de Kubernetes</b><span style="font-weight: 400;"> son entidades persistentes dentro del sistema de Kubernetes. Kubernetes utiliza estas entidades para representar el estado de tu clúster. Indican las aplicaciones, los recursos disponibles para estas y las políticas de comportamiento como las políticas de reinicio o tolerancia a fallo. Cada objeto posee dos campos:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><em><b>spec:</b></em><span style="font-weight: 400;"> Obligatorio, indica el estado deseado del objeto.</span></li>
+<li style="font-weight: 400;" aria-level="1"><em><b>status:</b></em><span style="font-weight: 400;"> Estado actual del objeto.</span></li>
+</ul>
+<p style="text-align: justify;"><b>Kubernetes</b><span style="font-weight: 400;"> intenta conseguir crear y mantener todos los objetos indicados en la especificación, en caso de no poder cumplir, tomará medidas para que se cumpla.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para la descripción de un objeto se puede usar el comando </span><b><i>kubectl</i></b><span style="font-weight: 400;"> pasándole un fichero en formato </span><b>YAML</b><span style="font-weight: 400;">, realizando las llamadas oportunas a la API. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los campos obligatorios del fichero son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b><i>apiVersion.</i></b><span style="font-weight: 400;"> Qué versión de la API de Kubernetes estás usando para crear este objeto. </span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b><i>kind.</i></b><span style="font-weight: 400;"> Tipo de objeto, puede ser un de tipo </span><i><span style="font-weight: 400;">pod</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">cronjob</span></i><span style="font-weight: 400;"> ,demonio, despliegue, servicios, volúmenes o réplica entre otros.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b><i>metadata.</i></b><span style="font-weight: 400;"> Datos para caracterizar al objeto e identificarlo.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b><i>spec.</i></b><span style="font-weight: 400;"> Depende de cada objeto definido en </span><b><i>kind.</i></b><span style="font-weight: 400;"> En la siguiente URL se pueden consultar los atributos de cada uno de ellos: </span><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#pod-v1-core"><span style="font-weight: 400;">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#pod-v1-core</span></a><span style="font-weight: 400;">.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">A continuación, se muestra un fichero </span><b>YAML</b><span style="font-weight: 400;"> de ejemplo en el que se aprecian  los campos requeridos y la </span><b><i>spec</i></b><span style="font-weight: 400;"> del objeto </span><b><i>Deployment de Kubernetes</i></b><span style="font-weight: 400;">:</span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>apiVersion: apps/v1 # Usa apps/v1beta2 para versiones anteriores a 1.9.0
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 # indica al controlador que ejecute 2 pods
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id445">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta445_129" class="block iDevice_content">
+<p style="text-align: center;"><video width="560" height="420" controls="controls" class="mediaelement">
+<source src="https://d3c33hcgiwev3.cloudfront.net/G6x6ctWiRf2senLVooX9vw.processed/full/360p/index.webm?Expires=1626307200&amp;Signature=NQozP9iggYabr9WWlEOlPDtL-LE9KhgS4Yh4sn8QPCkI32l9g8kccRZwWtJFAZS-Ybdb1oSpyHX6oxxCq5s7M-D2iXtA0gSjJoUPhS8VnL3pJAc8NYGL-MRNF~k3eZkUhOWu6XRQvvUfMivGCjtORZkdxoo0u8GPLufrjYM4nm8_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" type="video/webm" /></video></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Vídeo explicativo donde se detallan cuales son características de los principales Objetos de Kubernetes.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id461">
+<div class="iDevice emphasis0">
+<div id="ta461_154" class="block iDevice_content">
+<p>Los objetos básicos de Kubernetes son:</p>
+<ul>
+<li>Pods: Tal y como se ha definido anteriormente un grupo de contenedores con una especificación y unos recursos.</li>
+<li>Services: Permite exponer una aplicación. Se indica el o los pods a los que hace referencia y la forma de acceder a los mismos. Un ejemplo de configuración extraído de la documentación oficial. https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service.</li>
+</ul>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+&amp;nbsp; name: my-service
+spec:
+&amp;nbsp; selector:
+&amp;nbsp; &amp;nbsp; app: MyApp
+&amp;nbsp; ports:
+&amp;nbsp; &amp;nbsp; - protocol: TCP
+&amp;nbsp; &amp;nbsp; &amp;nbsp; port: 80
+&amp;nbsp; &amp;nbsp; &amp;nbsp; targetPort: 9376
+</code></pre>
+</div>
+</div>
+<p style="padding-left: 30px;">El atributo<strong><em> spec.selector.app</em></strong> tiene el valor MyApp, refiriendose al Pod que hace visible.</p>
+<ul>
+<li><strong>Volume:</strong> Permite el almacenamiento persistente independiente de los Pods, posee una gran variedad de tipos como awsElasticBlockStore, azureDisc, Cephfs o OpenStack.</li>
+<li><strong>Namespaces</strong>: Cluster virtualizados, pensado para entornos con muchos usuarios y muchos proyectos, son una forma de asignar los recursos del clúster entre varios usuarios.</li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id446">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta446_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Para la gestión de </span><b>objetos K8s</b><span style="font-weight: 400;"> se utiliza el comando </span><b><i>kubectl</i></b><span style="font-weight: 400;"> (Kubernetes CLI), ya sea usando parámetros o a través de ficheros </span><b>YAML</b><span style="font-weight: 400;">. Este libro (</span><strong><a href="https://kubectl.docs.kubernetes.io/">https://kubectl.docs.kubernetes.io/</a></strong><span style="font-weight: 400;">) se centra en el uso de </span><b>Kubectl</b><span style="font-weight: 400;"> para administrar aplicaciones de forma declarativa en </span><b>Kubernetes</b><span style="font-weight: 400;">, su lectura es muy recomendada para tener una visión amplia del comando </span><b><i>kubectl </i></b><span style="font-weight: 400;">y sus distintas posibilidades y funciones.</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="71_componentes_de_kubernetes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="8_herramientas_de_simulacin_de_fallos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

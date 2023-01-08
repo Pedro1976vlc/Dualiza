@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.1.4.- Dockfile | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-171"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li class="current-page-parent"><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="current-page-parent daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul>
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li class="current-page-parent"><a href="52_contenedores.html" class="current-page-parent daddy">5.2.- Contenedores</a>
+      <ul>
+         <li class="current-page-parent"><a href="521_docker.html" class="current-page-parent daddy">5.2.1.- Docker</a>
+         <ul>
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li id="active"><a href="5214_dockfile.html" class="active no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejercicio_resuelto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.2.1.4.- Dockfile</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id429">
+<div class="iDevice emphasis0">
+<div id="ta429_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Es posible la ejecución de parámetros en el contenedor tanto al iniciarlo como una vez en ejecución usando los comandos:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker run
+
+docker exec
+
+</code></pre>
+</div>
+</div>
+<p><span style="font-size: 1.1em;">Por ejemplo para realizar un <em><strong>ls</strong></em> dentro de un contenedor ya iniciado:</span></p>
+<p style="text-align: center;"><span style="font-size: 1.1em;"><img src="UD5_6_2_1_4_1_Comando_docker_exec_-it_confident.png" alt="Comando docker exec" title="Comando docker exec" width="974" height="675" /></span></p>
+<p style="text-align: center;"><span style="font-size: 1.1em;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id430">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta430_128" class="block iDevice_content">
+<p>Se puede encontrar información mucho más completa en la documentación oficial a cerca del comando <a href="https://docs.docker.com/engine/reference/commandline/exec/"><em><strong>docker exec</strong></em>.</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id431">
+<div class="iDevice emphasis0">
+<div id="ta431_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Tener que estar ejecutando cada uno de los <strong>comandos</strong> en el contenedor para configurar el mismo es una tarea tediosa, además es interesante adaptar una imagen base a las necesidades del proyecto. Para crear una imagen personalizada se utiliza el fichero <em><strong>Dockfile</strong></em> que contiene comandos que se ejecutan al instanciar la imagen, estos comandos se encuentran precedidos de otros que indican ciertas acciones:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>FROM [imagen].</strong></em> Indica la imagen base.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>RUN [comando] [parámetros]</strong> se ejecuta en la imagen.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>CMD [comando] [parámetros]</strong></em> se ejecuta posteriormente a la instancia del contenedor.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>ADD.</strong></em> Posee dos formatos:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><em><strong>ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</strong></em></li>
+<li style="font-weight: 400;" aria-level="2"><em><strong>ADD [--chown=&lt;user&gt;:&lt;group&gt;] ["&lt;src&gt;",... "&lt;dest&gt;"]</strong></em></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por supuesto <em><strong>chown</strong></em> solo es aplicable en contenedores Linux. La segunda forma simplemente añade un conjunto de ficheros/directorios de forma local y/o remota. En caso de añadir ficheros comprimidos es capaz de reconocerlos y descomprimir.</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong><em>COPY</em>.</strong> Similar al anterior, la documentación oficial recomienda este antes que <strong>ADD</strong> en ficheros normales (no comprimidos).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>EXPOSE  &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</strong></em>. Se definen los puertos en lo que el contenedor se encuentra escuchando.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>ENV &lt;key&gt;=&lt;value&gt;.</strong></em> Da valor a variables de entorno</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>LABEL &lt;key&gt;=&lt;value&gt;...</strong></em> Añade <strong>metainformación</strong> a la imagen</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>ENTRYPOINT.</strong></em> Indica el comando y los parámetros a ejecutar al iniciar el contenedor</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><em><strong>VOLUME.</strong></em> Crea un volumen y lo monta en el directorio indicado, un ejemplo de la documentación oficial:</span></li>
+</ul>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>FROM ubuntu
+
+RUN mkdir /myvol
+
+RUN echo "hello world" &gt; /myvol/greeting
+
+VOLUME /myvol
+</code></pre>
+</div>
+</div>
+<ul>
+<li><span style="font-weight: 400;"><strong>WORKDIR.</strong> Establece el directorio en el que se ejecutan el resto de comandos.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Una vez creado el <strong>Dockfile</strong> ejecutar el comando en el directorio en el que se encuentra el fichero <em><strong>Dockfile</strong></em>:</span></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>docker build  -t nombre_imagen .</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id434">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta434_128" class="block iDevice_content">
+<h2 style="text-align: justify;"><strong>Buenas prácticas para la creación de ficheros Dockerfile.</strong></h2>
+<p style="text-align: justify;">Este documento cubre las mejores prácticas y métodos recomendados para crear imágenes eficientes: <strong><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</a></strong>.</p>
+<p style="text-align: justify;"><strong>Docker</strong> crea imágenes automáticamente leyendo las instrucciones de un archivo <em><strong>Dockerfile</strong></em> de texto que contiene todos los comandos, necesarios para crear una imagen determinada. El formato específico y un conjunto de instrucciones de <em><strong>Dockerfile</strong></em>. que puede encontrar en la referencia de la documentación oficial.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id435">
+<div class="iDevice emphasis0">
+<div id="ta435_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Un ejemplo de fichero Dockfile basado en Debian en el que se instala Apache y se copia en la carpeta por defecto un fichero del anfitrión.</span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>FROM debian
+
+RUN apt-get update
+
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install apache2 -y
+
+EXPOSE 80
+
+copy ./proyecto/* /var/www/html
+
+CMD ["/bin/bash"]</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejercicio_resuelto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

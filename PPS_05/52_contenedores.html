@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.- Contenedores | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-166"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul class="other-section">
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li><a href="13_herramientas.html" class="no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li class="current-page-parent"><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="current-page-parent daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul>
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li id="active"><a href="52_contenedores.html" class="active daddy">5.2.- Contenedores</a>
+      <ul>
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="51_virtualizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521_docker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.2.- Contenedores</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id413">
+<div class="iDevice emphasis0">
+<div id="ta413_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">A pesar de que los equipos son cada vez más potentes, la ejecución de diferentes máquinas virtuales sobre un mismo equipo no es la solución más óptima ya que se han de virtualizar todo el hardware. Además los tiempos de arranque son considerables en el caso de servidores de aplicaciones o sistemas críticos.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id414">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta414_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/cjXI-yxqGTI" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;"><span>Vídeo de IBM Cloud, donde se presentan las diferencias existentes entre máquinas virtuales  y contenedores. Analiza  las razones por las qué los usuarios no deberían considerar simplemente las máquinas virtuales y los contenedores como tecnologías competidoras; porque pueden existir muchos beneficios, para casos de uso particulares, cuando estas tecnologías trabajan juntas.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id416">
+<div class="iDevice emphasis0">
+<div id="ta416_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Existe la <strong>virtualización</strong> a <strong>nivel de sistema operativo</strong> que se basa en añadir una capa de virtualización sobre el sistema operativo para tener instancias aisladas del espacio de usuario (espacio de memoria, recursos de E/S, almacenamiento, librerías) realizando las llamadas al sistema al núcleo, por ejemplo solicita el uso de un periférico, denominándose a esta técnica virtualización basada en contenedores.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Estas diferencias implican que sobre el mismo hardware es posible ejecutar muchos más contenedores que máquinas virtuales, además el tiempo de arranque se ve reducido notablemente, por ejemplo, en la plataforma de virtualización Proxmox se necesita mínimo 1 GB de memoria RAM para crear una máquina virtual con Ubuntu Server, en cambio un contenedor únicamente necesita 512 MB y en un uso típico (servidor DNS, DHCP, cortafuegos) no suele consumir más de 400 MB. Además es posible mover de forma sencilla los contenedores entre servidores, por ejemplo ante una actualización del anfitrión.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id417">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta417_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/EUitQ8DaZW8" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo explicativo realizado por Microsoft para resaltar la importancia de los contenedores y ayudar a comprender como éstos proporcionan una infraestructura ligera e inmutable para la implementación de aplicaciones y la utilización más eficiente de los recursos.  </p>
+</div>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id418">
+<div class="iDevice emphasis0">
+<div id="ta418_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Existen diversas implementaciones de contenedores destacando:</span></p>
+<ul>
+<li style="text-align: justify;"><strong><a href="https://linuxcontainers.org/">LXC</a>: LinuX containers.</strong> Proporciona diferentes herramientas para la gestión de los contenedores.</li>
+<li style="text-align: justify;"><strong><a href="https://linuxcontainers.org/lxd/introduction/">LXD</a>: Linux Container Daemon</strong>, basado en <strong>LXC</strong>, posee un demonio que gestiona los diferentes contenedores ,proporciona una API REST para la gestión de los mismos. También proporciona una interfaz de comandos para la gestión de los contenedores. Posee instantáneas, es posible descargar imágenes de contenedores y establecer perfiles según el uso del contenedor.</li>
+<li style="text-align: justify;"><strong><a href="https://www.docker.com/">Docker</a>.</strong> Similar a los anteriores, el sistema aísla al software del contenedor de sistema operativo host, como árbol de procesos, red, usuario o sistemas de archivos, además de limitar el acceso a los recursos hardware (memoria, E/S o la red). Proporciona una <strong>CLI</strong>, así como <strong>API REST</strong>, posee un repositorio en el que almacenar y descargar imágenes, además es posible definir personalizadas.</li>
+</ul>
+<p style="text-align: center;">im </p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 682px;"><img src="UD5_6_2__Docker_(container_engine)_logo.png" alt="Logotipo de Docker" title="Logotipo de Docker" width="682" height="163" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:Docker_(container_engine)_logo.png" target="_blank" class="author" rel="noopener">dotCloud, Inc</a>. <span class="title"><em>Logo of Docker, a Linux container engine.</em></span> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia Apache 2.0</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Existen otras implementaciones de contenedores pero las 3 anteriores son las más utilizadas en la actualidad.</span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="51_virtualizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521_docker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

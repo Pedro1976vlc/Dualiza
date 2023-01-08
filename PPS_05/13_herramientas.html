@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.3.- Herramientas. | UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-155"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 5: IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD5. IMPLANTACIÓN DE SISTEMAS SEGUROS DE DESPLEGADO DE SOFTWARE</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1__prcticas_unificadas_para_el_desarrollo_y_operacin_del_software_devops.html" class="current-page-parent daddy">1. - Prácticas unificadas para el desarrollo y operación del software (DevOps).</a>
+   <ul>
+      <li><a href="11_ciclo_de_vida_de_las_aplicaciones.html" class="no-ch">1.1.- Ciclo de vida de las aplicaciones.</a></li>
+      <li><a href="12_prcticas.html" class="no-ch">1.2.- Prácticas</a></li>
+      <li id="active"><a href="13_herramientas.html" class="active no-ch">1.3.- Herramientas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_control_de_versiones.html" class="daddy">2.- Sistemas de control de versiones.</a>
+   <ul class="other-section">
+      <li><a href="21_git.html" class="daddy">2.1.- Git.</a>
+      <ul class="other-section">
+         <li><a href="211_instalacin.html" class="no-ch">2.1.1.- Instalación.</a></li>
+         <li><a href="212_primeros_pasos.html" class="no-ch">2.1.2.- Primeros pasos.</a></li>
+         <li><a href="213_ramas.html" class="no-ch">2.1.3.- Ramas.</a></li>
+         <li><a href="214_trabajando_en_remoto.html" class="no-ch">2.1.4.- Trabajando en remoto.</a></li>
+         <li><a href="215_gitflow.html" class="no-ch">2.1.5.- GitFlow</a></li>
+         <li><a href="216_hook__ganchos.html" class="no-ch">2.1.6.- Hook / Ganchos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_sistemas_de_automatizacin_de_construccin_build.html" class="daddy">3.- Sistemas de automatización de construcción (build).</a>
+   <ul class="other-section">
+      <li><a href="31_construyendo_un_proyecto_con_gradle.html" class="no-ch">3.1.- Construyendo un proyecto con Gradle</a></li>
+   </ul>
+   </li>
+   <li><a href="4_integracin_continua_y_automatizacin_de_pruebas.html" class="no-ch">4.- Integración continua y automatización de pruebas.</a></li>
+   <li><a href="5_escalado_de_servidores_virtualizacin_contenedores.html" class="daddy">5.- Escalado de servidores. Virtualización. Contenedores.</a>
+   <ul class="other-section">
+      <li><a href="51_virtualizacin.html" class="no-ch">5.1.- Virtualización</a></li>
+      <li><a href="52_contenedores.html" class="daddy">5.2.- Contenedores</a>
+      <ul class="other-section">
+         <li><a href="521_docker.html" class="daddy">5.2.1.- Docker</a>
+         <ul class="other-section">
+            <li><a href="5211_instalacin.html" class="no-ch">5.2.1.1.- Instalación</a></li>
+            <li><a href="5212_descargando_imgenes_y_creando_contenedores.html" class="no-ch">5.2.1.2.- Descargando imágenes y creando contenedores</a></li>
+            <li><a href="5213_persistencia_de_datos.html" class="no-ch">5.2.1.3.- Persistencia de datos</a></li>
+            <li><a href="ejercicio_resuelto.html" class="no-ch">Ejercicio resuelto</a></li>
+            <li><a href="5214_dockfile.html" class="no-ch">5.2.1.4.- Dockfile</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_gestin_automatizada_de_configuracin_de_sistemas.html" class="daddy">6.- Gestión automatizada de configuración de sistemas.</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_resuelto0.html" class="no-ch">Ejercicio resuelto</a></li>
+   </ul>
+   </li>
+   <li><a href="7_orquestacin_de_contenedores.html" class="daddy">7.- Orquestación de contenedores.</a>
+   <ul class="other-section">
+      <li><a href="71_componentes_de_kubernetes.html" class="no-ch">7.1.- Componentes de Kubernetes.</a></li>
+      <li><a href="72_objetos_kubernetes.html" class="no-ch">7.2.- Objetos Kubernetes.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_herramientas_de_simulacin_de_fallos.html" class="no-ch">8.- Herramientas de simulación de fallos.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="12_prcticas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_sistemas_de_control_de_versiones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.3.- Herramientas.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id382">
+<div class="iDevice emphasis0">
+<div id="ta382_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Para llevar a cabo las diferentes fases y prácticas es necesario herramientas que automaticen las mismas y permitan la comunicación entre las diferentes personas implicadas. <strong>DevOps</strong> no establece las herramientas a utilizar, dejando la elección a cada una de las empresas, si bien existen estándares de <em>“facto”</em> para ciertas prácticas.</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Control de versiones.</strong> Permite gestionar el código de un equipo de desarrollo. La más conocida es <strong>Git</strong>, tratada en el siguiente punto de la unidad.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Construcción.</strong> La generación de aplicaciones de tamaño medio o grande consume una gran cantidad de tiempo y recursos. Es necesario liberar y automatizar de esta tarea a los desarrolladores y administradores delegando en herramientas software como <em><strong>Maven</strong></em>, <em><strong>Npm</strong></em>, <em><strong>Composer</strong></em> o <em><strong>Gradle</strong></em> entre otros.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Automatización.</strong> Las tareas a realizar en el desarrollo y explotación de una aplicación son repetitivas, inicialmente se creaban guiones para cada aplicación con dichas tareas, aunque posteriormente han aparecido herramientas software especializadas en la integración continua integrando y gestionando otras aplicaciones. Las más conocidas son </span><a href="https://www.jenkins.io/"><span style="font-weight: 400;">Jenkins</span></a><span style="font-weight: 400;"> y </span><a href="https://www.atlassian.com/software/bamboo"><span style="font-weight: 400;">Bamboo</span></a><span style="font-weight: 400;">.</span><span style="font-weight: 400;"></span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 501px; text-align: justify;"><img src="UD5_2_3_Jenkins.png" alt="Logotipo Jenkins" title="Logotipo Jenkins" width="501" height="161" />
+<figcaption class="figcaption"><a href="https://www.jenkins.io/" target="_blank" class="author" rel="noopener">https://www.jenkins.io/</a>. <a href="https://www.jenkins.io/artwork/" target="_blank" class="title" rel="noopener"><em>Logotipo Jenkins</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)<br /></span></span></figcaption>
+</figure>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 501px;"></figure>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id383">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta383_128" class="block iDevice_content">
+<p style="text-align: center;"><a href="https://www.atlassian.com/software/bamboo/comparison/bamboo-vs-jenkins" title="Comparativa Jenkins y Bamboo. ">Comparativa Jenkins y Bamboo. </a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id384">
+<div class="iDevice emphasis0">
+<div id="ta384_154" class="block iDevice_content">
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Gestión de configuración.</strong> La infraestructura se ha transformado en una parte más de la aplicación utilizándose diferentes herramientas para su gestión y configuración de forma flexible, siendo el software más conocido </span><a href="https://www.docker.com/"><span style="font-weight: 400;">Docker</span></a><span style="font-weight: 400;"> para <strong>virtualización</strong> y </span><a href="https://kubernetes.io/"><span style="font-weight: 400;">Kubernates</span></a><span style="font-weight: 400;"> para la <strong>orquestación</strong> y gestión de la <strong>infraestructura.</strong></span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Pruebas.</strong> Independientemente si se sigue o no una filosofía <strong>DevOps</strong> la realización de pruebas es una parte vital del mundo del software. Las herramientas más utilizadas han sido tratadas en temas anteriores.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>Monitorización.</strong> Estas herramientas permiten conocer el estado de los servidores, dispositivos en red y/o contenedores, evaluar la situación de las aplicaciones, obtener y gestionar métricas de las aplicaciones. Existen multitud de aplicaciones, algunas de las más conocidas son: </span><a href="https://www.nagios.org/"><span style="font-weight: 400;">Nagios</span></a><span style="font-weight: 400;"> o  </span><a href="https://prometheus.io/"><span style="font-weight: 400;">Prometheus</span></a><span style="font-weight: 400;">.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Además tanto <strong>Google</strong>, <strong>Amazon</strong> y <strong>Microsoft</strong> ofrecen entre sus servicios en la nube herramientas con la misma funcionalidad que la anterior para desarrollar con la cultura <strong>DevOps</strong> en sus plataformas.</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Las herramientas de <strong>Amazon</strong> se pueden consultar en: </span><span style="font-weight: 400;"><a href="https://aws.amazon.com/es/devops/">https://aws.amazon.com/es/devops/</a>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Las de <strong>Google Cloud</strong>: <a href="https://cloud.google.com/devops?hl=es-419#section-5" title="Google Cloud">https://cloud.google.com/devops?hl=es-419#section-5</a>. </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">En el caso de <strong>Azure de Microsoft</strong>: </span><a href="https://azure.microsoft.com/es-es/solutions/devops/#products"><span style="font-weight: 400;">https://azure.microsoft.com/es-es/solutions/devops/#products</span></a></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">La empresa especializada en desarrollo <strong>Atlassian</strong> también ofrece herramientas para <strong>DevOps:</strong> <a href="https://www.atlassian.com/devops/devops-tools" title="Atlassian">https://www.atlassian.com/devops/devops-tools</a><strong>.</strong></span></li>
+</ul>
+<p><span style="font-weight: 400;"><strong></strong></span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="12_prcticas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_sistemas_de_control_de_versiones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>
