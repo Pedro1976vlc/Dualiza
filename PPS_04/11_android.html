@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.- Android. | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="current-page-parent daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul>
+      <li id="active"><a href="11_android.html" class="active daddy">1.1.- Android.</a>
+      <ul>
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="111_fichero_androidmanifestxml.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.- Android.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id322">
+<div class="iDevice emphasis0">
+<div id="ta322_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los permisos en Android han cambiado a medida que el malware se hacía cada vez más peligroso, y no solo el malware, sino aplicaciones como Uber recolectan información del usuario en segundo plano. En cada nueva versión se ha añadido una <strong><span style="color: #0000ff;"><a href="#tac581268-8506-df5d-581e-ca6695f21aaa" id="linkac581268-8506-df5d-581e-ca6695f21aaa" class="exe-tooltip definition-tt titled-tt" title="Granularidad | Glosario" style="color: #0000ff;">granularidad</a></span></strong> mayor. Un gran salto se produjo en el 2015 con la versión Marshmallow, que introdujo los permisos en tiempo de ejecución, hasta ese momento los permisos se concedían o no, independientemente del momento.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Actualmente Android se encuentra en la versión 11, y siguiendo las versiones anteriores añade nuevas funcionalidades a la gestión de permisos.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los permisos se definen a nivel de recurso, el sistema administra una lista de permisos asociada a cada recurso a gestionar con las aplicaciones que lo pueden usar, estos se dividen en:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Datos restringidos, como la lista de contactos del usuario.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Acciones restringidas, como hacer una fotografía desde la cámara.</span></li>
+</ul>
+<div id="tac581268-8506-df5d-581e-ca6695f21aaa" class="exe-tooltip-text">
+<p>Se detalla con mayor precisión cada uno de los recursos, acciones y momentos de los permisos</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id323">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta323_129" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>Listado de permisos de Android</h2>
+<p><a href="https://developer.android.com/reference/android/Manifest.permission?hl=es-419"><span style="font-weight: 400;">https://developer.android.com/reference/android/Manifest.permission?hl=es-419</span></a></p>
+<h2>Ejemplo de permisos de Android</h2>
+<p><a href="https://github.com/android/permissions-samples"><span style="font-weight: 400;">https://github.com/android/permissions-samples</span></a></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id324">
+<div class="iDevice emphasis0">
+<div id="ta324_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Se establecen diferentes<strong> tipos de permisos</strong> en función de las necesidades:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Permisos en la instalación</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se otorgan acceso limitado a los datos restringidos y acciones que no afectan al sistema u otras aplicaciones. Dentro de estos permisos se tienen:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>Permisos normales:</strong> Acceso a los datos y acciones más allá de la zona de pruebas. Por ejemplo consultar el estado de la red <strong>ACCESS_NETWORK_STATE</strong> o <strong>BLUETOOTH</strong> para permitir a la aplicación conectarse a dispositivos emparejados.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>Permisos de firma:</strong> Si una aplicación posee un permiso, este se puede extender a otra aplicación siempre que la firma digital de ambas sea la misma (mismo desarrollador, empresa..). Alguno de los permisos: <strong>DELETE_CACHE_FILES</strong> o <strong>MANAGE_EXTERNAL_STORAGE</strong>.</span></li>
+</ul>
+<ul></ul>
+<h2>Permisos en tiempo de ejecución</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Da acceso a datos restringidos y acciones que afectan de forma más considerable al sistema u otras aplicaciones. Cada vez que se accede a dichos recursos se solicita permisos al usuario. Ejemplos de estos permisos: <strong>READ_SMS</strong> o <strong>RECORD_AUDIO</strong>.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="https://developer.android.com/images/training/permissions/runtime.svg?hl=es-419" alt="Permisos en tiempo de ejecución Android" title="Permisos en tiempo de ejecución Android" width="663" height="530" /></span></p>
+<h2>Permisos especiales</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los más restrictivos sólo la plataforma (Android y por tanto Google) y los OEM (Samsung, Xiaomi…). Estos permisos pueden ser personalizados por el usuario y cada uno de ellos posee sus características propias. Por ejemplo: <strong>SYSTEM_ALERT_WINDOW</strong> y <strong>MANAGE_EXTERNAL_STORAGE</strong>.</span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id325">
+<div class="iDevice emphasis0">
+<div id="ta325_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los anteriores permisos se definen en el fichero <strong>AndroidManifest.xml</strong> que define las características y detalla la configuración de una aplicación para el sistema operativo Android.</span></p>
+<h5 style="text-align: center;"><strong>Ejemplo de sección de permisos:</strong></h5>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;manifest ... &gt;
+
+    &lt;uses-permission android:name="android.permission.SEND_SMS"/&gt;
+
+    ...
+
+&lt;/manifest&gt;
+
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Lo tratado anteriormente es como las aplicaciones interactúan con el sistema, pero Android permite que las aplicaciones interactúen entre ellas, pudiendo delimitar la <em><strong>“activity”</strong></em>, el uso de servicios (concepto similar a los demonios en Linux) o proveedores de contenido (elemento que gestiona un conjunto de datos o información). </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">El sistema operativo define un sistema similar a los eventos para que el sistema operativo y las aplicaciones puedan comunicarse de forma asíncrona. Por ejemplo, resulta interesante conocer cuando en sistema pasa a <strong><em>“modo avión”</em></strong> de forma que la aplicación lo tenga en cuenta, y no mande mensajes a través de la red ya que no se encuentra activa, siendo posible definir a qué aplicaciones se envía el evento.  </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para definir estos permisos entre aplicaciones, también se definen en el fichero <strong>AndroidManifest.xml</strong> pero en sección dedicada a cada uno de los elementos, <em>&lt;activity&gt;&lt;service&gt;</em>....</span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="111_fichero_androidmanifestxml.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

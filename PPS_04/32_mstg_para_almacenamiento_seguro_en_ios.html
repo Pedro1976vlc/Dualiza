@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.- MSTG para almacenamiento seguro en iOS | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-151"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_almacenamiento_seguro_de_datos.html" class="current-page-parent daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul>
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="active no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="311_anlisis_de_mstg1_y_2.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.- MSTG para almacenamiento seguro en iOS</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id392">
+<div class="iDevice emphasis0">
+<div id="ta392_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id393">
+<div class="iDevice emphasis0">
+<div id="ta393_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">La protección de datos sensibles, como </span><b>tokens de autenticación</b><span style="font-weight: 400;"> e </span><b>información privada</b><span style="font-weight: 400;">, es clave para la seguridad móvil. En este apartado, se resumen los principales contenidos de la guía de seguridad OWASP para la prueba de aplicaciones móviles. </span></p>
+<div class="exe-fx exe-accordion">
+<h2><strong>MSTG-STORAGE-1 y MSTG-STORAGE-2</strong></h2>
+<p style="text-align: justify;"><strong>Prueba de el almacenamiento de datos local:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se debe guardar la menor cantidad posible de datos confidenciales en un almacenamiento local permanente. Sin embargo, en la mayoría de los escenarios prácticos reales, es necesario almacenar al menos algunos datos del usuario. Razón por la cual los dispositivos <strong>iOS</strong> ofrecen una <strong>API</strong> de almacenamiento seguro, que permiten a los desarrolladores utilizar el </span><b>hardware criptográfico.</b><span style="font-weight: 400;"> Los datos y archivos confidenciales se pueden proteger mediante cifrado <strong>AES de 256 bits</strong> respaldado por <em>hardware</em>.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Cada archivo almacenado en el <strong>sistema de archivos de iOS</strong> está <strong>encriptado</strong> con su propia clave por archivo, que está contenida en los <strong>metadatos del archivo</strong>. Los metadatos se cifran con la clave del sistema de archivos y se envuelven con la clave de clase correspondiente a la clase de protección que la aplicación seleccionó al crear el archivo.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La siguiente ilustración muestra la <strong>jerarquía de claves</strong> <strong>de protección</strong> de datos de <strong>iOS:</strong></span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 501px;"><img src="UD4_3_2__jerarquia_claves_proteccion_iOS.png" alt="Jerarquía de protección de claves iOS" title="Jerarquía de protección de claves iOS" width="501" height="177" />
+<figcaption class="figcaption"><a href="https://github.com/OWASP/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md" target="_blank" class="author" rel="noopener">OWASP</a>. <span class="title"><em>Jerarquía de claves de protección de datos iOS</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los archivos se pueden asignar a una de las cuatro clases de protección diferentes, que se explican con más detalle en la <b>Guía de seguridad de iOS</b>:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>Protección completa (NSFileProtectionComplete):</b><span style="font-weight: 400;"> una clave derivada del </span><b>código de acceso del usuario</b><span style="font-weight: 400;"> y la </span><b>UID del dispositivo</b><span style="font-weight: 400;"> garantiza la protección completa. La clave derivada se borra de la memoria poco después de que el dispositivo quede bloqueado, lo que hace que los datos sean inaccesibles hasta que el usuario desbloquee nuevamente el dispositivo.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Protegido a menos que esté abierto (NSFileProtectionCompleteUnlessOpen):</b><span style="font-weight: 400;"> esta clase de protección es similar a la </span><b>Protección completa</b><span style="font-weight: 400;">, pero, si el archivo se abre cuando está desbloqueado, la aplicación puede continuar accediendo al archivo incluso si el usuario bloquea el dispositivo. Esta clase de protección se utiliza cuando, por ejemplo, se está descargando un archivo adjunto de correo en segundo plano.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Protegido hasta la primera autenticación de usuario (NSFileProtectionCompleteUntilFirstUserAuthentication):</b><span style="font-weight: 400;"> se puede acceder al archivo tan pronto como el usuario desbloquea el dispositivo por primera vez después de arrancar. Se puede acceder incluso si el usuario posteriormente bloquea el dispositivo y la clave de clase no se elimina de la memoria.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b style="text-align: justify; color: #333333; font-size: 1.05em;">Sin protección (NSFileProtectionNone):</b><span style="text-align: justify; color: #333333; font-size: 1.05em;"> la clave para esta clase de protección está protegida solo con el UID. La clave de clase se almacena en "</span><i style="text-align: justify; color: #333333; font-size: 1.05em;">Almacenamiento borrable</i><span style="text-align: justify; color: #333333; font-size: 1.05em;">", que es una región de la memoria flash en el dispositivo iOS que permite el almacenamiento de pequeñas cantidades de datos. Esta clase de protección existe para una limpieza remota rápida (eliminación inmediata de la clave de clase, lo que hace que los datos sean inaccesibles).</span></li>
+</ul>
+<p style="text-align: justify;"><b>El llavero de iOS</b><span style="font-weight: 400;"> se puede utilizar para almacenar de forma segura datos breves y confidenciales, como claves de cifrado y <strong><em>tokens</em> de sesión</strong>. Se implementa como una </span><b>base de datos </b><b><i>SQLite</i></b><span style="font-weight: 400;"> a la que se puede acceder únicamente a través de las </span><b><i>API de Keychain</i></b><span style="font-weight: 400;">. </span><span style="text-align: justify; color: #333333; font-size: 1.05em;"><span style="font-weight: 400;">En iOS, cuando se desinstala una aplicación, el dispositivo retiene los datos del llavero utilizados por la aplicación. En el </span><b>caso de que un usuario venda su dispositivo</b><span style="font-weight: 400;"> sin </span><b>realizar un restablecimiento</b><span style="font-weight: 400;"> de </span><b>fábrica</b><span style="font-weight: 400;">, el comprador del dispositivo puede obtener acceso a las cuentas y los datos de la aplicación del usuario anterior reinstalando las mismas aplicaciones utilizadas por el usuario anterior. </span></span></p>
+<h2 style="text-align: justify;"><strong>MSTG-STORAGE 3</strong></h2>
+<p><span style="font-weight: 400;"><strong>Comprobación de registros en busca de datos confidenciales:</strong></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Hay muchas razones legítimas para crear archivos de registro en un dispositivo móvil, incluido realizar un seguimiento de los bloqueos o errores que se almacenan localmente mientras el dispositivo está fuera de línea (para que puedan enviarse al desarrollador de la aplicación una vez en línea) y almacenar estadísticas de uso. Sin embargo, el registro de datos confidenciales, como números de tarjetas de crédito e información de sesión, puede exponer los datos a atacantes o aplicaciones maliciosas.</span></p>
+<h2 style="text-align: justify;"><strong>MSTG-STORAGE 4</strong></h2>
+<p style="text-align: justify;"><strong>Determinación de si se envían datos confidenciales a terceros:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las características que brindan estos servicios de mejora de experiencia de usuario pueden incluir herramientas de seguimiento para monitorear el comportamiento del usuario mientras usa la aplicación. La desventaja de los servicios de terceros es que los desarrolladores no conocen los detalles del código ejecutado a través de bibliotecas de terceros. En consecuencia,  estos servicios de terceros pueden ser empleados para divulgar información sensible.</span></p>
+<p><span style="font-weight: 400;">La mayoría de los servicios de terceros se implementan de dos formas:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Mediante el empleo de una biblioteca independiente</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Utilizando un SDK completo.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Para determinar si las llamadas a las API y las funciones proporcionadas mediante bibliotecas de terceros se utilizan de acuerdo con las mejores prácticas, es necesaria la <strong>revisión de su código fuente</strong>.</span></p>
+<p><span style="font-weight: 400;">Todos l<strong>os datos que se envían</strong> <strong>a</strong> servicios de <strong>terceros deben mantenerse en el anonimato</strong> para <strong>evitar la exposición de PII (información de identificación personal)</strong>.</span></p>
+<h2 style="text-align: justify;"><strong>MSTG-STORAGE 5</strong></h2>
+<p style="text-align: justify;"><strong>Búsqueda de datos confidenciales en la caché del teclado:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los usuarios tienen a su disposición varias opciones para simplificar la entrada del teclado. Estas opciones incluyen corrección y revisión ortográfica. La mayoría de las entradas del teclado se almacenan en caché de forma predeterminada.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">El protocolo <em><strong>UITextInputTraits</strong></em> se utiliza para el almacenamiento en caché del teclado.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Cuando la <strong>autocorrección</strong> está <strong>habilitada</strong>, el objeto de texto rastrea las palabras desconocidas y sugiere reemplazos adecuados, reemplazando el texto escrito automáticamente a menos que el usuario anule el reemplazo.  </span><span style="font-weight: 400;">La aplicación debe evitar el almacenamiento en caché de información confidencial ingresada en campos de texto. Puede <strong>evitar el almacenamiento en caché deshabilitándolo mediante programación</strong>.</span></p>
+<h2 style="text-align: justify;"><strong>MSTG-STORAGE 6</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Determinación de si los datos confidenciales se exponen a través de mecanismos de IPC:</strong></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La comunicación entre procesos (IPC) permite que los procesos se envíen mensajes y datos entre sí. Para los procesos que necesitan comunicarse entre sí, existen diferentes formas de implementar IPC en iOS:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Servicios XPC:</strong> XPC es una biblioteca asincrónica estructurada que proporciona comunicación básica entre procesos. Está gestionado <em><strong>porlaunchd</strong></em>. Es la implementación más segura y flexible de IPC en iOS y debería ser el método preferido. Se ejecuta en el entorno más restringido posible: espacio aislado sin escalada de privilegios de <strong><em>root</em></strong> y acceso mínimo al sistema de archivos y acceso a la red. Se utilizan dos API diferentes con los servicios XPC: API <strong>NSXPCConnection</strong> y <strong>API de servicios XPC.</strong></span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Puertos Mach:</strong> toda la comunicación IPC se basa en última instancia en la <em><strong>API Mach Kernel</strong></em>. Los puertos Mach sólo permiten la comunicación local (comunicación entre dispositivos). Se pueden implementar de forma nativa o mediante envoltorios<em><strong> Core Foundation (CFMachPort)</strong></em> y <em><strong>Foundation (NSMachPort).</strong></em></span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>NSFileCoordinator:</strong> la clase <em>NSFileCoordinatorse</em> puede usar para administrar y enviar datos desde aplicaciones a través de archivos que están disponibles en el sistema de archivos local a varios procesos.</span></li>
+</ul>
+<h2 style="text-align: justify;"><strong>MSTG-STORAGE 7</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Comprobación de datos confidenciales divulgados a través de la interfaz de usuario:</strong></span></p>
+<p style="text-align: justify;">Ingresar información confidencial cuando, por ejemplo, registra una cuenta o realiza pagos, es una parte esencial del uso de muchas aplicaciones. Estos datos pueden ser información financiera, como datos de tarjetas de crédito o contraseñas de cuentas de usuario. Los datos pueden quedar expuestos si la aplicación no los enmascara correctamente mientras se escriben.<br />Se debe aplicar el enmascaramiento de los datos confidenciales (mostrando asteriscos o puntos en lugar de texto sin cifrar). Un campo de texto que enmascara su entrada se puede configurar de dos formas:</p>
+<ul>
+<li style="text-align: justify;"><strong>Storyboard.</strong> En el <em>storyboard</em> del proyecto de iOS, navegue hasta las opciones de configuración para el campo de texto que toma datos confidenciales. Si la opción <strong>"Entrada segura de texto"</strong> está activada, se muestran puntos en el campo de texto en lugar de la entrada de texto.</li>
+<li style="text-align: justify;"><strong>Código fuente.</strong> Si el campo de texto está definido en el código fuente, en caso que la opción isSecureTextEntry esté establecida en "true". Esta opción oscurece la entrada de texto mostrando puntos.</li>
+</ul>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="311_anlisis_de_mstg1_y_2.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

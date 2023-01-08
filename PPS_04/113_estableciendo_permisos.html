@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.3.- Estableciendo permisos | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-136"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="current-page-parent daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul>
+      <li class="current-page-parent"><a href="11_android.html" class="current-page-parent daddy">1.1.- Android.</a>
+      <ul>
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="113_estableciendo_permisos.html" class="active no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1122_permisos_en_tiempo_de_ejecucin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_ios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.3.- Estableciendo permisos</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id331">
+<div class="iDevice emphasis0">
+<div id="ta331_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">En el punto anterior se han tratado la </span><b>solicitud</b><span style="font-weight: 400;"> de permisos de las aplicaciones al sistema, que protegen al mismo de acciones de las aplicaciones no deseadas, pero es necesario proteger también las aplicaciones desarrolladas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Android se basa en parte en la colaboración entre aplicaciones para implementar diferentes funcionalidades, por ejemplo cuando se desea enviar una captura de pantalla se ofrece una lista de aplicaciones de mensajería que se puede utilizar.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación puede limitar la interacción con otras aplicaciones a nivel de:</span></p>
+<ul>
+<li style="text-align: justify;"><b>Actividades</b><span style="font-weight: 400;">. Se puede fijar el usuario (app) a la que se permite iniciar la actividad.</span></li>
+<li style="text-align: justify;"><b>Servicios</b><span style="font-weight: 400;">. Componente de una aplicación que puede realizar operaciones de larga ejecución en segundo plano y que no proporciona una interfaz de usuario.</span></li>
+<li style="text-align: justify;"><b>Proveedores de contenido</b><span style="font-weight: 400;">. Un proveedor de contenido administra el acceso a un repositorio central de datos. Se encuentran orientados a que lo usen otras aplicaciones que acceden al proveedor. Se ofrece una interfaz estándar y uniforme para los datos.</span></li>
+<li style="text-align: justify;"><b>Receptores de emisión</b><span style="font-weight: 400;">. Las <em>apps</em> de Android pueden enviar o recibir mensajes de emisión desde el sistema de Android y otras <em>apps</em> para Android, estas emisiones se envían cuando ocurre un evento de interés</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el fichero <strong>Androidmanifest.xml</strong> se declaran los anteriores elementos con diferentes etiquetas como <em><strong>&lt;activity&gt;&lt;service&gt;&lt;provider&gt;</strong></em> y <em><strong>&lt;receiver&gt;</strong></em> y dentro de cada uno de ellos se indican las restricciones.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Entrar en detalle en cada uno de los componentes anteriores sobrepasa la asignación temporal al tema, además el objetivo del mismo no es desarrollar aplicaciones en Android sino conocer y aplicar mecanismos de seguridad.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id332">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta332_128" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>¿Cómo restringir las interacciones con otras <em>apps</em>?</h2>
+<p style="text-align: center;"><a href="https://developer.android.com/training/permissions/restrict-interactions?hl=es" title="Restringe las interacciones con otras apps">Restringe las interacciones con otras apps</a></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id390">
+<div class="iDevice emphasis0">
+<div id="ta390_154" class="block iDevice_content">
+<p>Un caso clásico sobre el concepto de proveedores de contenido que permiten que diferentes aplicaciones puedan acceder a un elemento común de almacenamiento de información, por ejemplo la agenda de contactos, por supuesto el acceso a este información debe limitarse  utilizando permisos. En la siguiente imagen se puede ver la arquitectura de los proveedores de contenido.</p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 470px;"><img src="UD4_1_1_3_proveeedor_contenidos.png" alt="Arquitectura proveedor de contenido" width="470" height="367" />
+<figcaption class="figcaption"><a href="https://developer.android.com/guide/topics/providers/content-providers?hl=es-419" target="_blank" class="author" rel="noopener">developer.android.com</a>. <span class="title"><em>Arquitectura proveedor de contenido</em></span> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia MIT</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1122_permisos_en_tiempo_de_ejecucin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_ios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

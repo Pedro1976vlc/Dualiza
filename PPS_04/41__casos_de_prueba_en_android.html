@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1. - Casos de prueba en Android | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-146"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="current-page-parent daddy">4.- Fuga de información en los ejecutables</a>
+   <ul>
+      <li id="active"><a href="41__casos_de_prueba_en_android.html" class="active no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="4_fuga_de_informacin_en_los_ejecutables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_soluciones_casb_cloud_access_security_broker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.1. - Casos de prueba en Android</h1></header>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id364">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta364_151" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">En este apartado se realiza un análisis de alguno de los 13 casos de pruebas indicados en en <strong>MASV</strong> para Android, tomando como referencia el documento <strong>MSTG</strong> de <strong>OWASP</strong>, disponible en pdf en este mismo tema o en la web en: </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><a href="https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05j-Testing-Resiliency-Against-Reverse-Engineering.md">owasp-mstg/0x05j-Testing-Resiliency-Against-Reverse-Engineering.md at master · OWASP/owasp-mstg · GitHub</a></span></p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id365">
+<div class="iDevice emphasis0">
+<div id="ta365_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Se analizan los siguientes casos de pruebas:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.1 MSTG-RESILIENCE-1.</strong> La aplicación detecta y responde a la presencia de un dispositivo rooteado, ya sea alertando al usuario o finalizando la ejecución de la aplicación.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.2 MSTG-RESILIENCE-2.</strong> La aplicación impide la depuración o detecta y responde a la misma. Se deben cubrir todos los protocolos de depuración.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.5 MSTG-RESILIENCE-5.</strong> La aplicación detecta y responde a ser ejecutada en un emulador.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.6 MSTG-RESILIENCE-6.</strong> La aplicación detecta y responde ante modificaciones de código o datos en su propio espacio de memoria.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.9 MSTG-RESILIENCE-9.</strong> La ofuscación se aplica a las defensas del programa, lo que a su vez impide la desofuscación mediante análisis dinámico.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;"><strong>8.10 MSTG-RESILIENCE-10.</strong> La aplicación implementa un “enlace al dispositivo” utilizando una huella del dispositivo derivado de varias propiedades únicas al mismo.</span></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id366">
+<div class="iDevice emphasis0" >
+<div id="ta366_366_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-1. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación detecta y responde a la presencia de un dispositivo rooteado, ya sea alertando al usuario o finalizando la ejecución de la aplicación.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un sistema en el cual se tienen permisos de <em><strong>superusuario</strong></em> facilita la tarea del análisis estático pero especialmente dinámico de la aplicación, existiendo herramientas especializadas en ello. Existen diferentes métodos para conocer si un dispositivo <strong>Android</strong> se encuentra <strong><em>“rooteado”</em></strong> o no. </span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY-NC" style="width: 500px;"><img src="UD4_4_1_AndroidRoot.jpg" alt="Root Android" width="500" height="375" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/99bbf316-4504-4988-9479-e25a2d67ee02" target="_blank" class="author" rel="noopener">CyberHades </a>. <span class="title"><em>Root Android</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-NC">CC BY-NC</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">La detección del modo <strong>“root”</strong> se puede conseguir de diferentes formas, se recomienda implementar  varias en la aplicación:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>SafetyNet.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>API de Android</strong> con un conjunto de servicios que ofrece un perfil de dispositivo en función del software y el hardware. Al realizar una llamada a la API, se descarga un paquete binario con el código de validación y se ejecuta por reflexión. En esta llamada existen ciertos campos que permiten conocer si un dispositivo está <strong>“</strong><em><strong>rooteado”</strong></em>:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>ctsProfileMatch:</strong> si es <em>"verdadero"</em>, el perfil del dispositivo coincide con uno de los dispositivos de la lista de Google.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>basicIntegrity:</strong> si es <em>'true'</em>, es probable que el dispositivo que ejecuta la aplicación no haya sido manipulado.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>nonces:</strong> Para hacer coincidir la respuesta con su solicitud.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>timestampMs</strong>: para comprobar cuánto tiempo ha pasado desde que realizó la solicitud y recibió la respuesta. Una respuesta tardía puede sugerir una actividad sospechosa.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>apkPackageName, apkCertificateDigestSha256, apkDigestSha256:</strong> proporciona información sobre el <strong>APK</strong>, que se utiliza para verificar la identidad de la aplicación que llama. Estos parámetros están ausentes si la API no puede determinar de manera confiable la información del APK.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un ejemplo de la la llamada extraído de la documentación de WSTG:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>{
+  "nonce": "R2Rra24fVm5xa2Mg",
+  "timestampMs": 9860437986543,
+  "apkPackageName": "com.package.name.of.requesting.app",
+  "apkCertificateDigestSha256": ["base64 encoded, SHA-256 hash of the
+                              	certificate used to sign requesting app"],
+  "apkDigestSha256": "base64 encoded, SHA-256 hash of the app's APK",
+  "ctsProfileMatch": true,
+  "basicIntegrity": true,
+}
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">En un análisis simple del campo <em><strong>basicIntegrity</strong></em> da una primera señal en caso de fallar, conociendo si un dispositivo se encuentra <strong><em>“rooteado”</em></strong> o se está ejecutando en un emulador, aunque <em><strong>ctsProfileMatch</strong></em> es una señal más fiable de la manipulación del dispositivo. Las causas por las que <em><strong>ctsProfelMatch</strong></em> puede ser <em><strong>false</strong></em> son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos que fallan en <em><strong>basicIntegrity.</strong></em></span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos con un cargador de arranque desbloqueado.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos con una imagen de sistema personalizada (ROM personalizada).</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos para los que el fabricante no solicitó ni aprobó la certificación de Google.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos con una imagen del sistema creada directamente a partir de los archivos fuente del programa de código abierto de Android.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Dispositivos con una imagen del sistema distribuida como parte de una versión beta o un programa de vista previa para desarrolladores (incluido el programa Beta de Android).</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se recomienda realizar la validación de <strong>SafetyNet</strong> en un servidor externo, ya que no se puede garantizar que la lógica de la validación no haya sido modificada también en el dispositivo (recordar que se tienen permisos de <strong>superusuario</strong>). Es necesario obtener una clave de acceso a la <strong>API</strong> a través de la consola de API de Google.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la siguiente figura se muestra el protocolo:</span></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 401px;"><img src="UD4_5_SafetyNet.png" alt="Protocolo de API de certificación de SafetyNet" title="Protocolo de API de certificación de SafetyNet" width="401" height="213" />
+<figcaption class="figcaption"><a href="https://developer.android.com/training/safetynet/attestation?hl=es" target="_blank" class="title" rel="noopener"><em>Protocolo de API de certificación de SafetyNet</em></a> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia Apache 2</span><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Detección desde el código.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Al realizar el proceso de <strong><em>“rootear”</em></strong> se realizan una modificaciones en el sistema que se pueden evaluar desde la aplicación, es decir condiciones en el código de la misma.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Comprobación de existencia de ciertos ficheros: Al modificarse el sistema se crean una serie de archivos,directorios y binarios  que no se encuentran en un dispositivo original, los más comunes son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/app/Superuser.apk</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/etc/init.d/99SuperSUDaemon</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/dev/com.koushikdutta.superuser.daemon/</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/ xbin/daemonsu</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/sbin/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/bin/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/bin/failsafe/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/xbin/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/xbin/busybox</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/system/sd/xbin/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/data/local/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/data/local/xbin/su</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">/data/local/bin/su</span></li>
+</ul>
+<p><span style="font-weight: 400;">En este caso es recomendable comprobar si </span><b><i>su</i></b><span style="font-weight: 400;"> se encuentra en la variable de entorno del sistema <strong>PATH</strong>, un ejemplo del código:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>public static boolean checkRoot(){
+    	for(String pathDir : System.getenv("PATH").split(":")){
+        	if(new File(pathDir, "su").exists()) {
+            	         return true;
+        	}
+    	}
+    	return false;
+}
+</code></pre>
+</div>
+</div>
+<h2><b>Ejecución de comando “su” y otros que requieran permisos de superusuario.</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Comprobación sencilla que utilizando una llamada a:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Runtime.getRuntime().exec(command);</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Si el comando es </span><b><i>su</i></b><span style="font-weight: 400;"> u otro que necesita permisos de administrador y se ejecutan, significa que el dispositivo está <em>“rooteado”</em> en caso de saltar una excepción no lo está.</span></p>
+<h2><b>Análisis de procesos en ejecución.</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Asegurarse de que no existe ninguno de los procesos típicos usados por el software de <em>“rooteo”</em> como </span><strong><a href="https://supersuroot.org/">Supersu</a></strong><span style="font-weight: 400;"> que ejecuta en segundo plano un demonio llamado </span><b>daemosu</b><span style="font-weight: 400;">. Para este análisis se puede usar el comando </span><b><i>ps</i></b><span style="font-weight: 400;">, analizar el directorio </span><b><i>/proc</i></b><span style="font-weight: 400;"> o usar librerías y paquetes especializados como </span><a href="https://github.com/devadvance/rootinspector/"><span style="font-weight: 400;"><strong>rootinspector</strong></span></a><span style="font-weight: 400;">.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="UD4_5_1_Analisis_de_procesos_en_ejecucion.png" alt="Captura de pantalla comando ps" title="Captura de pantalla comando ps" width="400" height="219" /></span></p>
+<h2>Comprobación de instalaciones sospechosas.</h2>
+<p style="text-align: justify;"><b> </b><span style="font-weight: 400;">Existe multitud de aplicaciones que permiten alcanzar permisos de <strong>superusuario</strong> que son instaladas en el sistema, una comprobación sencilla es ver si se encuentra en el sistema alguna de las más conocidas como:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.thirdparty.superuser</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">eu.chainfire.supersu</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.noshufou.android.su</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.koushikdutta.superuser</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.zachspong.temprootremovejb</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.ramdroid.appquarantine</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">com.topjohnwu.magisk</span></li>
+</ul>
+<h2><b>Revisión de permisos de escritura en sistema de archivos y particiones.</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Unos permisos extraños en ciertos directorios del sistema pueden indicar una modificación del mismo. Los directorios y particiones del sistema se montan únicamente con permisos de lectura, si se han montado con permisos de escritura puede indicar una modificación del sistema.</span></p>
+<h2><b>Examen de existencia de sistemas operativos adaptados o “customizados”</b><span style="font-weight: 400;">.</span></h2>
+<p><span style="font-weight: 400;">Al igual que en los sistemas operativos de escritorio, es posible obtener información del sistema operativo y la compilación. En Android se realiza evaluando la etiqueta <strong>BUILD</strong>. Un ejemplo de evaluación:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>private bool isTestKeyBuild()
+{
+String str = Build.TAGS;
+if ((str! = null) &amp;&amp; (str.contains ("test-keys")));
+for (int i = 1;; i = 0)
+  return i;
+}
+</code></pre>
+</div>
+</div>
+</div>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id367">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta367_128" class="block iDevice_content">
+<p style="text-align: justify;">Si desea profundizar en los contenidos expuestos en este apartado se recomiendan los siguientes enlaces:</p>
+<ul>
+<li style="text-align: justify;"><a href="https://developer.android.com/training/safetynet/attestation?hl=es">API de certificación de </a><strong><a href="https://developer.android.com/training/safetynet/attestation?hl=es">SafetyNet</a>.</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id368">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta368_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/jaQDm9cKPko" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p style="text-align: justify;">En este vídeo explicativo se mostrara como ocultar el <em><strong>root</strong></em> de un dispositivo <em>Android</em>,  para que poder usar <strong>apps</strong> que detectan el <strong>root</strong> en los teléfonos, como es el caso de las aplicaciones bancarias.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id369">
+<div class="iDevice emphasis0" >
+<div id="ta369_369_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-2. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación impide la depuración o detecta y responde a la misma. Se deben cubrir todos los protocolos de depuración.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La depuración es una herramienta imprescindible en el desarrollo de software, pero a su vez es un peligro ya que proporciona una  información valiosa a la ingeniería inversa como ver el estado del programa (estado de las variables, modificar su valor o de la memoria, analizar conexiones, claves en el código…) en los puntos de corte (<em>breakpoint</em>).</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se han de establecer medidas para evitar que la aplicación sea depurada una vez distribuida, pudiendo establecerse dos estrategias no excluyentes entre ellas:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Preventivas.</strong> Evitar que el depurador llegue a conectarse.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Reactivas.</strong> Detectar y actuar ante la detección de la depuración conectada.</span></li>
+</ul>
+<p><span style="font-weight: 400;">El sistema Android provee de dos protocolos de depuración.</span></p>
+<div class="exe-fx exe-accordion">
+<h2><strong>Nivel Java con JDWP.</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> Es relativamente sencillo activar la depuración con <strong>JDWP</strong>, simplemente modificar el archivo <em><strong>manifest</strong></em> para cambiar la opción <em><strong>ro.debuggable</strong></em>. Algunas técnicas para detectar y deshabilitar los <strong>depuradores JDWP</strong>.</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Comprobar el indicador depurable en <em><strong>ApplicationInfo.</strong></em></span><span style="font-weight: 400;"><em><strong></strong></em></span></li>
+</ul>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>public static boolean isDebuggable(Context context){
+         return ((context.getApplicationContext().getApplicationInfo().flags &amp; ApplicationInfo.FLAG_DEBUGGABLE) != 0);
+}</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;">Evaluar el valor del atributo <em><strong>isDebuggerConnected</strong></em> de la clase <em><strong>android.os.Debug.</strong></em></span></li>
+</ul>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>public static boolean detectDebugger () { return Debug.isDebuggerConnected (); }</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2">Comprobación de temporizadores. <strong><em>Debug.threadCpuTimeNanos</em></strong> indica la cantidad de tiempo que el hilo actual ha estado ejecutando código. Debido a que la depuración <b style="font-size: 16.8px;">ralentiza la ejecución del proceso</b><span style="font-weight: 400;">, puede usar la diferencia en el tiempo de ejecución para adivinar si hay un depurador adjunto.</span></li>
+</ul>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>static boolean detect_threadCpuTimeNanos(){
+  long start = Debug.threadCpuTimeNanos();
+
+  for(int i=0; i&lt;1000000; ++i)
+    continue;
+
+  long stop = Debug.threadCpuTimeNanos();
+
+  if(stop - start &lt; 10000000) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+</code></pre>
+</div>
+</div>
+<h2><strong>Nivel nativo con depuradores basados en ptrace.</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Esta llamada al sistema permite controlar y observar la ejecución de procesos. La mayoría de las técnicas anti <strong>depuración de JDWP</strong> no funcionan con <strong>ptrace.</strong> Alguna de las soluciones son:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Comprobar si existe el <em><strong>TracerPId</strong></em>. Al ejecutar el depurador se arranca el <strong>servidor lldb</strong>, si se analiza el proceso en el sistema de archivos virtual <em>/proc/&lt;pid&gt;/status</em> o <em>/proc/self/status</em> el campo <strong><em>TracerPid</em></strong> tendrá un valor diferente a 0. </span><b>Esto es válido para aplicaciones nativas C/C++, no para aplicaciones Java/Kotlin.</b></li>
+</ul>
+<div class="pre-code">
+<div>
+<pre><code>$ adb shell ps -A | grep com.example.hellojni
+u0_a271      11657   573 4302108  50600 ptrace_stop         0 t com.example.hellojni
+$ adb shell cat /proc/11657/status | grep -e "^TracerPid:" | sed "s/^TracerPid:\t//"
+TracerPid:      11839
+$ adb shell ps -A | grep 11839
+u0_a271      11839 11837   14024   4548 poll_schedule_timeout 0 S lldb-server
+</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="2"><span style="font-weight: 400;">Usando <strong><em>Fork</em></strong> y <strong>ptrace</strong>. Esta técnica consiste en evitar la depuración creando un hijo y adjuntando al padre como depurador, de forma que no se pueda añadir otro depurador <strong>ptrace</strong>. Los analistas de <strong>ingeniería inversa</strong> pueden saltarse este método de protección de forma sencilla <em>“matando”</em> al hijo. Basándose en esta técnica se han de definir otras más elaboradas como múltiples hijos o comprobación periódica de existencia de hijo.</span></li>
+</ul>
+<div class="highlighted-code language-c line-numbers">
+<div>
+<pre><code>void fork_and_attach()
+{
+  int pid = fork();
+
+  if (pid == 0)
+    {
+      int ppid = getppid();
+
+      if (ptrace(PTRACE_ATTACH, ppid, NULL, NULL) == 0)
+        {
+          waitpid(ppid, NULL, 0);
+
+          /* Continue the parent process */
+          ptrace(PTRACE_CONT, NULL, NULL);
+        }
+    }
+}
+</code></pre>
+</div>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id370">
+<div class="iDevice emphasis0" >
+<div id="ta370_370_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-5. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación detecta y responde a ser ejecutada en un emulador.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la creación de las aplicaciones se utilizan emuladores antes de realizar pruebas en dispositivos reales, esto permite probar de forma sencilla el funcionamiento correcto de las aplicaciones en multitud de dispositivos y configuraciones y realizar de forma más sencilla la depuración  y desarrollo. Pero tiene la contrapartida que facilita la ingeniería inversa de las aplicaciones. Se ha de detectar y actuar en consecuencia en caso de detectar que la aplicación se ejecuta en emuladores.</span></p>
+<p><span style="font-weight: 400;">Algunos indicadores para la detección de emuladores:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Archivo <em><strong>build.prop</strong></em>, con los valores de las propiedades (propiedad valor emulador) :</span>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.ABI       </span> <span style="font-weight: 400;">armeabi     </span> <span style="font-weight: 400;">possibly emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">BUILD.ABI2      </span> <span style="font-weight: 400;">unknown     </span> <span style="font-weight: 400;">possibly emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.BOARD     </span> <span style="font-weight: 400;">unknown     </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.Brand     </span> <span style="font-weight: 400;">generic     </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.DEVICE    </span> <span style="font-weight: 400;">generic     </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.FINGERPRINT   generic     </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.Hardware  </span> <span style="font-weight: 400;">goldfish    </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.Host      </span> <span style="font-weight: 400;">android-test</span> <span style="font-weight: 400;">possibly emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.ID        </span> <span style="font-weight: 400;">FRF91       </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.MANUFACTURER  unknown     </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.MODEL     </span> <span style="font-weight: 400;">sdk         </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.PRODUCT   </span> <span style="font-weight: 400;">sdk         </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.RADIO     </span> <span style="font-weight: 400;">unknown     </span> <span style="font-weight: 400;">possibly emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.SERIAL    </span> <span style="font-weight: 400;">null        </span> <span style="font-weight: 400;">emulator</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Build.USER      </span> <span style="font-weight: 400;">android-build   emulator</span></li>
+</ul>
+</li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Uso de indicadores estáticos usados por el administrador de telefonía que indican si es un emulador o no, accediendo a la API del mismo se pueden consultar los valores (API valor significado):.</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Emulador de TelephonyManager.getDeviceId () 0 </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getLine1 Number () 155552155 emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getNetworkCountryIso () us posiblemente emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getNetworkType () 3 posiblemente emulador</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getNetworkOperator (). Substring (0,3) 310 posiblemente emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getNetworkOperator (). Substring (3) 260 posiblemente emulador</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getPhoneType () 1 posiblemente emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getSimCountryIso () us posiblemente emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getSimSerial Number () 89014103211118510720 emulador</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"> TelephonyManager.getSubscriberId () 310260000000000 emulador </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">TelephonyManager.getVoiceMailNumber () 15552175049 emulador</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se ha de tomar la información anterior con precaución ya que existe software como <span style="color: #0000ff;"><strong><a href="#t04df0117-0b78-a1db-eb69-851494c9c48f" id="link04df0117-0b78-a1db-eb69-851494c9c48f" class="exe-tooltip definition-tt titled-tt" title="Glosario | Xposed" style="color: #0000ff;">Xposed</a></strong></span> (dentro de</span><span style="color: #0000ff;"><strong><a href="https://github.com/topjohnwu/Magisk" id="link9e45ad08-5ead-62f1-2392-758957260796" title="Glosario | Magisk" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"> Magisk</a></strong></span><span style="font-weight: 400;">) o <span style="color: #0000ff;"><strong><a href="#t459a1484-d5e6-d022-c6b1-cae0eff987ac" id="link459a1484-d5e6-d022-c6b1-cae0eff987ac" class="exe-tooltip definition-tt titled-tt" title="Frida | Glosario" style="color: #0000ff;">Frida</a></strong></span>, que modifican los anteriores valores.</span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 280px;"><img src="UD4_5_1_Captura_de_pantalla_Emulador_Android.png" alt="Captura de pantalla Emulador de Andoid" title="Captura de pantalla Emulador de Andoid" width="280" height="233" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><a href="https://www.flickr.com/photos/27058133@N00" target="_blank" class="author" rel="noopener">BryanKemp</a>. <a href="https://www.flickr.com/photos/27058133@N00/3564400169" target="_blank" class="title" rel="noopener"><em>Screenshot-Android Emulator</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<div id="t459a1484-d5e6-d022-c6b1-cae0eff987ac" class="exe-tooltip-text">
+<p>Framework para inyección de código en aplicaciones nativas de Wiindwos,macOS, Linux, Andrody y QNX.</p>
+</div>
+<div id="t9e45ad08-5ead-62f1-2392-758957260796" class="exe-tooltip-text">
+<p>Herramienta para modificar móviles Android, mediante la cual es posible obtener acceso root en un terminal, descargar e instalar módulos con modificaciones preparados para ser usados.</p>
+</div>
+<div id="t04df0117-0b78-a1db-eb69-851494c9c48f" class="exe-tooltip-text">
+<p>Framework para modificar el comportamiento del sistema Android y sus respectivas aplicaciones sin realizar modificaciones directas sobre éstas.</p>
+</div></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id371">
+<div class="iDevice emphasis0" >
+<div id="ta371_371_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-6. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación detecta y responde ante modificaciones de código o datos en su propio espacio de memoria.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones no son más que instrucciones y datos en lenguaje binario (o similar como <strong><em>Bytecode</em></strong> de <strong>Java</strong> o <strong><em>CLR</em></strong> en <strong>.Net</strong>) alojados en un espacio de la memoria principal que el sistema operativo se encarga de activar y el procesador de ejecutar. Si se consigue acceder al espacio de memoria del proceso y modificar o leer los <em><strong>bytes</strong></em> se puede cambiar el comportamiento de la aplicación o obtener información confidencial, por ejemplo la clave para un usuario <em><strong>ssh</strong></em> si se accede a la zona de memoria de datos.</span><span style="font-weight: 400;"></span></p>
+<div class="exe-fx exe-accordion">
+<h2><strong>Verificación de integridad en tiempo de ejecución.</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La primera aproximación es realizar una suma de verificación similar a la suma que se realiza en ciertas capas en los mensajes TCP/IP en algunas de sus capas, como en un segmento TCP. Un ejemplo de verificación de integridad en tiempo de ejecución en el lenguaje Java extraído de la fundación OWASP.</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>try {
+  throw new Exception();
+}
+catch(Exception e) {
+  int zygoteInitCallCount = 0;
+  for(StackTraceElement stackTraceElement : e.getStackTrace()) {
+    if(stackTraceElement.getClassName().equals("com.android.internal.os.ZygoteInit")) {
+      zygoteInitCallCount++;
+      if(zygoteInitCallCount == 2) {
+        Log.wtf("HookDetection", "Substrate is active on the device.");
+      }
+    }
+    if(stackTraceElement.getClassName().equals("com.saurik.substrate.MS$2") &amp;&amp;
+        stackTraceElement.getMethodName().equals("invoked")) {
+      Log.wtf("HookDetection", "A method on the stack trace has been hooked using Substrate.");
+    }
+    if(stackTraceElement.getClassName().equals("de.robv.android.xposed.XposedBridge") &amp;&amp;
+        stackTraceElement.getMethodName().equals("main")) {
+      Log.wtf("HookDetection", "Xposed is active on the device.");
+    }
+    if(stackTraceElement.getClassName().equals("de.robv.android.xposed.XposedBridge") &amp;&amp;
+        stackTraceElement.getMethodName().equals("handleHookedMethod")) {
+      Log.wtf("HookDetection", "A method on the stack trace has been hooked using Xposed.");
+    }
+
+  }
+}
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">El código analiza la pila de llamadas a métodos <em><strong>strackTraceElement</strong></em> y busca entre los métodos la clases de las que no debería existir llamadas.</span></p>
+<h2><strong>Detección de Hooks nativos.</strong> </h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un ejecutable se estructura de forma nativa en formato binario ELF, en el cual se definen diferentes cabeceras que “apuntan” a direcciones de memoria del equipo, alguna de estas cabeceras:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong><em>.data.</em></strong> Datos inicializados del programa.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>.dynamic.</strong></em> Información relevante para el enlazado dinámico.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>.dynsym.</strong></em> Tabla de símbolos para el enlazado dinámico.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">.<em><strong>fini.</strong></em> Código de finalización del programa.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>.init.</strong></em> Código de inicialización del programa.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>.text.</strong></em> Parte ejecutable de un programa.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 370px;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Elf-layout--en.svg" alt="Capa de una archivo ELF" title="Capa de una archivo ELF" width="370" height="410" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/User:Suruena" target="_blank" class="author" rel="noopener">Santiago Urueña Pascual</a>. <a href="https://upload.wikimedia.org/wikipedia/commons/7/77/Elf-layout--en.svg" target="_blank" class="title" rel="noopener"><em>Capa de una archivo ELF</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Si se consigue modificar las cabeceras del <strong>formato ELF</strong> se puede llamar a código al que originalmente no se debería llamar. Una de estas zonas es la <strong>tabla de compensación global (GOT)</strong> cuya función es la de indicar la dirección en la que se encuentran funciones de librerías externas que solo se conocen en tiempo de ejecución, por ejemplo librerías dinámicas (cargadas en memoria y compartidas entre varios procesos) no se conoce su localización hasta que se ejecuta, como la <strong>función <em>printf</em> de C</strong> que es una librería dinámica.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Si se consigue modificar la <strong>tabla GOT</strong> se puede ejecutar un fragmento de código diferente al que validó, con los peligros que conlleva. Este funcionamiento deriva de <strong>GNU/Linux</strong> pero en el caso de <strong>Android</strong> el enlazador resuelve todas las funciones externas y escribe las tabla GOT </span><b>inmediatamente después de que se cargue la biblioteca</b><span style="font-weight: 400;"> (enlace inmediato) y en tiempo de ejecución todas las entradas apunten a ubicaciones de memoria válidas. </span></p>
+<p style="text-align: justify;"><b>La detección de modificación de tablas GOT o “Hooks” se basan en recorrer la tabla GOT y verificar su estado. Se ha de buscar en el código de las funciones de biblioteca instrucciones sospechosas como salto a direcciones de memoria lejanos o fuera de la memoria de la biblioteca.</b></p>
+<p style="text-align: justify;"><b></b></p>
+</div>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id372">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta372_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/WnqOhgI_8wA" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeo introductorio sobre el <strong>Formato ejecutable ELF</strong> <em><strong>(Executable and Linkable Format). </strong></em>Se trata del formato ejecutable más utilizado por los sistemas operativos <strong>UNIX, GNU/Linux</strong>, <strong>macOS</strong>, <strong>BSD </strong>y <strong>Solaris. </strong></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id373">
+<div class="iDevice emphasis0" >
+<div id="ta373_373_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-9. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La ofuscación se aplica a las defensas del programa, lo que a su vez impide la desofuscación mediante análisis dinámico.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La traducción es una fase de la compilación que transforman un programa escrito en lenguaje cercano al humano a un lenguaje binario o ensamblador preparado para una máquina virtual. Usando software especial  es posible realizar el proceso inverso, obtener el código fuente a partir del código ejecutable, o comprender código máquina directamente leyendo en binario o ensamblador.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Ofuscar se denomina al proceso de transformar el código ejecutable y los datos de forma que sea más complicado su comprensión, ya sea utilizando software que realice el proceso inverso a la traducción o entender directamente el código usando editores binarios.</span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 512px;"><img src="UD4_5_1_Ofuscacion.png" alt="Pantalla del cliente de la caja registradora: ¿Fallo u ofuscación?" title="Pantalla del cliente de la caja registradora: ¿Fallo u ofuscación?" width="512" height="384" />
+<figcaption class="figcaption"><a href="https://www.flickr.com/photos/10688882@N00" target="_blank" class="author" rel="noopener">Bill Smith</a>. <a href="https://www.flickr.com/photos/10688882@N00/14799615090" target="_blank" class="title" rel="noopener"><em>Pantalla del cliente de la caja registradora: ¿Fallo u ofuscación?</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el proceso de <strong>ofuscación</strong> se pueden definir diferentes <strong>niveles</strong> del mismo e incluso indicar que partes del código fuente se ofuscan y cuáles no. También se ha de tener en cuenta que la ofuscación tiene un coste en tiempo de ejecución.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Han existido diferentes <strong>métodos</strong> para realizar la <strong>ofuscación</strong>, inicialmente se utilizó <strong>Pro-Guard</strong>, pero ha sido su sustituto por el <strong>compilador R8</strong>, que permite entre otras funcionalidades la de ofuscar  los nombres de las <strong>clases</strong>, los <strong>métodos</strong> y los <strong>campos</strong> de la aplicación, usando <strong>archivos DEX</strong>. Es necesario configurar el proyecto realizar la ofuscación, existe la posibilidad de indicar también <strong>optimización</strong> y <strong>reducción</strong> del tamaño del <strong>APK</strong>, para indicar al compilador estas opción se modifica el fichero <em><strong>build.gradle</strong></em> del proyecto:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>android {
+    buildTypes {
+        getByName("release") {
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+            minifyEnabled = true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources = true
+
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt")),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    ...
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Existe una opción más agresiva para la configuración del compilador, en el fichero <em><strong>gradle.properties</strong></em>:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>android.enableR8.fullMode=true</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Otro software de <strong>optimización</strong> y <strong>ofuscación</strong> muy utilizado es : </span><a href="https://github.com/ClaudiuGeorgiu/Obfuscapk"><span style="font-weight: 400;">Obfuscapk.</span></a></p>
+<figure class="exe-figure exe-image position-center license-custom" style="width: 547px;"><img src="UD4_5_1_Arquitectura_Obfuscapk.png" alt="Arquitectura de Obfusckap" title="Arquitectura de Obfuscapk" width="547" height="225" />
+<figcaption class="figcaption"><a href="https://github.com/ClaudiuGeorgiu" target="_blank" class="author" rel="noopener">Gabriel Claudiu Georgiu</a>. <a href="https://raw.githubusercontent.com/ClaudiuGeorgiu/Obfuscapk/master/docs/architecture/architecture.png" target="_blank" class="title" rel="noopener"><em>Arquitectura de Obfuscapk</em></a> <span class="license"><span class="sep">(</span><span class="custom-license">Licencia MIT</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: center;"></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id375">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta375_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/ed9gt9P3LQY" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo-tutorial sobre la utilización de Obfuscapk APK. Una herramienta programada en Python para desarrolladores Android que permite generar APKs optimizados y ofuscados.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id376">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta376_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">El ofuscador <strong>R8</strong> puede utilizar los ficheros de reglas de <strong>Pro-Guard</strong> para personalizar el comportamiento, en el siguiente enlace se puede profundizar en la personalización: <strong><a href="https://developer.android.com/studio/build/shrink-code?hl=es#configuration-files">Archivos de configuración de R8.</a></strong></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/Lx4isBY3ozQ" allowfullscreen="allowfullscreen"></iframe><br /></strong></span></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">R8 frente a Pro-Guard. La nueva forma de ofuscar. Vídeo explicativo que presenta las mejoras que introduce el ofuscador R8 frente a su antecesor Pro-Guard.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id377">
+<div class="iDevice emphasis0" >
+<div id="ta377_377_2" class="block iDevice_content">
+<div class="exe-text"><h2 style="text-align: justify;"><span style="font-weight: 400;">MSTG-RESILIENCE-10. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación implementa un “enlace al dispositivo” utilizando una huella del dispositivo derivado de varias propiedades únicas al mismo.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Hace unos años se hizo famoso el caso de una persona que se negaba a dar sus claves de su teléfono al FBI, el FBI  se consiguió desbloquear el teléfono, se barajaron diferentes que se habían utilizado para lograrlo, una de ellas fue la de “clonar” el dispositivo en emuladores y romper por fuerza bruta la contraseña. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este caso de prueba intenta proteger a la aplicación de este ataque y de la copia de la aplicación a otro dispositivo con los permisos del dispositivo original. Es necesario obtener información del dispositivo en concreto.</span></p>
+<p><span style="font-weight: 400;">Alguno de los elementos que permiten identificar un dispositivo de forma única son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>Google Instance ID.</b><span style="font-weight: 400;"> Identificador único de </span><b>instancia </b><span style="font-weight: 400;">basada en tokens. Este token cambia cada vez que se reinicia, desinstala o modifica un estado significativo de la aplicación. Es un servicio web que ofrece Google y para su uso previamente ha de registrar la aplicación en la </span><a href="https://developer.android.com/distribute/console"><b>Consola de desarrollador</b></a><span style="font-weight: 400;">. El funcionamiento es sencillo, se envía el identificador de la instancia y el token proporcionado por Google de la aplicación al servidor, este válida el par,  devolviendo el resultado, en caso de no ser correcto es posible tomar medidas como borrar datos y copias de seguridad confidenciales.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b style="font-size: 16.8px;">IMEI y Serial</b><span style="font-weight: 400;">. Se basa en hardware o firmware, y al igual que la MAC de una tarjeta de red se pueden modificar y falsear. Google recomienda no utilizarlo como punto único de validación. Un ejemplo de obtención del número de serie:</span></li>
+</ul>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>String serial = android.os.Build.getSerial()
+Del IMEI:
+TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+String IMEI = tm.getDeviceId();
+</code></pre>
+</div>
+</div>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 240px;"><img src="UD4_5_1_IMEI.png" alt="IMEI" title="IMEI" width="240" height="193" />
+<figcaption class="figcaption"><a href="https://www.flickr.com/photos/32703995@N06/9688545014" target="_blank" class="author" rel="noopener">Sam Churchill</a>. <a href="https://www.flickr.com/photos/32703995@N06/9688545014" target="_blank" class="title" rel="noopener"><em>IMEI</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por supuesto es necesario otorgar permisos a la aplicación  en el fichero <strong>Android manifest</strong> para poder acceder al estado del teléfono, la definición de estos permisos depende de la versión de Android.</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>SSAID</b><span style="font-weight: 400;">. Al igual que el IMEI Google desaconseja su uso como único punto de verificación. Es un identificador hardware y puede ser modificado por software.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para evitar este ataque existen 3 métodos principales:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Aumentar la longitud de las credenciales, de forma que sea mucho más costoso computacionalmente el empleo de la fuerza bruta. Solo es válido para aplicaciones en las que es necesario reautenticarse, por ejemplo aplicaciones de banco cuando pasan de segundo plano a primer plano.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Codificar los datos con alguna clave que dependa de características del dispositivo. Android Keystore ofrece claves privadas </span><b> no exportables</b><span style="font-weight: 400;">. En caso de sustracción de los datos del dispositivo no se tendrá acceso a las claves almacenadas en KeyStore. Par la generación de claves dependientes del dispositivo se han de seguir una serie de pasos:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Genera el par de claves (asimétrica).</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Generar la clave secreta (simétrica).</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Codificar la información sensible usando la clave anterior y parámetros concretos del dispositivo.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Guardar la clave secreta en el almacén de claves usando la clave pública del punto 1.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Para descifrar la información, obtener la clave simétrica del almacén de llaves con la clave privada del punto 1, y aplicarla a los datos encriptados.</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Utilizar  autenticación de dispositivo basada en token (ID de instancia) para asegurarse de que se utiliza  la misma instancia de la aplicación.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">La siguiente cuestión es cómo identificar al dispositivo, existen ciertas propiedades estáticas que dan información como</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">En versiones antiguas:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><strong>Build.SERIAL</strong> sin <em><strong>Build.getSerial</strong></em></span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>htc.camera.sensor.front_SN</strong></em> para dispositivos HTC</span></li>
+<li style="font-weight: 400;" aria-level="2"><em><strong>persist.service.bdroid.bdadd</strong></em></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;"><em><strong>Settings.Secure.bluetooth_address</strong></em>, a menos que el permiso del sistema <strong>LOCAL_MAC_ADDRESS</strong> esté habilitado en el manifiesto</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>ANDROID_ID</strong> se usa solo como identificador.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">La ausencia de ID de instancia, <strong>Build.SERIAL</strong> y el <strong>IMEI</strong>.</span><span style="font-weight: 400;"></span></li>
+</ul>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>TelephonyManager tm = (TelephonyManager) context.getSystemService (Context.TELEPHONY_SERVICE);
+
+Cadena IMEI = tm.getDeviceId ();
+
+</code></pre>
+</div>
+</div>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">La creación de claves privadas en <strong>AndroidKeyStore</strong> usando <strong>KeyPairGeneratorSpec</strong> o <strong>KeyGenParameterSpecAPI</strong>.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para probar el comportamiento de la aplicación que implementa alguno de los métodos anteriores para identificar el dispositivo en el emulador obteniendo los datos de la aplicación con <strong>SSH</strong> y <strong>ADB</strong> (Caché y preferencias compartidas), copiarlo a un dispositivo real o simulado y comprobar que no se tiene acceso a los datos. El proceso en detalle se puede seguir en el documento <strong>MSTG</strong> de OWASP.</span></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id378">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta378_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/UJ79FFoGcHM" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeo explicativo a cerca de que es el código <strong>IMEI</strong> (<em>International Mobile Equipment Identity</em>, Identidad internacional del equipo móvil), para que sirve y como obtenerlo. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="4_fuga_de_informacin_en_los_ejecutables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_soluciones_casb_cloud_access_security_broker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.2.1.- Permisos de instalación o normales | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-149"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="current-page-parent daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul>
+      <li class="current-page-parent"><a href="11_android.html" class="current-page-parent daddy">1.1.- Android.</a>
+      <ul>
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li class="current-page-parent"><a href="112_solicitando_permisos.html" class="current-page-parent daddy">1.1.2.- Solicitando permisos</a>
+         <ul>
+            <li id="active"><a href="1121_permisos_de_instalacin_o_normales.html" class="active no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="112_solicitando_permisos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.2.1.- Permisos de instalación o normales</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id385">
+<div class="iDevice emphasis0">
+<div id="ta385_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Un ejemplo sencillo en el que se comprueba permisos en tiempo de ejecución y permisos de instalación:</span></p>
+<p><span style="font-weight: 400;">Se desea consultar una <span style="color: #0000ff;"><a href="#ta7d56f15-9c4b-ed98-4ba3-003facda05ed" id="linka7d56f15-9c4b-ed98-4ba3-003facda05ed" title="API REST | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong>API Rest</strong></a></span> pública del juego <em><strong>Age Of Empires II </strong></em></span><a href="https://age-of-empires-2-api.herokuapp.com/docs/"><span style="font-weight: 400;">https://age-of-empires-2-api.herokuapp.com/docs/</span></a><span style="font-weight: 400;"> y para ello la aplicación necesita acceder a Internet, el <strong>permiso necesario</strong> es: </span><span style="font-weight: 400;"><strong>Internet</strong>. <a href="https://developer.android.com/reference/android/Manifest.permission#INTERNET">https://developer.android.com/reference/android/Manifest.permission#INTERNET</a></span></p>
+<figure class="exe-figure exe-image position-center" style="width: 500px;"><img src="UD4_1_1_2_1_api_age.png" alt="API Rest del servicio" width="500" height="238" />
+<figcaption class="figcaption"><span class="title"><em>API Rest del servicio</em></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">Se modifica el fichero <strong>AndroidManifest.xml</strong> para añadir la solicitud del permiso.</span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+   package="com.example.myapplication"&gt;
+
+   
+
+&lt;uses-permission android:name="android.permission.INTERNET"&gt;&lt;/uses-permission&gt;
+
+   &lt;application
+
+       android:allowBackup="true"
+
+       android:icon="@mipmap/ic_launcher"
+
+       android:label="@string/app_name"
+
+       android:roundIcon="@mipmap/ic_launcher_round"
+
+       android:supportsRtl="true"
+
+       android:theme="@style/Theme.MyApplication"&gt;
+
+       &lt;activity android:name=".MainActivity"&gt;
+
+           &lt;intent-filter&gt;
+
+               &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+
+
+               &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+
+           &lt;/intent-filter&gt;
+
+       &lt;/activity&gt;
+
+   &lt;/application&gt;
+
+
+
+&lt;/manifest&gt;</code></pre>
+</div>
+</div>
+<p><br /><span style="font-weight: 400;">Al ser un permiso permanente se puede utilizar sin limitaciones. </span></p>
+<p><span style="font-weight: 400;">A continuación simplemente utilizar el recurso, se utiliza la librería Volley para realizar las peticiones HTTP</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>val queue = Volley.newRequestQueue(this)
+
+        val stringRequest = StringRequest(
+
+            Request.Method.GET, url,
+
+            { response -&gt;
+
+                findViewById&lt;TextView&gt;(R.id.visor).setText(response)
+
+            },
+
+            { error -&gt;
+
+                run {
+
+                    Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT)
+
+                        .show()
+
+                }
+
+            })
+
+        queue.add(stringRequest)</code></pre>
+</div>
+</div>
+<p></p>
+<p><span style="font-weight: 400;">Si se comenta el permiso en el fichero Androidmanifest.xml al ejecutar el código se obtiene el error:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Java.lang.SecurityException: Permission denied (missing INTERNET permision?)</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+<p></p>
+<div id="ta7d56f15-9c4b-ed98-4ba3-003facda05ed" class="exe-tooltip-text">
+<p>Una API es un conjunto de definiciones y protocolos que se utiliza para desarrollar e integrar aplicaciones software. Una API de RESTful, es una interfaz de programación que se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de RESTful.</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="112_solicitando_permisos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

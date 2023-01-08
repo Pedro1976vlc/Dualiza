@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. - Firma y verificación de aplicaciones. | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-127"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="2__firma_y_verificacin_de_aplicaciones.html" class="active daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul>
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="12_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_fundamentos_criptogrficos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2. - Firma y verificación de aplicaciones.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id267">
+<div class="iDevice emphasis0">
+<div id="ta267_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las medidas de seguridad instauradas por el sistema operativo, por la red o por los antivirus no sirven de mucho si no se puede garantizar que hacen las aplicaciones y la autoría de las mismas. Los sistemas operativos para dispositivos móviles establecen que toda aplicación que se instale o actualice en un dispositivo ha de ser segura, basándose esta seguridad en la firma digital. Esto garantiza su autoría, siendo más complicada la suplantación de la aplicación. Está idea no es nueva, por ejemplo hace años que Java con su tecnología Java Web Start  permite ejecutar aplicaciones en el cliente simplemente con una url, ejecutando ficheros .jar firmados y gestionar los certificados de firmas de forma que solo se confíe en las aplicaciones firmadas con certificados válidos. </span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 200px;"><img src="UD4_2_Firma.svg" alt="Firma manuscrita" title="Firma" width="200" height="185" />
+<figcaption class="figcaption"><a href=" https://search.creativecommons.org/photos/4e47cff3-9228-48db-866c-e4f3b7adb4d6" target="_blank" class="author" rel="noopener"> Delwar Hossain</a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">El sistema de firma digital se utiliza ampliamente en la industria informática, por ejemplo en la instalación de aplicaciones/actualizaciones de placas con UEFI, en la <strong>autenticación</strong> de usuarios y por supuesto en la seguridad en aplicaciones.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Pero la autoría no basta para conseguir aplicaciones seguras, las plataformas han de establecer mecanismos que garanticen que las aplicaciones además de estar firmadas no realizan acciones no permitidas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En este punto se tratan los <strong>fundamentos criptográficos de la firma digital</strong>, y del proceso en las dos principales plataformas móviles actuales.</span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="12_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_fundamentos_criptogrficos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

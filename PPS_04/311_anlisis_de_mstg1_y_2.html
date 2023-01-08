@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.1.- Análisis de MSTG-1 y 2 | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-152"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_almacenamiento_seguro_de_datos.html" class="current-page-parent daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="current-page-parent daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul>
+         <li id="active"><a href="311_anlisis_de_mstg1_y_2.html" class="active no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.1.- Análisis de MSTG-1 y 2</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id391">
+<div class="iDevice emphasis0">
+<div id="ta391_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Recordar que estos dos casos de prueba se refieren a el uso de los sistemas de almacenamiento de credenciales para almacenar datos confidenciales, no guardar nunca datos confidenciales fuera del contenedor de la aplicación del sistema de almacenamiento de claves, en este caso Android.</span></p>
+<p><span style="font-weight: 400;">Se establece un análisis estático en el que se compruebas sobre el código elementos como:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Fichero <em><strong>AndroidManifest.xml</strong></em> y los permisos solicitados con respecto al almacenamiento.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Comprobar  que se establece los permisos de los ficheros como <strong>MODE_PRIVATE</strong> de forma general y otros de forma excepcional con causa justificada.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Revisar el uso correcto de las siguientes clases y funciones relacionadas con el almacenamiento: <strong>SharedPreferences</strong>, <strong>FileOutPutStream</strong>, <strong>getExternal</strong>, <strong>getWritableDatabase</strong>, <strong>getReadableDatabase</strong>, <strong>getCacheDir</strong> y <strong>getExternalCacheDirs</strong></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Usar métodos y <strong>algoritmos de codificación fuertes</strong> y si es posible utilizando librerías de terceros seguras y ampliamente probadas.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 500px;"><img src="UD4_3_1_1__RSA_Conference_11.jpg" alt="Alegoría algoritmos codificación fuertes" title="Alegoría algoritmos codificación fuertes" width="500" height="332" />
+<figcaption class="figcaption"><a href="https://www.flickr.com/photos/39911851@N05" target="_blank" class="author" rel="noopener">Riebart</a>. <a href="https://search.creativecommons.org/photos/c70c170b-9a00-4b9b-a233-45282241eca5" target="_blank" class="title" rel="noopener"><em>RSA Conference USA 2011</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">También es necesario un análisis dinámico en tiempo de ejecución:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Comprobar</strong> los ficheros creados por la aplicación tanto en el almacenamiento interno como el externo, en caso de que se creen comprobar<strong> que no se guarda información confidencial en texto claro</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Comprobar los ficheros de apoyo</strong> en el desarrollo, las <strong>copias de seguridad</strong> y ficheros antiguos <strong>antes de llevar la aplicación a producción</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Comprobar</strong> la existencia de la <strong>base de datos SQLite</strong>, que información almacena y si esta es confidencial y está disponible.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Asegurarse</strong> de que las bases de <strong>datos SQLite</strong> se encuentran <strong>codificadas y protegidas con contraseña</strong> y estas se han almacenado en lugar seguro como <strong>KeyStore</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Comprobar</strong> en caso de existir <strong>fichero de preferencias (<em>Shared Preferences</em>)</strong> no contiene información sensible no protegida.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Validar los permisos</strong> de los <strong>ficheros</strong> almacenados en <em><strong>/data/data/&lt;package-name&gt;</strong></em>, solo el usuario y grupo que instaló la aplicación puede leer, escibir y ejecutar (rwx).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Examinar</strong> si se hace uso de <strong>base de datos <em>Firebase Real-time</em></strong> revisando si la configuración es correcta, realizando una llamada HTTP a la URL:</span></li>
+</ul>
+<p style="text-align: center;"><a href="about:blank"><span style="font-weight: 400;">https://_firebaseProjectName_.firebaseio.com/.json</span></a></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Determinar si existen <strong>base de datos Realm</strong> en <em><strong>/data/data/&lt;package-name&gt;/files/</strong></em>, si no está codificada y posee información sensible.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 320px;"><img src="UD4_3_1_1__2_Android_Credential_Storage.jpg" alt="Android Credential Storage" title="Android Credential Storage" width="320" height="480" />
+<figcaption class="figcaption"><a href="https://www.flickr.com/photos/19714819@N00" target="_blank" class="author" rel="noopener">MarkDoliner</a>. <a href="https://search.creativecommons.org/photos/ac65e10c-5b01-4f4d-ad2c-72c3853fbbe9" target="_blank" class="title" rel="noopener"><em>Android Credential Storage</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

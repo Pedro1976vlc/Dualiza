@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.- iOS | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-140"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2__firma_y_verificacin_de_aplicaciones.html" class="current-page-parent daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul>
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li id="active"><a href="23_ios.html" class="active no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="22_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_almacenamiento_seguro_de_datos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.3.- iOS</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id381">
+<div class="iDevice emphasis0">
+<div id="ta381_85" class="block iDevice_content">
+<p>Los dispositivos Apple cuentan con funciones de encriptación para proteger los datos del usuario y activar el borrado remoto si se pierde un dispositivo o si lo roban.<br />En general, los algoritmos más utilizados son los que usan el cifrado asimétrico. Se emplean para enviar una clave de sesión simétrica a través de un canal de comunicación inseguro para que luego pueda usar el cifrado simétrico en futuras comunicaciones. Por otro lado, a menudo se utiliza el cifrado simétrico para los datos en reposo (en su disco duro, por ejemplo) y como clave de sesión en varios esquemas de redes cifrados.</p>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 499px;"><img src="UD4_2_3_iossecurity.jpg" alt="iOS Security" width="499" height="333" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/abc994b2-8521-4b35-bb2f-13779e6eb17f" target="_blank" class="author" rel="noopener">Ervins Strauhmanis </a>. <span class="title"><em>iOS Security</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p>Los iOS proporcionan diferentes tipos de tecnologías de cifrado, entre las que destacan:</p>
+<ul>
+<li>Servicios de llaveros. Se emplean para cifrar y almacenar contraseñas, claves y otros pequeños secretos en una base de datos especial llamada llavero. Al almacenar los secretos del usuario de esta manera, se asegura de que se mantengan seguros, incluso en las copias de seguridad del dispositivo. </li>
+<li>Servicios de certificados, claves y confianza. Esta interfaz proporciona servicios de soporte criptográfico, incluidos métodos de cifrado y descifrado general, así como validación de confianza. </li>
+<li>Sintaxis de mensajes criptográficos. Servicios empleados para cifrar o agregar una firma digital a los mensajes S / MIME. S / MIME es es un estándar para encriptar y firmar mensajes, más comúnmente utilizado con el correo electrónico.</li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id382">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta382_128" class="block iDevice_content">
+<p><span style="font-weight: 400;">Cómo auditar una aplicación iOS desde la perspectiva #OWASP.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><iframe width="500" height="314" src="https://www.youtube.com/embed/JO8daeYsPtI" allowfullscreen="allowfullscreen"></iframe><br /></span></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Cómo auditar una aplicación iOS desde la perspectiva #OWASP</p>
+<p></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="22_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_almacenamiento_seguro_de_datos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

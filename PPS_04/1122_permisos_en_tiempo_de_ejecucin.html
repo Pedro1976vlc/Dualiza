@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.2.2.- Permisos en tiempo de ejecución | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-150"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="current-page-parent daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul>
+      <li class="current-page-parent"><a href="11_android.html" class="current-page-parent daddy">1.1.- Android.</a>
+      <ul>
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li class="current-page-parent"><a href="112_solicitando_permisos.html" class="current-page-parent daddy">1.1.2.- Solicitando permisos</a>
+         <ul>
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li id="active"><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="active no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1121_permisos_de_instalacin_o_normales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="113_estableciendo_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.2.2.- Permisos en tiempo de ejecución</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id386">
+<div class="iDevice emphasis0">
+<div id="ta386_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id387">
+<div class="iDevice emphasis0">
+<div id="ta387_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">En las nuevas versiones existen permisos que se conceden de forma temporal por parte del usuario a las aplicaciones. En la página de referencia de los permisos los clasifica como “dangerous”</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Existen 2 formas de solicitar este tipo de permisos:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Dejar la gestión al sistema operativo.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Controlar la solicitud en la aplicación.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Uno de los permisos en tiempo de ejecución es la escritura en el calendario del sistema, cada vez que la aplicación, en los siguientes ejemplos se solicita permiso en tiempo de ejecución de las dos formas indicadas anteriormente.</span></p>
+<h2 style="text-align: justify;"><b>Dejar la gestión al sistema operativo.</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">En primer lugar se instalan  una librería para la gestión:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-weight: 400;">androidx.activity 1.2.0 o versiones posteriores</span></li>
+<li><span style="font-weight: 400;">androidx.fragment 1.3.0 o versiones posteriores</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se ha de modificar el fichero build.gradle del módulo, para incluir las dependencias:</span></p>
+<div class="highlighted-code language-java line-numbers" style="text-align: justify;">
+<div>
+<pre><code>dependencies {
+   def fragment_version = "1.3.3"
+   implementation "androidx.fragment:fragment-ktx:$fragment_version"
+   implementation 
+   ….
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">El sistema acuerda a través de un contrato con la aplicación como gestionar el resultado de la solicitud de permiso. Se ha de configurar el tratamiento de la solicitud al sistema operativo a través del método registerForActivityResult de la clase activity, al que se le proporciona el tipo de contrato y una clase que implemente la interfaz androidx.activity.result.ActivityResultCallback para tratar la solicitud de permisos, devolviendo un objeto de tipo  ActivityResultLauncher&lt;O&gt; que se utilizará en el futuro para solicitar el permiso. Un ejemplo:</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>var requestPermissionLauncher: ActivityResultLauncher&lt;String&gt; = registerForActivityResult(ActivityResultContracts.RequestPermission(), this)
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Observar que el segundo parámetro de la llamada es this, implementado la clase la interface ActivityResultCallback</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>class MainActivity : AppCompatActivity(), ActivityResultCallback&lt;Boolean&gt; {</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">El siguiente paso es pedir al sistema que solicite el permiso al usuario utilizando el objeto devuelto por registerForActivityResult.</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>this.requestPermissionLauncher.launch(android.Manifest.permission.WRITE_CALENDAR)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Además al implementar la interface ActivityResultCallback se ha de definir el método onActivityResult que se llama al finalizar la solicitud de la actividad, en este caso la de pedir permisos en tiempo de ejecución.</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>override fun onActivityResult(result: Boolean) </code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un ejemplo completo:</span></p>
+<div class="highlighted-code language-java line-numbers" style="text-align: justify;">
+<div>
+<pre><code>import android.app.VoiceInteractor
+import android.content.ContentValues
+import android.content.pm.PackageManager
+import android.icu.util.Calendar
+import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.provider.CalendarContract
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
+import android.util.JsonReader
+import android.util.Log
+import android.util.Log.DEBUG
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import java.util.jar.Manifest
+class MainActivity : AppCompatActivity(), ActivityResultCallback&lt;Boolean&gt; {
+   var requestPermissionLauncher: ActivityResultLauncher&lt;String&gt; =
+       registerForActivityResult(ActivityResultContracts.RequestPermission(), this)
+   override fun onCreate(savedInstanceState: Bundle?) {
+       super.onCreate(savedInstanceState)
+       setContentView(R.layout.activity_main)
+       findViewById&lt;Button&gt;(R.id.button2).setOnClickListener {
+           if (ContextCompat.checkSelfPermission(
+                   this,
+                   android.Manifest.permission.WRITE_CALENDAR
+               ) == PackageManager.PERMISSION_GRANTED
+           ) {
+               Log.i("DEBUG", "Permiso concedido previamente")
+           } else {
+               this.requestPermissionLauncher.launch(android.Manifest.permission.WRITE_CALENDAR)
+           }
+       }
+   }
+   override fun onActivityResult(result: Boolean) {
+     if(result){
+         Log.i("DEBUG", "Se ha concedido el permiso")
+     }else{
+         Log.i("DEBUG", "No se ha concedido el permiso")
+     }
+   }
+}</code></pre>
+</div>
+</div>
+<h2 style="text-align: justify;"><b>Gestionar la solicitud de permisos desde la aplicación.</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se realiza una llamada al método <strong>requestPermissions</strong> que se encuentra en la actividad por herencia, al que se le pasa un array de permisos y un código de petición que se puede usar posteriormente para comprobar el resultado, aunque suele ser 0.  Por ejemplo se solicita permiso para el uso de la cámara:</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>this.requestPermissions(arrayOf&lt;String&gt;(android.Manifest.permission.CAMERA),0)</code></pre>
+</div>
+</div>
+<figure class="exe-figure exe-image position-center" style="width: 196px;"><img src="UD4_1_1_2_1_permisos.png" alt="Solicitud de permisos en Android" width="196" height="400" />
+<figcaption class="figcaption"><span class="title"><em>Solicitud de permisos en Android</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">También se ha de definir quién tratará el resultado de la solicitud, en este caso por defecto se ejecuta el método <strong>onRequestPermissionsResult</strong>, cuya definición es:</span></p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code><strong>onRequestPermissionsResult</strong>(int requestCode, String[] permissions, int[] grantResults)</code></pre>
+</div>
+</div>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>requestCode</strong>: El código facilitado en la llamada.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>String[] permissions</strong>:Array de permisos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>int[] grantResults</strong>:Array con el resultado de la solicitud.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se sobreescribe para adaptarse a las necesidades de la aplicación.</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div style="text-align: justify;">
+<pre><code>override fun onRequestPermissionsResult(
+   requestCode: Int,
+   permissions: Array&lt;out String&gt;,
+   grantResults: IntArray
+) {
+   var permisos=""
+   super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+   Log.i("DEBUG","El request code es_"+requestCode.toString())
+   Log.i("DEBUG","Los permisos solicitados son:"+permissions.joinToString(separator = ","))
+   Log.i("DEBUG","El resultado es:"+grantResults.joinToString(separator = ","))
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id388">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta388_128" class="block iDevice_content">
+<p>Permisos en Android 11.</p>
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/myZkkhLyVi8" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo sobre las últimas novedades referentes a los permisos en Android.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id389">
+<div class="iDevice emphasis0">
+<div id="ta389_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Android recomienda una serie de acciones en caso de denegación de permisos para hacer ver al usuario las consecuencias sobre la denegación, las recomendaciones son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Orientar la atención del usuario</b><span style="font-weight: 400;">. Destacar una parte específica de la IU de la app en la que la funcionalidad sea limitada porque no tiene los permisos necesarios. Estos son algunos ejemplos de lo que se puede hacer:</span>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Mostrar un mensaje en el que habrían aparecido los resultados o los datos de la función.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Mostrar un botón diferente que contenga un ícono y un color de error.</span></li>
+</ul>
+</li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Brindar información específica.</b><span style="font-weight: 400;"> No mostrar un mensaje genérico; en su lugar, mencionar qué funciones no están disponibles porque la app no tiene el permiso necesario.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>No bloquear la interfaz de usuario</b><span style="font-weight: 400;">. En otras palabras, no mostrar un mensaje de advertencia de pantalla completa que impida a los usuarios seguir usando tu app</span></li>
+</ul>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1121_permisos_de_instalacin_o_normales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="113_estableciendo_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

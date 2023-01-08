@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Resumen | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-90"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li id="active"><a href="resumen.html" class="active no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="bibliografa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Resumen</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id209">
+<div class="iDevice emphasis0" >
+<div id="ta209_112_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">En la actualidad los smartphones son una parte esencial de nuestras vidas. Están presentes tanto en los negocios como en nuestra vida social. Los utilizamos constantemente, para comunicarnos o acceder a las redes telefónicas y de datos.  Hemos llegado a confiar en ellos para la búsqueda de información, la navegación y la comunicación. Un usuario puede tener en su terminal instaladas multitud de aplicaciones que acceden o hacen uso de información de carácter personal. Hoy en día el uso y presencia de los teléfonos inteligentes es tan importante e intenso, incluso más que el de los propios ordenadores.</span></p>
+<p style="text-align: justify;"></p>
+<p><span style="font-weight: 400;">La tecnología móvil ha introducido nuevos e inquietantes riesgos en materia de seguridad. El esfuerzo para mantenerse al día frente a los continua evolución de esta tecnología y poder dar una respuesta a los nuevos retos que surgen en materia de seguridad es titánico.</span></p>
+<p style="text-align: justify;"></p>
+<p><span style="font-weight: 400;">Pese a existir, al menos en apariencia, una enorme similitud entre los ordenadores y los smartphones; los requerimientos de seguridad de las aplicaciones móviles van más allá del de las aplicaciones software clásicas. </span></p>
+<p><span style="font-weight: 400;">Los sistemas operativos para smartphones son diferentes a los sistemas operativos de escritorio, y las aplicaciones móviles son diferentes a las aplicaciones web. La seguridad móvil tiene que ver con la protección de los datos: las aplicaciones almacenan nuestra información personal, imágenes, grabaciones, notas, datos de cuentas bancarias, información empresarial, ubicación y mucho más. </span></p>
+<p style="text-align: justify;"></p>
+<p><span style="font-weight: 400;">A pesar de que los sistemas operativos móviles modernos como iOS y Android ofrecen buenas APIs para el almacenamiento y la comunicación de datos seguros, éstas deben ser incluidas en las aplicaciones y usadas correctamente para ser efectivas. </span></p>
+<p style="text-align: justify;"></p>
+<p><span style="font-weight: 400;">El objetivo general del MASVS es ofrecer una línea de base para la seguridad de las aplicaciones móviles (MASVS-L1), mientras que también permite la inclusión de medidas de defensa en profundidad (MASVS-L2) y protecciones contra las amenazas del lado del cliente (MASVS-R).</span></p>
+<p style="text-align: justify;"></p>
+<p><span style="font-weight: 400;">La fuga de información se produce cuando existe una divulgación voluntaria o involuntaria de información, lo que puede ayudar a los ciberdelincuentes a comprometer la seguridad de un individuo u organización. El uso masivo de las nuevas tecnologías y en concreto la utilización de los dispositivos móviles ha supuesto un riesgo añadido para la seguridad de los datos. Generalmente, estas fugas pueden acabar provocando graves incidentes con consecuencias muy negativas desde un punto de vista legal y económico. </span></p>
+<p><span style="font-weight: 400;">La mayoría de aplicaciones móviles de carácter empresarial tienden a guardar la información de carácter corporativo y personal en servidores de almacenamiento externos situados en la nube. La seguridad de las aplicaciones en la Cloud plantea desafíos adicionales. Los datos confidenciales también son más vulnerables en las aplicaciones basadas en la nube puesto que los datos se transmiten por Internet del usuario a la aplicación y viceversa. Para dar respuesta a todos estos problemas de seguridad se emplean servidores CASBs (Control Access Security Broker).</span></p></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="bibliografa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

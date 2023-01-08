@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.- MSTG para el almacenamiento seguro en Android. | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-145"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_almacenamiento_seguro_de_datos.html" class="current-page-parent daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul>
+      <li id="active"><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="active daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul>
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="3_almacenamiento_seguro_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_anlisis_de_mstg1_y_2.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.- MSTG para el almacenamiento seguro en Android.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id342">
+<div class="iDevice emphasis0">
+<div id="ta342_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">La guía de pruebas de seguridad móvil expone los fundamentos teóricos, técnicas y características de almacenamiento en Android.</span></p>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 500px;"><img src="UD4_3_1_owasp.png" alt="Logo fundación OWASP" width="500" height="174" />
+<figcaption class="figcaption"><a href="OWASP Fundation" target="_blank" class="author" rel="noopener">https://owasp.org/#</a>. <span class="title"><em>Logotipo de la fundación OWASP</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Establece 11 test de pruebas de almacenamiento  y 1 de plataforma.</span></p>
+<div class="exe-fx exe-accordion">
+<h2><strong>MSTG-STORAGE-1:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> Los sistemas de almacenamiento de credenciales que proporciona el sistema se han de utilizar para almacenar datos confidenciales.</span></p>
+<h2><strong>MSTG-STORAGE-2:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">No se deben almacenar datos confidenciales fuera del contenedor de la aplicación o de las instalaciones de almacenamiento de credenciales del sistema.</span></p>
+<h2><strong>MSTG-STORAGE-3:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">No se escriben datos confidenciales en los registros de la aplicación.</span></p>
+<h2><strong>MSTG-STORAGE-4:</strong> </h2>
+<p><span style="font-weight: 400;">No se comparte ningún dato sensible con terceros a menos que sea una parte necesaria de la arquitectura.</span></p>
+<h2><strong>MSTG-STORAGE-5: </strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La caché del teclado está deshabilitada en las entradas de texto que procesan datos confidenciales.</span></p>
+<h2><strong>MSTG-STORAGE-6:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">No se exponen datos sensibles a través de mecanismos de <strong><span style="color: #0000ff;"><a href="#t11221256-8ed8-865b-5de7-e4a748c78abc" id="link11221256-8ed8-865b-5de7-e4a748c78abc" class="exe-tooltip definition-tt titled-tt" title="IPC (Inter-Process Communication) | Glosario" style="color: #0000ff;">IPC</a></span></strong>.</span></p>
+<h2><strong>MSTG-STORAGE-7:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> No se exponen datos confidenciales, como contraseñas o pines, a través de la interfaz de usuario.</span></p>
+<h2><strong>MSTG-STORAGE-8:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> No se incluyen datos confidenciales en las copias de seguridad generadas por el sistema operativo móvil.</span></p>
+<h2><strong>MSTG-STORAGE-9:</strong></h2>
+<p style="text-align: justify;"><span style="font-size: 16.8px;"> La aplicación elimina los datos confidenciales de las vistas cuando se mueven al fondo.</span></p>
+<h2><strong>MSTG-STORAGE-10:</strong> </h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación no retiene datos confidenciales en la memoria más de lo necesario y la memoria se borra explícitamente después de su uso.</span></p>
+<h2><strong>MSTG-STORAGE-11:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La aplicación aplica una política mínima de seguridad de acceso al dispositivo, como exigir al usuario que establezca un código de acceso para el dispositivo.</span></p>
+<h2><strong>MSTG-PLATFORM-2:</strong></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Todas las entradas de fuentes externas y del usuario se validan y, si es necesario, se desinfectan. Esto incluye datos recibidos a través de la interfaz de usuario, mecanismos de IPC como intenciones, URL personalizadas y fuentes de red.</span></p>
+</div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Estas <span style="color: #0000ff;"><strong><a href="#t44b94026-41bf-38ac-c02d-b2f886690982" id="link44b94026-41bf-38ac-c02d-b2f886690982" class="exe-tooltip definition-tt titled-tt" title="MSTG (Mobile Security Testing Guide) | Glosario" style="color: #0000ff;">MSTG</a></strong></span> se asocian a los diferentes <strong>requerimientos</strong> <span style="color: #0000ff;"><strong><a href="#tb651465d-6694-42d8-d9d8-b224fc357bd5" id="linkb651465d-6694-42d8-d9d8-b224fc357bd5" class="exe-tooltip definition-tt titled-tt" title="MASVS (Mobile Application Security Verification Standard) | Glosario" style="color: #0000ff;">MASVS</a></strong></span> para la certificación de las aplicaciones en los niveles 1 y 2, en el caso de almacenamiento (capítulo 2) existe una correspondencia directa entre el requerimiento y el caso de prueba.</span></p>
+<div id="t11221256-8ed8-865b-5de7-e4a748c78abc" class="exe-tooltip-text">
+<p>Inter-Process Communication. Sistema de comunicación entre proceso, existen difefernetes tipos:variables compartidas, memoria principal o paso de mensajes entre otros</p>
+</div>
+<div id="t44b94026-41bf-38ac-c02d-b2f886690982" class="exe-tooltip-text">
+<p>Guía OWASP de pruebas de seguridad para móviles. Se trata de un documento que aporta información específica y técnica sobre los controles de seguridad que se deben contemplar a la hora de realizar tareas de pentesting en aplicaciones móviles.</p>
+</div>
+<div id="tb651465d-6694-42d8-d9d8-b224fc357bd5" class="exe-tooltip-text">
+<p>El Estándar OWASP de Verificación de Seguridad de Aplicaciones Móviles, es un esfuerzo comunitario para establecer un marco de requisitos de seguridad necesarios para diseñar, desarrollar y probar aplicaciones móviles seguras en iOS y Android.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id341">
+<div class="iDevice emphasis0">
+<div id="ta341_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id344">
+<div class="iDevice emphasis0">
+<div id="ta344_154" class="block iDevice_content">
+<h1>Técnicas de almacenamiento:</h1>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para almacenar y proteger los datos sensibles es necesario previamente conocer los diferentes métodos y características de almacenamiento que proporciona la plataforma, en el caso de Android son:</span></p>
+<div class="exe-fx exe-accordion">
+<h2><span style="font-size: 1.2em; font-weight: normal;">Shared Preferences:</span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">En común con muchas aplicaciones, no solo para dispositivos móviles. Se tiene la necesidad de almacenar información en formato clave-valor, es decir se asocia un nombre denominado clave a un valor que puede ser una cadena de texto o un valor numérico. Dada su utilidad muchos sistemas, lenguajes y librerías ofrecen interfaces que facilitan el almacenamiento, por ejemplo los ficheros .properties de Java en el que se almacenan pares clave-valor. En el caso de Android se almacena en XML y establece algunas medidas de seguridad como que solo la aplicación propietaria maneje el fichero.</span></p>
+</div>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id346">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta346_148" class="block story iDevice_content">
+<p><span style="font-weight: 400;">Un ejemplo de uso para <span style="color: #0000ff;"><a href="#t9bdf3de7-badc-97f7-f02d-b3e666a9da99" id="link9bdf3de7-badc-97f7-f02d-b3e666a9da99" title="Kotlin | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong>Kotlin</strong></a></span>, en el caso de preferencias compartidas:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>var sharedPref = getSharedPreferences("key", Context.MODE_WORLD_READABLE)
+var editor = sharedPref.edit()
+editor.putString("username", "administrator")
+editor.putString("password", "supersecret")
+editor.commit()
+</code></pre>
+</div>
+</div>
+<p></p>
+<div id="t9bdf3de7-badc-97f7-f02d-b3e666a9da99" class="exe-tooltip-text">
+<p>Kotlin es un lenguaje de programación pragmático pensado para funcionar con Máquina Virtual de Java (JVM) y Android. Además, puede ser compilado a código fuente de Javascript. Se caracteriza por una perfecta combinación de características claramente orientadas a la funcionalidad durante la programación, centrándose en la seguridad, la claridad y la interoperabilidad. Está diseñado para ser un lenguaje de programación orientado a objetos de calidad industrial, y para ser un lenguaje mejor que Java pero todavía ser plenamente interoperable con código Java, permitiendo a las compañías hacer una migración gradual de Java a Kotlin.</p>
+</div>
+</section>
+<section id="taquesQuestion0b346" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">¿Qué errores de seguridad se han cometido en el código anterior? ¿Cómo solucionarlo?</span></p>
+</section>
+<form name="feedback-form-quesFeedback0b346" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b346text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b346" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b346" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: justify;"><span style="font-weight: 400;">Destacar que el segundo parámetro de constructor indica la visibilidad de las preferencias seleccionadas, pudiendo tomar los valores:  <strong>MODE_PRIVATE</strong>, <strong>MODE_MULTI_PROCESS</strong>, <strong>MODE_WORLD_READABLE</strong> y <strong>MODE_WORLD_WRITEABLE</strong>, aunque los dos últimos no se encuentran disponibles a partir de la API 24.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Si las preferencias se limitan a una actividad no es necesario indicar el nombre de la misma, únicamente el modo de acceso:</span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id347">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta347_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez abierta, la interfaz posee métodos de búsqueda, lectura y escritura, para saber más:</span></p>
+<p style="text-align: center;"><a href="https://developer.android.com/training/data-storage/shared-preferences"><span style="font-weight: 400;">Cómo guardar datos de pares clave-valor  |  Desarrolladores de Android</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id348">
+<div class="iDevice emphasis0">
+<div id="ta348_154" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>Bases de datos SQLite:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este es un sistema gestor de base de datos sencillo y mínimo, que incluye la funcionalidad de la SGBD en la librería o paquete de la aplicación, almacenando la estructura y los datos en un </span><b>simple fichero de texto</b><span style="font-weight: 400;">. En contraprestación a los pocos recursos que necesita no ofrece toda la potencia de una SGBD completa como <strong>MySql</strong> o <strong>Postgre</strong>, limitando por ejemplo los tipos de datos de los campos o las posibilidades de gestión de usuarios. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las recomendaciones para usuarios y contraseñas son las mismas que en el caso de las aplicaciones web. codificación usando los diferentes métodos tratados en el tema anterior, pero el acceso al resto de los datos es tan sencillo como acceder al fichero que los contiene, normalmente se encuentra en al ruta:</span></p>
+<p style="text-align: center;"><em><span style="font-weight: 400;">/data/data/&lt;package-name&gt;/databases/</span></em></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una aplicación maliciosa o el acceso físico al dispositivo compromete la seguridad de toda la información contenida.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La solución que propone OWASP es la de codificar el fichero de forma que aunque se tenga acceso al mismo no sea posible la obtención de los datos, recomendado el uso de la librería <a href="https://www.zetetic.net/sqlcipher/sqlcipher-for-android/" title="https://www.zetetic.net/sqlcipher/sqlcipher-for-android/">SQLCipher</a>.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Esta librería extiende a <strong>SQLite</strong> añadiendo protección a los ficheros de base de datos de forma automática incluyendo un usuario y contraseña para ello, estas credenciales se pueden:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Solicitar cada vez que el usuario accede a la aplicación.</span></li>
+<li style="text-align: justify;">Almacenarlas en un servidor para que la aplicación las solicite al iniciarse.</li>
+</ul>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdmodifIdevice em_iDevice em_iDevice_reflexionfpd" id="id349">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta349_121" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">¿No sería mejor almacenar las credenciales de acceso a la base de datos en un fichero?</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id350">
+<div class="iDevice emphasis0">
+<div id="ta350_154" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>Bases de datos de Firebase y Realm Database:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Dos alternativas para almacenamiento de datos en en <strong>Android</strong>. La primera forma parte de una plataforma  de desarrollo de aplicaciones web y móviles de <strong>Google</strong> siendo <strong>Realtime database</strong> uno de los servicios que ofrece es almacenamiento en tiempo real en formato <strong>JSON</strong> en la nube a través de una <strong>API Rest</strong>, además de implementar el protocolo <span style="color: #0000ff;"><strong><a href="#t46ad9dca-db83-5d5b-7865-35233e3ee633" id="link46ad9dca-db83-5d5b-7865-35233e3ee633" class="exe-tooltip definition-tt titled-tt" title="SSE (Server-Sent Events) | Glosario" style="color: #0000ff;">SSE</a></strong></span> para recibir eventos del servidor. </span><span style="font-weight: 400;">La segunda, <strong>Realm Database</strong> es orientada a objetos y diseñada específicamente para sistemas operativos móviles.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los ficheros se encuentran codificados, y es posible almacenar la clave tanto en un fichero de configuración en un servidor remoto. El uso es transparente para el desarrollador.</span></p>
+<p><a href="https://docs.mongodb.com/realm-legacy/docs/java/latest/"><span style="font-weight: 400;"></span></a></p>
+</div>
+<p></p>
+<div id="t46ad9dca-db83-5d5b-7865-35233e3ee633" class="exe-tooltip-text">
+<p>Protocolo que describe los mecanismos necesarios para enviar información asíncrona desde el servidor a los clientes. Formando parte del estándar HTML5 del W3C.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id351">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta351_128" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/t5yyc1XfQrs" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeo explicativo sobre Firestore. B<span>ase de datos disponible en Firebase; junto con Realtime Database permiten implementar soluciones de base de datos remota en aplicaciones Android desarrolladas con Kotlin. En este tutorial se muestra como integrar Firestor con la App par realizar operaciones de lectura, actualización, escritura y eliminación.</span></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id352">
+<div class="iDevice emphasis0">
+<div id="ta352_154" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2>Almacenamiento interno:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">En este caso el sistema de almacenamiento es el clásico para un sistema de ficheros, en teoría sería posible que cualquier aplicación pudiera acceder a los ficheros, pero Android establece un parámetro en el constructor de las clases que manejan ficheros en el que se indica que en acceso es privado con la constante </span><a href="https://developer.android.com/reference/android/content/Context#MODE_PRIVATE"><span style="font-weight: 400;">Context.MODE_PRIVATE</span></a><span style="font-weight: 400;">.</span></p>
+<h2>Almacenamiento externo:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">El sistema no provee de mecanismo de protección ante datos almacenados en dispositivos externos, y cualquier aplicación o en caso de ser extraíble, otro sistema externo puede acceder a los datos.</span></p>
+<h2>KeyStore:</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La mayor parte de los sistemas operativos actuales poseen almacenes protegidos con credenciales en los que se almacenan contraseñas y claves <strong>criptográficas</strong> y <strong>certificados</strong>. <strong>Android</strong> no es una excepción y define <strong>KeyStore</strong> con este fin. Para el acceso a este almacén se ha de facilitar unas credenciales por parte de usuario, como es la huella, el patrón o el PIN de desbloqueo del dispositivo.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones definen cómo se accede a las claves que estas generan o importan, el acceso estas se otorga por:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Criptografía:</strong> Conjunto de algoritmos criptográficos en los que se puede usar la clave:</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Validez temporal: </strong>Se define el tiempo en que el usuario puede utilizar las claves.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong>Autenticación del usuario:</strong> Solo se puede usar si el usuario se autenticó hace poco tiempo.</span><span style="font-weight: 400;"></span></li>
+</ul>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id354">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta354_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/3lDtAf8Jk_c" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeo donde se explica de un modo muy sencillo que es <strong>Android KeyStore</strong>.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="3_almacenamiento_seguro_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_anlisis_de_mstg1_y_2.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

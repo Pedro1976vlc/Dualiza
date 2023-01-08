@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.- Soluciones CASB (Cloud Access Security Broker). | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-144"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="5_soluciones_casb_cloud_access_security_broker.html" class="active no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="41__casos_de_prueba_en_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.- Soluciones CASB (Cloud Access Security Broker).</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id355">
+<div class="iDevice emphasis0">
+<div id="ta355_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Durante el tema se ha tratado la seguridad del dispositivo físico, ya sean los permisos de las aplicaciones, el almacenamiento de datos seguros, la seguridad de la instalación o la protección ante ingeniería inversa. Todos los puntos anteriores son importantes para hacer una aplicación y un dispositivo seguro, pero la realidad es que prácticamente toda la información empresarial y también la personal es gestionada y almacenada en aplicaciones externas, incluso el procesamiento de dicha información o parte de este se realiza fuera del dispositivo y posiblemente fuera de la organización.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la actualidad muchas empresas aún poseen sistemas con varios servidores para dar servicio a sus aplicaciones, aunque la mayoría están migrando sus infraestructuras y aplicaciones a servicios en la nube profesionales que aportan una serie de ventajas sobre la arquitectura clásica, en especial la <span style="color: #0000ff;"><strong><a href="#t34179033-286e-26f0-164c-193f85cc3bb9" id="link34179033-286e-26f0-164c-193f85cc3bb9" class="exe-tooltip definition-tt titled-tt" title="escalabilidad | Glosario" style="color: #0000ff;">escalabilidad</a></strong></span>, la <span style="color: #0000ff;"><strong><a href="#t276115be-0b50-79c9-943f-32e1ad2d9385" id="link276115be-0b50-79c9-943f-32e1ad2d9385" class="exe-tooltip definition-tt titled-tt" title="elasticidad | Glosario" style="color: #0000ff;">elasticidad</a></strong></span>  y la <a href="#te9decfb3-bbc2-1d94-de70-84f98d7100e0" id="linke9decfb3-bbc2-1d94-de70-84f98d7100e0" class="exe-tooltip definition-tt titled-tt" title="disponibilidad | Glosario"><span style="color: #0000ff;"><strong>disponibi</strong></span></a></span><span style="color: #0000ff;"><strong><a href="#te9decfb3-bbc2-1d94-de70-84f98d7100e0" id="linke9decfb3-bbc2-1d94-de70-84f98d7100e0" class="exe-tooltip definition-tt titled-tt" title="disponibilidad | Glosario" style="font-size: 16.8px; color: #0000ff;"></a><a href="#te9decfb3-bbc2-1d94-de70-84f98d7100e0" class="exe-tooltip definition-tt titled-tt" title="disponibilidad | Glosario" style="font-size: 16.8px; color: #0000ff;">lidad</a></strong></span><span style="font-size: 16.8px;">. A modo de recordatorio las 3 arquitecturas de la nube son:</span></p>
+<ul>
+<li style="text-align: justify;"><b>Infraestructura como servicio (IAAS)</b><span style="font-weight: 400;">: Ofrece almacenamiento básico y capacidad de cómputo, se pueden configurar instancias de servidores virtualizados, sistemas de almacenamiento y redes, la gestión de esta infraestructura es responsabilidad del cliente.</span></li>
+<li style="text-align: justify;"><b>Plataforma como servicio(PAAS)</b><span style="font-weight: 400;">. En este el cliente no gestiona la infraestructura, simplemente define e implementa un conjunto de servicios(autenticación, mensajería, servicios REST, XML..) y la plataforma se encarga de la gestión de los recursos necesarios para ofrecer los servicios (instanciar nuevos servidores, añadir almacenamiento…). El proveedor ofrece una serie de lenguajes y herramientas en los cuales desarrollar los servicios.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><b>Software como servicio (SAAS)</b>. En este caso se trata de una aplicación completa instanciada en la nube del proveedor y que sirve a múltiples clientes. Normalmente es accesible a través de un navegador web pero también puede ofrecer API’s como REST o cualquier otro protocolo que se necesite.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 500px;"><img src="UD4_6_CASB_Cloud_computing-es.svg" alt="Diagrama que muestra esquemáticamente la computación en la nube, con típicos ejemplos de aplicaciones compatibles con ese modelo informático." title="Computación en la nube" width="500" height="453" />
+<figcaption class="figcaption"><span class="author">Sam Johnston</span>. <span class="title"><em>Cloud Computing</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: center;"></p>
+<div id="t34179033-286e-26f0-164c-193f85cc3bb9" class="exe-tooltip-text">
+<p>Velocidad de crecimiento de los recursos en función de la demanda.</p>
+</div>
+<div id="t276115be-0b50-79c9-943f-32e1ad2d9385" class="exe-tooltip-text">
+<p>Capacidad del sistema para crecer.</p>
+</div>
+<div id="te9decfb3-bbc2-1d94-de70-84f98d7100e0" class="exe-tooltip-text">
+<p>Capacidad de ofrecer los datos en cualquier lugar y en cualquier momento.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id356">
+<div class="iDevice emphasis0">
+<div id="ta356_154" class="block iDevice_content">
+<p style="text-align: justify;">Esta migración de un entorno controlado (la organización) en que se controlan el software instalado, el acceso físico a los equipos, la gestión del almacenamiento, las redes, los usuarios y en especial las medidas de seguridad han cambiado, trasladándose a la nube y perdiendo el control de muchos de los elementos.</p>
+<p style="text-align: justify;">Al cambiar de una arquitectura interna en la organización a una arquitectura en la nube surgen los siguientes problemas de seguridad con el acceso y uso de los datos:</p>
+<ul>
+<li style="text-align: justify;">No se conoce la localización del dispositivo a la hora de tener acceso a las aplicaciones y los datos.</li>
+<li style="text-align: justify;">Es posible que no se tenga control del dispositivo, de las aplicaciones instaladas y por tanto de los datos que maneja el mismo.</li>
+<li style="text-align: justify;">La autenticación del usuario se realiza con credenciales, en la antigua arquitectura además debía estar físicamente dentro de la organización, pudiendo ser un problema de seguridad.</li>
+</ul>
+<p>A la vista de lo anterior se hace necesario establecer mecanismos de seguridad para evitar el acceso y uso no permitido de datos confidenciales, es decir un control de acceso a la información almacenada en la nube, en especial en caso de <strong>PASS</strong> y <strong>SAAS</strong>.</p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Pensando en una aplicación o servicio que gestiona los datos sanitarios a nivel nacional, existiendo aplicaciones y sistemas de las comunidades autónomas que usan dicho servicio, algunas de ellas simplemente consumen el servicio desde sus servidores, otras han desarrollado aplicaciones de escritorio y móvil, además estos servicios son usados por gran cantidad de usuarios. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es imprescindible dada la naturaleza de los datos poder analizar el uso de la información y en caso de detectar problemas de seguridad aislar los dispositivos, usuarios o software que lo causan no siendo posible cancelar el servicio para todos los clientes y usuarios.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id357">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta357_129" class="block iDevice_content">
+<p style="text-align: center;"><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/WnroUTlZ48w" allowfullscreen="allowfullscreen"></iframe> <iframe width="560" height="314" src="https://www.youtube.com/embed/DHpsaCkp6CI" allowfullscreen="allowfullscreen"></iframe><br /><br /></strong></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeos explicativos en los que se ofrece una visión general de  CASB, a cargo de dos empresas líderes en servicios basados esta tecnología.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id358">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta358_148" class="block story iDevice_content">
+
+</section>
+<section id="taquesQuestion0b358" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Localice (proporcione su URL y país donde se encuentra ubicada) y describa algún ejemplo de empresa de ciberseguridad que proporcione servicios CASB.</span></p>
+</section>
+<form name="feedback-form-quesFeedback0b358" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b358text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b358" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b358" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="exe-fx exe-tabs">
+<h2><b>Adaptature</b></h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 125px;"><img src="UD4_6_CASB_Logo_ADAPTURE.png" alt="Logotipo Adapture" title="Logotipo Adapture" width="125" height="26" />
+<figcaption class="figcaption"><a href="https://adapture.com/" target="_blank" class="author" rel="noopener">https://adapture.com/</a>. <span class="title"><em>Logotipo Adapture</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;"><strong>Ubicación:</strong> Atlanta, Estados Unidos.</span></p>
+<p><strong>URL: </strong><a href="https://adapture.com/"><span style="font-weight: 400;">https://adapture.com/</span></a></p>
+<p><strong>Descripción:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">ADAPTURE ofrece soluciones de ciberseguridad, nube e infraestructura. Al adoptar un enfoque de diseño de arquitectura con visión de futuro y preparado para el futuro, ADAPTURE ayuda a sus clientes a permanecer a la vanguardia de la tecnología emergente, lo que permite la agilidad y escalabilidad al tiempo que mantiene los sistemas seguros con los más altos estándares. La compañía se ha establecido rápidamente como líder de clase mundial en consultoría de TI y servicios profesionales.</span></p>
+<h2>Bitglass Inc.</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 125px;"><img src="UD4_6_CASB_Logo_Bitglass.png" alt="Logotipo Bitglass" title="Logotipo Bitglass" width="125" height="27" />
+<figcaption class="figcaption"><a href="www.bitglass.com" target="_blank" class="author" rel="noopener">www.bitglass.com</a>. <span class="title"><em>Logotipo Bitglass</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;"><strong>Ubicación:</strong> Campbell, Estados Unidos.</span></p>
+<p><strong>URL: </strong><a href="http://www.bitglass.com/"><span style="font-weight: 400;">www.bitglass.com</span></a></p>
+<p><strong>Descripción:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La solución Cloud Access Security Broker (CASB) de Bitglass ofrece protección contra amenazas y datos para cualquier interacción, en cualquier dispositivo y en cualquier lugar.  </span><span style="font-weight: 400;">Dispone de una amplia red global que ofrece un alto rendimiento y un tiempo de actividad inigualables para garantizar la continuidad comercial segura para las organizaciones más grandes.</span></p>
+<h2>Cloud Mask Inc.</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 123px;"><img src="UD4_6_CASB_Logo_CloudMask.png" alt="Logotipo Cloud Mask" title="Logotipo Cloud Mask" width="123" height="22" />
+<figcaption class="figcaption"><a href="www.cloudmask.com" target="_blank" class="author" rel="noopener">www.cloudmask.com</a>. <span class="title"><em>Logotipo Cloud Mask</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><br /><br /></p>
+<p></p>
+<p><span style="font-weight: 400;"><strong>Ubicación:</strong> Ottawa, Canada</span></p>
+<p><span style="font-weight: 400;"><strong>URL:</strong> <a href="http://www.cloudmask.com">www.cloudmask.com</a></span></p>
+<p><strong>Descripción:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">CloudMask es una empresa de ciberseguridad especializada en el cumplimiento de las regulaciones de protección de datos, la protección de sus datos contra las infracciones y la creación de una colaboración ágil y segura que utilice aplicaciones locales y SaaS. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La tecnología de patente de CloudMask proporciona Dynamic Data Masking (DDM) que enmascara datos sensibles, estructurados o no estructurados, en tiempo real. Al ejecutarse en dispositivos finales, intercepta y cambia de forma transparente los datos de producción para que los solicitantes de datos no autorizados no tengan acceso a datos confidenciales, mientras que no se producen cambios físicos en los datos de producción originales. La solución de CloudMask simplifica la implementación de la seguridad en cualquier SaaS o aplicación heredada. Los datos interceptados pueden pertenecer a una variedad de aplicaciones, como Google, Salesforce y MS 365.</span></p>
+<h2>Crypto Magic</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 124px;"><img src="UD4_6_CASB_Logo_CryptoMagic.png" alt="Logotipo Crypto Magic" title="Logotipo Crypto Magic" width="124" height="33" />
+<figcaption class="figcaption"><a href="https://www.cryptomagic.eu/" target="_blank" class="author" rel="noopener">https://www.cryptomagic.eu/</a>. <span class="title"><em>Logotipo Crypto Magic</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><b>Ubicación:</b><span style="font-weight: 400;"> Ausburgo, Alemania.</span></p>
+<p><b>URL: </b><a href="https://www.cryptomagic.eu/"><span style="font-weight: 400;">https://www.cryptomagic.eu/</span></a></p>
+<p><b>Descripción:</b></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">CryptoApp es una empresa revolucionaria empresa especializada en tecnologías de acceso remoto que ofrece soluciones para la Seguridad de aplicaciones, CASB, seguridad en la nube, seguridad de datos, cifrado, servicios gestionados, seguridad móvil, seguridad de red, SaaS, comunicaciones seguras, intercambio seguro de archivos, seguridad de puerta de enlace web y redes privadas virtuales (VPN).</span></p>
+<h2>Insta Safe</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 125px;"><img src="UD4_6_CASB_InstaSafe-Profile-Pic-Logo.png" alt="Logotipo InstaSafe" title="Logotipo InstaSafe" width="125" height="125" />
+<figcaption class="figcaption"><a href="http://www.instasafe.com" target="_blank" class="author" rel="noopener">http://www.instasafe.com</a>. <span class="title"><em>Logotipo Insta Safe</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: left;"><br /><b>Ubicación:</b><span style="font-weight: 400;"> Bengaluru, India</span></p>
+<p><b>URL:</b> <a href="http://www.instasafe.com"><span style="font-weight: 400;">www.instasafe.com</span></a></p>
+<p><b>Descripción:</b></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">InstaSafe es un proveedor líder de soluciones de seguridad basadas en la nube, que ayudan a los trabajadores móviles y remotos a acceder de forma segura a las aplicaciones empresariales, el correo electrónico y la web en un modelo SaaS. Especializados en ofrecer servicios: CASBs, Compliance, Data Breach Prevention, Data Protection, Data Security, DDOS Protection, DLP, Penetration Testing, SaaS, Web Gateway Security ....</span></p>
+<h2>Netskope</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 126px;"><img src="UD4_6_CASB_Logo_Netskope.png" alt="Logotipo Netsckope" title="Logotipo Netskope" width="126" height="66" />
+<figcaption class="figcaption"><a href="https://www.netskope.com/" target="_blank" class="author" rel="noopener">https://www.netskope.com/</a>. <span class="title"><em>Logotipo Netskope</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;"><strong>Ubicación:</strong> Los Altos, Estados Unidos.</span></p>
+<p><strong>URL: <a href="http://www.netscope.com">www.netscope.com</a></strong></p>
+<p><strong>Descripción:</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Empresa  líder en seguridad en la nube. Ofrece protección avanzada contra amenazas (APT), seguridad de aplicaciones, análisis de comportamiento, CASB, cumplimiento, prevención de violación de datos, protección de datos, DLP, cifrado, respuesta a incidentes y violaciones, seguridad móvil, SaaS. La plataforma de seguridad a escala de nube de Netskope proporciona un control de contexto de todo el uso de la nube en la empresa en tiempo real, ya sea que se acceda desde la red corporativa, de forma remota o desde un dispositivo móvil.</span></p>
+<h2>SMiD</h2>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 125px;"><img src="UD4_6_CASB_Logo_SMiD.png" alt="Logotipo SiMD" title="Logotipo SiMD" width="125" height="69" />
+<figcaption class="figcaption"><a href="https://smidcloud.com/" target="_blank" class="author" rel="noopener">https://smidcloud.com/</a>. <span class="title"><em>Logotipo SiMD</em></span> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><b>Ubicación:</b><span style="font-weight: 400;"> Madrid, España.</span></p>
+<p><b>URL:</b> <a href="https://smidcloud.com/"><span style="font-weight: 400;">https://smidcloud.com/</span></a></p>
+<p><b>Descripción:</b></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La tecnología SMiD ha sido desarrollada siguiendo las mejores prácticas de seguridad para permitir la disponibilidad, integridad y confidencialidad de los datos. Los servicios SMiD de CASBs cifran automáticamente los datos antes de almacenarlos en cualquier proveedor público, privado o en local. Garantizando siempre la confidencialidad y la integridad de los datos.</span></p>
+</div></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="41__casos_de_prueba_en_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

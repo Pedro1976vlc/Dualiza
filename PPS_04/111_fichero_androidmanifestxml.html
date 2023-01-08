@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.1.- Fichero Androidmanifest.xml | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-134"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="current-page-parent daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul>
+      <li class="current-page-parent"><a href="11_android.html" class="current-page-parent daddy">1.1.- Android.</a>
+      <ul>
+         <li id="active"><a href="111_fichero_androidmanifestxml.html" class="active no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="11_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="112_solicitando_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.1.- Fichero Androidmanifest.xml</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id326">
+<div class="iDevice emphasis0">
+<div id="ta326_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Sobre el fichero </span><b>Androidmanifest.xml </b><span style="font-weight: 400;">recae la configuración de los permisos de la aplicación. Posee diferentes etiquetas, las más destacadas:</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Componentes de la aplicación</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Mencionados en el apartado anterior y en el que se especifican los permisos sobre el uso de recursos de la aplicación con el resto. Se encuentran dentro de la etiqueta <em><strong>&lt;application&gt;</strong></em></span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Activity.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Service.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Receiver.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Provider.</span></li>
+</ul>
+<h2>Filtros de <em>intents</em></h2>
+<p><span style="font-weight: 400;">Mensaje en forma de objeto que activa los componentes de la aplicación. Permite comunicarse con el sistema.</span></p>
+<h2>Íconos y etiquetas</h2>
+Algunos elementos del manifiesto tienen atributos <strong><em>icon</em></strong><span> </span><span> </span>y <em><strong>label</strong></em><span> </span><code> </code>para mostrar un pequeño ícono y una etiqueta de texto, respectivamente, a los usuarios según el componente de aplicación correspondiente.
+<p style="text-align: justify;">En cada caso, el ícono y la etiqueta establecidos en un elemento superior se convierten en la configuración predeterminada para todos los elementos inferiores.</p>
+<h2>Permisos</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se definen los permisos que la aplicación necesita utilizar.</span></p>
+<h2>Compatibilidad con dispositivos</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Indica los requisitos de <em>hardware</em> y <em>software</em> que han de reunir los dispositivos en que se desea instalar y utilizar la aplicación</span></p>
+</div>
+<figure class="exe-figure exe-image position-center" style="width: 500px;"><img src="UD4_1_1_1_androidmanifest.png" alt="Fichero Androidmanifest en Android Studio" width="500" height="188" />
+<figcaption class="figcaption"><span class="title"><em>Fichero Androidmanifest en Android Studio</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el siguiente enlace se listan todas las etiquetas que permite el fichero: </span><a href="https://developer.android.com/guide/topics/manifest/manifest-intro?hl=es-419#reference"><span style="font-weight: 400;">https://developer.android.com/guide/topics/manifest/manifest-intro?hl=es-419#reference</span></a><span style="font-weight: 400;">, los relacionados con los permisos son:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><em><strong>&lt;path-permission&gt;</strong></em> Define la ruta y los permisos necesarios para un subconjunto específico de datos dentro de un proveedor de contenido.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong><em>&lt;permission&gt;</em></strong> Declara un permiso de seguridad que puede utilizarse para limitar el acceso a componentes o funciones específicas de esta u otras aplicaciones.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>&lt;permission-group&gt;</strong></em> Declara un nombre para una agrupación lógica de permisos relacionados.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>&lt;permission-tree&gt;</strong></em> Declara el nombre base de un árbol de permisos.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>&lt;uses-permission&gt;</strong></em> Especifica un permiso de sistema que debe conceder el usuario para que la aplicación funcione correctamente.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><em><strong>&lt;uses-permission-sdk-23&gt;</strong></em> Específica que una <em>app</em> desea un permiso particular, pero solo si esta se ejecuta en un dispositivo que ejecuta Android 6.0 (nivel de API 23) o versiones pub.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Un ejemplo del proyecto AppAuthforAndroid para el uso de OAth2.0 y OpenID Connect en aplicaciones móviles: </span><span style="font-weight: 400;"><a href="https://github.com/openid/AppAuth-Android">https://github.com/openid/AppAuth-Android</a><a href="https://github.com/openid/AppAuth-Android"></a></span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;manifest
+    	xmlns:android="http://schemas.android.com/apk/res/android"
+    	package="net.openid.appauthdemo" &gt;
+
+	&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+	&lt;application
+        	android:allowBackup="false"
+        	android:fullBackupContent="false"
+        	android:icon="@mipmap/ic_launcher"
+        	android:label="@string/app_name_short"
+        	android:theme="@style/AppTheme"
+        	android:supportsRtl="false"
+        	android:name=".Application"&gt;
+    	&lt;activity
+            	android:name=".LoginActivity"
+            	android:label="@string/app_name_short"
+            	android:theme="@style/AppTheme"
+            	android:windowSoftInputMode="stateHidden" &gt;
+        	&lt;intent-filter&gt;
+            	&lt;action android:name="android.intent.action.MAIN" /&gt;
+            	&lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+        	&lt;/intent-filter&gt;
+    	&lt;/activity&gt;
+
+    	&lt;activity
+            	android:name=".TokenActivity"
+            	android:label="@string/app_name_short"
+            	android:theme="@style/AppTheme"
+            	android:windowSoftInputMode="stateHidden" &gt;
+    	&lt;/activity&gt;
+
+    	&lt;activity android:name="net.openid.appauth.RedirectUriReceiverActivity"&gt;
+        	&lt;intent-filter&gt;
+            	&lt;action android:name="android.intent.action.VIEW"/&gt;
+            	&lt;category android:name="android.intent.category.DEFAULT"/&gt;
+            	&lt;category android:name="android.intent.category.BROWSABLE"/&gt;
+            	&lt;data android:scheme="https"
+              	android:host="appauth.demo-app.io"
+              	android:path="/oauth2redirect"/&gt;
+        	&lt;/intent-filter&gt;
+    	&lt;/activity&gt;
+	&lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="11_android.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="112_solicitando_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

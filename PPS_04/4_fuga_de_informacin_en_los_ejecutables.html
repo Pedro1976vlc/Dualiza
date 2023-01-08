@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.- Fuga de información en los ejecutables | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-143"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="3_almacenamiento_seguro_de_datos.html" class="daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul class="other-section">
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="active daddy">4.- Fuga de información en los ejecutables</a>
+   <ul>
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__casos_de_prueba_en_android.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.- Fuga de información en los ejecutables</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id359">
+<div class="iDevice emphasis0">
+<div id="ta359_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones móviles gestionan gran cantidad de información sensible como se ha visto a lo largo del tema. Si bien cumpliendo con los requerimientos y pasando los casos de prueba vistos anteriormente se puede considerar una aplicación relativamente segura, esto no  evita que ante usuarios avanzados se puede analizar posibles fallos a nivel de código de la aplicación y aprovechar dichos errores para su beneficio, por ejemplo, obtener la <em><strong>pimienta</strong></em> en caso de usar el <strong>método de sal y pimienta</strong> en funciones hash.</span></p>
+<p><span style="font-weight: 400;">Dos de las <strong>vulnerabilidades del Top Ten para móviles</strong> se relacionan con la <strong>fuga de información</strong> en los ejecutables: </span></p>
+<ul>
+<li><span style="font-weight: 400;">M8, Modificación de código.</span></li>
+<li><span style="font-weight: 400;">M9, ingeniería inversa.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">El <strong>MASVS</strong> establece un nivel más que se pueden combinar con los de nivel 1 y nivel 2 para hacer más segura la aplicación, denominado <strong>MASVS</strong>-<b>Resistencia</b>, definiéndose como:</span></p>
+<p><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id360">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta360_151" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Nivel de seguridad específico para la aplicación y también es resistente a ataques específicos y claramente definidos en el</span><b> lado del cliente</b><span style="font-weight: 400;">, como </span><b>alteración, modificación o ingeniería inversa para extraer código o datos sensibles</b><span style="font-weight: 400;">. Esta aplicación aprovecha las características de seguridad del hardware o bien técnicas de protección de software suficientemente fuertes y verificables.</span></p>
+<p><span style="font-weight: 400;">MASVS-R es adecuado para las aplicaciones que manejan datos altamente confidenciales y puede servir como medio para proteger la propiedad intelectual o dificultar la manipulación de una aplicación.</span></p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id362">
+<div class="iDevice emphasis0">
+<div id="ta362_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las combinaciones posibles y sus características son :</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">MASVS-L1.</span></li>
+<li style="text-align: justify;">MASVS-L1+R.</li>
+<li style="text-align: justify;">MASVS-L2.</li>
+<li style="text-align: justify;">MASVS-L2+R.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 640px;"><img src="UD4_4_masv_level.png" alt="Niveles MASV" title="Niveles MASV" width="640" height="267" />
+<figcaption class="figcaption"><a href="https://owasp.org/www-project-mobile-security-testing-guide/" target="_blank" class="author" rel="noopener">OWASP Fundation</a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">Algunos ejemplo de aplicaciones tipo de nivel L2+R:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Industria Financiera</b><span style="font-weight: 400;">: Tener acceso al código fuente permite el diseño de <em>malware</em> efectivo. Se ha de impedir que se conozca cualquier detalle de la implementación, ya que permiten al usuario mover fondos.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Aplicaciones móviles</b><span style="font-weight: 400;"> que, por diseño, necesitan almacenar datos sensibles en el dispositivo móvil y, al mismo tiempo, deben soportar una amplia gama de dispositivos y versiones del sistema operativo.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Aplicaciones que contengan</b><span style="font-weight: 400;"> “compras en la aplicación” y que los mecanismos de protección no se encuentren en el servidor. Es necesario aplicar los controles MASVS-R de</span><b> forma adicional</b><span style="font-weight: 400;"> para incrementar el esfuerzo necesario para revertir o manipular la aplicación.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">El capítulo 8 de la versión actual de MASVS (1.2) establece los requerimientos e indican que:</span></p>
+<blockquote>
+<p style="text-align: justify;"><b>Nunca deben utilizarse como reemplazo de los controles de seguridad. Los controles listados en MASVR-R buscan añadir controles de protección adicionales y específicos contra las amenazas a las aplicaciones que también cumplen con los requerimientos de seguridad del MASVS.</b></p>
+</blockquote>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los requerimientos y los casos de prueba se clasifican en:</span></p>
+<div class="exe-fx exe-tabs">
+<h2 style="text-align: justify;">Impedir <strong>el análisis dinámico y la manipulación</strong></h2>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"></span><span style="font-weight: 400;"><strong>8.1. MSTG-RESILIENCE-1.</strong> La aplicación detecta y responde a la presencia de un dispositivo <span style="color: #0000ff;"><strong><a href="#t96c3a671-2754-2dca-6a58-5b9a3256a67e" id="link96c3a671-2754-2dca-6a58-5b9a3256a67e" class="exe-tooltip definition-tt titled-tt" title="rooteado | Glosario" style="color: #0000ff;">rooteado</a></strong></span>, ya sea alertando al usuario o finalizando la ejecución de la aplicación.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.2. MSTG-RESILIENCE-2.</strong> La aplicación impide la depuración o detecta y responde a la misma. Se deben cubrir todos los protocolos de depuración.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.3. MSTG-RESILIENCE-3.</strong> La aplicación detecta y responde a cualquier modificación de ejecutables y datos críticos de la propia aplicación,</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.4 MSTG-RESILIENCE-4.</strong> La aplicación detecta la presencia de herramientas de ingeniería inversa o frameworks comúnmente utilizados.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.5. MSTG-RESILIENCE-5.</strong> La aplicación detecta y responde a ser ejecutada en un emulador.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.6. MSTG-RESILIENCE-6.</strong> La aplicación detecta y responde ante modificaciones de código o datos en su propio espacio de memoria.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.7. MSTG-RESILIENCE-7.</strong> La aplicación implementa múltiples mecanismos de detección para los puntos del 8.1 al 8.6. Nótese que, a mayor cantidad y diversidad de mecanismos usados, mayor será la resistencia.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.8. MSTG-RESILIENCE-8.</strong> Los mecanismos de detección provocan distintos tipos de respuestas, incluyendo respuestas retardadas y silenciosas.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.9. MSTG-RESILIENCE-9.</strong> La ofuscación se aplica a las defensas del programa, lo que a su vez impide la desofuscación mediante análisis dinámico.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.10. MSTG-RESILIENCE-10.</strong> La aplicación implementa un <em>“enlace al dispositivo”</em> </span>utilizando una huella del dispositivo derivado de varias propiedades únicas al mismo.</li>
+</ul>
+<h2>Impedir la compresión</h2>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.11. MSTG-RESILIENCE-11.</strong> Todos los archivos ejecutables y bibliotecas correspondientes a la aplicación se encuentran cifrados, o bien los segmentos importantes de código se encuentran cifrados o “empaquetados” (packed). De este modo cualquier análisis estático trivial no revelará código o datos importantes.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong>8.12. MSTG-RESILIENCE-12.</strong> Si el objetivo de la ofuscación es proteger código propietario, debe utilizarse un esquema de ofuscación apropiado para la tarea particular y robusto contra métodos de desofuscación manual y automatizada, considerando la investigación actual publicada. La eficacia del esquema de ofuscación debe verificarse mediante pruebas manuales. Nótese que, siempre que sea posible, las características de aislamiento basadas en hardware son preferibles a la ofuscación.</span></li>
+</ul>
+<h2 style="text-align: justify;">Impedir <span style="font-weight: 400;"><strong>el Eavesdropping</strong></span></h2>
+<ul>
+<li><span style="font-weight: 400;"><strong>8.13. MSTG-RESILIENCE-13.</strong> A modo de defensa en profundidad, además de incluir un refuerzo (hardening) sólido de la comunicación, puede implementarse el cifrado de datos (payloads) a nivel de aplicación como medida adicional contra ataques de <span style="color: #0000ff;"><a href="#t2d81ec4b-1cf0-0165-e573-a7dc877d74ae" id="link2d81ec4b-1cf0-0165-e573-a7dc877d74ae" title="Eavesdropping | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong><em>eavesdropping</em></strong>.</a></span></span></li>
+</ul>
+</div>
+<ul></ul>
+<ul></ul>
+<div id="t2d81ec4b-1cf0-0165-e573-a7dc877d74ae" class="exe-tooltip-text">
+<p>Escuchar conversaciones privadas sin consentimiento de forma ilegal.</p>
+</div>
+<div id="t96c3a671-2754-2dca-6a58-5b9a3256a67e" class="exe-tooltip-text">
+<p>Dispositivo en el cual el usuario del mismo posee permisos de superusuario en el sistema operativo, pudiendo tener acceso a todas las funciones.</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__casos_de_prueba_en_android.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

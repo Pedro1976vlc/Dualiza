@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Almacenamiento seguro de datos. | UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-141"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 4: Detección de problemas de seguridad en aplicaciones para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD4. DETECCIÓN DE PROBLEMAS DE SEGURIDAD EN APLICACIONES PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_modelos_de_permisos_en_plataformas_mviles.html" class="daddy">1.- Modelos de permisos en plataformas móviles</a>
+   <ul class="other-section">
+      <li><a href="11_android.html" class="daddy">1.1.- Android.</a>
+      <ul class="other-section">
+         <li><a href="111_fichero_androidmanifestxml.html" class="no-ch">1.1.1.- Fichero Androidmanifest.xml</a></li>
+         <li><a href="112_solicitando_permisos.html" class="daddy">1.1.2.- Solicitando permisos</a>
+         <ul class="other-section">
+            <li><a href="1121_permisos_de_instalacin_o_normales.html" class="no-ch">1.1.2.1.- Permisos de instalación o normales</a></li>
+            <li><a href="1122_permisos_en_tiempo_de_ejecucin.html" class="no-ch">1.1.2.2.- Permisos en tiempo de ejecución</a></li>
+         </ul>
+         </li>
+         <li><a href="113_estableciendo_permisos.html" class="no-ch">1.1.3.- Estableciendo permisos</a></li>
+      </ul>
+      </li>
+      <li><a href="12_ios.html" class="no-ch">1.2.- iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="2__firma_y_verificacin_de_aplicaciones.html" class="daddy">2. - Firma y verificación de aplicaciones.</a>
+   <ul class="other-section">
+      <li><a href="21_fundamentos_criptogrficos.html" class="no-ch">2.1.- Fundamentos criptográficos</a></li>
+      <li><a href="22_android.html" class="no-ch">2.2.- Android</a></li>
+      <li><a href="23_ios.html" class="no-ch">2.3.- iOS</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_almacenamiento_seguro_de_datos.html" class="active daddy">3.- Almacenamiento seguro de datos.</a>
+   <ul>
+      <li><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="daddy">3.1.- MSTG para el almacenamiento seguro en Android.</a>
+      <ul class="other-section">
+         <li><a href="311_anlisis_de_mstg1_y_2.html" class="no-ch">3.1.1.- Análisis de MSTG-1 y 2</a></li>
+      </ul>
+      </li>
+      <li><a href="32_mstg_para_almacenamiento_seguro_en_ios.html" class="no-ch">3.2.- MSTG para almacenamiento seguro en iOS</a></li>
+   </ul>
+   </li>
+   <li><a href="4_fuga_de_informacin_en_los_ejecutables.html" class="daddy">4.- Fuga de información en los ejecutables</a>
+   <ul class="other-section">
+      <li><a href="41__casos_de_prueba_en_android.html" class="no-ch">4.1. - Casos de prueba en Android</a></li>
+   </ul>
+   </li>
+   <li><a href="5_soluciones_casb_cloud_access_security_broker.html" class="no-ch">5.- Soluciones CASB (Cloud Access Security Broker).</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="23_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.- Almacenamiento seguro de datos.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id338">
+<div class="iDevice emphasis0">
+<div id="ta338_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los dispositivos móviles almacenan gran cantidad de información personal, profesional y empresarial. El <strong>Top Ten de OWASP</strong> para aplicaciones móviles establece como uno de las vulnerabilidades más peligrosas el <strong>almacenamiento inseguro (M2)</strong>. Al igual que en las aplicaciones web, se ha de proteger dicha información ante posibles ataques tanto desde el exterior como desde el interior. Las técnicas empleadas son similares a las de la unidad anterior: uso de <strong>criptografía</strong> y<strong> saneamiento de los datos</strong>.</span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 499px;"><img src="UD4_3_movil_candado.jpg" alt="Móvil protegido con un candado" width="499" height="333" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/640c594d-8cb6-4c11-bfe2-13b414363a4e" target="_blank" class="author" rel="noopener">stockcatalog </a>. <span class="title"><em>Móvil protegido con un candado</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los vectores de ataque van desde el acceso físico al dispositivo y por tanto al sistema de ficheros al conectarse a un ordenador, hasta la creación de <strong>malware</strong> que permite enviar archivos fuera del dispositivo.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La información se puede encontrar en:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Base de datos.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Ficheros de log.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Almacenamiento en XML.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Ficheros binarios.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Almacenamiento de <em>“cookies”</em>.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Tarjetas de memoria externa.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Almacenamiento en la nube.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones utilizan funciones del sistema operativo y puede que de los entornos de desarrollo para el almacenamiento de datos. El desarrollador  ha de conocer cómo implementa el sistema y/o el <em>“framework”</em> ciertas funciones relacionadas con el tratamiento de datos, en especial las </span><b>cachés </b><span style="font-weight: 400;"> para copiar/cortar/pegar, capturas de pantalla  o aplicaciones de manejo de teclado.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>MASVS</strong> establece un capítulo para tratar el almacenamiento seguro de datos, algunas obvias como no almacenar los datos sensibles en fichero en texto plano. Entre los controles a cumplir se encuentran:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Las funcionalidades de almacenamiento de credenciales del sistema deben de ser utilizadas para almacenar información sensible, tal como información personal.</span></li>
+<li style="text-align: justify;">No se escribe información sensible en los registros (logs) de la aplicación.</li>
+<li style="text-align: justify;">No se expone información sensible como contraseñas y números de tarjetas de crédito a través de la interfaz o capturas de pantalla.</li>
+<li style="text-align: justify;">No se guarda ningún tipo de información sensible de forma local en el dispositivo móvil. En su lugar, esa información debería ser obtenida desde un sistema remoto sólo cuando es necesario y únicamente residir en memoria. <b style="font-size: 16.8px;">En este caso son aplicaciones de nivel 2.</b></li>
+</ul>
+<p><span style="font-weight: 400;">En total se definen 15 controles para el almacenamiento de datos seguros.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdmodifIdevice em_iDevice em_iDevice_reflexionfpd" id="id340">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta340_121" class="block iDevice_content">
+<p><span style="font-weight: 400;">Indicar los requerimientos de seguridad para el almacenamiento de datos en aplicaciones de nivel 2.</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="23_ios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_mstg_para_el_almacenamiento_seguro_en_android.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
