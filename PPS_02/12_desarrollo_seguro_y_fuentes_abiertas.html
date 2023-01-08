@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.2.- Desarrollo seguro y fuentes abiertas. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-63"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="current-page-parent daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul>
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li id="active"><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="active no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="11_tcnicas_y_herramientas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.2.- Desarrollo seguro y fuentes abiertas.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id128">
+<div class="iDevice emphasis0">
+<div id="ta128_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Además de evitar la fuga de información, a la hora de crear software existen fuentes abiertas de diferentes organismos que se centran en los problemas de seguridad en el desarrollo de aplicaciones, las más conocidas son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>OWASP (<em><span>Open Web Application Security Project</span></em>)</b><span style="font-weight: 400;"><em>:</em> Proyecto de código abierto dedicado a determinar y combatir las causas que hacen que el software sea inseguro.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>CWE (<em>Common Weakness Enumeration</em>)</b><span style="font-weight: 400;">: En castellano enumeración de debilidades comunes, proyecto comunitario para entender las </span><span style="font-weight: 400;">fallas </span><span style="font-weight: 400;">y el desarrollo de herramientas automatizadas para identificar, corregir y prevenir las fallas, se centra en el desarrollo, gestionado por la organización sin ánimo de lucro </span><a href="https://www.mitre.org/"><span style="font-weight: 400;">Mitre</span></a><span style="font-weight: 400;">.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 401px;"><img src="Mitre_Corporation_logo.svg.png" alt="Logo Mitre" title="Logo Mitre" width="401" height="165" />
+<figcaption class="figcaption"><a href="http://www.mitre.org/" target="_blank" class="author" rel="noopener">The Mitre Corporation</a>. <span class="title"><em>Logo Mitre</em></span> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>CVE <em>(<span>Common Vulnerabilities and Exposures</span>)</em></b><span style="font-weight: 400;"><em>:</em> Acrónimo de  Vulnerabilidades y Exposiciones Comunes, similar al anterior, gestionado por la misma organización, aunque se centra más en software ya desarrollado, indicando la vulnerabilidad, las versiones del software afectadas y las posibles soluciones. Posee un buscador en el que se es posible buscar errores, bugs y fallas en el software y las librerías más utilizadas, la url es:</span></li>
+</ul>
+<p style="text-align: center;"><a href="http://cve.mitre.org/cve/search_cve_list.html"><span style="font-weight: 400;">http://cve.mitre.org/cve/search_cve_list.html</span></a></p>
+<p style="padding-left: 30px; text-align: justify;"><span style="font-weight: 400;">Se puede también descargar la base de datos completa de la misma web.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 399px;"><img src="image10.png" alt="Buscador CVE" title="Buscador CVE" width="399" height="110" />
+<figcaption class="figcaption"><span class="title"><em>Buscador CVE</em></span></figcaption>
+</figure>
+<p style="padding-left: 30px;"></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id130">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta130_128" class="block iDevice_content">
+<p>Vídeo en inglés sobre el funcionamiento de las vulnerabilidades <strong>CVE, con subtítulos.</strong></p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/qfpnJyTl1To" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Visión global del funcionamiento de los CVE para evitar software inseguro.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdIdevice em_iDevice em_iDevice_reflexionfpd" id="id174">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta174_119" class="block iDevice_content">
+<p><span style="font-weight: 400;">A la empresa ha llegado un proyecto desarrollado hace unos años con C++ que utiliza XML y la librería Xerces de la fundación Apache, en concreto la versión 2.5, para revisar la seguridad del proyecto en general. De los tres proyectos anteriores, ¿En cuál buscar información sobre vulnerabilidades de esa librería y esa versión?. ¿Existe alguna vulnerabilidad? ¿Qué hacer si existe algún problema en esa librería?</span></p>
+</div>
+<form name="feedback-form-174" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback174text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-174" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-174" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div id="ta174_120" class="block iDevice_content">
+<p><span style="font-weight: 400;">Las vulnerabilidades de librerías y software se encuentran en CVE. Si existen vulnerabilidades en esa versión, al realizar la búsqueda. Sería necesario establecer un "sandbox" para sustituir la versión de la librería por otra más reciente, realizar los cambios en el software para esa nueva librería y establecer plan de pruebas para comprobar una integración correcta</span><span style="font-weight: 400;">.</span></p>
+</div>
+</section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id214">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-214_141" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion214_141" class="block question iDevice_content">
+<p><span style="font-weight: 400;">Proyecto comunitario con el objetivo de comprender las fallas en el software y crear herramientas automatizadas que se puedan utilizar para identificar, corregir y prevenir esas fallas.</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_144" class="sr-av"><a href="#answer-214_144">Opción 1</a></label><input type="radio" name="option214_141" id="i214_144" class="exe-radio-option exe-radio-option-0-4-214_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_144"><div id="taans214_144" class="block iDevice_content">
+<p>CWE.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_999" class="sr-av"><a href="#answer-214_999">Opción 2</a></label><input type="radio" name="option214_141" id="i214_999" class="exe-radio-option exe-radio-option-1-4-214_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_999"><div id="taans214_999" class="block iDevice_content">
+<p>OSINT</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1002" class="sr-av"><a href="#answer-214_1002">Opción 3</a></label><input type="radio" name="option214_141" id="i214_1002" class="exe-radio-option exe-radio-option-2-4-214_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1002"><div id="taans214_1002" class="block iDevice_content">
+<p>NIST</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1005" class="sr-av"><a href="#answer-214_1005">Opción 4</a></label><input type="radio" name="option214_141" id="i214_1005" class="exe-radio-option exe-radio-option-3-4-214_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1005"><div id="taans214_1005" class="block iDevice_content">
+<p>MITRE</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b214_141" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa1b214_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa2b214_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b214_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-214_144">Opción correcta</a><span> (<a href="#sa0b214_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_999">Incorrecto</a><span> (<a href="#sa1b214_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1002">Incorrecto</a><span> (<a href="#sa2b214_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1005">Incorrecto</a><span> (<a href="#sa3b214_141">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+<br/><section class="question">
+<form name="multi-choice-form-214_1008" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion214_1008" class="block question iDevice_content">
+<p><span style="font-weight: 400;">Herramienta software para la extracción y modificación de metadatos de documentos públicos.</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1011" class="sr-av"><a href="#answer-214_1011">Opción 1</a></label><input type="radio" name="option214_1008" id="i214_1011" class="exe-radio-option exe-radio-option-0-5-214_1008-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1011"><div id="taans214_1011" class="block iDevice_content">
+<p>Google Dork.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1014" class="sr-av"><a href="#answer-214_1014">Opción 2</a></label><input type="radio" name="option214_1008" id="i214_1014" class="exe-radio-option exe-radio-option-1-5-214_1008-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1014"><div id="taans214_1014" class="block iDevice_content">
+<p>Shodan.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1017" class="sr-av"><a href="#answer-214_1017">Opción 3</a></label><input type="radio" name="option214_1008" id="i214_1017" class="exe-radio-option exe-radio-option-2-5-214_1008-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1017"><div id="taans214_1017" class="block iDevice_content">
+<p><span style="font-weight: 400;">ExifTool.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1020" class="sr-av"><a href="#answer-214_1020">Opción 4</a></label><input type="radio" name="option214_1008" id="i214_1020" class="exe-radio-option exe-radio-option-3-5-214_1008-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1020"><div id="taans214_1020" class="block iDevice_content">
+<p>Name Check.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i214_1023" class="sr-av"><a href="#answer-214_1023">Opción 5</a></label><input type="radio" name="option214_1008" id="i214_1023" class="exe-radio-option exe-radio-option-4-5-214_1008-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-214_1023"><div id="taans214_1023" class="block iDevice_content">
+<p>Spokeo.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b214_1008" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa1b214_1008" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa2b214_1008" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa3b214_1008" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa4b214_1008" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-214_1011">Incorrecto</a><span> (<a href="#sa0b214_1008">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1014">Incorrecto</a><span> (<a href="#sa1b214_1008">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1017">Opción correcta</a><span> (<a href="#sa2b214_1008">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1020">Incorrecto</a><span> (<a href="#sa3b214_1008">Retroalimentación</a>)</span></li>
+<li><a href="#answer-214_1023">Incorrecto</a><span> (<a href="#sa4b214_1008">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="11_tcnicas_y_herramientas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

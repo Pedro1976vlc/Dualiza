@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1.- Técnicas y herramientas | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="current-page-parent daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul>
+      <li id="active"><a href="11_tcnicas_y_herramientas.html" class="active no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1.- Técnicas y herramientas</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id124">
+<div class="iDevice emphasis0">
+<div id="ta124_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las técnicas y herramientas más utilizadas para obtener la información en OSINT son:</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>Buscadores habituales.</b><span style="font-weight: 400;"> Una de las funciones principales es rastrear continuamente Internet obteniendo e indexando prácticamente todo lo que se encuentra en abierto, por ejemplo: un administrador de sistemas ha configurado una carpeta de Apache para que se pueda ver un listado de sus archivos, entre los que se encuentra un fichero SQL con la estructura de la base de datos. El buscador analizará la página indexando el listado de ficheros,  siendo éste accesible de forma pública  y pudiendo encontrar la estructura de la base de datos. Una situación similar ocurre con los videos y grabaciones realizadas por cámaras de videovigilancia, que son almacenadas en la nube, si las configuraciones de seguridad no se realizan de forma correcta. </span>A la técnica para obtener información publicada sensible se le denomina “<b style="font-size: 1em;"><i>Google Hacking</i></b><span style="font-weight: 400;">”, aunque puede recibir el nombre del buscador. Se hace uso de los operadores de búsqueda para encontrar la información que se persigue. A las expresiones que utilizan operadores avanzados para encontrar información interesante se les denomina </span><b style="font-size: 1em;">Google Dork</b><span style="font-weight: 400;">. En el siguiente enlace se comentan los principales operadores de búsqueda de Google:</span></li>
+</ul>
+<p style="text-align: center;"><a href="https://ahrefs.com/blog/es/operadores-de-busqueda-avanzada-de-google/"><span style="font-weight: 400;">https://ahrefs.com/blog/es/operadores-de-busqueda-avanzada-de-google/</span></a></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>Buscadores especializados</b><span style="font-weight: 400;">: Estos buscadores facilitan los procesos de búsqueda de información, y entre ellos destacan:</span></li>
+</ul>
+<p style="padding-left: 60px;"><span style="font-weight: 400;"><strong><a href="https://www.shodan.io/" title="https://www.shodan.io/">- Shodan</a>:  </strong></span><span style="font-weight: 400;">Permite realizar búsqueda de recursos concretos como WebCam, bases de datos…Existe servicio de pago con más funcionalidades.</span></p>
+<p style="padding-left: 60px;"><span style="font-size: 12pt;"><strong><a href="https://namechk.com/" title="https://namechk.com/">- NameCHK</a></strong>: Comprueba si un usuario existe en más de 150 sitios web. En caso de robo de credenciales, es posible comprobar si ese usuario existe en otros servicios y probar con la contraseña robada, ya que muchas personas utilizan la misma contraseña en varios sitios.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 399px; text-align: justify;"><img src="Namechk.png" alt="Página web Namechk" title="Página web Namechk" width="399" height="185" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><span class="title"><em>Página web Namechk</em></span></figcaption>
+</figure>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>Buscadores de información de personas</b><span style="font-weight: 400;">. Existen varios, destacando <strong><a href="https://www.spokeo.com/" title="https://www.spokeo.com/">Spokeo</a></strong>, aunque se centra en Estados Unidos. </span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Herramientas extracción metadatos</b><span style="font-weight: 400;">. De los archivos y ficheros se puede obtener mucha información como autor, fecha y hora de creación, software y versión del mismo utilizada o incluso la geolocalización en caso de fotografías. Existen múltiples herramientas para la obtención de <a href="#tab3a9d24-7b2d-d9bb-f172-960a8b779117" id="linkab3a9d24-7b2d-d9bb-f172-960a8b779117" title="Metadatos | Glosario" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><strong>metadatos,</strong></span></a> algunas de las más conocidas:</span></li>
+</ul>
+<p style="padding-left: 60px;"><a href="https://tools.kali.org/information-gathering/metagoofil" title="Metagoofil"><strong>- Metagoofi</strong></a><span style="font-weight: 400;"><a href="https://tools.kali.org/information-gathering/metagoofil" title="Metagoofil"><strong>l</strong></a>. Permite la extracción de metadatos de documentos públicos; como archivos PDF, imágenes, o ficheros DOC, como son direcciones de correo electrónico del personal de una empresa, el software utilizado para la creación de los documentos. También da la posibilidad de analizar un sitio web completo.</span></p>
+<p style="padding-left: 60px;"><span style="font-weight: 400;"><strong><a href="https://exiftool.org/" title="ExifTool">- ExifTool</a>.</strong> Similar al anterior, permitiendo también la modificación de los metadatos de los ficheros.</span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><b>API Rest de las redes sociales</b><span style="font-weight: 400;">. Otra opción muy útil para obtener información, aunque en los últimos tiempos ha dejado de ser pública. Además, es necesario disponer de cuenta en la red social y burlar las medidas de seguridad establecidas, como <em>tokens</em> para el acceso a la información.</span></li>
+<li style="font-weight: 400;" aria-level="1"><a href="https://www.maltego.com/" title="https://www.maltego.com/"><b>Maltego</b></a><span style="font-weight: 400;"><a href="https://www.maltego.com/" title="https://www.maltego.com/">:</a> Software especializado en analizar las relaciones entre personas, dominios, cuentas en redes sociales o metadatos entre otros. Posee tres versiones para clientes y tres versiones para servidor, la versión CE es gratuita aunque con funcionalidades limitadas. Permite añadir otras fuentes como el buscador <strong>Shodan</strong> o <strong>People Mon</strong> y construir grafos de relaciones a partir de las fuentes seleccionadas.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Recon-ng</b><span style="font-weight: 400;">. Similar a Maltego permite añadir módulos con diferentes motores de búsqueda para recabar información. Se ejecuta sobre la línea de comandos y posee incluso una tienda de módulos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>TheHarvester</b><span style="font-weight: 400;">. Otro recolector de información de fuentes públicas. Similar al anterior.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Searchcode</b><span style="font-weight: 400;">. En este caso, la fuente pública es el código fuente existente en repositorios, es posible realizar búsquedas para encontrar fallos en el mismo o datos sensibles que se han olvidado en el código, como comentarios con las claves de acceso a base de datos, o sentencias SQL que proporcionen información sobre la estructura de la base de datos.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center" style="width: 400px; text-align: justify;"><img src="searchcode.png" alt="Buscador SearchCode" title="Buscador  SearchCode" width="400" height="238" />
+<figcaption class="figcaption"><span class="title"><em>Buscador SearchCode</em></span></figcaption>
+</figure>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;"><strong><a href="https://osintframework.com/" title="https://osintframework.com/">OSINT Framework</a>.</strong> Colección de recursos de fuentes abiertas, clasificados en función de la topología: como usuarios, correos electrónicos, imágenes y un largo etcétera.</span></li>
+</ul>
+<div id="tda7b74ad-c410-d750-b19e-02f4a3a6dd85" class="exe-tooltip-text">
+<p>Los metadatos son, en su definición más simple, datos que describen otros datos. Generalmente, un archivo, además de contener datos, tiene información adicional sobre su organización y estructura, como por ejemplo: fecha de creación o modificación, descripción, autor y resumen.</p>
+</div>
+<div id="tab3a9d24-7b2d-d9bb-f172-960a8b779117" class="exe-tooltip-text">
+<p>Los metadatos son, en su definición más simple, datos que describen otros datos. Generalmente, un archivo, además de contener datos, tiene información adicional sobre su organización y estructura, como por ejemplo: fecha de creación o modificación, descripción, autor y resumen.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id204">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Protección frente a técnicas y herramientas de investigación en fuentes abiertas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta204_206_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Se ha de garantizar que las aplicaciones y sistemas que se desarrollen no poseen puntos de fuga de información, protegiéndose de las aplicaciones anteriores. Algunas de las acciones a realizar son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Eliminar los metadatos de forma automática al subirlos al servidor.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Realizar búsquedas de correos expuestos en Internet del dominio de la organización.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Comprobar la configuración de los servidores para ver que solo se exponen al público las carpetas y ficheros  necesarios y no otros.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Configurar correctamente las condiciones de indexación en los buscadores.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Utilizar las herramientas OSINT para comprobar qué información se ofrece de forma pública.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Revisar la configuración de las redes sociales para proteger la información privada.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Comprobar de forma exhaustiva todas las APIS disponibles comprobando si son públicas o privadas y en caso de las públicas asegurarse que la información que muestra es la que se desea.</span></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper RecomendacionfpdIdevice em_iDevice em_iDevice_recomendacionfpd" id="id206">
+<div class="iDevice emphasis_recomendacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Recomendación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta206_131" class="block iDevice_content">
+<p style="text-align: justify;">Se recomienda la lectura de los siguientes libros, para conocer en profundidad la Investigaciones en Fuentes Abiertas (OSINT):</p>
+<div class="exe-fx exe-accordion">
+<h2>Open Source INTelligence (OSINT): Investigar personas e Identidades en Internet<strong></strong><strong></strong></h2>
+<p><strong><img src="https://0xword.com/392-thickbox_default/open-source-intelligence-osint-investigar-personas-e-identidades-en-internet.jpg" alt="Open Source-INTelligence (OSINT): Investigar Personas-e-Identidades en Internet" title="Open Source-INTelligence (OSINT): Investigar Personas-e-Identidades en Internet" width="300" height="300" /> </strong></p>
+<ul>
+<li><strong>Título:</strong> <em>"<a href="https://0xword.com/libros/162-open-source-intelligence-osint-investigar-personas-e-identidades-en-internet.html" title="Open Source INTelligence (OSINT): Investigar personas e Identidades en Internet">Open Source INTelligence (OSINT): Investigar personas e Identidades en Internet</a>"</em>.</li>
+<li><strong>Autores:</strong> Vicente Aguilera Díaz, Carlos Seisdedos.</li>
+<li><strong>Editorial:</strong> OxWORD, 2020.</li>
+<li><strong>ISBN:</strong> 8409197855, 9788409197859.</li>
+<li><strong>Número de páginas:</strong> 369 páginas.</li>
+</ul>
+<h2>Manual de Ciberinvestigación en Fuentes Abiertas: OSINT para Analistas<strong></strong></h2>
+<p><strong><img src="https://images-na.ssl-images-amazon.com/images/I/51UHBEcnnGL.jpg" alt="Manual de Ciberinvestigación en Fuentes Abiertas: OSINT para Analistas" title="Manual de Ciberinvestigación en Fuentes Abiertas: OSINT para Analistas" width="300" height="300" /></strong></p>
+<ul>
+<li><strong>Título:</strong> <em>"<a href="https://www.amazon.com/-/es/F%C3%A9lix-Brezo-Fern%C3%A1ndez/dp/1650895747">Manual de Ciberinvestigación en Fuentes Abiertas: OSINT para Analistas</a>"</em>.</li>
+<li><strong>Autores: </strong>Yaiza Rubio Viñuela, Félix Brezo Fernández </li>
+<li><strong>Año de publicación: </strong>2019.</li>
+<li><strong>ISBN:</strong> 1650895747, 9781650895741</li>
+<li><strong>Número de páginas:</strong> 261 páginas.</li>
+</ul>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

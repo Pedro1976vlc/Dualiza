@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.2. - Mobile Security Testing Guide. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-100"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="current-page-parent daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul>
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li class="current-page-parent"><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="current-page-parent daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul>
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li id="active"><a href="332__mobile_security_testing_guide.html" class="active daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul>
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="331__web_security_testing_guide.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.3.2. - Mobile Security Testing Guide.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id180">
+<div class="iDevice emphasis0">
+<div id="ta180_154" class="block iDevice_content">
+<p style="text-align: justify;">Los dispositivos móviles almacenan datos personales muy importante para los usuarios, desde&nbsp; los mensajes personales en programas de mensajería instantánea o los correos electrónicos hasta los datos bancarios, pasando por fotos personales. Esta información es una de las más deseadas por los hackers se hace necesario la creación de aplicaciones para móviles seguros, además de poder medir lo segura que es una aplicación con estándares de seguridad. OWASP establece&nbsp; &nbsp;una serie de proyectos relacionados que permiten evaluar lo segura o insegura que es una aplicación.</p>
+<ul>
+<li style="text-align: justify;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://owasp.org/www-project-mobile-security-testing-guide/">Guía de desarrollo y testeo de seguridad en aplicaciones móviles.</a>(MSTG). Guía de pruebas que define un conjunto de casos de pruebas junto con los procesos, técnicas y herramientas a utilizar para realizar dichas pruebas. Es una guía con un alto contenido técnico.</li>
+<li style="text-align: justify;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://github.com/OWASP/owasp-masvs">Estándar de verificación de seguridad de aplicaciones móviles</a> (MASVS). Define una serie de requerimientos que las aplicaciones han de cumplir para conseguir ser certificadas con cierto nivel de seguridad, para cada requerimiento se define un caso de prueba en la guía de desarrollo y testeo (MSTG).&nbsp;</li>
+<li style="text-align: justify;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://github.com/OWASP/owasp-mstg/releases">Lista de verificación de seguridad de aplicaciones</a>. Hoja de cálculo que permite realizar el seguimiento del proceso de evaluación de los requerimientos de una aplicación.&nbsp;Dispone de versión en castellano.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 400px;"><img width="400" height="259" title="Esquema Mobile Security Testing Guide" style="display: block; margin-left: auto; margin-right: auto;" alt="Esquema Mobile Security Testing Guide" src="image7.png" hspace="auto">
+<figcaption class="figcaption"><a class="author" href="https://owasp.org/www-project-mobile-security-testing-guide/" target="_blank" rel="noopener">OWASP Fundation</a> <span class="license"><span class="sep">(</span><a title="Creative Commons (CC0)" href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="license nofollow noopener">CC0</a><span class="sep">)</span></span></figcaption>
+<a class="author" href="https://owasp.org/www-project-mobile-security-testing-guide/" target="_blank" rel="noopener"><br></a></figure>
+<p><strong>Guía de prueba de seguridad móvil(MSTG). </strong></p>
+<p style="text-align: justify;">Esta guía define y analiza la&nbsp; pruebas para dispositivos móviles. En especial en las aplicaciones móviles, describiendo un conjunto de <strong>requerimientos y pruebas&nbsp;exhaustivas </strong>que cubren los procesos, técnicas y herramientas utilizados durante una prueba de seguridad de aplicaciones para móviles, en el que se indican las vulnerabilidades típicas de las aplicaciones móviles, la metodología de pruebas sobre estas y las posibles soluciones, relacionándose con los requerimientos denominados MASVS, siendo MSTG&nbsp; una aplicación técnica y tecnológica de estos, agrupados por tipo como:</p>
+<ul style="text-align: justify;">
+<li>Áreas privadas.</li>
+<li>Almacenamiento local.</li>
+<li>Comunicación con servicios externos, servicios web.</li>
+<li>Autenticación y autorización.</li>
+<li>Interacción con el sistema operativo.</li>
+<li>Calidad de código.</li>
+<li>Técnicas para evitar la manipulación e ingeniería inversa del código.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 400px; text-align: justify;"></figure>
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><video width="500" height="240" class="mediaelement" controls="controls">
+<source src="mstg.mp4" type="video/mp4"></video>
+<figcaption class="figcaption"><span class="title"><em>Estándar de verificación de aplicaciones para móviles</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Análisis de los diferentes elementos para la verificación de aplicaciones móviles de la fundación OWASP, WSTG, MASVS y la hoja de cálculo para ralizar la evaluación.</p>
+</div>
+<p style="text-align: justify;">También incluye capítulos con test de pruebas para las dos principales sistemas operativos móviles: Android e iOS y un apéndice en el que se indican las principales herramientas de test para estos sistemas operativos:</p>
+<ul style="text-align: justify;">
+<li>Distribuciones para pruebas como <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="Mobile Security Toolchain">Androl4b</a> o <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://androidtamer.com/">Adroid Tamer</a>.</li>
+<li>Frameworks de seguridad: AppMon para monitorización o <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF</a> para análisis.</li>
+<li>Analizadores de código: <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://www.checkmarx.com/">Checkmarx</a>, <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://www.microfocus.com/es-es/products/application-security-testing/overview">Fortity</a> y <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://www.veracode.com/">Veracode</a>.</li>
+</ul>
+<p style="text-align: justify;">En el caso de punto 3.2 referido a las pruebas de&nbsp;<strong>comunicaciones por red</strong>&nbsp;se indica:</p>
+<p style="text-align: justify;">Los principales ataque son los de "<span style="color: #0000ff;"><strong><a title="sniffing | Glosario" class="exe-tooltip definition-tt titled-tt" id="linkd3f8ef4f-d9e6-e09f-2981-f24f741b691e" style="color: #0000ff;" href="#td3f8ef4f-d9e6-e09f-2981-f24f741b691e">sniffing</a></strong></span>" y "<strong><span style="color: #0000ff;"><a title="Man-in-the-middle | Glosario" class="exe-tooltip definition-tt titled-tt" id="link25eae840-efb7-20e0-1a17-2d2215ff16a0" style="color: #0000ff;" href="#t25eae840-efb7-20e0-1a17-2d2215ff16a0">man-in-the-middle</a></span></strong>".</p>
+<p style="text-align: justify;">Las principales las vulnerabilidades potenciales,&nbsp; como la de interceptación de tráfico HTTP y HTTPS,&nbsp; análisis de tráfico no HTTP, simulación de ataques "Man-in-the.Middle", envenenamiento de tablas <a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://www.incibe-cert.es/blog/arp-spoofing">ARP</a>, o reenvío de puertos de puertos, junto con las herramientas para evaluarlas.</p>
+<p style="text-align: justify;">Los estándares de verificación de seguridad de aplicaciones móviles para las conexiones de red (MASVS). En este punto son 3. <strong>MSTG-NETWORK-1</strong> y <strong>2</strong> relacionado con la codificación de datos en al red, los algoritmos a emplear, la comprobación de no exponer "endpoints" en texto plano o el análisis de tráfico enviado y <strong>MSTG-NETWORK-5</strong> guía para aplicaciones críticas con niveles de verificación denominados "defensa en profundidad) que necesitan de implementar&nbsp; controles de seguridad avanzados en operaciones críticas como validación con tarjeta de coordenadas en caso de pago en Internet.</p>
+<p style="text-align: justify;">Por último incluye un punto de referencia con el <strong>OWASP Mobile Top 10</strong> relacionada con el capítulo, los MASVS, los CWE equivalentes, las herramientas a utilizar en esa guía de pruebas y otras referencias como los <strong>RFC</strong> de <strong>IETF</strong> o&nbsp; el estándar de generación de certificados digitales .</p>
+<p style="text-align: justify;"></p>
+<p></p>
+<div class="exe-tooltip-text" id="td3f8ef4f-d9e6-e09f-2981-f24f741b691e">
+<p>Técnica de vigilancia y recogida pasiva de comunicaciones de la red, descodifica los protocolos y examina los contenidos en busca de información de interés.</p>
+</div>
+<div class="exe-tooltip-text" id="t25eae840-efb7-20e0-1a17-2d2215ff16a0">
+<p>Estrategia de ataque en la que el atacante intercepta una comunicación entre dos partes, sustituyendo el tráfico entre ambas a voluntad y controlando la comunicación.</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="331__web_security_testing_guide.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

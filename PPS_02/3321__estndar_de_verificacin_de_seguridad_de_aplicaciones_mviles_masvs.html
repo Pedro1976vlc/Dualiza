@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS). | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-108"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="current-page-parent daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul>
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li class="current-page-parent"><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="current-page-parent daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul>
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li class="current-page-parent"><a href="332__mobile_security_testing_guide.html" class="current-page-parent daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul>
+            <li id="active"><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="active no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="332__mobile_security_testing_guide.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id203">
+<div class="iDevice emphasis0">
+<div id="ta203_85" class="block iDevice_content">
+<p>La guía de prueba establece diferentes tipos de pruebas que serán necesarias o no dependiendo del tipo de aplicación y el nivel de seguridad requerido, para establecer unos criterios comunes en cuanto al nivel de seguridad la fundación establece una serie de requerimientos que se han de cumplir en función de las pruebas (MSTG)</p>
+<p>Estor requerimientos permiten conocer el grado de seguridad de una aplicación móvil en función del grado de cumplimiento de las pruebas. Establece<strong> 2 niveles (MASVS-L1 y MASVS-L2)</strong> de verificación de seguridad y otro adicional<strong> (MASVS-R)</strong> para la ingeniería inversa.</p>
+<ul>
+<li>El nivel <strong>MASVS-L1</strong>: Se aplica a todas las aplicaciones, las implementación de este nivel tiene un coste económico y de usabilidad aceptable. Se centra en requerimientos relacionados con la calidad del código y manejo de datos sensibles. <strong>Debe existir un proceso de pruebas para verificar el nivel.</strong></li>
+<li>El nivel <strong>MASVS-L2</strong>: Se ha de usar en aplicaciones que manejen datos de especial protección, esto conlleva un aumento del coste económico en su implementación así como la pérdida de experiencia de uso por parte de los usuarios. En este nivel se ha de crear un <strong>modelo de amenazas</strong> y el desarrollo y la arquitectura la <strong>seguridad</strong> ha de ser un <strong>elemento clave</strong>, algunos ejemplos de aplicaciones de L2 son las relacionadas con la salud o con temas financieros. </li>
+<li>El nivel <strong>MASVS-R</strong>: Su función es evitar la ingeniería inversa y la manipulación de la aplicación para extraer código o datos sensibles. Se basa en las características del hardware y en técnicas de protección de software avanzadas.</li>
+</ul>
+<p>El estándar actual se puede obtener en castellano y otros idiomas en la siguiente dirección:</p>
+<p style="text-align: center;"><a href="https://github.com/OWASP/owasp-masvs/releases" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">https://github.com/OWASP/owasp-masvs/releases</a></p>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 640px;"><img src="image6.png" alt="Niveles MASV" title="Niveles MASV" width="640" height="267" />
+<figcaption class="figcaption"><a href="https://owasp.org/www-project-mobile-security-testing-guide/" target="_blank" class="author" rel="noopener">OWASP Fundation</a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p>Un ejemplo de requerimientos del grupo 4, verificación de seguridad, con los dos niveles existentes:</p>
+<p></p>
+<figure class="exe-figure exe-image position-center" style="width: 500px;"><img src="requerimientosMASVS.png" alt="Ejemplo requerimientos" title="Ejemplo requerimientos" width="500" height="367" />
+<figcaption class="figcaption"><span class="title"><em>Ejemplo requerimientos.</em></span></figcaption>
+</figure>
+<p></p>
+<p>Recordar además la existencia de la  l<strong>ista de verificación de seguridad de aplicaciones. </strong>Hoja de cálculo en la que se tienen los requerimientos de MSTG, dispone de diferentes hojas que permite realizar una evaluación del estado de cumplimiento de estos. Se puede obtener en diferentes idiomas de la siguiente dirección:</p>
+<p style="text-align: center;"><a href="https://github.com/OWASP/owasp-mstg/tree/master/Checklists" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">https://github.com/OWASP/owasp-mstg/tree/master/Checklists</a></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="332__mobile_security_testing_guide.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

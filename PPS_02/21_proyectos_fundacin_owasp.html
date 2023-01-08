@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.- Proyectos fundación OWASP. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-71"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="current-page-parent daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul>
+      <li id="active"><a href="21_proyectos_fundacin_owasp.html" class="active no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22_owasp_top_ten_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.1.- Proyectos fundación OWASP.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id177">
+<div class="iDevice emphasis0">
+<div id="ta177_154" class="block iDevice_content">
+<p>La fundación posee decenas de proyectos para el desarrollo de aplicaciones seguras, entre todos ellos destacan:</p>
+<div class="exe-fx exe-carousel">
+<h2>Top Ten Web Application Security Risk.</h2>
+<p style="text-align: justify;">Listado de los 10 riesgos más importantes y comunes en el desarrollo web. Este listado se actualiza cada pocos años, se añaden nuevos riesgos, desaparecen otros, o cambia su relevancia o posición en el listado. La versión actual es del 2020. Se puede consultar en:</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></p>
+<h2>Top Ten Mobile Security Risk.</h2>
+<p style="text-align: justify;">Equivalente a la anterior, pero para aplicaciones móviles. La última versión es la del 2016.</p>
+<h2>Dependency-Trak</h2>
+<p style="text-align: justify;">Plataforma para el análisis inteligente de componentes, que permite minimizar el riesgo. Las aplicaciones actuales se construyen basándose en otros componentes y librerías sobre las que no se tiene control. Con esta herramientas es posible realizar una monitorización de los diferentes componentes. Utiliza los repositorios de código y gestores de paquetes utilizados en los lenguajes más usados, como: npm, maven o composer. La página web de proyecto es:</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://docs.dependencytrack.org/">https://docs.dependencytrack.org/</a></p>
+<h2>Juice Shop.</h2>
+<p style="text-align: justify;">Aplicación plagada de errores de seguridad útil para el aprendizaje y entrenamiento en uso de herramientas de seguridad. Desarrollada con Node, Servicios REST con Express y Angular. Se puede descargar el código o utilizar una imagen de Docker-OWASP. Existe un libro oficial sobre la aplicación.</p>
+<figure class="exe-figure exe-image position-center license-CC-BY-NC-SA" style="width: 401px;"><img width="401" height="168" title="Juice Shop" alt="Juice Shop." src="juiceshop.png">
+<figcaption class="figcaption"><a class="author" href="bkimminich" target="_blank" rel="noopener">https://github.com/bkimminich/juice-shop</a>. <span class="title"><em>Juice Shop</em></span> <span class="license"><span class="sep">(</span><a title="Creative Commons BY-NC-SA" href="http://creativecommons.org/licenses/?lang=es" target="_blank" rel="license nofollow noopener">CC BY-NC-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<h2>Mobile Security Testing Guide.</h2>
+<p style="text-align: justify;">Guía de desarrollo y pruebas de seguridad en aplicaciones móviles. Es uno de los proyectos de mayor relevancia de la fundación, se trata en mayor profundidad en posteriores puntos de la unidad.</p>
+<h2>Web Security Testing Guide.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Guía completa para probar la seguridad de las aplicaciones web y los servicios web, proporcionando un marco con las mejores prácticas en las aplicaciones web basada en escenarios. En la primera parte de la guía se explica la importancia de las pruebas, los tipos, desarrollo del plan de pruebas y proceso de pruebas Además, establece un marco de trabajo para especificar, diseñar y realizar las pruebas. También especifica un gran conjunto de pruebas a llevar a cabo para medir la seguridad de una aplicación, agrupadas en tipos como fuga de información (relacionado con las fuentes abiertas), manejo de sesiones o validación de entradas.</span></p>
+<p><span style="font-weight: 400;">En cada caso de pruebas se&nbsp; indica el problema de seguridad de forma técnica, y la forma de realizar las pruebas:</span></p>
+<ul>
+<li><span style="font-weight: 400;">Comandos como <span style="color: #0000ff;"><a title="curl | Glosario" class="exe-tooltip definition-tt titled-tt" id="linkd0e92146-ce60-6a4e-da08-39f6e13da892" style="color: #0000ff;" href="#td0e92146-ce60-6a4e-da08-39f6e13da892"><em><strong>curl</strong></em></a>.</span></span></li>
+<li><span style="font-weight: 400;">Pruebas de caja blanca.</span></li>
+<li><span style="font-weight: 400;">Pruebas de caja negra.</span></li>
+<li><span style="font-weight: 400;">Pruebas de Integración</span></li>
+<li><span style="color: #0000ff;"><strong><a class="exe-tooltip definition-tt" id="linkb3aafe17-98ea-08c9-a5c3-66973d664b9d" style="color: #0000ff;" href="#tb3aafe17-98ea-08c9-a5c3-66973d664b9d">Pruebas Fuzzy.</a></strong></span></li>
+<li><strong><span style="color: #0000ff;"><a class="exe-tooltip definition-tt" id="linkf30cee32-8ff1-f51e-9362-b1983a2f0880" style="color: #0000ff;" href="#tf30cee32-8ff1-f51e-9362-b1983a2f0880">Pruebas E2E.</a></span></strong></li>
+</ul>
+<h2>Zed Attack Proxy (ZAP)</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Herramienta para el testeo de aplicaciones web, permite manipular el tráfico que pasa a través del mismo. Algunas de las funcionalidades que ofrece son: </span><span style="font-weight: 400;">&nbsp;&nbsp;&nbsp; </span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;"><strong>Proxy de interceptación:</strong> Permite ver todo el tráfico entre el navegador y el servidor web. Puede modificar el tráfico HTTP en ambas direcciones de la comunicación (entre el servidor web y el navegador).</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;"><strong>Spider:</strong> Ayuda a descubrir nuevas URL’s en el sitio auditado. Una de las maneras que realiza esto es analizando el código HTML de la página para descubrir etiquetas <em>&lt;a&gt;</em> y seguir sus atributos <em>href</em>.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;"><strong>Forced Browsing:</strong> Intenta descubrir directorios y archivos no indexados en el sitio como pueden ser páginas de inicio de sesión.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;"><strong>Active Scan:</strong> Genera diferentes ataques web, como <strong>CSRF</strong>, <strong>XSS</strong>, <strong>Inyección SQL</strong>.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;"><strong>Pruebas <em>Fuzzer</em>:</strong> Proporcionar datos inválidos, inesperados o aleatorios con el objetivo de supervisar y vigilar el comportamiento del sistema.</span></li>
+</ul>
+<h2><span style="font-weight: 400;">OWASP ModSecurity Core Rule Set.</span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Sistema de detección de ataques basado en cortafuegos para aplicaciones web. En el proyecto se incluyen diferentes tutoriales: instalación, configuración de Apache, IIS y Mginx, definición de reglas y disparadores entre otros. El proyecto ha crecido y posee su propia página web fuera de la fundación.<br></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://coreruleset.org/">https://coreruleset.org/</a></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se basa en la definición de reglas, por ejemplo la siguiente bloquea la IP de un spammer</span></p>
+<div class="highlighted-code language-c">
+<div>
+<pre><code>SecRule TX:block_spammer_ip "@eq 1" \
+   "msg:'HTTP Blacklist match for spammer IP',\
+   severity:'CRITICAL',\
+   id:910160,\
+   phase:request,\
+   block,\
+   t:none,\
+   tag:'application-multi',\
+   tag:'language-multi',\
+   tag:'platform-multi',\
+   tag:'attack-reputation-ip',\
+   chain,\
+   skipAfter:END_RBL_CHECK"
+        SecRule TX:httpbl_msg "(?i)^.*? spammer .*?$" \
+           "setvar:'tx.msg=%{rule.msg}',\
+           setvar:tx.anomaly_score=+%{tx.critical_anomaly_score},\
+           setvar:tx.%{rule.id}-AUTOMATION/MALICIOUS-%{matched_var_name}=%{matched_var},\
+           setvar:ip.reput_block_flag=1,\
+           expirevar:ip.reput_block_flag=%{tx.reput_block_duration},\
+           setvar:'ip.reput_block_reason=%{rule.msg}',\
+           setvar:ip.previous_rbl_check=1,\
+           expirevar:ip.previous_rbl_check=86400"</code></pre>
+</div>
+</div>
+</div>
+<figure class="exe-figure exe-image position-center license-CC-BY" style="width: 399px;"><img width="399" height="139" alt="Logotipo de la fundación OWASP" src="owasp.png">
+<figcaption class="figcaption"><a class="author" href="https://owasp.org/#" target="_blank" rel="noopener">OWASP Fundation</a>. <span class="title"><em>Logotipo de la fundación OWASP</em></span> <span class="license"><span class="sep">(</span><a title="Creative Commons BY" href="http://creativecommons.org/licenses/?lang=es" target="_blank" rel="license nofollow noopener">CC BY</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;">Además, es muy importante destacar que existen grupos locales, repartidos por todo el mundo, especializados en ofrecer cursos y conferencias. En España existen dos, uno en Bilbao y otro en Sevilla, siendo este último el que más actividad reciente ha tenido; y en el que se puede encontrar diferentes presentaciones y documentos. La página oficial del grupo de Sevilla es:</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://owasp.org/www-chapter-sevilla/">https://owasp.org/www-chapter-sevilla/</a></p>
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><video width="500" height="240" class="mediaelement" controls="controls">
+<source src="intro_owasp.mp4" type="video/mp4"></video>
+<figcaption class="figcaption"><span class="title"><em>Fundación OWASP</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Introducción a la fundación OWASP y los proyectos más destacados.</p>
+</div>
+<div class="exe-tooltip-text" id="tb3aafe17-98ea-08c9-a5c3-66973d664b9d">
+<p>El fuzzing o fuzz testing consiste en pruebas semiautomáticas o automáticas donde se proveen datos al azar, inválidos y no esperados en la sección de entrada de datos del software.</p>
+</div>
+<div class="exe-tooltip-text" id="tf30cee32-8ff1-f51e-9362-b1983a2f0880">
+<p>Probar flujos de ejecución en una aplicación de comienzo a fin. se prueban escenarios que combinan diferentes casos de uso/funcionalidades tal cual como lo haría un usuario.</p>
+</div>
+<div class="exe-tooltip-text" id="td0e92146-ce60-6a4e-da08-39f6e13da892">
+<p>Comando disponible en la mayoría de los sistemas basados ​​en UNIX. Es una abreviatura de “Client URL”. Los comandos de Curl están diseñados para funcionar como una forma de verificar la conectividad a las URL. Son una gran herramienta para transferir datos.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id178">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta178_128" class="block iDevice_content">
+<p>Seminario de Incibe sobre el funcionamiento de ZAP</p>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/1InikJ74654" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Uso de ZAP para comprobar la seguridad de una aplicación web, desde su instalación hasta ejemplo de ataques</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper RecomendacionfpdIdevice em_iDevice em_iDevice_recomendacionfpd" id="id181">
+<div class="iDevice emphasis_recomendacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Recomendación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta181_131" class="block iDevice_content">
+<p>Canal oficial de la fundación OWASP:</p>
+<p style="text-align: center;"><a href="https://www.youtube.com/c/OWASPGLOBAL/videos" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">https://www.youtube.com/c/OWASPGLOBAL/videos</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22_owasp_top_ten_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

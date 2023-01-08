@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.1. - Web Security Testing Guide. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-106"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="current-page-parent daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul>
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li class="current-page-parent"><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="current-page-parent daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul>
+         <li id="active"><a href="331__web_security_testing_guide.html" class="active no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332__mobile_security_testing_guide.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.3.1. - Web Security Testing Guide.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id200">
+<div class="iDevice emphasis0">
+<div id="ta200_154" class="block iDevice_content">
+<p>OWAPS establece a partir del estándar de verificación de aplicaciones una guía<strong> específica</strong> para aplicaciones y servicios&nbsp; web, la dirección del proyecto es:</p>
+<p style="text-align: center;"><a href="https://owasp.org/www-project-web-security-testing-guide/">https://owasp.org/www-project-web-security-testing-guide/</a></p>
+<p>Actualmente la se encuentra en la versión 4.2, disponible online en&nbsp;<a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://owasp.org/www-project-web-security-testing-guide/v42/">https://owasp.org/www-project-web-security-testing-guide/v42/</a>&nbsp;y en formato pdf. Se estructura en escenarios agrupados en categorías, en concreto 12:</p>
+<ul>
+<li>Information Gathering.</li>
+<li>Configuration and Deployment Management Testing.</li>
+<li>Identity Management Testing.</li>
+<li>Authentication Testing.</li>
+<li>Authorization Testing.</li>
+<li>Session Management Testing.</li>
+<li>Input Validation Testing.</li>
+<li>Error Handling.</li>
+<li>Cryptography.</li>
+<li>Business Logic Testing.</li>
+<li>Client Side Testing.</li>
+<li>API Testing.</li>
+</ul>
+<p>Estos escenarios exponen los fundamentos técnicos a evaluar en las <a title="Pruebas de penetración" class="exe-tooltip definition-tt" id="link1849b493-4054-51c9-7fdc-ecc9c88e1854" href="#t1849b493-4054-51c9-7fdc-ecc9c88e1854">pruebas de penetración</a>, las cuales se han de reproducir para comprobar la seguridad del sistema. Cada escenario&nbsp; se identifica con las letras WSTG-&lt;categoria&gt;--&lt;numero&gt;, la categoría se nombra con 4 caracteres que indican el tipo de prueba o debilidad, algunos ejemplos de categorías:</p>
+<ul>
+<li>INFO: Recopilación de información.</li>
+<li>CONF: Comprobación de configuraciones de elementos.</li>
+<li>APIT: Evaluación de API.</li>
+<li>ATHN: Autenticación.</li>
+</ul>
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><video width="500" height="240" class="mediaelement" controls="controls">
+<source src="wstg.mp4" type="video/mp4"></video>
+<figcaption class="figcaption"><span class="title"><em>Tests de pruebas de aplicaciones web</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Introducción al proyecto WSTG describiendo el documento de referencia sobre las pruebas.</p>
+</div>
+<p>Se dispone también de una libro Excel que permita realizar la verificación del resultado de la evaluación de cada escenario en un proyecto, esta hoja se encuentra en:</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;" href="https://github.com/OWASP/wstg/tree/master/checklist">https://github.com/OWASP/wstg/tree/master/checklist</a></p>
+<p>Incluye cuatro hojas de cálculo:</p>
+<ul>
+<li><strong>Testing Checklist</strong>: la primera con las categorías, en cada fila se tiene el escenario, en nombre de la prueba, los objetivos a conseguir, el estado y una celda para notas.</li>
+<li><strong>Summary Findings</strong>: Fallos de seguridad encontrados, en el que se indica el nombre, el escenario, el elemento afectado (url..), la probabilidad de ataque, el nivel de riesgo, observaciones, las recomendaciones y el test en que se detecto.</li>
+<li><strong>Calculadora de evaluación de riesgos</strong>: A partir del tipo de aplicación y sus características se establece el nivel de riesgo de la aplicación se obtiene el nivel de riesgo de sufrir un ataque de la aplicación. Tiene en cuenta 2 factores:
+<ul>
+<li>Probabilidad de ataque: Tiene en cuenta los posibles elementos vulnerables como la dificultad de detección de intrusión&nbsp; y los factores que determinan las posibles amenazas como el nivel de habilidades requerido para romper el sistema.</li>
+<li>Factores de impacto: Se evalúa los factores técnicos como la pérdida de cofidencialidad y los factores de negocio como la pérdida de reputación ante por ejemplo fuga de información.</li>
+</ul>
+</li>
+<li>Referencias: Equivalencia entre los cuadro desplegables de la calculadora y su valor numérico, solo útil para cálculos internos.</li>
+</ul>
+<figure class="exe-figure exe-image position-center" style="width: 501px;"><a onclick="window.open(this.href,'eXeLearningPopup','width=1200,height=400,left='+(screen.availWidth/2-600)+',top='+(screen.availHeight/2-200)+'');return false;" href="3_3_1_wstg.png"><img width="501" height="250" title="Ejemplo evaluación nivel de riesgo." alt="Ejemplo evaluación nivel de riesgo." src="3_3_1_wstg.png"></a>
+<figcaption class="figcaption"><span class="title"><em>Ejemplo evaluación nivel de riesgo.</em></span></figcaption>
+</figure>
+<p></p>
+<div class="exe-tooltip-text" id="t1849b493-4054-51c9-7fdc-ecc9c88e1854">
+<p>Ataque a un sistema que pretende de encontrar las debilidades de seguridad en especial sus datos.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id201">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta201_129" class="block iDevice_content">
+<p>Test de penetración de Incibe.</p>
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/sMn9FRIpxkI" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Concepto de test de penetración usado por OWASP en la verificación del nivel de aplicaciones web.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id202">
+<div class="iDevice emphasis0">
+<div id="ta202_154" class="block iDevice_content">
+<p>Cada uno de estos escenarios responde a un tipo de amenaza o vulnerabilidad, estas pueden ser muy diferentes entre ellas, por ejemplo los fundamentos tecnológicos afectados (lado del cliente, lado del servidor, lenguaje de programación...), las causas que originan la amenaza determinando las herramientas a utilizar en los test de penetración. Por ejemplo el escenario <a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods.html" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">WSTG-CONF-06 Test HTTP Methods</a><strong>.</strong></p>
+<p>Analiza los diferentes métodos del protocolo HTTP haciendo referencia al RFC en el que se definen, indicado además que la mayor parte de las aplicaciones web solo necesitan los metodos GET y POST, aunque en servicios REST también se utilizan PUT y DELETE.</p>
+<p>En el siguiente punto indica los objetivos que persigue el test de penetración:</p>
+<ul>
+<li>Indicar los métodos HTTP que implementa la aplicación.</li>
+<li>Evaluar el cumplimento del control de acceso.</li>
+<li>Comprobar la existencia de vulnerabilidades de tipo <a href="#t1b8ebe1f-ccd0-3d9a-a331-da85f9e125b6" id="link1b8ebe1f-ccd0-3d9a-a331-da85f9e125b6" class="exe-tooltip definition-tt">XST</a>.</li>
+<li>Probar la anulación de los métodos no necesarios.</li>
+</ul>
+<p>El punto siguiente en todos los escenarios indica como realizar las pruebas, este dependerá de cada escenario concreto e indicara las técnicas y herramientas necesarias para su realización, en este caso nmap, ncat o curl.</p>
+<p>Por último lista una serie de referencias de carácter técnico referidas al escenario.</p>
+<p></p>
+<div id="t1b8ebe1f-ccd0-3d9a-a331-da85f9e125b6" class="exe-tooltip-text">
+<p>Ataque que se basa en conseguir ejecutar código Javascript en el cliente para enviar una petición con el método TRACE al servidor de forma que responda con información sensible, como las cookies</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332__mobile_security_testing_guide.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

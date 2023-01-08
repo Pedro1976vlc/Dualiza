@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Resumen | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-90"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li id="active"><a href="resumen.html" class="active no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="bibliografa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Resumen</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id209">
+<div class="iDevice emphasis0" >
+<div id="ta209_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">En esta unidad se han visto los conceptos fundamentales relacionados con la programación y prueba de aplicaciones web o <em>apps</em> para móviles:</p>
+<ul>
+<li style="text-align: justify;">El software es la parte intangible de  un sistema informático, el equivalente al equipamiento o soporte lógico.</li>
+<li style="text-align: justify;">Un programa es una serie de instrucciones u ordenes secuenciadas con una finalidad concreta que realizan una función determinada.</li>
+<li style="text-align: justify;">El lenguaje máquina es ininteligible y se compone de ceros y unos.  Es el único lenguaje que entiende directamente el ordenador (la máquina), por tanto no necesita ser traducido. Es dependiente y exclusivo para cada microprocesador.</li>
+<li style="text-align: justify;">El lenguaje ensamblador (<em>assembler</em>) sustituyó al lenguaje máquina para facilitar la labor de programación. Sigue siendo muy cercano al <em>hardware, </em>pero en lugar de utilizar unos y ceros usa instrucciones mnemotécnicas. Resulta muy difícil de comprender y programar, puesto que trabaja directamente con los registros del procesador y las direcciones físicas de memoria.</li>
+<li style="text-align: justify;">Los lenguajes de alto nivel tienen una forma de programar más intuitiva y sencilla, puesto que son más cercanos a los lenguajes humanos que a los lenguajes de las máquinas.</li>
+<li style="text-align: justify;">Los lenguajes de programación son, por tanto, un lenguaje artificial creado para que, al traducirse a código máquina.</li>
+<li style="text-align: justify;">Los lenguajes de programación pueden clasificarse en:
+<ul>
+<li>Lenguajes interpretados.</li>
+<li>Lenguajes compilados.</li>
+<li>Lenguajes híbridos: compilados en tiempo de ejecución.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Los traductores son programas cuya finalidad es traducir lenguajes de alto nivel a lenguajes de bajo nivel como ensamblador o código máquina.</li>
+<li style="text-align: justify;">Existen dos grandes grupos de tipos de traductores:
+<ul>
+<li><em>Compiladores: </em>traducen el código fuente a código máquina.</li>
+<li><em>Intérpretes: </em>traducen y ejecutan simultáneamente el código fuente línea a línea. </li>
+</ul>
+</li>
+<li style="text-align: justify;">Los lenguajes de programación permiten crear programas a alto nivel y utilizando herramientas como el compilador permiten generar código objeto y ejecutables a partir de código fuente, además se han desarrollado programas para facilitar la creación, mantenimiento y generación de software denominados entornos de desarrollo integrados o IDE's con diferentes niveles de asistencia.</li>
+<li style="text-align: justify;">Para optimizar la ejecución de código se han desarrollado diferentes técnicas entre las que destacan las librerías dinámicas, aunque no están exentas de riesgos.</li>
+<li style="text-align: justify;">La estructura básica de un programa es similar en los diferentes lenguajes, destacando la definición del espacio de nombres o paquete, la inclusión de librerías y el código del software desarrollado.</li>
+<li>Las pruebas en los últimos tiempos se han convertido en una piedra angular del ciclo de vida del software, garantizando la creación de productos con un mínimo de calidad. Se ha de diferenciar tres conceptos importantes y diferentes:
+<ul>
+<li style="text-align: justify;">Etapas o niveles de prueba: Casos de prueba asociados a el ciclo de desarrollo del software, por ejemplo en las etapa de especificación de requerimientos se suelen utilizar pruebas de unidad, las pruebas en las etapas son:
+<ul>
+<li>Unidad.</li>
+<li>Integración.</li>
+<li>Sistema.</li>
+<li>Aceptación.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Tipos de pruebas. En este caso se diferencia entre pruebas funcionales que evalúan el grado de cumplimiento de la especificación( que el software se comporte de manera previsible) y los no funcionales relacionados con el entorno de ejecución (nivel de carga, usabilidad...)</li>
+<li style="text-align: justify;">Técnicas. Estrategias para el diseño de los casos de prueba que permitan encontrar los posibles fallos del software durante el desarrollo. Los tres tipos son;
+<ul>
+<li style="text-align: justify;">Caja negra.</li>
+<li style="text-align: justify;">Caja blanca.</li>
+<li style="text-align: justify;">Enfoque aleatorio.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="text-align: justify;">En el desarrollo los programadores suelen cometer errores derivados de su experiencia y el lenguaje utilizado, en la actualidad algunos lenguajes incluyen medidas para evitar fallos comunes en el desarrollo además de opciones en el compilador en cuanto al grado de cumplimiento de los estándares y evitar errores.</li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="bibliografa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

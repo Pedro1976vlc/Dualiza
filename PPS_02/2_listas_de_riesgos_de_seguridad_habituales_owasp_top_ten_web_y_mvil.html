@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil) | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-70"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="active daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul>
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_proyectos_fundacin_owasp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id160">
+<div class="iDevice emphasis0" >
+<div id="ta160_119_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">La seguridad total en el mundo de la informática es una quimera. En los sistemas informáticos existen múltiples factores tanto externos como internos que pueden provocar fallos de seguridad, como por ejemplo: olvidar cerrar un puerto o utilizar una librería con fallos de seguridad.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los atacantes realizan estudios previos sobre el objetivo, mediante el empleo de fuentes abiertas y OSINT, para así poder encontrar y  fijar algún </span><span style="font-weight: 400;"> </span><span style="color: #0000ff;"><a href="#t487fbbf4-10d6-229b-e2bf-3e3fbb0b6445" id="link487fbbf4-10d6-229b-e2bf-3e3fbb0b6445" title="Vector de ataque | Vector de ataque" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b>vector de ataque</b></a><span style="font-weight: 400;">.</span></span><span style="font-weight: 400;"> Si bien pueden existir cientos de vectores a explotar, su descubrimiento no es sencillo; por lo que se utilizan los más comunes y recurrentes para romper la seguridad del sistema.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Dado que la mayor parte de los ataques utilizan un número reducido de vectores y técnicas, se creó la fundación OWASP en el año 2001 con el objetivo de <b>determinar y combatir las causas que hacen que el software sea inseguro. </b>Esta fundación proporciona una serie de <a href="https://owasp.org/projects/">proyectos</a>,  documentos y herramientas (más de 200)  para el desarrollo y mantenimiento de aplicaciones seguras.</span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 600px;"><img src="candado.jpg" alt="Teclado con un candado" width="600" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/31d4e6d5-4d6d-4f5a-81f9-b85e829ff8f2" target="_blank" class="author" rel="noopener"> perspec_photo88 </a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<div id="t487fbbf4-10d6-229b-e2bf-3e3fbb0b6445" class="exe-tooltip-text">
+<p style="text-align: justify;">Un agujero o falla presente en la aplicación que compromete la seguridad de la misma</p>
+</div></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id208">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta208_129" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400; font-size: 14pt;"><strong>¿Qué es OWASP?</strong></span><span style="font-weight: 400; font-size: 14pt;"><strong></strong></span><span style="font-weight: 400; font-size: 14pt;"><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><em><strong>Open Web Application Security Project (OWASP)</strong></em> es una fundación sin fines de lucro que trabaja para mejorar la seguridad del software. A través de proyectos de software de código abierto liderados por la comunidad, cientos de capítulos locales en todo el mundo, decenas de miles de miembros y conferencias educativas y de capacitación líderes, la Fundación <strong>OWASP</strong> es la fuente para que los desarrolladores y tecnólogos protejan la web. L</span><span style="font-weight: 400;">a organización se ha provisto de una serie: </span></p>
+<ul style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Herramientas y recursos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Comunidades y redes.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Educación y formación.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Todos los materiales de <strong>OWASP</strong> están disponibles de manera libre para su libre consulta y uso gratuitamente en </span><span style="font-weight: 400;"><a href="http://www.owasp.org">http://www.owasp.org</a><a href="http://www.owasp.org">. </a></span><span style="font-weight: 400;">Son liberadas bajo las licencias de <em>“Lesser” <strong>GNU Public License agreement</strong></em>, o la <em>GNU Free Documentation License (GFDL)</em>.</span></p>
+<p><span style="font-weight: 400;"><strong>OWASP</strong> es una <strong>organización</strong> que tiene como objetivo  convertirse en centro <strong>de referencia de toda la información de seguridad enfocada a las aplicaciones web</strong>.</span></p>
+<h2 style="text-align: justify;"><span style="font-weight: 400; font-size: 14pt;"><strong>¿Cuáles son las características de OWASP?</strong></span><span style="font-weight: 400; font-size: 14pt;"><strong></strong></span></h2>
+<p><span style="font-weight: 400;">Como organización, destacan sus características y  valores:</span></p>
+<ul>
+<li><span style="font-weight: 400;"><strong>Transparencia:</strong> Todos los elementos relacionados con <strong>OWASP</strong> son <strong>transparentes</strong>: por ejemplo; sus finanzas, pueden ser consultadas en sus página web y el código fuente de sus proyectos son accesibles a través de sus  repositorios. </span></li>
+<li><span style="font-weight: 400;"><strong>Innovación</strong>: Promueven y favorecen la experimentación en la búsqueda de soluciones ante los nuevos desafíos y retos de seguridad que continuamente aparecen.</span></li>
+<li><span style="font-weight: 400;"><strong>Global</strong>: Cualquier persona, con independencia del lugar del mundo donde resida, puede participar en la comunidad de OWASP.</span></li>
+<li><span style="font-weight: 400;"><strong>Integridad</strong>: Se declara como una comunidad honesta y neutral desde el punto comercial en la que se puede confiar.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_proyectos_fundacin_owasp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

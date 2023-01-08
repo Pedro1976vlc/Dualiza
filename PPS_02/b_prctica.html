@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>B.- Práctica | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-111"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li class="current-page-parent"><a href="caso_prctico_prctica_web.html" class="current-page-parent daddy">Caso práctico: Práctica Web</a>
+   <ul>
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li id="active"><a href="b_prctica.html" class="active no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="a_preparando_el_entorno.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">B.- Práctica</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id219">
+<div class="iDevice emphasis0">
+<div id="ta219_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id220">
+<div class="iDevice emphasis0">
+<div id="ta220_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Una empresa de la ciudad ha experimentado un aumento de pedidos en su tienda web y ha decidido evaluar el nivel de seguridad de su aplicación web.</span></p>
+<p><span style="font-weight: 400;">La empresa de desarrollo de software que realiza el análisis no posee experiencia en en verificación de aplicaciones web y tras investigar los estándares de verificación opta por OWASP, sus herramietnas y la guía de testeo para aplicaciones web, </span><span style="font-weight: 400;"><a href="https://owasp.org/www-project-web-security-testing-guide/">https://owasp.org/www-project-web-security-testing-guide/</a><a href="https://owasp.org/www-project-web-security-testing-guide/"></a></span></p>
+<div class="exe-fx exe-timeline">
+<h2><strong>Manejo de Web Security Testing Guide</strong></h2>
+<h3><strong>Enunciado</strong></h3>
+<p><span style="font-weight: 400;">Para familiarizarse con la guía se analizan una serie de test de forma que sirvan de ejemplo para los o las testeadoras. </span></p>
+<p><span style="font-weight: 400;">Los Test son los siguientes:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">WSTG-INFO-08. Huella del framework.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">WSTG-IDNT-01. Definición de roles.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">WSTG-INPV-02, Almacenamiento de XSS.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">WSTG-INPV-12. Inyección de comandos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">WSTG-CLNT-02. Ejecución de Javascript.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Se pide para cada test (CEd): </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Resumen del tipo de problema.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Objetivo del test.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ejemplo de test. Tipo de pruebas, herramientas…</span></li>
+</ul>
+<p><span style="font-weight: 400;">Buscar los requerimientos asociados a los casos de prueba anteriores e indicar los niveles de verificación para los que se definen. (CEa)</span></p>
+<p><span style="font-weight: 400;">¿Qué tipo de nivel ha de cumplir la aplicación Juice Shop según el estándar ASVS? (CEb).</span></p>
+<p><span style="font-weight: 400;">¿De la clasificación anterior, que requerimientos se incluirían en aplicaciones de nivel 2? Indicar al menos 3 aplicaciones de dicho nivel. (CEc).</span></p>
+<p><span style="font-weight: 400;">Se tiene una aplicación web bancaria. ¿Que nivel a de cumplir? Listar los requerimientos que ha de cumplir del capítulo XX?</span></p>
+<h3><span style="font-weight: 400;">Ejemplo el test WSTG-INPV-04. Polución de parámetros HTTP (HPP).</span></h3>
+<h4>Problema</h4>
+<p><span style="font-weight: 400;">Reside en el envío al servidor de una petición HTTP con varios parámetros con el mismo nombre, esto hace que el servidor pueda comportarse de forma imprevista, y dependiendo de este comportamiento del servidor un atacante puede:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Evitar la validación de entrada.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Provocar fallos en la aplicación.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Modificar valores internos del servidor.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Conocer detalles del servidor</span></li>
+</ul>
+<h4>Objetivo del test</h4>
+<p><span style="font-weight: 400;">Identificar el back-end (tecnología de servidor)</span></p>
+<p><span style="font-weight: 400;">Descubrir los puntos de inyección e intentar pasar los filtros de entrada usando la polución de parámetros de entrada.</span></p>
+<h4><strong>Ejemplo del test</strong></h4>
+<p><span style="font-weight: 400;">Este test se puede realizar realizando una petición directamente contra el servidor sin necesidad de un cliente, por ejemplo utilizando el programa </span><a href="https://www.postman.com/"><span style="font-weight: 400;">Postman</span></a><span style="font-weight: 400;">, utilizado para testear servicios web, pero que permite crear peticiones HTTP de forma personalizada, además de poder analizar también la respuesta HTTP.</span></p>
+<p><span style="font-weight: 400;">En el cliente se puede forzar en envío de parámetros duplicados colocando en las entradas el carácter separador de parámetros.</span></p>
+<p><span style="font-weight: 400;">Se recomienda el uso de ZAP para el análisis de vulnerabilidades.</span></p>
+<h2>Análisis de un sitio web con ZAP</h2>
+<h3>Indicaciones</h3>
+<p><span style="font-weight: 400;">El testeo de aplicaciones web puede convertirse en una tarea tediosa y costosa en tiempo si se realiza de forma manual, existen diferentes aplicaciones y framework que permiten evaluar aplicaciones de forma automatizada, una de ellas es  </span><a href="https://www.metasploit.com/"><span style="font-weight: 400;">Metasploit</span></a><span style="font-weight: 400;">, con versiones gratuitas o ZAP de la propia organización OWASP. </span></p>
+<p><span style="font-weight: 400;">En este caso se evalúa el nivel de seguridad con Zen Attack Proxy (ZAP), ir a la web </span><a href="https://owasp.org/www-project-zap/"><span style="font-weight: 400;">https://owasp.org/www-project-zap/</span></a><span style="font-weight: 400;">, descargar la aplicación e instalarla.</span></p>
+<p><img src="img0.2.png" width="567" height="364" alt="Sitio web con ZAP" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><span style="font-weight: 400;">A continuación configurar el navegador para que el servidor ZAP se utilice como proxy de forma que todas las peticiones HTTP pasen por el mismo, la dirección es localhost:8080.</span></p>
+<p><span style="font-weight: 400;">El Instituto Nacional de Ciberseguridad de España (INCIBE) posee un seminario del uso de ZAP en la siguiente dirección:</span></p>
+<p style="text-align: center;"><a href="https://www.youtube.com/watch?v=1InikJ74654"><span style="font-weight: 400;">https://www.youtube.com/watch?v=1InikJ74654</span></a></p>
+<h3><span style="font-weight: 400;">ASVS de  Juice Shop con ZAP:</span></h3>
+<p><span style="font-weight: 400;">A partir del vídeo de INCIBE(CEd):</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Realizando un análisis automatizado,</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Buscar url ocultas con el sitio de navegación predeterminada.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Encontrar las direcciones de correo de los administradores.(CEd)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A partir del vídeo que se facilita y utilizando el ataque Fuzzy realizar un SQL Injection para entrar sin usuario validado.(CEd)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Generar un informe de los resultados, estableciendo si la aplicación es o no segura.(CEb)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Clasificar los bugs detectados en el Top Ten 10 para páginas web. (CEd)</span><span style="font-weight: 400;"></span></li>
+</ul>
+<h3>Certificando los resultados.</h3>
+<p>Utilizando la aplicación web OWASP Application Security Verification Standard (ASVS) Web App, buscar los test asociados a las pruebas evaluadas con ZAP y marcar los resultado obtenidos. (CEc)</p>
+<p>Genera un informe del grado de cumplimiento de ASVS.(CEc)</p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="a_preparando_el_entorno.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="glosario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

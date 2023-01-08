@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.- Fuentes abiertas para el desarrollo seguro. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li id="active"><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="active daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul>
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_tcnicas_y_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.- Fuentes abiertas para el desarrollo seguro.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id120">
+<div class="iDevice emphasis0">
+<div id="ta120_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Se ha de definir en primer lugar el </span><b>concepto de fuentes abiertas</b><span style="font-weight: 400;"> y cómo dichas fuentes se están </span><b>utilizando</b><span style="font-weight: 400;"> en la actualidad.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Fernando Cocho, profesor de la Universidad Autónoma de Madrid define</span><b> fuentes abiertas</b><span style="font-weight: 400;"> como: “todo documento con cualquier tipo de contenido, fijado en cualquier clase de soporte que se transmite por diversos medios, al que se puede </span><b>acceder en modo digital </b><span style="font-weight: 400;">o no y es puesto a </span><b>disposición pública</b><span style="font-weight: 400;">, con independencia de que esté comercializado, esté siendo difundido por canales restringidos o sea gratuito”.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Hoy en día muchos sistemas se encuentran disponibles en Internet  y no son elementos aislados del resto, por ejemplo; los sitios web de las entidades financieras a través de los cuales los clientes acceden a sus productos financieros o los sistemas de videovigilancia de múltiples entidades, empresas y particulares que son accesibles desde cualquier parte del mundo, entre muchos otros sistemas. Estos en caso de no estar bien protegidos son una fuente de información abierta para terceros, al igual que la información que los usuarios de redes sociales suben de forma abierta.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Estas fuentes de información abiertas tratadas de forma correcta son muy valiosas en diferentes ámbitos, como predicciones de elecciones utilizando técnicas de inteligencia artificial a partir de la evolución de comentarios y tendencias en Twitter o crecimiento de demanda de ciertos tipos de productos; llamando la atención de los servicios de seguridad de los gobiernos. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">El tratamiento de estos datos para extraer información ha propiciado el desarrollo técnicas para la obtención, procesamiento y análisis de grandes cantidades de datos. </span><span style="font-weight: 400;">o de entidades o personas concretas</span><span style="font-weight: 400;">, denominándose a estas </span><a href="#t7c325504-3892-1726-7168-c0836849f72f" id="link7c325504-3892-1726-7168-c0836849f72f" title="OSINT (Open Source Intelligence) | Glosario" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><b>técnicas Inteligencia de fuentes abiertas (OSINT)</b></span></a><span style="font-weight: 400;">, según el gobierno de los Estados Unidos se define como “la inteligencia que se produce a través de información </span><b>disponible</b><span style="font-weight: 400;"> para el público, que es obtenida, explotada y diseminada en el tiempo y para la audiencia apropiada, a fin de satisfacer una petición de inteligencia concreta”.</span></p>
+<div id="t7c325504-3892-1726-7168-c0836849f72f" class="exe-tooltip-text">
+<p>Significa Inteligencia de Fuentes Abiertas. Se trata de un conjunto de técnicas y herramientas para recopilar información pública, correlacionar los datos y procesarlos. Es decir, aplicarle análisis e inteligencia a la gran cantidad de información públicamente accesible en Internet con el objetivo de extraer conclusiones útiles para una investigación, un monitoreo, una campaña de marketing, etc.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id205">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta205_129" class="block iDevice_content">
+<blockquote class="exe-quote-cite styled-qc" lang="en">
+<p style="text-align: justify;"><b>Open-source intelligence</b><span> (</span><b>OSINT</b><span>) is intelligence that is produced from publicly available information and is collected, exploited, and disseminated in a timely manner to an appropriate audience for the purpose of addressing a specific intelligence requirement.</span></p>
+<cite lang="en"><a href="https://www.defense.gov/">U.S. Department of Defense (DoD)</a></cite></blockquote>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id173">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta173_128" class="block iDevice_content">
+<p>Vídeo del Coronel Pedro Baños y otros expertos sobre las fuentes abiertas.</p>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/t5uY964K9Go" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Vídeo que trata la importancia de las fuentes abiertas en la sociedad actual y tratando otras técnicas de inteligencia relacionadas.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_tcnicas_y_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

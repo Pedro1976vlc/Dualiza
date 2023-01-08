@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS). | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-105"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="current-page-parent daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul>
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li id="active"><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="active daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul>
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="32__niveles_de_verificacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="331__web_security_testing_guide.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id194">
+<div class="iDevice emphasis0">
+<div id="ta194_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">La fundación OWASP establece un estándar de verificación que permite medir y evaluar el grado de seguridad de una aplicación a partir de una lista de requerimientos de seguridad&nbsp; asociadas a una serie de pruebas de tipo funcional y no funcional. Establece dos objetivos principales:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Ayudar a las organizaciones en el desarrollo y mantenimiento de aplicaciones seguras.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Permitir la alineación entre las necesidades y ofertas de los servicios de seguridad, proveedores de herramientas de seguridad y consumidores.</span></li>
+</ul>
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><video width="500" height="240" class="mediaelement" style="margin-right: auto; margin-left: auto; display: block;" controls="controls">
+<source src="asvs.mp4" type="video/mp4"></video>
+<figcaption class="figcaption"><span class="title"><em>Estándar ASVS y niveles</em></span></figcaption>
+</figure>
+<p><br><br></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Descripción de la función de ASVS y estructura de documento de referencia.</p>
+</div>
+<p><span style="font-weight: 400;"><br><br></span></p>
+<p><span style="font-weight: 400;">Además este estándar establece los diferentes niveles de verificación tratados en el punto 3.4 y agrupa los requisitos o requerimientos en agrupaciones relacionadas, siendo alguno de estos grupos:</span></p>
+<ul>
+<li>Arquitectura.</li>
+<li>Autentificación.</li>
+<li>Gestión de sesiones.</li>
+<li>Control de acceso.</li>
+<li>Manejo de entrada de datos.</li>
+<li>Criptografía en el almacenamiento.</li>
+<li>Protección de datos.</li>
+<li>Seguridad http.</li>
+<li>Configuración de seguridad.</li>
+<li>Seguridad interna.</li>
+<li>Archivos y recursos.</li>
+<li>Móvil.</li>
+<li>Servicios web.</li>
+</ul>
+<p>Estos grupos se denominan&nbsp;<span style="font-weight: 400;"><strong>capítulos</strong>&nbsp;que contienen&nbsp; <strong>secciones</strong> que permitan una fácil identificación, por ejemplo el requerimiento 3.1.1 corresponde al capítulo 3. requerimientos de verificación de administración de sesiones, sección 1, fundamentos de administración de sesiones y es el primer requerimiento verificar que la aplicación no incluye el token de sesión el a url, además indica que se ha de evaluar en en los niveles 1,2 y 3.&nbsp;</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id195">
+<div class="iDevice emphasis0">
+<div id="ta195_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Mencionar que en cada versión de la especificación ASVS la numeración puede cambiar, por lo que se recomienda añadir la versión a los requerimientos en las diferentes pruebas y documentos para verificar las aplicaciones, por ejemplo la notación utilizada para referirse a un requerimiento concreto de la versión 4.0.2 sería: v 4.0.2-1.11.3 que indica el requerimiento 3 de la sección 11 del capítulo 1 de la versión 4.0.2.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id196">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta196_129" class="block iDevice_content">
+<p>Conferencia sobre ASVS.</p>
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/YuS8ITYMap4" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Conferencia que trata diversos aspectos de ASVS tanto desde el punto de vista de la web como de aplicaciones para móviles.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id197">
+<div class="iDevice emphasis0">
+<div id="ta197_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Se definen junto con cada uno de los requerimientos el Common Weakness Enumeration o CWE, sistema de categorías para debilidad y vulnerabilidad software que permite crear herramientas automatizadas para identificar, corregir y prevenir fallas. Este proyecto cuenta con el apoyo del Departamento de Seguridad Nacional de Estados Unidos y se encuentra en su versión 3.2, definiendo el documento de referencia  más de 1000 debilidades comunes.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id198">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta198_128" class="block iDevice_content">
+<p>¿Qué es CWE?</p>
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/GJNaEpv3Ok0" allowfullscreen="allowfullscreen"></iframe></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id199">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Documentos</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta199_82" class="block iDevice_content">
+
+</div>
+<ul class='exeFileList'><li><a href='OWASP Application Security Verification Standard 4.0.2-en.pdf' target='_blank'>ASVS versión 4.0.2 (Importante)<span> (Ventana nueva)</span></a></li>
+<li><a href='cwe_v3.2.pdf' target='_blank'>Listado de CWE3.2 (recomendado)<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="32__niveles_de_verificacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="331__web_security_testing_guide.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

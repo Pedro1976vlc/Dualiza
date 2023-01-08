@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.- OWASP Top Ten Web. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-101"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="current-page-parent daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul>
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li id="active"><a href="22_owasp_top_ten_web.html" class="active no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="21_proyectos_fundacin_owasp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="23_owasp_top_ten_mvil.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.2.- OWASP Top Ten Web.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id182">
+<div class="iDevice emphasis0">
+<div id="ta182_154" class="block iDevice_content">
+<p style="text-align: justify;">El software lleva muchas décadas utilizándose instalado en estaciones de trabajo, en especial para un uso doméstico y en pequeñas y medianas empresas, por ejemplo en programas ofimáticos. En la última década se ha producido un movimiento desde las aplicaciones nativas, destacando las del sistema operativo Windows hacia versiones que utilizan el <strong>navegador y la web</strong>, como Office 365 o Autocad, alguno de ellos con prácticamente la misma funcionalidad que sus versiones nativas. También los organismos oficiales y bancos han creado aplicaciones web para interactuar con sus clientes y ciudadanos. Junto con el aumento de uso de las aplicaciones web el interés por los <span style="color: #0000ff;"><a href="#t400821a5-5c5c-9180-e970-362c156c242d" id="link400821a5-5c5c-9180-e970-362c156c242d" title="Hacker | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong>hackers</strong></a></span> en este tipo de software ha crecido al mismo o mayor ritmo.</p>
+<p style="text-align: justify;">La fundación OWASP recolecta los <strong>10 mayores vulnerabilidades y riesgos</strong> a partir de las contribuciones de empresas relacionadas con la seguridad de aplicaciones proporcionando técnicas básicas para protegerse. Cada cierto tiempo la lista se actualiza con nuevos riesgos, la última versión es la del <strong>2017</strong> que ha tenido en cuenta los nuevos lenguajes de servidor, los microservicios, los servicios REST, las aplicaciones de una sola página (SPA) o los frameworks de aplicaciones web del lado del cliente como Angular, Vue o en CSS Boostrap (aunque utiliza Javascript y jquery entre otras).<br />También incluye una serie de sugerencias para perfiles concretos del desarrollo web como desarrolladores, testers o administradores de aplicaciones.</p>
+<figure class="exe-figure exe-image position-center" style="width: 399px; text-align: justify;"><a href="image8.png" onclick="window.open(this.href,'eXeLearningPopup','width=1200,height=400,left='+(screen.availWidth/2-600)+',top='+(screen.availHeight/2-200)+'');return false;"><img src="image8.png" alt="Evolución Top Ten Web " title="Evolución Top Ten Web " width="399" height="133" /></a>
+<figcaption class="figcaption"><span class="title"><em>Evolución Top Ten Web (Wikipedia)</em></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;"><strong>OWASP Top Ten Web</strong> es un <em>ranking</em> de los diez </span><a href="#t2b10338c-8dbc-77e4-b8ec-a315841836a0" id="link2b10338c-8dbc-77e4-b8ec-a315841836a0" title="Riesgo | Glosario" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><b>riesgos</b></span></a><span style="font-weight: 400;"> y </span><a href="#t12b870b8-9473-831a-e7a8-b1245fe3f98a" id="link12b870b8-9473-831a-e7a8-b1245fe3f98a" title="Vulnerabilidad | Glosario" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><b>vulnerabilidades</b></span></a><span style="font-weight: 400;"> de seguridad de la información más peligrosos para aplicaciones web:</span></p>
+<div class="exe-fx exe-accordion">
+<h2><b>1. Inyección (</b><a href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection"><b>Injection</b></a><b>)</b><span style="font-weight: 400;">. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las fallas de inyección, como la inyección de SQL, </span><a href="#t4f933322-725e-c7ea-6a21-47c5c67e09e9" id="link4f933322-725e-c7ea-6a21-47c5c67e09e9" title="NoSQL | Glosario" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><b>NoSQL</b></span></a><span style="font-weight: 400;">, OS y </span><span style="color: #0000ff;"><a href="#t6e2e5d67-fc37-850e-3dcf-b82b8aa0752c" id="link6e2e5d67-fc37-850e-3dcf-b82b8aa0752c" title="LDAP | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b>LDAP</b></a></span><span style="font-weight: 400;">, ocurren cuando se envían datos que no son de confianza a un intérprete como parte de un comando o consulta. Los datos hostiles del atacante pueden engañar al intérprete para que ejecute comandos no deseados o acceda a datos sin la debida autorización.</span></p>
+<h2><b>2. Autenticación rota (</b><a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication"><b>Broken Authentication</b></a><b>).</b><span style="font-weight: 400;"> </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las funciones de la aplicación relacionadas con la autenticación y la administración de sesiones a menudo se implementan de manera incorrecta, lo que permite a los atacantes comprometer contraseñas, claves o <em>tokens</em> de sesión, o aprovechar otras fallas de implementación para asumir las identidades de otros usuarios de forma temporal o permanente.</span></p>
+<h2><b>3. Exposición de datos sensibles (</b><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure"><b>Sensitive Data Exposure</b></a><b>).</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> Muchas aplicaciones web y API no protegen adecuadamente los datos confidenciales, como los financieros o la información médica. Los atacantes pueden robar o modificar esos datos débilmente protegidos para cometer fraude con tarjetas de crédito, robo de identidad u otros delitos. Los datos confidenciales pueden verse comprometidos sin protección adicional, como el cifrado en reposo o en tránsito, y requieren precauciones especiales cuando se intercambian con el navegador.</span></p>
+<h2><b>4. Entidades externas XML (</b><a href="https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE)"><b>XML External Entities, XXE</b></a><b>).</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> Muchos procesadores XML más antiguos o mal configurados evalúan las referencias de entidades externas dentro de los documentos XML. Se pueden utilizar entidades externas para divulgar archivos internos, escaneo de puertos internos, ejecución remota de código y ataques de denegación de servicio.</span></p>
+<h2><b>5. Control de acceso roto (</b><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control"><b>Broken Access Control</b></a><b>).</b><span style="font-weight: 400;"> </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las restricciones sobre lo que pueden hacer los usuarios autenticados a menudo no se aplican correctamente. Los atacantes pueden aprovechar estos defectos para acceder a funciones y / o datos no autorizados, como acceder a las cuentas de otros usuarios, ver archivos confidenciales, modificar los datos de otros usuarios, cambiar los derechos de acceso, etc.</span></p>
+<h2><b>6. Configuración incorrecta de seguridad (</b><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration"><b>Security Misconfiguration</b></a><b>)</b><span style="font-weight: 400;">. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La mala configuración de seguridad es el problema más común. Esto suele ser el resultado de configuraciones predeterminadas inseguras, configuraciones incompletas o </span><i><span style="font-weight: 400;">ad hoc</span></i><span style="font-weight: 400;">, almacenamiento en la nube abierta, encabezados HTTP mal configurados y mensajes de error detallados que contienen información confidencial. No solo todos los sistemas operativos, marcos, bibliotecas y aplicaciones deben estar configurados de manera segura, sino que también deben ser parcheados / actualizados de manera oportuna.</span></p>
+<h2><b>7. Secuencias de comandos entre sitios</b><span style="font-weight: 400;"> (</span><a href="https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)"><b>Cross-Site Scripting, XSS</b></a><span style="font-weight: 400;">).</span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"> Los defectos de XSS ocurren cuando una aplicación incluye datos que no son de confianza en una nueva página web sin la validación o el escape adecuados, o actualiza una página web existente con datos proporcionados por el usuario mediante una API de navegador que puede crear HTML o JavaScript. XSS permite a los atacantes ejecutar scripts en el navegador de la víctima que pueden secuestrar sesiones de usuario, desfigurar sitios web o redirigir al usuario a sitios maliciosos.</span></p>
+<h2><b>8. Deserialización insegura (</b><a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization"><b>Insecure Deserialization</b></a><b>).</b><span style="font-weight: 400;"> </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La deserialización insegura a menudo conduce a la ejecución remota de código. Incluso si las fallas de deserialización no dan como resultado la ejecución remota de código, se pueden usar para realizar ataques, como por ejemplo: ataques de reproducción, ataques de inyección y ataques de escalada de privilegios.</span></p>
+<h2><b>9. Uso de componentes con vulnerabilidades conocidas (</b><a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities"><b>Using Components with Known Vulnerabilities</b></a><b>)</b><span style="font-weight: 400;">. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los componentes, como bibliotecas, marcos y otros módulos de software, se ejecutan con los mismos privilegios que la aplicación. Si se explota un componente vulnerable, dicho ataque puede facilitar la pérdida de datos o la toma de control del servidor. Las aplicaciones y <strong>API</strong> que utilizan componentes con vulnerabilidades conocidas pueden socavar las defensas de las aplicaciones y permitir varios ataques e impactos.</span></p>
+<h2><b>10. Registro y monitoreo insuficientes (</b><a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring"><b>Insufficient Logging &amp; Monitoring</b></a><b>)</b><span style="font-weight: 400;">. </span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">El registro y la supervisión insuficientes, junto con una gestión ineficaz de las respuestas ante incidentes, permite a los atacantes atacar aún más los sistemas, mantener la persistencia, introducir cambios en los sistemas y manipular, extraer o destruir datos. La mayoría de los estudios demuestran que el tiempo para detectar una infracción es superior a 200 días, generalmente detectados por agentes externos en lugar de procesos internos o monitoreo.</span></p>
+</div>
+<p>El listado actual se puede encontrar en:</p>
+<p style="text-align: center;"><a href="https://owasp.org/www-project-top-ten/" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">https://owasp.org/www-project-top-ten/</a></p>
+<p style="text-align: justify;"></p>
+<div id="t2b10338c-8dbc-77e4-b8ec-a315841836a0" class="exe-tooltip-text">
+<p>Es la posibilidad de que una amenaza se produzca, dando lugar a un ataque.</p>
+</div>
+<div id="t12b870b8-9473-831a-e7a8-b1245fe3f98a" class="exe-tooltip-text">
+<p>Deficiencias de seguridad de un sistema informático que pueden permitir el acceso a usuarios no autorizados y la realización de acciones maliciosas intencionadas.</p>
+</div>
+<div id="t4f933322-725e-c7ea-6a21-47c5c67e09e9" class="exe-tooltip-text">
+<p>NoSQL (Not Only SQL). Sistema de gestión de base de datos que difieren del modelo de bases de datos relacionales. Este tipo de almacenamiento de datos relaja las restricciones inherentes al propio modelo relacional. Este tipo de bases de datos no suelen proveer garantías ACID, pero resultan mucho más eficientes y baratas para manipular datos sin tener necesariamente que adaptarlos a una estructura rígida. Son ideales para almacenar datos de manera masiva, lo que responde muy bien a la enorme riqueza de datos que genera la Web, y analizarlos sin seguir necesariamente unos estándares que no necesariamente se adaptan a ellos.</p>
+</div>
+<div id="t6e2e5d67-fc37-850e-3dcf-b82b8aa0752c" class="exe-tooltip-text">
+<p>LDAP (Lightweight Directory Access Protocol) Protocolo a nivel de aplicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar diversa información en un entorno de red.</p>
+</div>
+<div id="t400821a5-5c5c-9180-e970-362c156c242d" class="exe-tooltip-text">
+<p>Persona con grandes habilidades en el manejo de computadoras que investiga un sistema informático para avisar de los fallos y desarrollar técnicas de mejora. Persona que accede ilegalmente a sistemas informáticos ajenos para apropiárselos u obtener información secreta. (pirata informático)</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id183">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Listado Top Ten Web</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta183_82" class="block iDevice_content">
+<p>El listado en castellano en formato pdf:</p>
+</div>
+<ul class='exeFileList'><li><a href='OWASP-Top-10-2017-es.pdf' target='_blank'>Top Ten Web<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="21_proyectos_fundacin_owasp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="23_owasp_top_ten_mvil.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

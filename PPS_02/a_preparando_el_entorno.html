@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>A.- Preparando el entorno | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-110"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li class="current-page-parent"><a href="caso_prctico_prctica_web.html" class="current-page-parent daddy">Caso práctico: Práctica Web</a>
+   <ul>
+      <li id="active"><a href="a_preparando_el_entorno.html" class="active no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="caso_prctico_prctica_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b_prctica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">A.- Preparando el entorno</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id217">
+<div class="iDevice emphasis0">
+<div id="ta217_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id218">
+<div class="iDevice emphasis0">
+<div id="ta218_154" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2><strong>Instalando la aplicación a evaluar</strong></h2>
+<p><span style="font-weight: 400;">Es posible instalar desde 0 en una máquina real o en una virtual todo lo necesario para su funcionamiento, aunque para la práctica se opta por el uso de una imagen para Docker ya instalada y configurada, no siendo el objetivo de la unidad no es la instalación de entornos web. </span></p>
+<p><span style="font-weight: 400;">Existen otras posibilidades como el uso de Heroku (servicio de computación en la Nube), Vagrant (herramienta para creación y configuración de entornos de desarrollo virtualizados), Amazon AWS, Azure o Google Compute Engine. Se puede profundizar en los diferentes métodos de instalación en la URL </span><a href="https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part1/running.html"><span style="font-weight: 400;">https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part1/running.html</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Para instalar Docker en Windows ir a la web: </span><a href="https://docs.docker.com/docker-for-windows/install/"><span style="font-weight: 400;">https://docs.docker.com/docker-for-windows/install/</span></a><span style="font-weight: 400;"> descargar el ejecutable  e instalar siguiendo los pasos.</span></p>
+<p><span style="font-weight: 400;"><img src="img0.1.png" width="462" height="319" alt="Instalando Docker" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-weight: 400;">Puede ser necesario instalar un subsistema para el kernel de Linux que permite ejecutar aplicaciones Linux en Windows (WSL2) </span></p>
+<p><a href="https://docs.microsoft.com/es-es/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package"><span style="font-weight: 400;">https://docs.microsoft.com/es-es/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package</span></a></p>
+<p><span style="font-weight: 400;">Descargar la imagen de Juice Shop con el comando:</span><span style="font-weight: 400;"></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;">docker pull bkimminich/juice-shop</span></p>
+<p><span style="font-weight: 400;">Y arrancar el contenedor con:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;">docker run --rm -p 3000:3000 bkimminich/juice-shop</span></p>
+<p><span style="font-weight: 400;">Ahora para acceder a la web introducir en el navegador la dirección:</span></p>
+<p style="text-align: center;"><a href="http://localhost:3000/"><span style="font-weight: 400;">http://localhost:3000/</span></a></p>
+<p><span style="font-weight: 400;">Nota: Lo anterior se puede realizar también desde las diferentes interfaces gráficas que existen para Docker.</span></p>
+<p><span style="font-weight: 400;"><img src="img1.png" width="567" height="306" alt="JuiceShop" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<h2><strong>Herramienta de evaluación del banco Santander con OWASP Application Security Verification Standard (ASVS) Web App</strong></h2>
+<p><span style="font-weight: 400;">El proceso de evaluación de una aplicación no es sencillo, se han de realizar múltiples pruebas, evaluar los resultados, modificar el código y volver a reevaluar entre otras muchas tareas. Esta evaluación puede realizarse de forma manual aunque lo ideal es informatizar y automatizar el proceso lo máximo posible.</span></p>
+<p><span style="font-weight: 400;">La seguridad informática es importante para cualquier sector, pero en el bancario es un elemento clave del mismo, el banco Santander ha desarrollado una aplicación basada en ASVS para la evaluación del nivel de seguridad de las aplicaciones web. Al igual que la aplicación anterior, es posible crearla desde 0, aunque facilita una imagen en docker para un fácil uso.</span></p>
+<p><span style="font-weight: 400;">Para saber más: Repositorio de Santander en GitHub con aplicaciones de seguridad basadas en proyecto OWASP como guiones ZAP u otras como evaluación de Cross-Origin Resource Sharing (CORS).</span></p>
+<p style="text-align: center;"><a href="https://github.com/Santandersecurityresearch"><span style="font-weight: 400;">https://github.com/Santandersecurityresearch</span></a></p>
+<p><span style="font-weight: 400;">El proceso de instalación se indica en la página, es necesario tener instalado git.</span></p>
+<p><span style="font-weight: 400;">En primer lugar, clonar el repositorio:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"> </span><a href="https://github.com/Santandersecurityresearch/asvs"><span style="font-weight: 400;">https://github.com/Santandersecurityresearch/asvs</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Construir la imagen (es necesario disponer de una cuenta en Docker): </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;">docker build -t asvs .</span></p>
+<p><span style="font-weight: 400;">Iniciar la imagen:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"> docker run -d -p 8000:8000 asvs</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="caso_prctico_prctica_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b_prctica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

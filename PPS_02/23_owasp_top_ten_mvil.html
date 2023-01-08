@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3. -OWASP Top Ten Móvil. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-102"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="current-page-parent daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul>
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li id="active"><a href="23_owasp_top_ten_mvil.html" class="active no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul class="other-section">
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="22_owasp_top_ten_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.3. -OWASP Top Ten Móvil.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id184">
+<div class="iDevice emphasis0">
+<div id="ta184_154" class="block iDevice_content">
+<p style="text-align: justify;">Si bien las aplicaciones web son las que están experimentando una mayor proliferación en los últimos tiempos, las aplicaciones nativas para dispositivos móviles también han crecido exponencialmente; siendo los teléfonos móviles los dispositivos electrónicos más utilizados hoy en día, por delante de los clásicos equipos PC de sobremesa y ordenadores portátiles; y por tanto, se han convertido en el principal objetivo de los ciberdelincuentes.</p>
+<figure class="exe-figure exe-image position-center license-CC-BY-NC" style="width: 351px;"><img src="appmovile.jpg" alt="Pantalla aplicación móviles" width="351" height="263" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/23b30cef-5969-457d-9197-1215bd589668" target="_blank" class="author" rel="noopener"> Daniel Y. Go</a>. <span class="title"><em>Pantalla aplicación móviles</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-NC">CC BY-NC</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><br /><br />De igual forma que las aplicaciones web se ha definido un listado con las 10 categorías de riesgos más peligrosos en el desarrollo de aplicaciones móviles, el listado actual es la versión del 2016, la página en la que se puede encontrar es:</p>
+<p style="text-align: center;"><a href="https://owasp.org/www-project-mobile-top-10/" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">https://owasp.org/www-project-mobile-top-10</a></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdmodifIdevice em_iDevice em_iDevice_reflexionfpd" id="id185">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta185_121" class="block iDevice_content">
+<p>En caso de ser un <em>hacker</em> que persigue un objetivo económico ¿hacia qué tipo de aplicaciones te dirigirías web o nativas para móviles? ¿Y si se desea robar datos personales y escuchar las conversaciones?</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id186">
+<div class="iDevice emphasis0">
+<div id="ta186_154" class="block iDevice_content">
+<p>Para cada categoría se indica la situación de riesgo o el vector de ataque, el grado de explotabilidad, la prevalencia, la detectabilidad y el impacto que puede tener. Se explica también los elementos implicados y posibles soluciones para evitar esa categoría de riesgos.</p>
+<div class="exe-fx exe-accordion">
+<h2><b>1. Uso impropio de la plataforma.</b></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m1-improper-platform-usage" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M1: Improper Platform Usage</b></a><span style="font-weight: 400;">.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Hace referencia al uso indebido de una función de la plataforma o la falta de uso de los controles de seguridad de la plataforma. Para aprovechar esta vulnerabilidad, la organización debe exponer un servicio web o una llamada a la API que consume la aplicación móvil. El servicio expuesto o la llamada a la API se implementa utilizando técnicas de codificación inseguras que producen una vulnerabilidad en el servidor. A través de la interfaz móvil, un atacante puede enviar entradas maliciosas o secuencias inesperadas de eventos al punto final vulnerable.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Hay varias formas en que las aplicaciones móviles pueden experimentar este riesgo:</span></p>
+<ol style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="2"><b>Violación de las pautas publicadas</b><span style="font-weight: 400;">. Todas las plataformas tienen pautas de desarrollo para la seguridad (p.e, Android, iOS, Windows Phone. Si una aplicación contradice las recomendaciones del fabricante, estará expuesta a este riesgo. </span></li>
+<li style="font-weight: 400;" aria-level="2"><b>Violación de convención o práctica común.</b><span style="font-weight: 400;"> No todas las mejores prácticas están codificadas en la guía del fabricante. En algunos casos, existen mejores prácticas de facto que son comunes en las aplicaciones móviles.</span></li>
+<li style="font-weight: 400;" aria-level="2"><b>Mal uso involuntario.</b><span style="font-weight: 400;"> Algunas aplicaciones tienen la intención de hacer lo correcto, pero en realidad se equivocan en una parte de la implementación. Esto podría ser un error simple, como configurar el indicador incorrecto en una llamada a la API, o podría ser un malentendido sobre cómo funcionan las protecciones. Las fallas en los modelos de permisos de la plataforma se incluyen en esta categoría. </span></li>
+</ol>
+<h2 style="text-align: justify;"><b>2. Almacenamiento de datos inseguros. </b><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m2-insecure-data-storage"><b></b></a></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m2-insecure-data-storage" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M2: Insecure Data Storage</b></a><b>.</b><span style="font-weight: 400;"> </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un atacante que robe o adquiera físicamente un dispositivo móvil, puede conectarlo a una computadora  y mediante las herramientas software adecuadas, que en muchos casos están  disponible gratuitamente; puede todos los directorios de aplicaciones de terceros que contienen información de identificación personal (PII) almacenada u otros activos de información confidencial. </span></p>
+<h2><b>3. Comunicaciones Inseguras.</b></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m3-insecure-communication" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M3: Insecure Communication</b></a><b>.</b><span style="font-weight: 400;"> </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Cuando se diseña una aplicación móvil, los datos se intercambian comúnmente entre un  cliente y un servidor. Cuando la solución transmite sus datos, debe atravesar la red del operador del dispositivo móvil e Internet. Los atacantes pueden aprovechar las vulnerabilidades para interceptar datos confidenciales mientras viajan.  Las aplicaciones móviles con frecuencia no protegen el tráfico de la red. Pueden usar SSL / TLS durante los procesos de  autenticación, pero no en otros lugares. Esta incoherencia conlleva el riesgo de exponer los datos y los identificadores de sesión a la interceptación. </span></p>
+<h2><b>4. Autenticación Insegura.</b></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m4-insecure-authentication" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M4: Insecure Authentication</b></a><b>. </b></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los agentes que aprovechan las vulnerabilidades de autenticación normalmente lo hacen empleando herramientas disponibles o personalizadas que permiten automatizar los ataques. Hay muchas formas diferentes en que una aplicación móvil puede sufrir una autenticación insegura: </span></p>
+<ol style="text-align: justify;">
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Si una aplicación móvil almacena contraseñas o secretos compartidos localmente en el dispositivo, lo más probable es que sufra una autenticación insegura;</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Si la aplicación móvil usa una política de contraseña débil para simplificar el ingreso de una contraseña, sufre de autenticación insegura; o</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Si la aplicación móvil utiliza una función como </span><span style="color: #0000ff;"><a href="#t06f8c84f-a2b3-42d1-18f6-568d14216692" id="link06f8c84f-a2b3-42d1-18f6-568d14216692" title="TouchID | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b>TouchID</b></a></span><span style="font-weight: 400;">, sufre de autenticación insegura.</span></li>
+</ol>
+<p style="text-align: justify;"><span style="font-weight: 400;">Lo deseable es que la información de autenticación que se guarda localmente en el móvil, se almacena encriptada empleando claves de cifrado fuertes.</span></p>
+<h2 style="text-align: justify;"><b>5. Criptografía insuficiente.</b></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m5-insufficient-cryptography" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M5: Insufficient Cryptography</b></a><b>. </b></p>
+<p><span style="font-weight: 400;">Aprovechando esta debilidad, un adversario puede devolver con los datos cifrados o confidenciales a su forma original. Los principales fallos que pueden provocar esta situación son:</span></p>
+<ol>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Incluir las claves en el mismo directorio legible por el atacante que el contenido cifrado;</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Poner las claves a disposición del atacante;</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Las claves se pueden interceptar mediante ataques binarios. </span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">No hay manera más fácil de manejar mal el cifrado, móvil o de otro tipo, que crear y usar sus propios algoritmos o protocolos de cifrado.</span></li>
+</ol>
+<p><span style="font-weight: 400;">Para manejar datos confidenciales, las principales recomendaciones son:</span></p>
+<ol>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Siempre que sea posible, se debe evitar el almacenamiento de datos confidenciales en  el dispositivo móvil siempre que sea posible.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Es muy recomendable utilizar algoritmos criptográficos  de última generación que hayan sido aceptados como sólidos por la comunidad de seguridad. </span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Seguir las pautas marcadas por el </span><span style="color: #0000ff;"><a href="#t8efbde79-adb3-3c77-61e0-d8278b1e1986" id="link8efbde79-adb3-3c77-61e0-d8278b1e1986" title="NIST (National Institute of Standards and Technology) | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b><i>NIST (National Institute of Standards and Technology)</i></b></a></span><span style="font-weight: 400;"> sobre algoritmos recomendados</span></li>
+</ol>
+<h2><strong>6. Autenticación insegura.</strong></h2>
+<p><strong><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m6-insecure-authorization" style="background-color: #f7f7f7; font-size: 1em;" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">M6: Insecure Authorization</a><span style="background-color: #f7f7f7; color: #000000; font-size: 1em;">.</span></strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los </span>adversarios<span style="font-weight: 400;"> pueden realizar ataques binarios contra la aplicación móvil e intentar ejecutar una funcionalidad privilegiada que solo debería ser ejecutable con un usuario de mayor privilegio mientras la aplicación móvil está en modo 'fuera de línea'.</span></p>
+<h2><b>7. Calidad de código deficiente.</b></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m7-client-code-quality" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;"><b>M7: Poor Code Quality</b></a><span style="font-weight: 400;">. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los problemas de calidad del código son bastante frecuentes en la mayoría de los códigos móviles. Por lo general, es difícil detectar este tipo de problemas mediante la revisión manual del código. En su lugar, los atacantes utilizan herramientas de terceros que realizan análisis estático. Este tipo de herramientas normalmente identificarán pérdidas de memoria, desbordamientos de búfer y otras malas prácticas de programación. Los piratas informáticos con conocimientos y experiencia de muy bajo nivel pueden explotar eficazmente este tipo de problemas. El objetivo principal típico es ejecutar código externo dentro del espacio de direcciones del código móvil.</span></p>
+<h2><strong>8. Manipulación de código. </strong></h2>
+<p><strong><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m8-code-tampering">M8: Code Tampering</a>. </strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un atacante aprovechará la modificación del código a través de formas maliciosas de las aplicaciones alojadas en tiendas de aplicaciones de terceros. El atacante también puede engañar al usuario para que instale la aplicación mediante ataques de </span><span style="color: #0000ff;"><a href="#td8e03aff-e975-1db8-eab1-55c8da54fcfc" id="linkd8e03aff-e975-1db8-eab1-55c8da54fcfc" title="Phising | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><strong><i>phising</i></strong><i>.</i></a></span><span style="font-weight: 400;">  Las formas modificadas de aplicaciones son sorprendentemente más comunes de lo que se cree. Existe toda una industria de seguridad construida alrededor de la detección y eliminación de versiones no autorizadas de aplicaciones móviles dentro de las tiendas de aplicaciones. </span></p>
+<h2><strong>9. Ingeniería inversa.</strong></h2>
+<p><strong><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m9-reverse-engineering" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">M9: Reverse Engineering</a>.</strong></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un atacante descarga la aplicación objetivo de una tienda de aplicaciones y la analiza dentro de su propio entorno local utilizando un conjunto de herramientas diferentes (como por ejemplo: IDA Pro, </span><a href="https://www.hopperapp.com/"><span style="font-weight: 400;">Hopper</span></a><span style="font-weight: 400;">, otool, strings, </span><a href="https://ghidra-sre.org/"><span style="font-weight: 400;">Ghidra</span></a><span style="font-weight: 400;"> o </span><a href="https://binary.ninja/"><span style="font-weight: 400;">BinaryNinja</span></a><span style="font-weight: 400;">). Generalmente, todo el código móvil es susceptible de ingeniería inversa. Para evitar una ingeniería inversa eficaz, debe utilizar una herramienta de ofuscación. Existen muchos ofuscadores gratuitos y comerciales en el mercado. </span></p>
+<h2><strong>10. Funcionalidades Extrañas. </strong></h2>
+<p><a href="https://owasp.org/www-project-mobile-top-10/2016-risks/m10-extraneous-functionality" onclick="window.open(this.href,'eXeLearningPopup','width=600,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');return false;">M10: Extraneous Functionality</a></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por lo general, un atacante busca comprender la funcionalidad extraña dentro de una aplicación móvil para descubrir una funcionalidad oculta en los sistemas backend. A menudo, los desarrolladores incluyen funciones ocultas de puerta trasera u otros controles de seguridad de desarrollo internos que no están destinados a ser lanzados a un entorno de producción. </span></p>
+<p></p>
+</div>
+<div id="t06f8c84f-a2b3-42d1-18f6-568d14216692" class="exe-tooltip-text">
+<p>Método seguro de autentificación para aplicaciones móviles. Se basa en el reconocimiento biométrico, es decir, el reconocimiento inequívoco de personas mediante aspectos físicos únicos, como las huellas dactilares, la retina o el iris.</p>
+</div>
+<div id="t8efbde79-adb3-3c77-61e0-d8278b1e1986" class="exe-tooltip-text">
+<p>El Instituto Nacional de Estándares y Tecnologías es una agencia de la Administración de Tecnología del Departamento de Comercio de los Estados Unidos. Su misión es promover la innovación y la competencia industrial mediante avances en metrología, normas y tecnología de forma que mejoren la estabilidad económica y la calidad de vida.</p>
+</div>
+<div id="td8e03aff-e975-1db8-eab1-55c8da54fcfc" class="exe-tooltip-text">
+<p>Método mediante el cual se obtiene información personal de un usuario a través de sitios web ficticios, correo electrónico u otros mensajes. Esta información se emplea principalmente para fines ilegales. El término es una contracción de "password fishing" (pesca de contraseñas).</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper SeleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id215">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<div id="actitity-215_136">
+<form name="multi-select-form-215_136" action="#" class="activity-form multi-select-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion215_136" class="block question iDevice_content">
+<p style="text-align: justify;">Señale cuáles de los siguientes riesgos forman parte de la lista OWASP Móvil Top 10 de 2016:<br /><br /></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1360" class="sr-av"><a href="#answer-215_139">Opción 1</a></label><input type="checkbox" id="op215_1360" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_139"><div id="taans215_139" class="block iDevice_content">
+<p>Calidad de código deficiente.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1360" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1361" class="sr-av"><a href="#answer-215_1026">Opción 2</a></label><input type="checkbox" id="op215_1361" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1026"><div id="taans215_1026" class="block iDevice_content">
+<p>Comunicación insegura.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1361" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1362" class="sr-av"><a href="#answer-215_1028">Opción 3</a></label><input type="checkbox" id="op215_1362" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1028"><div id="taans215_1028" class="block iDevice_content">
+<p>Configuración incorrecta de seguridad.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1362" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1363" class="sr-av"><a href="#answer-215_1030">Opción 4</a></label><input type="checkbox" id="op215_1363" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1030"><div id="taans215_1030" class="block iDevice_content">
+<p>Cross Site Scripting.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1363" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1364" class="sr-av"><a href="#answer-215_1032">Opción 5</a></label><input type="checkbox" id="op215_1364" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1032"><div id="taans215_1032" class="block iDevice_content">
+<p>Ingeniería inversa.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1364" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1365" class="sr-av"><a href="#answer-215_1034">Opción 6</a></label><input type="checkbox" id="op215_1365" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1034"><div id="taans215_1034" class="block iDevice_content">
+<p>Inyección SQL.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1365" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1366" class="sr-av"><a href="#answer-215_1036">Opción 7</a></label><input type="checkbox" id="op215_1366" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1036"><div id="taans215_1036" class="block iDevice_content">
+<p>Negación de servicio.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1366" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1367" class="sr-av"><a href="#answer-215_1038">Opción 8</a></label><input type="checkbox" id="op215_1367" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1038"><div id="taans215_1038" class="block iDevice_content">
+<p>Registro y monitoreo insuficientes.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1367" style="display:none"></section>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op215_1368" class="sr-av"><a href="#answer-215_1040">Opción 9</a></label><input type="checkbox" id="op215_1368" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-215_1040"><div id="taans215_1040" class="block iDevice_content">
+<p>Uso impropio de la plataforma.</p>
+</div>
+</div>
+<section class="iDevice_answer-feedback feedback" id="feedback-215_1368" style="display:none"></section>
+</section>
+</section>
+<div class="block iDevice_buttons feedback-button js-required">
+<p>
+<input type="button" name="submitSelect" class="feedbackbutton multi-select-feedback-toggler" value="Mostrar retroalimentación" id="multi-select-feedback-toggler-9-215_136" /> 
+</p>
+</div>
+<section id="f215_136" class="js-hidden js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-215_139" class="right">Correcto</a></li>
+<li><a href="#answer-215_1026" class="right">Correcto</a></li>
+<li><a href="#answer-215_1028" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-215_1030" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-215_1032" class="right">Correcto</a></li>
+<li><a href="#answer-215_1034" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-215_1036" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-215_1038" class="wrong">Incorrecto</a></li>
+<li><a href="#answer-215_1040" class="right">Correcto</a></li>
+</ol>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="22_owasp_top_ten_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

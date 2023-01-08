@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido. | UD 2: Determinación del nivel de seguridad requerido por las aplicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-59"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 2: Determinación del nivel de seguridad requerido por las aplicaciones</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 2: DETERMINACIÓN DEL NIVEL DE SEGURIDAD REQUERIDO POR LAS APLICACIONES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fuentes_abiertas_para_el_desarrollo_seguro.html" class="daddy">1.- Fuentes abiertas para el desarrollo seguro.</a>
+   <ul class="other-section">
+      <li><a href="11_tcnicas_y_herramientas.html" class="no-ch">1.1.- Técnicas y herramientas</a></li>
+      <li><a href="12_desarrollo_seguro_y_fuentes_abiertas.html" class="no-ch">1.2.- Desarrollo seguro y fuentes abiertas.</a></li>
+   </ul>
+   </li>
+   <li><a href="2_listas_de_riesgos_de_seguridad_habituales_owasp_top_ten_web_y_mvil.html" class="daddy">2.- Listas de riesgos de seguridad habituales: OWASP Top Ten (web y móvil)</a>
+   <ul class="other-section">
+      <li><a href="21_proyectos_fundacin_owasp.html" class="no-ch">2.1.- Proyectos fundación OWASP.</a></li>
+      <li><a href="22_owasp_top_ten_web.html" class="no-ch">2.2.- OWASP Top Ten Web.</a></li>
+      <li><a href="23_owasp_top_ten_mvil.html" class="no-ch">2.3. -OWASP Top Ten Móvil.</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_requisitos_de_verificacin_necesarios_asociados_al_nivel_de_seguridad_establecido.html" class="active daddy">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</a>
+   <ul>
+      <li><a href="31__estndares_para_medir_la_calidad_del_software.html" class="no-ch">3.1. - Estándares para medir la calidad del software.</a></li>
+      <li><a href="32__niveles_de_verificacin.html" class="no-ch">3.2. - Niveles de verificación.</a></li>
+      <li><a href="33__estndar_de_verificacin_de_seguridad_en__aplicaciones_asvs.html" class="daddy">3.3. - Estándar de Verificación de Seguridad en  Aplicaciones (ASVS).</a>
+      <ul class="other-section">
+         <li><a href="331__web_security_testing_guide.html" class="no-ch">3.3.1. - Web Security Testing Guide.</a></li>
+         <li><a href="332__mobile_security_testing_guide.html" class="daddy">3.3.2. - Mobile Security Testing Guide.</a>
+         <ul class="other-section">
+            <li><a href="3321__estndar_de_verificacin_de_seguridad_de_aplicaciones_mviles_masvs.html" class="no-ch">3.3.2.1. - Estándar de verificación de seguridad de aplicaciones móviles. (MASVS).</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_comprobaciones_de_seguridad_a_nivel_de_aplicacin_asvs_.html" class="no-ch">4.- Comprobaciones de seguridad a nivel de aplicación: ASVS .</a></li>
+   <li><a href="caso_prctico_prctica_web.html" class="daddy">Caso práctico: Práctica Web</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_prctica.html" class="no-ch">B.- Práctica</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="23_owasp_top_ten_mvil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__estndares_para_medir_la_calidad_del_software.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.- Requisitos de verificación necesarios asociados al nivel de seguridad establecido.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id131">
+<div class="iDevice emphasis0">
+<div id="ta131_154" class="block iDevice_content">
+<p style="text-align: justify;">No todo el software debe cumplir los <strong>requisitos de seguridad</strong> con el mismo <strong>nivel</strong> o grado <strong>de exigencia</strong>. Por ejemplo una aplicación con funcionalidad de alarma-despertador, no tiene que cumplir con unos requisitos de seguridad demasiado elevados para almacenar la hora a la que ha de sonar, es decir no es preciso que esta información se almacene de forma cifrada. En cambio, una aplicación para el control de medicación en un hospital debería cumplir con unos requisitos de seguridad mucho más altos. </p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id132">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta132_151" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">El proyecto del </span><b>Estándar de Verificación de Seguridad de Aplicaciones</b><span style="font-weight: 400;"> (</span><b><i>ASVS, Application Security Verification Standard</i></b><span style="font-weight: 400;">) de OWASP proporciona una lista de requerimientos de seguridad o pruebas que pueden ser utilizadas por arquitectos, desarrolladores, testers, profesionales de seguridad e incluso consumidores, para determinar el grado de seguridad es una aplicación.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 450px;"><img width="450" height="276" alt="Nube conceptos seguridad OWASP" src="nubeowasp.jpg" />
+<figcaption class="figcaption"><a class="author" href="https://search.creativecommons.org/photos/0cfff184-9559-4ff0-833e-838d365c7c6e" target="_blank" rel="noopener">purpleslog </a>. <span class="title"><em>Palabras clave OWASP</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">OWASP ASVS ofrece una lista completa de requisitos, controles y pruebas de seguridad de aplicaciones que puede utilizar para determinar el alcance, crear y verificar aplicaciones web y móviles seguras. Permite a las organizaciones desarrollar y mantener aplicaciones más seguras; y también brinda a los proveedores de servicios de seguridad y proveedores un conjunto de controles bien documentados con el que pueden alinear sus requisitos y ofertas. La última versión, <a title="OWASP ASVS v4.0.2" href="https://github.com/OWASP/ASVS/tree/v4.0.2" target="_blank" rel="noopener"><strong>OWASP ASVS v4.0.2</strong></a>, se lanzó en octubre de 2020.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+<p style="text-align: justify;">ASVS tiene dos objetivos principales:</p>
+<ul>
+<li style="text-align: justify;">Ayudar a las organizaciones en el desarrollo y mantenimiento aplicaciones seguras.</li>
+<li style="text-align: justify;">Permitir la alineación entre las necesidades y ofertas de los servicios de seguridad, proveedores de herramientas de seguridad y consumidores</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id133">
+<div class="iDevice emphasis0">
+<div id="ta133_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los requisitos se desarrollaron con los siguientes objetivos en mente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Usarlo como métrica:</strong> proporcione a los desarrolladores y propietarios de aplicaciones un criterio con el que evaluar el grado de confianza que se puede depositar en sus aplicaciones web,</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Utilizarlo como guía:</strong> proporcionar orientación a los desarrolladores de controles de seguridad sobre qué incorporar en los controles de seguridad para satisfacer los requisitos de seguridad de las aplicaciones</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Usarlo durante la adquisición</strong>: proporciona una base para especificar los requisitos de verificación de seguridad de la aplicación en los contratos.</span></li>
+</ul>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="23_owasp_top_ten_mvil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__estndares_para_medir_la_calidad_del_software.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
