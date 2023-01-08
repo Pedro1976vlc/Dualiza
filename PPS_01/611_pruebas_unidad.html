@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.1.- Pruebas unidad | UD 1. Prueba de aplicaciones web y para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-80"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 1. Prueba de aplicaciones web y para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 1: PRUEBA DE APLICACIONES WEB Y PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fundamentos_de_la_programacin.html" class="daddy">1.- Fundamentos de la programación</a>
+   <ul class="other-section">
+      <li><a href="11_fundamentos_de_los_lenguajes_ms_utilizados_i.html" class="no-ch">1.1.- Fundamentos de los lenguajes más utilizados I</a></li>
+      <li><a href="12_fundamentos_de_los_lenguajes_ms_utilizados_ii.html" class="no-ch">1.2.- Fundamentos de los lenguajes más utilizados II</a></li>
+   </ul>
+   </li>
+   <li><a href="2_lenguajes_de_programacin_interpretados_y_compilados.html" class="daddy">2.- Lenguajes de programación interpretados y compilados</a>
+   <ul class="other-section">
+      <li><a href="21_compilacin_en_tiempo_de_ejecucin.html" class="no-ch">2.1.- Compilación en tiempo de ejecución</a></li>
+   </ul>
+   </li>
+   <li><a href="3_cdigo_fuente_y_entornos_de_desarrollo.html" class="daddy">3.- Código fuente y entornos de desarrollo</a>
+   <ul class="other-section">
+      <li><a href="31__entornos_de_desarrollo.html" class="no-ch">3.1. - Entornos de desarrollo</a></li>
+   </ul>
+   </li>
+   <li><a href="4_ejecucin_de_software.html" class="no-ch">4.- Ejecución de software</a></li>
+   <li><a href="5_elementos_principales_de_un_programa.html" class="no-ch">5. -Elementos principales de un programa</a></li>
+   <li class="current-page-parent"><a href="6_pruebas.html" class="current-page-parent daddy">6.- Pruebas</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_etapas_o_niveles_de_pruebas.html" class="current-page-parent daddy">6.1.- Etapas o niveles de pruebas</a>
+      <ul>
+         <li id="active"><a href="611_pruebas_unidad.html" class="active no-ch">6.1.1.- Pruebas unidad</a></li>
+         <li><a href="612_pruebas_de_integracin.html" class="no-ch">6.1.2.- Pruebas de integración</a></li>
+         <li><a href="613_pruebas_de_sistema.html" class="no-ch">6.1.3.- Pruebas de sistema</a></li>
+         <li><a href="614_pruebas_de_aceptacin.html" class="no-ch">6.1.4.- Pruebas de aceptación</a></li>
+      </ul>
+      </li>
+      <li><a href="62_tipos_de_pruebas.html" class="daddy">6.2.- Tipos de pruebas</a>
+      <ul class="other-section">
+         <li><a href="621_pruebas_funcionales.html" class="no-ch">6.2.1.- Pruebas funcionales</a></li>
+         <li><a href="622_pruebas_no_funcionales.html" class="no-ch">6.2.2.- Pruebas no funcionales</a></li>
+      </ul>
+      </li>
+      <li><a href="63_tcnicas_de_prueba.html" class="daddy">6.3.- Técnicas de prueba</a>
+      <ul class="other-section">
+         <li><a href="631_pruebas_de_caja_negra.html" class="no-ch">6.3.1.- Pruebas de caja negra</a></li>
+         <li><a href="632_pruebas_de_caja_blanca.html" class="no-ch">6.3.2.- Pruebas de caja blanca</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_seguridad_en_los_lenguajes_de_programacin_y_sus_entornos_de_ejecucin_sandboxes.html" class="no-ch">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</a></li>
+   <li><a href="caso_prctico_mochachai.html" class="daddy">Caso práctico: Mocha-Chai</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_desarrollando_el_software.html" class="no-ch">B.- Desarrollando el software</a></li>
+      <li><a href="c_probando_el_software.html" class="no-ch">C.- Probando el software</a></li>
+      <li><a href="d_ampliacin.html" class="no-ch">D.- Ampliación</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="61_etapas_o_niveles_de_pruebas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_pruebas_de_integracin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1.1.- Pruebas unidad</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id163">
+<div class="iDevice emphasis0" >
+<div id="ta163_144_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Las pruebas unitarias o de componentes permiten <strong>probar componentes individuales</strong> para asegurar que funcionan correctamente. Los componentes pueden ser entidades simples como funciones, métodos, clases de objetos, interfaces o agrupaciones coherentes de esas entidades. Cada componente se prueba de forma individual sin interactuar con ningún otro elemento del sistema.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span><span style="font-weight: 400;"><span>Las pruebas no deben tener dependencias respecto a sí mismas o al entorno donde se están ejecutando, pudiendo ser ejecutadas en distinto orden y distintos subconjuntos sin que esto afecte al resultado final. Debido a este principio muchas <strong>herramientas de <em>testing</em> unitario</strong> ejecutan las pruebas aleatoriamente.</span></span></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id164">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Motivos para realizar un test unitario</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta164_146_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">Entre los principales motivos por los que resulta altamente recomendable realizar pruebas unitarias sobre el software desarrollado destacan los siguientes: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Las pruebas unitarias demuestran que la lógica del código está bien estructurada y funcionará en todos los casos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Aumentan la legibilidad del código y ayudan a los desarrolladores a entender el código base, lo que facilita hacer cambios más rápidamente.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Se realizan en pocos milisegundos, por lo que podrás realizar cientos de ellas en muy poco tiempo.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Las pruebas de componentes permiten al desarrollador refactorizar el código más adelante y tener la garantía de que el módulo sigue funcionando correctamente. Para ello se escriben <span style="color: #0000ff;"><strong><a href="#tdef73d9b-b11c-f506-6420-27b2cecc9b9d" id="linkdef73d9b-b11c-f506-6420-27b2cecc9b9d" class="exe-tooltip definition-tt titled-tt" title="caso de prueba | Glosario" style="color: #0000ff;">casos de prueba</a></strong></span> para todas las funciones y métodos, para que cada vez que un cambio provoque un error, sea posible identificarlo y repararlo rápidamente.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">La calidad final del código mejorará ya que, al estar realizando pruebas de manera continua, al finalizar el código será más limpio y de mayor calidad.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Como las pruebas unitarias dividen el código en pequeños fragmentos, es posible probar distintas partes del proyecto sin tener que esperar a que otras estén completadas. </span></li>
+</ul>
+<div id="tdef73d9b-b11c-f506-6420-27b2cecc9b9d" class="exe-tooltip-text">
+<p>Conjunto de entradas, condiciones de ejecución y salidas diseñadas para un objetivo concreto Los casos de prueba forman parte de las pruebas a un software.</p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id165">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta165_129" class="block iDevice_content">
+<h2>¿Qué son las pruebas unitarias?</h2>
+<p>En programación, una prueba unitaria es una forma de comprobar el correcto funcionamiento de una unidad de código. Por ejemplo en diseño estructurado o en diseño funcional una función o un procedimiento, en diseño orientado a objetos una clase.</p>
+<p style="text-align: center;"><iframe width="600" height="314" src="https://www.youtube.com/embed/wA_y-72rLs0" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Vídeo descriptivo sobre las pruebas de unidad. Se define el concepto de prueba unitaria y se analizan las ventajas de su aplicación.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id195">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta195_128" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">El proceso de los tests unitarios puede realizarse de manera manual, aunque lo más común es automatizar el procedimiento a través de herramientas software. </span><span style="font-weight: 400;">Hay muchas opciones disponibles, que varían en función del lenguaje de programación que se esté utilizando. Estos son algunos ejemplos de este tipo de herramientas que te ayudarán con las pruebas.</span></p>
+<div class="exe-fx exe-tabs">
+<h2>JUnit</h2>
+<figure class="exe-figure exe-image position-center license-gnu-gpl" style="width: 180px;"><img src="https://destatic.blob.core.windows.net/images/junit.png" alt="Logo de JUnit" width="180" height="180" />
+<figcaption class="figcaption"><a href="https://junit.org/junit5/" target="_blank" class="author" rel="noopener">Junit</a> <span class="license"><span class="sep">(</span><a href="http://www.gnu.org/licenses/gpl.html" rel="license nofollow noopener" target="_blank">GNU/GPL</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;"><a href="https://junit.org/junit5/">JUnit</a> es un conjunto de bibliotecas creadas por Erich Gamma y Kent Beck que son utilizadas en programación para hacer pruebas unitarias de aplicaciones Java.</span></p>
+<h2>PhpUnit</h2>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/PHPUnit_Logo.svg" alt="" width="180" height="530" /></span></p>
+<p><span style="font-weight: 400;"><a href="https://phpunit.de/index.html">PHPUnit</a> es un entorno para realizar pruebas unitarias en el lenguaje de programación PHP. PHPUnit es un framework de la familia xUnit originada con SUnit de Kent Beck. PHPUnit se puede encontrar en GitHub​ y ha sido creado por Sebastian Bergmann.</span></p>
+<h2>NUnit</h2>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="img2.png" alt="Logotipo NUnit" width="180" height="73" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://nunit.org/">NUnit</a> es un <em>framework open source</em> de pruebas de unidad para <strong>Microsoft .NET</strong> y <span style="color: #0000ff;"><strong><a href="#tbc4a016a-8b58-dc19-39b9-1564eb8ddc24" style="color: #0000ff;" id="linkbc4a016a-8b58-dc19-39b9-1564eb8ddc24" title="Mono | Mono" class="exe-tooltip definition-tt titled-tt">Mono</a></strong></span>. Sirve al mismo propósito que JUnit realiza en el mundo Java, y es uno de muchos en la familia xUnit. NUnit.Forms es una expansión al framework núcleo NUnit y es también open source.</span></p>
+<h2>Mocha - Chai</h2>
+<p><span style="font-weight: 400;"><img src="mocha-chai.jpg" alt="" width="180" height="112" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://mochajs.org/">Mocha</a> es un framework de prueba de JavaScript rico en funciones que se ejecuta en Node.js y en el navegador, lo que hace que las pruebas asincrónicas sean simples y divertidas. Las pruebas de Mocha se ejecutan en serie, lo que permite informes flexibles y precisos, al tiempo que asigna las excepciones no detectadas a los casos de prueba correctos. Alojado en GitHub.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://www.chaijs.com/">Chai</a> es una librería de aserciones, la cual se puede emparejar con cualquier marco de pruebas de Javascript. Chai tiene varias interfaces: </span><b><i>assert</i></b><span style="font-weight: 400;">, </span><b><i>expect</i></b><span style="font-weight: 400;"> y </span><b><i>should</i></b><b>,</b><span style="font-weight: 400;"> que permiten al desarrollador elegir el estilo que le resulte más legible y cómodo a la hora de desarrollar sus casos de prueba.</span></p>
+<h2>Mockito</h2>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="https://github.com/mockito/mockito.github.io/raw/master/img/logo%402x.png" width="180" height="90" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://site.mockito.org/">Mockito</a> es un <em>framework</em> de prueba de código abierto para Java lanzado bajo la Licencia MIT. El marco permite la creación de objetos dobles de prueba en pruebas unitarias automatizadas con el propósito de desarrollo basado en pruebas o desarrollo basado en el comportamiento.</span></p>
+<h2>Sinon</h2>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="https://sinonjs.org/assets/images/logo.png" alt="" width="180" height="252" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://sinonjs.org/">Sinon</a> es una popular librería Javascript diseñada para ser utilizada conjuntamente con otros <em>frameworks</em> de prueba como son Mocha o Jasmie. Los tests unitarios sirven para probar el funcionamiento de una unidad de código. Estos bloques de código que deseamos probar suelen tener dependencias con otros módulos tanto propios como ajenos. Debido a ello en nuestros casos de prueba pueden surgir las siguientes necesidades:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Se precisa comprobar cómo interacciona nuestro código con módulos externos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Se necesita que un módulo externo devuelva un resultado en concreto para el caso que estemos probando.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Se desean evitar llamadas reales a esos módulos externos para que no interfieran en los resultados o simplemente porque no queremos que se hagan.</span></li>
+</ul>
+<p>Sinon resuelve estas necesidades proporcionando tres tipos de elementos: <a href="#teca33ad8-52f6-fdaa-84af-bba1a0dfe931" id="linkeca33ad8-52f6-fdaa-84af-bba1a0dfe931" title="Stubs | Stubs" class="exe-tooltip definition-tt titled-tt"><span style="color: #0000ff;"><b style="font-size: 1.05em;"><i>Stubs </i></b></span></a><span style="color: #333333; font-size: 1.05em;">(simulacros), </span><span style="color: #0000ff;"><a href="#t0c9bdcd9-1634-cace-8ae0-dfa8119fcbd8" id="link0c9bdcd9-1634-cace-8ae0-dfa8119fcbd8" title="Spies | Spies" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b style="font-size: 1.05em;"><i>Spies</i></b></a><span style="font-size: 1.05em;"> </span></span><span style="color: #333333; font-size: 1.05em;">(espías)  y </span><a href="#td350f702-3326-7f66-8767-bb397314106f" id="linkd350f702-3326-7f66-8767-bb397314106f" class="exe-tooltip definition-tt titled-tt" title="Mocks | Mocks"><span style="color: #0000ff;"><b style="font-size: 1.05em;"><i>Mocks</i></b></span></a><span style="color: #333333; font-size: 1.05em;"> (pseudo-objetos u objetos de pega)</span></p>
+<h2>Jasmine</h2>
+<p style="text-align: center;"><img src="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fgithub.com%2Fjasmine%2Fjasmine&amp;psig=AOvVaw0L68FJTJ99fWJ7X9_AJDgx&amp;ust=1616369212935000&amp;source=images&amp;cd=vfe&amp;ved=0CA0QjhxqFwoTCKD4n9aCwO8CFQAAAAAdAAAAABAI" alt="" /><img src="https://camo.githubusercontent.com/8ab36dbb00942def1444dc40124df7da6490e8cb5bccf0d8a05ef876a9cd36ad/68747470733a2f2f7261776769746875622e636f6d2f6a61736d696e652f6a61736d696e652f6d61696e2f696d616765732f6a61736d696e652d686f72697a6f6e74616c2e737667" alt="" width="180" height="187" /></p>
+<p style="text-align: justify;"><a href="https://jasmine.github.io/">Jasmine</a> <span style="font-weight: 400;">es un marco de desarrollo impulsado por el comportamiento para probar código JavaScript. No depende de ningún otro marco de JavaScript. No requiere DOM. Y tiene una sintaxis clara y obvia para que pueda escribir pruebas fácilmente.</span></p>
+<h2>Jest</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href=" https://jestjs.io/es-ES/">Jest </a>es un marco de prueba de JavaScript mantenido por Facebook, Inc. diseñado y construido por Christoph Nakazawa con un enfoque en la simplicidad y el soporte para grandes aplicaciones web. Funciona con proyectos que utilizan Babel, TypeScript, Node.js, React, Angular, Vue.js y Svelte.</span></p>
+<h2>TestNG</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://testng.org/">TestNG </a>es un framework para pruebas y <em>testing</em> que trabaja con Java y está basado en JUnit y NUnit, pero introduciendo nuevas funcionalidades que los hacen más poderosos y fáciles de usar, tales como: Anotaciones JDK, configuración flexible de pruebas y soporte para pruebas para <em>data-driven testing</em>.</span><a href="https://testng.org/"><span style="font-weight: 400;"></span></a></p>
+<h2>Powermock</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;"><a href="https://github.com/powermock/">PowerMock</a> es un <em>framework</em> basado en Java, fue desarrollado originalmente por Johan Haleby y Jan Kronquist, permite crear objetos simulados para pruebas unitarias . Se ejecuta como una extensión de otros <em>frameworks</em> como Mockito o Easymock y extiende su rango de funciones para incluir la habilidad de imitar ciertos aspectos del lenguaje como métodos estáticos o constructores. Utiliza técnicas tales como su propio cargador de clases o <em>bytecode</em> manipulación con el fin de manipular aspectos en los objetos simulados que no se pueden cambiar con las construcciones de lenguaje habituales, tales como métodos estáticos o finales o constructores.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">PowerMock está sujeto a la licencia Apache 2.0. Powermock se utiliza para realizar pruebas con marcos y herramientas conocidos como <a href="#t1fc4fa29-e902-8f3f-e976-4a8b2bdb4e09" id="link1fc4fa29-e902-8f3f-e976-4a8b2bdb4e09" title="Spring | Spring" class="exe-tooltip definition-tt titled-tt"><strong><span style="color: #0000ff;">Spring</span></strong></a>, <strong><span style="color: #0000ff;"><a href="#tc101a03e-8557-b7db-37a2-7a256df3dec0" style="color: #0000ff;" id="linkc101a03e-8557-b7db-37a2-7a256df3dec0" title="Neo4j | Neo4j" class="exe-tooltip definition-tt titled-tt">Neo4j</a></span></strong>, <a href="#t58168d8f-16cb-096b-7b55-d48edbb8206f" id="link58168d8f-16cb-096b-7b55-d48edbb8206f" class="exe-tooltip definition-tt titled-tt" title="Checkstyle | Checkstyle"><span style="color: #0000ff;"><strong>Checkstyle</strong></span></a>, o <a href="https://www.wildfly.org/"><strong><span style="color: #0000ff;">WildFly</span></strong> </a>.</span></p>
+</div>
+<p><span style="font-weight: 400;"></span></p>
+<div id="tbc4a016a-8b58-dc19-39b9-1564eb8ddc24" class="exe-tooltip-text">
+<p>Mono es el nombre de un proyecto de código abierto iniciado por Ximian respaldado por Microsoft y actualmente impulsado por Novell para crear un grupo de herramientas libres, basadas en GNU/Linux y compatibles con .NET según lo especificado por el ECMA</p>
+</div>
+<div id="teca33ad8-52f6-fdaa-84af-bba1a0dfe931" class="exe-tooltip-text">
+<p>En el contexto del testeo del software, un trozo de código usado como sustituto de alguna otra funcionalidad. Un stub puede simular el comportamiento de código existente o ser el sustituto temporal para un código aún no desarrollado.</p>
+</div>
+<div id="td350f702-3326-7f66-8767-bb397314106f" class="exe-tooltip-text">
+<p>En la programación orientada a objetos se llaman mock objects (pseudoobjetos, objetos simulados u objetos de pega) a los objetos que imitan el comportamiento de objetos reales de una forma controlada. Se usan para simular el comportamiento de objetos complejos cuando es imposible o impracticable usar al objeto real en la prueba.</p>
+</div>
+<div id="t0c9bdcd9-1634-cace-8ae0-dfa8119fcbd8" class="exe-tooltip-text">
+<p>Un spy (espia) una función que nos permite realizar comprobaciones en las interacciones sobre ella. En tests unitarios es útil sobre todo para comprobar cómo hemos llamado a una dependencia externa; permite comprobar si se ha realizado una llamada a un método, el número de veces que se ha invocado o los argumentos empleados</p>
+</div>
+<div id="t58168d8f-16cb-096b-7b55-d48edbb8206f" class="exe-tooltip-text">
+<p>Checkstyle ​ es una herramienta de análisis de código estático que se utiliza en el desarrollo de software para comprobar si el código fuente de Java cumple con las reglas de codificación. Desarrollado originalmente por Oliver Burn en 2001, el proyecto es mantenido por un equipo de desarrolladores de todo el mundo.</p>
+</div>
+<div id="tc101a03e-8557-b7db-37a2-7a256df3dec0" class="exe-tooltip-text">
+<p>Neo4j es un software libre de Base de Datos Orientada a Grafos e implementado en Java.1​2​. Una base de datos orientada a grafos representa la información como nodos de un grafo y sus relaciones con las aristas del mismo, de manera que se pueda usar teoría de grafos para recorrer la base de datos ya que esta puede describir atributos de los nodos y las aristas. La primera versión de Neo4j fue lanzada en febrero de 2010 y está licenciada en un modelo dual, tanto bajo Affero General Public License (AGPL) v3 como bajo licencia comercial.</p>
+</div>
+<div id="tb503cd95-a11a-fa2f-d1ab-f9137cfda63a" class="exe-tooltip-text">
+<p>WildFly,​ anteriormente conocido como JBoss, es un servidor de aplicaciones Java EE de código abierto, sujeto a los requisitos de la GNU Lesser General Public License (LGPL), versión 2.1.</p>
+</div>
+<div id="t1fc4fa29-e902-8f3f-e976-4a8b2bdb4e09" class="exe-tooltip-text">
+<p>Spring es un framework para el desarrollo de aplicaciones y contenedor de inversión de control, de código abierto para la plataforma Java</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id154">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta154_128" class="block iDevice_content">
+<p><b>¿Qué significan las siglas TDD (</b><b><i>Test Driven Development</i></b><b>)?</b></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es una filosofía de desarrollo y prueba de aplicaciones software que consiste en <strong>codificar pruebas</strong>, <strong>desarrollar</strong> y <em><strong>refactorizar</strong></em> de forma continua el código generado. </span><span style="font-weight: 400;">La idea principal de esta metodología consiste en especificar e implementar en primer lugar las pruebas unitarias para el código que se desea implementar. Es decir, primero se codifican las pruebas y, posteriormente, se desarrolla la lógica de negocio.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">El <strong>ciclo de vida</strong> de <strong>TDD</strong> se basa en <strong>una continua codificación</strong> y <strong><em>refactorización</em></strong>.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 400px;"><a href="TDD.png" title="Modelo TDD - Test Driven Developement" onclick="window.open('TDD.png','Modelo TDD - Test Driven Developement','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img src="TDD.png" alt="Modelo TDD - Test Driven Developement" title="Modelo TDD - Test Driven Development" width="400" height="297" /></a>
+<figcaption class="figcaption"><span class="author">Pulsa aquí para ampliar</span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">Para aplicar correctamente la metodología TDD se deben seguir los siguientes pasos:</span></p>
+<ol>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Fallo:</strong> En primer lugar, se debe tomar un tiempo para pensar que test es más adecuado para probar el código. A continuación, <strong>se escribe una prueba</strong> de unas pocas líneas <strong>y se ejecuta</strong> el test. <strong>Se comprueba que</strong> el test <strong>falla</strong> y se presta atención a los mensajes de error.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Pasa:</strong> <strong>Se escriben unas pocas líneas de código de producción</strong>. No se debe tener una excesiva preocupación por la pureza del código o su elegancia. <strong>Se ejecutan las pruebas</strong> hasta obtener resultados <strong>correctos</strong>.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Refactorización:</strong> Una vez que los resultados de las pruebas han resultado exitosos, se introducen los cambios necesarios en las pruebas para <strong>mejorar el código y optimizarlo</strong>. Es necesario, ejecutar nuevamente las pruebas para asegurar que sus resultados siguen siendo correctos.</span></li>
+</ol>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este ciclo se debe repetir tantas veces como resulte necesario. Tener un único repositorio universal de pruebas facilita complementar el TDD con <strong>procesos ágiles</strong> de <em><strong>"Integración Continua"</strong></em>. Integrar continuamente nuestro trabajo con el del resto del equipo de desarrollo permite ejecutar toda la batería de pruebas y verificar que la última versión del software es compatible con el resto del sistema.</span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="61_etapas_o_niveles_de_pruebas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_pruebas_de_integracin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

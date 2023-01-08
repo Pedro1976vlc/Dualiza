@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.4.- Pruebas de aceptación | UD 1. Prueba de aplicaciones web y para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-83"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 1. Prueba de aplicaciones web y para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 1: PRUEBA DE APLICACIONES WEB Y PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fundamentos_de_la_programacin.html" class="daddy">1.- Fundamentos de la programación</a>
+   <ul class="other-section">
+      <li><a href="11_fundamentos_de_los_lenguajes_ms_utilizados_i.html" class="no-ch">1.1.- Fundamentos de los lenguajes más utilizados I</a></li>
+      <li><a href="12_fundamentos_de_los_lenguajes_ms_utilizados_ii.html" class="no-ch">1.2.- Fundamentos de los lenguajes más utilizados II</a></li>
+   </ul>
+   </li>
+   <li><a href="2_lenguajes_de_programacin_interpretados_y_compilados.html" class="daddy">2.- Lenguajes de programación interpretados y compilados</a>
+   <ul class="other-section">
+      <li><a href="21_compilacin_en_tiempo_de_ejecucin.html" class="no-ch">2.1.- Compilación en tiempo de ejecución</a></li>
+   </ul>
+   </li>
+   <li><a href="3_cdigo_fuente_y_entornos_de_desarrollo.html" class="daddy">3.- Código fuente y entornos de desarrollo</a>
+   <ul class="other-section">
+      <li><a href="31__entornos_de_desarrollo.html" class="no-ch">3.1. - Entornos de desarrollo</a></li>
+   </ul>
+   </li>
+   <li><a href="4_ejecucin_de_software.html" class="no-ch">4.- Ejecución de software</a></li>
+   <li><a href="5_elementos_principales_de_un_programa.html" class="no-ch">5. -Elementos principales de un programa</a></li>
+   <li class="current-page-parent"><a href="6_pruebas.html" class="current-page-parent daddy">6.- Pruebas</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_etapas_o_niveles_de_pruebas.html" class="current-page-parent daddy">6.1.- Etapas o niveles de pruebas</a>
+      <ul>
+         <li><a href="611_pruebas_unidad.html" class="no-ch">6.1.1.- Pruebas unidad</a></li>
+         <li><a href="612_pruebas_de_integracin.html" class="no-ch">6.1.2.- Pruebas de integración</a></li>
+         <li><a href="613_pruebas_de_sistema.html" class="no-ch">6.1.3.- Pruebas de sistema</a></li>
+         <li id="active"><a href="614_pruebas_de_aceptacin.html" class="active no-ch">6.1.4.- Pruebas de aceptación</a></li>
+      </ul>
+      </li>
+      <li><a href="62_tipos_de_pruebas.html" class="daddy">6.2.- Tipos de pruebas</a>
+      <ul class="other-section">
+         <li><a href="621_pruebas_funcionales.html" class="no-ch">6.2.1.- Pruebas funcionales</a></li>
+         <li><a href="622_pruebas_no_funcionales.html" class="no-ch">6.2.2.- Pruebas no funcionales</a></li>
+      </ul>
+      </li>
+      <li><a href="63_tcnicas_de_prueba.html" class="daddy">6.3.- Técnicas de prueba</a>
+      <ul class="other-section">
+         <li><a href="631_pruebas_de_caja_negra.html" class="no-ch">6.3.1.- Pruebas de caja negra</a></li>
+         <li><a href="632_pruebas_de_caja_blanca.html" class="no-ch">6.3.2.- Pruebas de caja blanca</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_seguridad_en_los_lenguajes_de_programacin_y_sus_entornos_de_ejecucin_sandboxes.html" class="no-ch">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</a></li>
+   <li><a href="caso_prctico_mochachai.html" class="daddy">Caso práctico: Mocha-Chai</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_desarrollando_el_software.html" class="no-ch">B.- Desarrollando el software</a></li>
+      <li><a href="c_probando_el_software.html" class="no-ch">C.- Probando el software</a></li>
+      <li><a href="d_ampliacin.html" class="no-ch">D.- Ampliación</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="613_pruebas_de_sistema.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_tipos_de_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1.4.- Pruebas de aceptación</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id174">
+<div class="iDevice emphasis0">
+<div id="ta174_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las pruebas de aceptación tienen lugar en la etapa final de desarrollo del producto, antes de que el cliente final acepte que el sistema se ponga en funcionamiento. El cliente final proporciona datos con los que probar el sistema con objeto de determinar de comprobar que software cumple con los requerimientos y especificaciones que se proporcionaron cuando se contrató o encargó el desarrollo del producto.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las pruebas de aceptación se dividen en dos grandes grupos: </span><b><i>pruebas alfa</i></b><span style="font-weight: 400;"> y </span><b><i>pruebas beta.</i></b></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Las </span><b>pruebas alfa:</b><span style="font-weight: 400;"> se llevan a cabo, por un cliente, en el lugar de desarrollo. Se usa el software de forma natural con el desarrollador como observador del usuario y registrando los errores y problemas de uso. Las pruebas alfa se llevan a cabo en un entorno controlado.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Las </span><b>pruebas beta</b><span style="font-weight: 400;">: se llevan a cabo por los usuarios finales del software en los lugares de trabajo de los clientes. Generalmente, se llevan a cabo, justo antes del lanzamiento y puesta en producción de una aplicación software. A diferencia de la prueba alfa, el desarrollador no está presente normalmente. Así, la prueba beta es una aplicación en vivo del software en un entorno que no puede ser controlado por el desarrollador. El cliente registra todos los problemas que encuentra durante la prueba beta e informa a intervalos regulares al desarrollador.</span></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id175">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-175_141" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion175_141" class="block question iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Este tipo de pruebas se emplean para comprobar la interacción mutua entre los diferentes componentes software. Se asume que los componentes individuales ya han sido aprobados de forma aislada.</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_281" class="sr-av"><a href="#answer-175_281">Opción 1</a></label><input type="radio" name="option175_141" id="i175_281" class="exe-radio-option exe-radio-option-0-4-175_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_281"><div id="taans175_281" class="block iDevice_content">
+<p>Pruebas de unidad.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_284" class="sr-av"><a href="#answer-175_284">Opción 2</a></label><input type="radio" name="option175_141" id="i175_284" class="exe-radio-option exe-radio-option-1-4-175_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_284"><div id="taans175_284" class="block iDevice_content">
+<p>Pruebas de integración.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_287" class="sr-av"><a href="#answer-175_287">Opción 3</a></label><input type="radio" name="option175_141" id="i175_287" class="exe-radio-option exe-radio-option-2-4-175_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_287"><div id="taans175_287" class="block iDevice_content">
+<p>Pruebas de sistema.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_290" class="sr-av"><a href="#answer-175_290">Opción 4</a></label><input type="radio" name="option175_141" id="i175_290" class="exe-radio-option exe-radio-option-3-4-175_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_290"><div id="taans175_290" class="block iDevice_content">
+<p>Pruebas de aceptación.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b175_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa1b175_141" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa2b175_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b175_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-175_281">Incorrecto</a><span> (<a href="#sa0b175_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_284">Opción correcta</a><span> (<a href="#sa1b175_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_287">Incorrecto</a><span> (<a href="#sa2b175_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_290">Incorrecto</a><span> (<a href="#sa3b175_141">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+<br/><section class="question">
+<form name="multi-choice-form-175_293" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion175_293" class="block question iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">El proceso de comprobación que permite comprobar que el producto especificado es lo que realmente deseaba el usuario se denomina:</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_296" class="sr-av"><a href="#answer-175_296">Opción 1</a></label><input type="radio" name="option175_293" id="i175_296" class="exe-radio-option exe-radio-option-0-4-175_293-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_296"><div id="taans175_296" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Validación.</span><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_299" class="sr-av"><a href="#answer-175_299">Opción 2</a></label><input type="radio" name="option175_293" id="i175_299" class="exe-radio-option exe-radio-option-1-4-175_293-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_299"><div id="taans175_299" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Verificación.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_302" class="sr-av"><a href="#answer-175_302">Opción 3</a></label><input type="radio" name="option175_293" id="i175_302" class="exe-radio-option exe-radio-option-2-4-175_293-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_302"><div id="taans175_302" class="block iDevice_content">
+<p><span style="font-weight: 400;">Regresión.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_305" class="sr-av"><a href="#answer-175_305">Opción 4</a></label><input type="radio" name="option175_293" id="i175_305" class="exe-radio-option exe-radio-option-3-4-175_293-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_305"><div id="taans175_305" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Integración.</span></p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b175_293" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa1b175_293" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa2b175_293" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b175_293" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-175_296">Opción correcta</a><span> (<a href="#sa0b175_293">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_299">Incorrecto</a><span> (<a href="#sa1b175_293">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_302">Incorrecto</a><span> (<a href="#sa2b175_293">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_305">Incorrecto</a><span> (<a href="#sa3b175_293">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+<br/><section class="question">
+<form name="multi-choice-form-175_308" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion175_308" class="block question iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Habitualmente este tipo de pruebas se realizan justo antes del lanzamiento de las grandes aplicaciones software y durante su ejecución los miembros del equipo de desarrollo no están presentes.</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_311" class="sr-av"><a href="#answer-175_311">Opción 1</a></label><input type="radio" name="option175_308" id="i175_311" class="exe-radio-option exe-radio-option-0-4-175_308-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_311"><div id="taans175_311" class="block iDevice_content">
+<p><span style="font-weight: 400;">Pruebas alpha.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_314" class="sr-av"><a href="#answer-175_314">Opción 2</a></label><input type="radio" name="option175_308" id="i175_314" class="exe-radio-option exe-radio-option-1-4-175_308-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_314"><div id="taans175_314" class="block iDevice_content">
+<p><span style="font-weight: 400;">Pruebas beta.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_317" class="sr-av"><a href="#answer-175_317">Opción 3</a></label><input type="radio" name="option175_308" id="i175_317" class="exe-radio-option exe-radio-option-2-4-175_308-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_317"><div id="taans175_317" class="block iDevice_content">
+<p><span style="font-weight: 400;">Pruebas gamma.</span></p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i175_320" class="sr-av"><a href="#answer-175_320">Opción 4</a></label><input type="radio" name="option175_308" id="i175_320" class="exe-radio-option exe-radio-option-3-4-175_308-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-175_320"><div id="taans175_320" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Pruebas omega.</span></p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b175_308" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa1b175_308" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa2b175_308" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b175_308" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-175_311">Incorrecto</a><span> (<a href="#sa0b175_308">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_314">Opción correcta</a><span> (<a href="#sa1b175_308">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_317">Incorrecto</a><span> (<a href="#sa2b175_308">Retroalimentación</a>)</span></li>
+<li><a href="#answer-175_320">Incorrecto</a><span> (<a href="#sa3b175_308">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="613_pruebas_de_sistema.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_tipos_de_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

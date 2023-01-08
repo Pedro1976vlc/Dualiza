@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.3.1.- Pruebas de caja negra | UD 1. Prueba de aplicaciones web y para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-97"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 1. Prueba de aplicaciones web y para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 1: PRUEBA DE APLICACIONES WEB Y PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fundamentos_de_la_programacin.html" class="daddy">1.- Fundamentos de la programación</a>
+   <ul class="other-section">
+      <li><a href="11_fundamentos_de_los_lenguajes_ms_utilizados_i.html" class="no-ch">1.1.- Fundamentos de los lenguajes más utilizados I</a></li>
+      <li><a href="12_fundamentos_de_los_lenguajes_ms_utilizados_ii.html" class="no-ch">1.2.- Fundamentos de los lenguajes más utilizados II</a></li>
+   </ul>
+   </li>
+   <li><a href="2_lenguajes_de_programacin_interpretados_y_compilados.html" class="daddy">2.- Lenguajes de programación interpretados y compilados</a>
+   <ul class="other-section">
+      <li><a href="21_compilacin_en_tiempo_de_ejecucin.html" class="no-ch">2.1.- Compilación en tiempo de ejecución</a></li>
+   </ul>
+   </li>
+   <li><a href="3_cdigo_fuente_y_entornos_de_desarrollo.html" class="daddy">3.- Código fuente y entornos de desarrollo</a>
+   <ul class="other-section">
+      <li><a href="31__entornos_de_desarrollo.html" class="no-ch">3.1. - Entornos de desarrollo</a></li>
+   </ul>
+   </li>
+   <li><a href="4_ejecucin_de_software.html" class="no-ch">4.- Ejecución de software</a></li>
+   <li><a href="5_elementos_principales_de_un_programa.html" class="no-ch">5. -Elementos principales de un programa</a></li>
+   <li class="current-page-parent"><a href="6_pruebas.html" class="current-page-parent daddy">6.- Pruebas</a>
+   <ul>
+      <li><a href="61_etapas_o_niveles_de_pruebas.html" class="daddy">6.1.- Etapas o niveles de pruebas</a>
+      <ul class="other-section">
+         <li><a href="611_pruebas_unidad.html" class="no-ch">6.1.1.- Pruebas unidad</a></li>
+         <li><a href="612_pruebas_de_integracin.html" class="no-ch">6.1.2.- Pruebas de integración</a></li>
+         <li><a href="613_pruebas_de_sistema.html" class="no-ch">6.1.3.- Pruebas de sistema</a></li>
+         <li><a href="614_pruebas_de_aceptacin.html" class="no-ch">6.1.4.- Pruebas de aceptación</a></li>
+      </ul>
+      </li>
+      <li><a href="62_tipos_de_pruebas.html" class="daddy">6.2.- Tipos de pruebas</a>
+      <ul class="other-section">
+         <li><a href="621_pruebas_funcionales.html" class="no-ch">6.2.1.- Pruebas funcionales</a></li>
+         <li><a href="622_pruebas_no_funcionales.html" class="no-ch">6.2.2.- Pruebas no funcionales</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="63_tcnicas_de_prueba.html" class="current-page-parent daddy">6.3.- Técnicas de prueba</a>
+      <ul>
+         <li id="active"><a href="631_pruebas_de_caja_negra.html" class="active no-ch">6.3.1.- Pruebas de caja negra</a></li>
+         <li><a href="632_pruebas_de_caja_blanca.html" class="no-ch">6.3.2.- Pruebas de caja blanca</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_seguridad_en_los_lenguajes_de_programacin_y_sus_entornos_de_ejecucin_sandboxes.html" class="no-ch">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</a></li>
+   <li><a href="caso_prctico_mochachai.html" class="daddy">Caso práctico: Mocha-Chai</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_desarrollando_el_software.html" class="no-ch">B.- Desarrollando el software</a></li>
+      <li><a href="c_probando_el_software.html" class="no-ch">C.- Probando el software</a></li>
+      <li><a href="d_ampliacin.html" class="no-ch">D.- Ampliación</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="63_tcnicas_de_prueba.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="632_pruebas_de_caja_blanca.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.3.1.- Pruebas de caja negra</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id146">
+<div class="iDevice emphasis0">
+<div id="ta146_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Estas pruebas permiten obtener un conjunto de condiciones de entrada que ejerciten completamente todos los requisitos funcionales de un programa. En ellas se ignora la estructura de control, concentrándose en los requisitos funcionales del sistema y ejercitándose.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para preparar los casos de pruebas hacen falta un número de datos que ayuden a la ejecución de los estos casos y que permitan que el sistema se ejecute en todas sus variantes, pueden ser datos válidos o inválidos para el programa según si lo que se desea es hallar un error o probar una funcionalidad. Los datos se escogen atendiendo a las especificaciones del problema, sin importar los detalles internos del programa, a fin de verificar que el programa corra bien.</span></p>
+<p><span style="font-weight: 400;"><img src="Pruebas_de_caja_negra.jpg" alt="Pruebas de caja negra" title="Pruebas de caja negra" width="500" height="375" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id188">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Técnicas para la elaboración de pruebas de caja negra</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta188_197_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Para desarrollar la prueba de caja negra existen varias técnicas, entre ellas destacan:</span></p>
+<div class="exe-fx exe-carousel">
+<h2>Técnica de las Clases o Particiones de Equivalencia</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los datos de entrada y los resultados de un programa normalmente se pueden agrupar en varias clases diferentes que tienen características comunes. Las aplicaciones habitualmente se comportan de forma similar para todos los miembros de un mismo dominio, clase o  partición de equivalencia. Por tanto, una vez identificadas cada una de las clases o particiones de equivalencia pueden escogerse casos de prueba representativos para cada una de estas particiones. La forma habitual de  aplicar esta técnica consiste en: </span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Se clasifican las entradas de datos del sistema en grupos que presentan un comportamiento similar, por lo cual serán procesados de la misma forma.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Se definen particiones tanto para datos válidos como no válidos (datos que deben ser rechazados por el sistema).</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Las particiones también pueden definirse en función de las salidas de datos, valores internos, valores relacionados antes o después de ciertos eventos, y también para los valores que reciben las interfaces.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">A partir de allí se definen pruebas para cubrir todos o parte de las particiones de datos válidos y datos inválidos.</span></li>
+</ul>
+<h2>Técnica de Análisis de Valores Límite (AVL)</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Esta técnica prueba la habilidad del programa para manejar datos que se encuentran en los límites aceptables. Esta técnica habitualmente es complementaria a la de particiones de equivalencia. Muchas veces, los diseñadores y programadores se equivocan al establecer los valores en los límites frontera de las particiones de equivalencia.<strong> Los fallos</strong> de ejecución <strong>de los programas se producen</strong> cuando se procesan los valores situados en <strong>los extremos o en los puntos medios de las clases de equivalencia</strong>.</span></p>
+<h2>Técnica de las Pruebas de Comparación</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Partiendo de las mismas especificaciones <strong>se desarrollan</strong> diversas <strong>versiones independientes de una aplicación</strong>. <strong>Se prueban</strong> todas las versiones <strong>con los mismos</strong> conjuntos de <strong>datos de prueba</strong>. Por último se ejecutan las versiones en paralelo <strong>y se hace una comparación</strong> en tiempo real <strong>de los resultados</strong>.</span></p>
+<h2>Técnica de la Conjetura de Errores</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se elabora una lista con las equivocaciones que pueden cometer los desarrolladores y programadores. <strong>A partir de la lista</strong> que contiene los <strong>posibles errores</strong> de la aplicación <strong>se  generan los casos de prueba.</strong> Por tanto, la generación de casos se realiza en base a la intuición o la experiencia del equipo de pruebas.</span></p>
+<h2>Técnica de los Grafos de Causa - Efecto</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es una técnica de diseño de casos de prueba de caja negra que permite <strong>representar sin ambigüedad</strong> las relaciones entre las <strong>condiciones lógicas y</strong> sus respectivas <strong>acciones</strong>. Para definir los casos de prueba son necesarios cuatro pasos:</span></p>
+<ol>
+<li style="text-align: justify;"><span style="font-weight: 400;">Listar las condiciones de entrada (causas) y las acciones (efectos) del objeto a probar y asignarles un identificador.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Desarrollar el grafo causa-efecto.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Transformar el grafo  en una tabla de decisión.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Convertir las reglas de la tabla de decisión en casos de prueba.</span></li>
+</ol>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id148">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta148_128" class="block iDevice_content">
+<p style="text-align: justify;">A continuación se presentan una serie de vídeos donde se explican mediante ejemplos sobre como aplicar las técnicas de diseño de prueba de caja negra explicadas:</p>
+<ul>
+<li style="text-align: justify;"><strong>Técnica de particiones de eauivalencia.</strong></li>
+</ul>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/pAVc6SY__cA" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>En este vídeo se profundiza en las diferentes técnicas de elaboración de casos de prueba de caja negra. En concreto, se centra en la técnica de partición de equivalencia. </p>
+</div>
+<ul>
+<li><strong>Técnica de los Grafos Causa-Efecto:</strong><strong></strong></li>
+</ul>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/uyuwl1ghDf8" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Se explica mediante un sencillo ejemplo como se aplica la técnica Grafo Causa-Efecto para la obtención de casos de prueba de caja negra.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id149">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta149_148" class="block story iDevice_content">
+<p>Mediante un ejemplo sencillo se ilustrará como aplicar la detección de clases o particiones de equivalencia.</p>
+<ul>
+<li>El objetivo de esta técnica de prueba es poder comprobar todas las clases válidas e inválidas al menos una vez.</li>
+<li>Cada vez que se diseña que se diseña un caso de prueba con datos inválidos, se introducirá solamente una clase inválida. De este modo, es posible conocer si el programa está funcionando correctamente.</li>
+<li>Muchas veces, al utilizar varias clases inválidas, los errores se enmascaran y no puede conocerse si todas las clases funcionan,</li>
+</ul>
+</section>
+<section id="taquesQuestion0b149" class="block iDevice_content">
+<p style="text-align: justify;">Se desea diseñar un caso de prueba de caja negra que permita comprobar el funcionamiento de una función <b><i>esAprobado(nota: decimal): booleano,</i></b><i> </i>la cual recibe una nota entre 0-10 y devuelve un valor lógico indicando si dicha nota es <strong>APROBADO </strong>o <strong>SUSPENSO. </strong>Se pide indicar cuales son las diferentes <strong>particiones de equivalencia</strong> que se pueden identificar en los datos de entrada de la función, analizando también los <strong>valores límite</strong> para cada dominio. </p>
+</section>
+<form name="feedback-form-quesFeedback0b149" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b149text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b149" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b149" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p style="text-align: justify;">A partir de esta especificación, pueden identificarse tres particiones de equivalencia:</p>
+<ol>
+<li style="text-align: justify;"><strong>Clase valores inválidos:</strong> Notas inferiores a cero y notas superiores a diez (10 &lt; nota &lt; 0 ). Valores límite = {-1, 11}</li>
+<li style="text-align: justify;"><strong>Clase Aprobados: </strong>Notas mayores o iguales a cinco e inferiores o iguales a diez (5 &lt;= nota &lt;= 10). Valores límite = {5, 7.5, 10}</li>
+<li style="text-align: justify;"><strong>Clase Suspensos: </strong>Notas inferiores a cinco, pero superiores o iguales a cero (0 &lt;= nota &lt; 5). Valores límite = {0, 2.5, 4.999}</li>
+</ol>
+<p style="text-align: center;"><img src="Particiones_de_equivalencia.jpg" alt="Ejemplo de particiones de equivalencia" title="Ejemplo de particiones de equivalencia" width="800" height="600" /></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="63_tcnicas_de_prueba.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="632_pruebas_de_caja_blanca.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

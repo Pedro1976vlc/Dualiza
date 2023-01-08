@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”). | UD 1. Prueba de aplicaciones web y para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-94"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 1. Prueba de aplicaciones web y para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 1: PRUEBA DE APLICACIONES WEB Y PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fundamentos_de_la_programacin.html" class="daddy">1.- Fundamentos de la programación</a>
+   <ul class="other-section">
+      <li><a href="11_fundamentos_de_los_lenguajes_ms_utilizados_i.html" class="no-ch">1.1.- Fundamentos de los lenguajes más utilizados I</a></li>
+      <li><a href="12_fundamentos_de_los_lenguajes_ms_utilizados_ii.html" class="no-ch">1.2.- Fundamentos de los lenguajes más utilizados II</a></li>
+   </ul>
+   </li>
+   <li><a href="2_lenguajes_de_programacin_interpretados_y_compilados.html" class="daddy">2.- Lenguajes de programación interpretados y compilados</a>
+   <ul class="other-section">
+      <li><a href="21_compilacin_en_tiempo_de_ejecucin.html" class="no-ch">2.1.- Compilación en tiempo de ejecución</a></li>
+   </ul>
+   </li>
+   <li><a href="3_cdigo_fuente_y_entornos_de_desarrollo.html" class="daddy">3.- Código fuente y entornos de desarrollo</a>
+   <ul class="other-section">
+      <li><a href="31__entornos_de_desarrollo.html" class="no-ch">3.1. - Entornos de desarrollo</a></li>
+   </ul>
+   </li>
+   <li><a href="4_ejecucin_de_software.html" class="no-ch">4.- Ejecución de software</a></li>
+   <li><a href="5_elementos_principales_de_un_programa.html" class="no-ch">5. -Elementos principales de un programa</a></li>
+   <li><a href="6_pruebas.html" class="daddy">6.- Pruebas</a>
+   <ul class="other-section">
+      <li><a href="61_etapas_o_niveles_de_pruebas.html" class="daddy">6.1.- Etapas o niveles de pruebas</a>
+      <ul class="other-section">
+         <li><a href="611_pruebas_unidad.html" class="no-ch">6.1.1.- Pruebas unidad</a></li>
+         <li><a href="612_pruebas_de_integracin.html" class="no-ch">6.1.2.- Pruebas de integración</a></li>
+         <li><a href="613_pruebas_de_sistema.html" class="no-ch">6.1.3.- Pruebas de sistema</a></li>
+         <li><a href="614_pruebas_de_aceptacin.html" class="no-ch">6.1.4.- Pruebas de aceptación</a></li>
+      </ul>
+      </li>
+      <li><a href="62_tipos_de_pruebas.html" class="daddy">6.2.- Tipos de pruebas</a>
+      <ul class="other-section">
+         <li><a href="621_pruebas_funcionales.html" class="no-ch">6.2.1.- Pruebas funcionales</a></li>
+         <li><a href="622_pruebas_no_funcionales.html" class="no-ch">6.2.2.- Pruebas no funcionales</a></li>
+      </ul>
+      </li>
+      <li><a href="63_tcnicas_de_prueba.html" class="daddy">6.3.- Técnicas de prueba</a>
+      <ul class="other-section">
+         <li><a href="631_pruebas_de_caja_negra.html" class="no-ch">6.3.1.- Pruebas de caja negra</a></li>
+         <li><a href="632_pruebas_de_caja_blanca.html" class="no-ch">6.3.2.- Pruebas de caja blanca</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="7_seguridad_en_los_lenguajes_de_programacin_y_sus_entornos_de_ejecucin_sandboxes.html" class="active no-ch">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</a></li>
+   <li><a href="caso_prctico_mochachai.html" class="daddy">Caso práctico: Mocha-Chai</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_desarrollando_el_software.html" class="no-ch">B.- Desarrollando el software</a></li>
+      <li><a href="c_probando_el_software.html" class="no-ch">C.- Probando el software</a></li>
+      <li><a href="d_ampliacin.html" class="no-ch">D.- Ampliación</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="632_pruebas_de_caja_blanca.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_mochachai.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id199">
+<div class="iDevice emphasis0">
+<div id="ta199_85" class="block iDevice_content">
+<p style="text-align: justify;">Los lenguajes de programación son la base sobre los que se construyen los sistemas informáticos, desde sistemas operativos generalistas hasta sistemas operativos en tiempo real pasando por software de contabilidad o de entretenimiento. En cuanto a la seguridad de los lenguajes se puede ver desde 2 puntos de vista:</p>
+<p style="text-align: justify;"><strong>Seguridad en el desarrollo del código.</strong> Algunos lenguajes por su características dejan en manos del desarrollador ciertos aspectos que de no realizarse de forma precisa pueden dar lugar al mal funcionamiento del software, uno de los clásicos es olvidar colocar el "break" en algún caso de la sentencia "switch" y ejecutar más instrucciones de las deseadas, otros ejemplos son la no inicialización de variables o inicializarlas a null que pueden ser un problema en la posterior ejecución del código, el uso y conversión de tipos de datos, o el uso de punteros en C/ C++ aunque este último caso a pesar de poder ser un problema en la ejecución del programa y en la fuga de memoria, permite una gran flexibilidad, expresividad y velocidad de ejecución. En la actualidad los compiladores permiten configurar el grado de análisis y cumplimiento de ciertas reglas que fomentan la creación de código en teoría seguro, por ejemplo Typescript o C# permiten definir un modo estricto de generación.  </p>
+<p>Entre los lenguajes de programación más seguros en cuanto a su compilación destacan:</p>
+<ul>
+<li><strong>Ada</strong>: Basado en Pascal, se caracteriza por ser multiproposito, orientado a objetos y concurrente, el tipado el fuerte, por lo que lo hacen un candidato para los sistemas en tiempo real y críticos por poder gestionar hijos y procesos en paralelo, además sus estructuras minimizan los posibles errores, por ejemplo la instrucción switch.</li>
+</ul>
+<div class="highlighted-code language-pascal">
+<div>
+<pre><code>Do_Menu_Choices_1:
+   loop
+      ...
+  
+      case User_Choice is
+         when 'A'    =&gt; Item := Terminal_IO.Get ("Item to add");
+         when 'D'    =&gt; Item := Terminal_IO.Get ("Item to delete");
+         when 'M'    =&gt; Item := Terminal_IO.Get ("Item to modify");
+         when 'Q'    =&gt; exit Do_Menu_Choices_1;
+  
+         when others =&gt; -- error has already been signaled to user
+            null;
+      end case;
+   end loop Do_Menu_Choices_1;</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Rust</strong>: Lenguaje que ha aparecido recientemente de la mano de la fundación Mozilla y que está experimentando un gran interés. Se basa en C++ mejorando entre otros la gestión de la memoria, la existencia de un sistema de conversión de tipos que facilita el polimorfismo, además implementa un sistema de concurrencia optimizado basado en el paso de mensajes.</li>
+</ul>
+<figure class="exe-figure exe-image position-center license-pd" style="width: 250px;"><img src="Rust_programming_language_black_logo.svg.png" alt="Logo del lenguaje Rust" width="250" height="250" />
+<figcaption class="figcaption"><a href="https://commons.wikimedia.org/wiki/File:Rust_programming_language_black_logo.svg" target="_blank" class="author" rel="noopener">Kibwen</a> <span class="license"><span class="sep">(</span><span>Dominio público</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p><strong>Seguridad de la plataforma</strong>: Una vez el código compilado no se tiene la seguridad de que instrucciones está ejecutando o si el autor de esa librería o módulo es confiable. Para poder ejecutar código seguro los diferentes lenguajes y entornos proporcionan herramientas para garantizar la autoría del código, principalmente firmando los ejecutables con certificados digitales. Uno de los primeros entornos que introdujeron la necesidad de firma para la ejecución de código fue Java con su tecnología Java Web Start que permitía la ejecución. Otros optan por realizar funciones resumen o hash del código original como Javascript y el atributo <strong>"integrity" </strong>de la etiqueta <strong>"script"</strong>, junto con el atributo <strong>"crossorigin"</strong> para indicar la url de los lugares permitidos.<br /><br />.  </p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id200">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta200_128" class="block iDevice_content">
+<p>Manual de firma para la ejecución de scripts en PowerShell.</p>
+<p style="text-align: center;"><a href="https://social.technet.microsoft.com/wiki/contents/articles/25788.firmar-scripts-de-powershell-con-un-certificado-digital-interno-es-es.aspx">https://social.technet.microsoft.com/wiki/contents/articles/25788.firmar-scripts-de-powershell-con-un-certificado-digital-interno-es-es.aspx</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="632_pruebas_de_caja_blanca.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_mochachai.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

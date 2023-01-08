@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.2.- Pruebas de integración | UD 1. Prueba de aplicaciones web y para dispositivos móviles </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-81"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 1. Prueba de aplicaciones web y para dispositivos móviles</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD 1: PRUEBA DE APLICACIONES WEB Y PARA DISPOSITIVOS MÓVILES</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_fundamentos_de_la_programacin.html" class="daddy">1.- Fundamentos de la programación</a>
+   <ul class="other-section">
+      <li><a href="11_fundamentos_de_los_lenguajes_ms_utilizados_i.html" class="no-ch">1.1.- Fundamentos de los lenguajes más utilizados I</a></li>
+      <li><a href="12_fundamentos_de_los_lenguajes_ms_utilizados_ii.html" class="no-ch">1.2.- Fundamentos de los lenguajes más utilizados II</a></li>
+   </ul>
+   </li>
+   <li><a href="2_lenguajes_de_programacin_interpretados_y_compilados.html" class="daddy">2.- Lenguajes de programación interpretados y compilados</a>
+   <ul class="other-section">
+      <li><a href="21_compilacin_en_tiempo_de_ejecucin.html" class="no-ch">2.1.- Compilación en tiempo de ejecución</a></li>
+   </ul>
+   </li>
+   <li><a href="3_cdigo_fuente_y_entornos_de_desarrollo.html" class="daddy">3.- Código fuente y entornos de desarrollo</a>
+   <ul class="other-section">
+      <li><a href="31__entornos_de_desarrollo.html" class="no-ch">3.1. - Entornos de desarrollo</a></li>
+   </ul>
+   </li>
+   <li><a href="4_ejecucin_de_software.html" class="no-ch">4.- Ejecución de software</a></li>
+   <li><a href="5_elementos_principales_de_un_programa.html" class="no-ch">5. -Elementos principales de un programa</a></li>
+   <li class="current-page-parent"><a href="6_pruebas.html" class="current-page-parent daddy">6.- Pruebas</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_etapas_o_niveles_de_pruebas.html" class="current-page-parent daddy">6.1.- Etapas o niveles de pruebas</a>
+      <ul>
+         <li><a href="611_pruebas_unidad.html" class="no-ch">6.1.1.- Pruebas unidad</a></li>
+         <li id="active"><a href="612_pruebas_de_integracin.html" class="active no-ch">6.1.2.- Pruebas de integración</a></li>
+         <li><a href="613_pruebas_de_sistema.html" class="no-ch">6.1.3.- Pruebas de sistema</a></li>
+         <li><a href="614_pruebas_de_aceptacin.html" class="no-ch">6.1.4.- Pruebas de aceptación</a></li>
+      </ul>
+      </li>
+      <li><a href="62_tipos_de_pruebas.html" class="daddy">6.2.- Tipos de pruebas</a>
+      <ul class="other-section">
+         <li><a href="621_pruebas_funcionales.html" class="no-ch">6.2.1.- Pruebas funcionales</a></li>
+         <li><a href="622_pruebas_no_funcionales.html" class="no-ch">6.2.2.- Pruebas no funcionales</a></li>
+      </ul>
+      </li>
+      <li><a href="63_tcnicas_de_prueba.html" class="daddy">6.3.- Técnicas de prueba</a>
+      <ul class="other-section">
+         <li><a href="631_pruebas_de_caja_negra.html" class="no-ch">6.3.1.- Pruebas de caja negra</a></li>
+         <li><a href="632_pruebas_de_caja_blanca.html" class="no-ch">6.3.2.- Pruebas de caja blanca</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_seguridad_en_los_lenguajes_de_programacin_y_sus_entornos_de_ejecucin_sandboxes.html" class="no-ch">7. -Seguridad en los lenguajes de programación y sus entornos de ejecución (“sandboxes”).</a></li>
+   <li><a href="caso_prctico_mochachai.html" class="daddy">Caso práctico: Mocha-Chai</a>
+   <ul class="other-section">
+      <li><a href="a_preparando_el_entorno.html" class="no-ch">A.- Preparando el entorno</a></li>
+      <li><a href="b_desarrollando_el_software.html" class="no-ch">B.- Desarrollando el software</a></li>
+      <li><a href="c_probando_el_software.html" class="no-ch">C.- Probando el software</a></li>
+      <li><a href="d_ampliacin.html" class="no-ch">D.- Ampliación</a></li>
+   </ul>
+   </li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="recursos_adicionales.html" class="no-ch">Recursos adicionales</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="611_pruebas_unidad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="613_pruebas_de_sistema.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1.2.- Pruebas de integración</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id167">
+<div class="iDevice emphasis0" >
+<div id="ta167_142_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Las pruebas de integración prueban que todos los elementos unitarios que componen el software, funcionan juntos correctamente en grupo. Se centra principalmente en probar la comunicación entre los componentes y sus comunicaciones ya sea hardware o software.  </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las <strong>pruebas de integración</strong> son una extensión lógica de las pruebas unitarias. Dos unidades que ya han sido testeadas y combinadas en un componente y sus </span><i><span style="font-weight: 400;">interfaces</span></i><span style="font-weight: 400;"> son testeadas entre ellas. El motivo de las pruebas de integración es <strong>verificar la funcionalidad</strong> y <strong>la seguridad</strong> entre los componentes que han sido integrados. Permiten identificar los problemas que ocurren cuando las unidades se combinan. Resultan particularmente beneficiosas porque permiten comprobar el  funcionamiento de los tests trabajando juntos.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Es posible diferenciar diversas estrategias a la hora de realizar las pruebas de integración.</span></p>
+<div class="exe-fx exe-carousel">
+<h2>Pruebas no incrementales (<em>Big bang approach</em>)</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se integran todos los componentes y entonces se prueba el sistema como un todo. No se sigue ninguna pauta para la integración gradual de los componentes, </span><span style="font-weight: 400;">Se produce una "<em>explosión"</em> se prueban todos los componentes juntos, sin saber que provocó los fallos y porque. </span><span style="font-weight: 400;">Entre los principales problemas que que presenta esta estrategia de integración destacan:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Los defectos presentes en las interfaces de los componentes se identifican muy tarde porque todos los componentes están integrados a la vez.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Es muy complicado aislar los errores encontrados.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Existe una alta probabilidad de que se pierdan algunos defectos críticos, que podrían aparecer en el entorno de producción.</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Resulta muy difícil cubrir todos los casos para pruebas de integración sin perder ni un solo escenario.</span></li>
+</ul>
+<h2>Pruebas incrementales</h2>
+<p><span style="font-weight: 400;">Se sigue una estrategia de integración gradual. El programa es construido y probado en pequeños incrementos. Facilita el aislamiento de errores y la pruebas sistemáticas. Resulta mucho más fácil la detección del componente que está provocando un funcionamiento erróneo del sistema. Dentro de las estrategias de integración incremental destacan la metodologías de integración descendente y ascendente, las cuales se detallan a continuación. </span></p>
+<h2>Integración descendente <em>(top-down)</em> </h2>
+<p><span style="font-weight: 400;">La prueba de integración descendente es un enfoque incremental para la construcción de la arquitectura software. La prueba comienza por el componente de más alto nivel del sistema que es el encargado de invocar a los otros componentes (A).  La integración avanza descendiendo a través de la jerarquía de control. </span>Una de las ventajas de aplicar esta estrategia es que las interfaces entre los distintos componentes se prueban en una fase temprana y con frecuencia.<span class="author"></span></p>
+<figure class="exe-figure exe-image position-center" style="width: 351px;"><a href="Top-Down.JPG" onclick="window.open('Top-Down.JPG','eXeLearningPopup','resizable=yes,status=yes,width=1200,height=1200,left='+(screen.availWidth/2-600)+',top='+(screen.availHeight/2-600)+'');return false;"><img src="Top-Down.JPG" alt="Metodología de integración descendente" width="351" height="263" /></a>
+<figcaption class="figcaption"><span class="author">Pulse aquí para ampliar</span></figcaption>
+</figure>
+<h2>Integración ascendente (<em>bottom-up</em>)</h2>
+<p><b style="color: #333333; font-size: 1.05em; text-align: left;"><span style="font-weight: 400;">En este caso se crean primero los componentes de más bajo nivel (E, F) y se crean componentes conductores para simular a los componentes que los llaman. A continuación se desarrollan los componentes de más alto nivel (B, C, D) y se prueban. Por último dichos componentes se combinan con el que los llama (A). Los componentes auxiliares son necesarios en raras ocasiones. </span></b><span style="color: #333333; font-size: 1.05em; text-align: left;">Este tipo de enfoque permite un desarrollo más en paralelo que el enfoque de arriba abajo, pero presenta mayores dificultades a la hora de planificar y de gestionar.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 351px;"><a href="Bottom-up.JPG" onclick="window.open(this.href,'Metodología de integración ascendente','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img src="Bottom-up.JPG" alt="Metodología de integración ascendente" title="Metodología de integración ascendente" width="351" height="263" /></a>
+<figcaption class="figcaption"><span class="author">Pulse aquí para ampliar</span></figcaption>
+</figure>
+<h2>Integración mixta o combinada (<em>mixed</em>)</h2>
+<p><span style="font-weight: 400;">A menudo es útil aplicar las estrategias anteriores conjuntamente. De este modo, se desarrollan partes del sistema con un enfoque </span><b><i>top-down</i></b><span style="font-weight: 400;">, mientras que los componentes más críticos en el nivel más bajo se desarrollan siguiendo un enfoque </span><b><i>bottom-up</i></b><span style="font-weight: 400;">. En este caso es necesaria una planificación cuidadosa y coordinada de modo que los componentes individuales converjan adecuadamente.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 180px; text-align: justify;"></figure>
+</div>
+<p style="text-align: center;"></p>
+<p></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id168">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Defectos encontrados habitualmente en las pruebas de integración</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta168_145_2" class="block iDevice_content">
+<div class="exe-text"><p>Gracias a este tipo de pruebas, lo defectos que puedes encontrar habitualmente son:</p>
+<ul>
+<li>Cálculos incorrectos.</li>
+<li>Comportamiento incorrecto en aspectos funcionales y no funcionales.</li>
+<li>Flujo incorrecto de la información entre los componentes.</li>
+<li>Defectos únicamente reproducibles en entornos de producción.</li>
+<li>Funcionamientos incorrectos respecto a la documentación del producto.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdIdevice em_iDevice em_iDevice_reflexionfpd" id="id169">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta169_119" class="block iDevice_content">
+<p style="text-align: justify;">¿Por qué las pruebas de integración son necesarias si ya se han probado que funcionan los componentes individualmente?</p>
+</div>
+<form name="feedback-form-169" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback169text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-169" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-169" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div id="ta169_120" class="block iDevice_content">
+<p style="text-align: justify;">Aunque los componentes funciones bien individualmente, puede darse el caso de que al juntar los diferentes componentes del sistema ocurran errores que no estén contemplados en un primer momento.</p>
+</div>
+</section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id170">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta170_128" class="block iDevice_content">
+<p>Cuando se realizan pruebas de integración resultan fundamentales el empleo de herramienta software para la automatización del proceso de pruebas. Entre estas herramientas destaca entre otras:</p>
+<div class="exe-fx exe-tabs">
+<h2>Mocha</h2>
+<p><span><img src="https://miro.medium.com/max/1318/1*UNZn6QsJ-cd9YstpFaddxg.png" width="301" height="127" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span><a href="https://mochajs.org/" target="_blank" title="Mocha" rel="noopener"><strong>Mocha</strong></a> es un <em>framework</em> de prueba de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">JavaScript</a> rico en funciones que se ejecuta en <a href="https://nodejs.org/es/">Node.js</a> y en el navegador, lo que hace que las pruebas asincrónicas sean simples y divertidas. Las pruebas de Mocha se ejecutan en serie, lo que permite informes flexibles y precisos, al tiempo que asigna las excepciones no detectadas a los casos de prueba correctos. Alojado en <span style="color: #0000ff;"><strong><a href="#t4df95979-b5e7-f9a0-35da-b93e76bfe436" id="link4df95979-b5e7-f9a0-35da-b93e76bfe436" title="GitHub | GitHub" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;">GitHub.</a></strong></span></span></p>
+<p></p>
+</div>
+<p></p>
+<div id="t4df95979-b5e7-f9a0-35da-b93e76bfe436" class="exe-tooltip-text">
+<p>GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de control de versiones Git. El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="611_pruebas_unidad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="613_pruebas_de_sistema.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
