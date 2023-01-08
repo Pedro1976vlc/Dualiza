@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall). | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-126"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="active no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="83__captchas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id321">
+<div class="iDevice emphasis0">
+<div id="ta321_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Un firewall de aplicaciones web (WAF) es un tipo especial de cortafuegos que ayuda a proteger las aplicaciones web, filtrando, monitorizando o bloqueando el tráfico HTTP que se dirige desde o hacia las mismas. Se diferencia de un firewall clásico o tradicional en que puede filtrar el contenido de aplicaciones web específicas, mientras que un firewall de red protege todo el tráfico, desde el nivel de red hasta el de aplicación, aunque se suele centra en red y transporte. </span></p>
+<p><span style="font-weight: 400;">Mientras un proxy protege a los clientes (navegadores en este caso), un WAFs protege al servidor. Habitualmente, los WAFs se despliegan para proteger una aplicación web específica o un conjunto de aplicaciones web.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id323">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta323_128" class="block iDevice_content">
+<p>Colección de vídeos sobre conceptos básicos: cortafuegos, proxy, proxy inverso.</p>
+<div class="exe-fx exe-accordion">
+<h2>Concepto de cortafuegos</h2>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/3q2ENiVBAy8" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: justify;">Descripción textual alternativa: Vídeo que define de forma sencilla y básica el concepto de cortafuegos.</p>
+<h2>¿Qué es un proxy?</h2>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/QpyUC_wzIDA" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: left;">Descripción textual alternativa: Vídeo que define de forma sencilla y básica el concepto de proxy.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id324">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta324_129" class="block iDevice_content">
+<p>Concepto de proxy inverso, funcionalidad y uso.</p>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/e9Vjf9ylxJ0" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo sobre el concepto de proxy inverso y funcionalidades como anonimato, encriptación o balanceo de carga.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id322">
+<div class="iDevice emphasis0">
+<div id="ta322_85" class="block iDevice_content">
+<p><span style="font-weight: 400;">Un servidor proxy protege la identidad del equipo del cliente por medio de un intermediario, en cambio; un WAF es un tipo de <b>proxy inverso</b> que protege al servidor de los riesgos al hacer que los clientes atraviesen el WAF antes de llegar al servidor.</span></p>
+<figure class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 401px;"><img src="ud3_9_proxy.png" alt="Funcionamiento proxy inverso" width="401" height="155" />
+<figcaption class="figcaption"><a href="https://search.creativecommons.org/photos/dcc6b60b-dfd8-4f11-8fe1-055d66e9f2aa" target="_blank" class="author" rel="noopener">Alextalker </a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-SA">CC BY-SA</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p><span style="font-weight: 400;">El WAF opera por medio de un conjunto de reglas, normalmente denominadas directivas. Estas directivas tienen el fin de proteger contra las vulnerabilidades en la aplicación mediante la filtración del tráfico malicioso.</span></p>
+<p></p>
+<p><span style="font-weight: 400;">Un WAF puede operar de tres modos diferentes:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>Modelo de seguridad negativo</b><span style="font-weight: 400;">: Basándose en </span><b>listas negras</b><span style="font-weight: 400;">, protege de ataques conocidos. Permite todo el tráfico, salvo aquel que ha sido denegado de forma explícita.</span></li>
+<li aria-level="1"><b>Modelo de seguridad positivo: <span style="font-weight: 400;">Basándose en </span>listas blancas<span style="font-weight: 400;">, únicamente admite el tráfico de red que ha sido admitido previamente.</span></b></li>
+<li style="font-weight: 400;" aria-level="1"><b>Modelo de seguridad híbrido.</b><span style="font-weight: 400;"> Los dos modelos anteriores presentan tanto ventajas como inconvenientes; por lo que muchos WAF ofrecen un modelo de seguridad combinado.</span></li>
+</ul>
+<p><span style="font-weight: 400;">A la hora de implementar un WAF pueden adoptarse también tres soluciones distintas:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><b>WAF basado en la red</b><span style="font-weight: 400;">, se instala de forma local directamente sobre el hardware. Presentan como ventaja una reducción considerable de la latencia. Pero por contra, tienen como desventaja un elevado coste pues requieren del almacenamiento y mantenimiento de equipos físicos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>WAF basado en host, </b><span style="font-weight: 400;">está completamente integrado en el software de  aplicación. Se trata de una solución mucho más económica que la anterior, que admite múltiples opciones de personalización. Sin embargo, sigue teniendo un elevado consumo de recursos en el servidor local, su implementación y mantenimiento resultan complejos.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>WAF basados en la nube, <span style="font-weight: 400;">Su implementación es muy sencilla, ofrecen una instalación lista para usar con un costo inicial mínimo. Los usuarios pagan una cuota fija al mes o al año por el servicio. Estos WAF se actualizan continuamente para ofrecer protección frente a las nuevas amenazas, sin que ello suponga un coste adicional para el usuario. Sin embargo, estas soluciones en la nube dependen completamente de los proveedores del servicio, siendo su implementación un absoluto misterio para los usuarios de las mismas. </span></b></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id325">
+<div class="iDevice emphasis0">
+<div id="ta325_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id327">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta327_129" class="block iDevice_content">
+<p>Vídeo sobre el concepto y funcionamiento de los WAF.</p>
+<p style="text-align: center;"><iframe width="400" height="314" src="https://www.youtube.com/embed/HBbDKBV4QW0" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Vídeo en el que se describe el funcionamiento técnico básico de una aplicación web y la necesidad de intercalar un cortafuegos para el acceso a los servidores utilizando el protocolo HTTP</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id326">
+<div class="iDevice emphasis0">
+<div id="ta326_154" class="block iDevice_content">
+<p><span>Existen multitud de empresas y cortafuegos especializados en la web, tanto basado en la nube, como en dispositivos, además las grandes empresas de servicios en al nube (<a href="https://cloud.google.com/blog/products/identity-security/new-waf-capabilities-in-cloud-armor" target="_blank" rel="noopener">Google</a>, <a href="https://aws.amazon.com/es/waf/" target="_blank" rel="noopener">Amazon</a>, <a href="https://azure.microsoft.com/es-es/services/web-application-firewall/" target="_blank" rel="noopener">Azure</a> u <a href="https://www.oracle.com/es/security/cloud-security/web-application-firewall/" target="_blank" rel="noopener">Oracle</a>) ofrecen entre sus servicio establecer WAF para las aplicaciones alojadas en su nube.</span></p>
+<p><span>También hay soluciones de código abierto disponibles para cualquier público.</span></p>
+<ul>
+<li><span>ModSecurity. Módulo bajo licencia GNU del servidor web Apache.</span></li>
+<li><span><a href="https://github.com/nbs-system/naxsi" target="_blank" rel="noopener">NAXSI</a>. Módulo para el servidor web/proxy inverso de alto rendimiento Nginx</span></li>
+</ul>
+<p><span style="background-color: #ff0000;"><a href="https://openwebinars.net/blog/seguridad-en-apache-modsecurity/">https://openwebinars.net/blog/seguridad-en-apache-modsecurity/</a> Práctica</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id328">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ficheros adjuntos</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta328_82" class="block iDevice_content">
+<p>Presentación de Ricardo Sup Picon para la fundación OWASP sobre NAXSI</p>
+</div>
+<ul class='exeFileList'><li><a href='Naxsis_ricardo_supo_meeting_0x02.pdf' target='_blank'>Naxsis_ricardo_supo_meeting_0x02.pdf<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="83__captchas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

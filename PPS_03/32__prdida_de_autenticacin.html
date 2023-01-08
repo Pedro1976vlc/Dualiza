@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2. - Pérdida de autenticación. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-103"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li class="current-page-parent"><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="current-page-parent daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul>
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li id="active"><a href="32__prdida_de_autenticacin.html" class="active no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="31__inyeccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__exposicin_de_datos_sensibles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2. - Pérdida de autenticación.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id188">
+<div class="iDevice emphasis0">
+<div id="ta188_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Supóngase que utilizando SQL injection se han conseguido el usuario y la clave de todos los usuarios, pero el almacenamiento de las contraseñas se hace utilizando funciones hash con lo cual no se tiene la contraseña en claro (actualmente guardar las contraseñas en texto claro es una temeridad, un gran fallo de seguridad y en puede derivar en infracciones por parte de la AEPD). Los atacantes intentarán obtener la clave utilizando o bien <strong><span style="color: #0000ff;"><a title="Fuerza bruta | " class="exe-tooltip definition-tt titled-tt" id="link33501674-0319-7f96-f651-099552e7b4ca" href="#t33501674-0319-7f96-f651-099552e7b4ca" style="color: #0000ff;">fuerza bruta</a></span></strong> o el uso de <span style="color: #0000ff;"><strong><a title="Diccionario | " class="exe-tooltip definition-tt titled-tt" id="linkbe7924c0-f31c-d6c4-d665-3392c2412299" href="#tbe7924c0-f31c-d6c4-d665-3392c2412299" style="color: #0000ff;">diccionarios</a></strong></span> para agilizar el proceso como tablas Rainbow.</span></p>
+<div class="exe-tooltip-text" id="t33501674-0319-7f96-f651-099552e7b4ca">
+<p>Obtener el mensaje o clave original de uno codificado probando todas las posibles</p>
+</div>
+<div class="exe-tooltip-text" id="tbe7924c0-f31c-d6c4-d665-3392c2412299">
+<p>Ficheros con pares en el que se tiene el mensaje en claro y su equivalente codificado, de forma que no es necesario calcularlo.</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id187">
+<div class="iDevice emphasis0">
+<div id="ta187_154" class="block iDevice_content">
+
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id223">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta223_128" class="block iDevice_content">
+<p>Artículo en el que se trata las tablas Rainbow, su funcionamiento y uso.</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;" href="https://www.ionos.es/digitalguide/servidores/seguridad/rainbow-tables/">https://www.ionos.es/digitalguide/servidores/seguridad/rainbow-tables/</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id224">
+<div class="iDevice emphasis0">
+<div id="ta224_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Otro de los motivos de la pérdida de autenticación es la de no desactivar o cambiar las cuentas administrativas por defecto de las aplicaciones más utilizadas y obtener acceso a la sección administrativa, uno de los casos más conocidos son las webcams expuestas en la red con usuario y contraseña por defecto para ese modelo.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 499px;"><a href="perdida.png" onclick="window.open('perdida.png','Pérdida de Autenticación','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img width="499" height="166" alt="Valoración de factores de la vulnerabilidad." src="perdida.png" /></a>
+<figcaption class="figcaption"><a class="author" href="https://owasp.org" target="_blank" rel="noopener">OWASP Fundation</a>. <span class="title"><em>Valoración de factores de la vulnerabilidad.</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">El protocolo HTTP, elemento fundamental de las aplicaciones web es un protocolo sin estado, esto implica que no se almacena ninguna información entre cliente y servidor en las peticiones, con lo cual el servidor no sabe quién le realiza la petición y si ese mismo cliente realizó conexiones previas.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por último mencionar que los atacantes no solo van a probar los pares usuario y contraseña en la aplicación de la que lo han obtenido sino en otras, ya que los usuarios suelen utilizar las mismas credenciales en varias aplicaciones y servicios.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones web vulnerables a estos ataques poseen las siguientes debilidades de autenticación:</span></p>
+<ul style="text-align: justify;">
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Permitir ataques automatizados. Probar cientos o miles de credenciales en un corto espacio de tiempo.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Permitir ataques de fuerza bruta o diccionario. Un mismo origen realiza muchas autenticaciones.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Permitir contraseñas débiles ante fuerza bruta(longitud, número de símbolos, o cuya probabilidad de estar en tablas Rainbow sea alta (admin,1234, secreto…)</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Sistemas de recuperación de credenciales basadas </span><b>únicamente</b><span style="font-weight: 400;"> en el conocimiento.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Almacenamiento de contraseñas en texto claro (</span><b>una temeridad</b><span style="font-weight: 400;">) o con funciones resúmenes débiles como MD5.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Exponer los identificadores de sesión en la URL, no comprobar si la sesión se ha cerrado o no cerrar la sesión pasado un tiempo de inactividad.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id225">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta225_151" class="block iDevice_content">
+<p><span style="font-weight: 400;">Para evitar los ataques por este riesgo se recomienda:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Implementar autenticación con múltiples factores (al menos 2): algo que se sabe (usuario y clave), algo que se posee(móvil, tarjeta de coordenadas..) tiene, algo que se es (datos biométricos) o algo que el usuario hace (voz, firma, facila…)</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">No usar credenciales por defecto, en especial aplicaciones más utilizadas (Wordpress, Drupal..)</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">No permitir contraseñas débiles y asignar caducidad a las mismas.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Asegurarse que no es posible listar los usuarios de la aplicación.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Evitar ataques por fuerza bruta o diccionario incrementando el tiempo entre validaciones, avisando ante la detección de ataques e incluso bloquear las cuentas afectadas.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Gestión segura de sesiones en el servidor.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="31__inyeccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__exposicin_de_datos_sensibles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

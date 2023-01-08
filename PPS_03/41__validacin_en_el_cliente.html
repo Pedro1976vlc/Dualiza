@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1. - Validación en el cliente. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-119"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="current-page-parent daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul>
+      <li id="active"><a href="41__validacin_en_el_cliente.html" class="active daddy">4.1. - Validación en el cliente.</a>
+      <ul>
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="411_ejemplo_prctico_con_angular.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.1. - Validación en el cliente.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id237">
+<div class="iDevice emphasis0">
+<div id="ta237_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">La primera protección ante ataques que utilizan los datos enviados al servidor es la validación en el cliente, es decir en el navegador. En la versión actual de HTML se ha mejorado la validación de formularios introduciendo nuevos tipos de “inputs” y técnicas de validación, utilizándose también javascript de forma nativa, aunque existen librerías y entornos de trabajo que amplían la funcionalidad de la versión 5 de HTML.</span></p>
+<p><span style="font-weight: 400;">En primer lugar se analiza la validación utilizando el </span><b>estándar HTML 5</b><span style="font-weight: 400;">. Se intenta evitar que se envíen secuencias de caracteres que puedan causar fallos de seguridad o que no cumplan con los requisitos necesarios (campos obligatorios…) </span></p>
+<p><span style="font-weight: 400;">Se tiene un formulario para solicitar una cita previa en un ayuntamiento, los campos del formulario son:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Nombre de tipo texto y requerido, longitud máxima 60.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Apellidos de tipo texto y requerido,  longitud máxima 120.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Email de tipo mail y requerido.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">NIF de tipo texto, requerido y a de cumplir con el formato del documento.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Departamento, un cuadro desplegable con varios departamentos requerido.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Fecha de tipo date y requerido.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Hora de tipo time y requerido.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Descripción cuadro de texto de máximo 250 caracteres y no es requerido.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Por supuesto el formulario se envía utilizando el método POST y por HTTPS. Sin validación el formulario es el siguiente:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Ejemplo formulario HTML 5.</h2>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>&lt;form method="post" action="./procesar.php" enctype="application/x-www-form-urlencoded"&gt;
+        &lt;div&gt;
+            &lt;label&gt;Nombre&lt;/label&gt;
+            &lt;input type="text" name="nombre" id="nombre"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Apellidos&lt;/label&gt;
+            &lt;input type="text" name="apellidos" id="apellidos"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Email&lt;/label&gt;
+            &lt;input type="text" name="email" id="email"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;NIF&lt;/label&gt;
+            &lt;input type="text" name="nif" id="nif"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Departamento&lt;/label&gt;
+            &lt;select name="departamento" id="departamento"&gt;
+                &lt;option&gt;Seleccionar un departamento&lt;/option&gt;
+                &lt;option value="medio_ambiente"&gt;Medio Ambiente&lt;/option&gt;
+                &lt;option value="registro"&gt;Registro&lt;/option&gt;
+                &lt;option value="hacienda"&gt;Hacienda&lt;/option&gt;
+                &lt;option value="estadistica"&gt;Estadística&lt;/option&gt;
+                &lt;option value="fiestas"&gt;Fiestas&lt;/option&gt;  
+            &lt;/select&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Fecha&lt;/label&gt;
+           &lt;input type="date" id="fecha" name="fecha"&gt; 
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;Hora&lt;/label&gt;
+           &lt;input type="time" id="hora" name="hora"&gt; 
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;Descripción&lt;/label&gt;
+            &lt;textarea id="descripcion" name="descripcion"&gt;&lt;/textarea&gt;
+           
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button type="submit" &gt;Enviar&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/form&gt;
+</code></pre>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionfpdmodifIdevice em_iDevice em_iDevice_reflexionfpd" id="id238">
+<div class="iDevice emphasis_reflexionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Reflexiona</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta238_121" class="block iDevice_content">
+<p>Analizar las posibles vulnerabilidades del OWASP Top Ten en el formulario anterior.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id239">
+<div class="iDevice emphasis0">
+<div id="ta239_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Al enviar el formulario no se garantiza ni que el contenido de los campos sea el correcto, ni que exista. HTML 5 provee de los siguientes atributos que permiten un cierto control de los formularios.</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><b>required:</b><span style="font-weight: 400;"> El campo es obligatorio.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>minlength y maxlengt</b><span style="font-weight: 400;">h: Estos atributos indican la longitud mínima y máxima de los datos de texto .</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>min y ma</b><span style="font-weight: 400;">x: Similares a los anteriores pero para valores numéricos.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>type</b><span style="font-weight: 400;">: Permite restringir el valor de campo, existiendo los siguientes:</span>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">button, </span><span style="font-weight: 400;">checkbox, </span><span style="font-weight: 400;">color</span><span style="font-weight: 400;"> ,</span><span style="font-weight: 400;">date, <span style="background-color: #ffffff; color: #002000;">datetime-local, email, file, hidden, image, month, number, password, radio, range, reset, search, submit, tel, text, time, url, week</span>.</span><span style="font-weight: 400;"></span></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">pattern: Más flexible que la anterior, permite especificar expresiones regulares para validar la entrada.</span></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id240">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta240_128" class="block iDevice_content">
+<p>Página web del 3WSchool sobre los controles en HTML5:</p>
+<p style="text-align: center;"><a onclick="window.open(this.href,'eXeLearningPopup','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;" href="https://www.w3schools.com/tags/att_input_pattern.asp">https://www.w3schools.com/tags/att_input_pattern.asp</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id241">
+<div class="iDevice emphasis0">
+<div id="ta241_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Al personalizar el anterior formulario con los atributos anteriores el propio navegador será el encargado de validar el formulario y no permitir en envío si no se cumplen los requisitos de cada campo, indicar que los mensajes de error son los definidos por el propio navegador y pueden cambiar dependiendo del utilizado. Quedando el anterior formulario de la siguiente forma:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Formularios con validación nativa.</h2>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>&lt;form method="post" action="./procesar.php" enctype="application/x-www-form-urlencoded"&gt;
+        &lt;div&gt;
+            &lt;label&gt;Nombre&lt;/label&gt;
+            &lt;input type="text" name="nombre" id="nombre" required maxlength="60"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Apellidos&lt;/label&gt;
+            &lt;input type="text" name="apellidos" id="apellidos" required maxlength="120"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Email&lt;/label&gt;
+            &lt;input type="email" name="email" id="email"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;NIF&lt;/label&gt;
+            &lt;input type="text" name="nif" id="nif"&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Departamento&lt;/label&gt;
+            &lt;select name="departamento" id="departamento" required&gt;
+                &lt;option value=""&gt;Seleccionar un departamento&lt;/option&gt;
+                &lt;option value="medio_ambiente"&gt;Medio Ambiente&lt;/option&gt;
+                &lt;option value="registro"&gt;Registro&lt;/option&gt;
+                &lt;option value="hacienda"&gt;Hacienda&lt;/option&gt;
+                &lt;option value="estadistica"&gt;Estadística&lt;/option&gt;
+                &lt;option value="fiestas"&gt;Fiestas&lt;/option&gt;  
+            &lt;/select&gt;
+        &lt;/div&gt; 
+        &lt;div&gt;
+            &lt;label&gt;Fecha&lt;/label&gt;
+           &lt;input type="date" id="fecha" name="fecha" required&gt; 
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;Hora&lt;/label&gt;
+           &lt;input type="time" id="hora" name="hora" required&gt; 
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;Descripción&lt;/label&gt;
+            &lt;textarea id="descripcion" name="descripcion"&gt;&lt;/textarea&gt;
+           
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button type="submit" &gt;Enviar&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/form&gt;</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+<p><span style="font-weight: 400;">Observar el cambio en el campo email de type=”text” a type=”email”, añadir al option vacío el value=””.</span></p>
+<p><span style="font-weight: 400;">Mencionar que es posible la aplicación de estilos de forma automática para los campos que no se validan de forma correcta, por ejemplo, para que aparezca un borde rojo en un campo incorrecto:</span></p>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>input:invalid { 
+      box-shadow: 0 0 5px 1px red;
+}</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">Queda por validar el nif, esta validación se puede hacer con expresiones regulares pero no comprobaría que la letra fuera la correcta.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id242">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicio Resuelto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta242_148" class="block story iDevice_content">
+
+</section>
+<section id="taquesQuestion0b242" class="block iDevice_content">
+<p><span style="font-weight: 400;">Si se quiere comprobar la letra del nif, ¿Cómo hacerlo?. Escribir la expresión regular para validar un nif más común (8 dígitos y 1 letra) teniendo en cuenta que no validará que la letra sea la correcta.</span></p>
+<p><span style="font-weight: 400;">Como material de apoyo: </span><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet"><span style="font-weight: 400;">https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet</span></a></p>
+</section>
+<form name="feedback-form-quesFeedback0b242" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b242text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b242" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b242" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p><span style="font-weight: 400;">Solución [0-9]{8}[A-Z]{1}</span></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id243">
+<div class="iDevice emphasis0">
+<div id="ta243_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Esta opción de validación no ofrece muchas opciones, y no es muy rica visualmente, otra opción más potente es la del uso de Javascript con alguna librería o framework, teniendo en cuenta que el uso de este elemento puede conllevar una vulnerabilidad. </span></p>
+<p><span style="font-weight: 400;">Algunas de las librerías más conocidas:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><a href="https://github.com/guillaumepotier/Parsley.js/"><span style="font-weight: 400;">Parsley Js</span></a><span style="font-weight: 400;">: Utiliza la librería jQuery, permite personalizar la validación y se integra fácilmente con frameworks del lado del servidor.</span></li>
+<li aria-level="1" style="font-weight: 400;"><a href="https://validatejs.org/"><span style="font-weight: 400;">Validate.js</span></a><span style="font-weight: 400;">: No necesita Jquery, funcionamiento similar a la anterior. Permite definir objetos de validación reutilizables, por ejemplo tarjeta de crédito.</span></li>
+<li aria-level="1" style="font-weight: 400;"><a href="https://github.com/validatorjs/validator.js"><span style="font-weight: 400;">Validator.js</span></a><span style="font-weight: 400;">. Posee una gran cantidad de atributos, además de poseer métodos para “currar” de caracteres peligrosos los datos, con la función </span><b>blacklist(input, chars)</b><span style="font-weight: 400;">.</span></li>
+<li aria-level="1" style="font-weight: 400;"><a href="https://github.com/YahooArchive/xss-filters"><span style="font-weight: 400;">xss-filters</span></a><span style="font-weight: 400;">: De Yahoo, algo antigua pero permite filtrar las cadenas para evitar ataques de tipo XSS.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Además los frameworks más usados como Angular, Vue y React poseen de forma nativa o con extensiones la posibilidad de validación de formularios.</span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="411_ejemplo_prctico_con_angular.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

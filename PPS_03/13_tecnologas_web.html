@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.3. -Tecnologías Web. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-109"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li class="current-page-parent"><a href="1_protocolo_http.html" class="current-page-parent daddy">1.- Protocolo HTTP.</a>
+   <ul>
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li id="active"><a href="13_tecnologas_web.html" class="active no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="12_versiones_del_protocolo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.3. -Tecnologías Web.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id217">
+<div class="iDevice emphasis0">
+<div id="ta217_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Desde los inicios de la WWW en el que los clientes simplemente se encargaban de realizar la solicitud, interpretar el código HTML y presentar la web y la función del servidor era la de obtener el recurso estático (fichero) y enviarlo al cliente.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">A medida que se comienza a utilizar y popularizar las páginas se empiezan a desarrollar tecnologías que ofrecen mayores funcionalidades tanto en el cliente como en el servidor, junto con estas tecnologías también aparecen vulnerabilidades en el desarrollo de las páginas web y aplicaciones. Para desarrollar aplicaciones web seguras se han de conocer las tecnologías implicadas, tanto de servidor como de cliente.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el cliente:</span></p>
+<div class="exe-fx exe-accordion">
+<h2 style="text-align: justify;"><b>HTML. Lenguaje de marcas de hipertexto</b>.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Utiliza etiquetas con significado que el servidor envía al cliente, este lo recibe, interpreta y “pinta” en la pantalla. Existen diferentes versiones de <a href="https://html.spec.whatwg.org/" target="_blank" title="HTML Standard" rel="noopener">HTML</a>, en la actualidad se utiliza mayoritariamente <strong>HTML 5</strong>.</span></p>
+<p></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Un ejemplo sencillo de HTML.</span></p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;!DOCTYPE html&gt;&lt;br&gt;&lt;html&gt;&lt;br&gt;&lt;head&gt;&lt;br&gt;&lt;title&gt;Primera página&lt;/title&gt;&lt;br&gt;&lt;/head&gt;&lt;br&gt;&lt;body&gt;&lt;br&gt;&lt;p&gt;Hola mundo.&lt;/p&gt;&lt;br&gt;&lt;/body&gt;&lt;br&gt;&lt;/html&gt;</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+<h2>CSS</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los usuarios de las páginas o aplicaciones web esperan que estas sean atractivas visualmente, si bien HTML posee atributos y etiquetas que permiten modificar el aspecto visual de las aplicaciones, su mantenimiento cuando se tienen decenas o cientos de páginas en un sitio se hace imposible de mantener si se da el aspecto en cada etiqueta.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para poder gestionar el aspecto de un sitio web de forma jerarquizada se utilizan las <strong>Hojas de Estilo en Cascada (<em>Cascading Style Sheets</em>)</strong>, que utilizando selectores permiten modificar el aspecto de todas las páginas que hagan referencia a ese estilo. Un ejemplo de selector y atributos <strong>CSS</strong>:</span></p>
+<div class="highlighted-code language-css line-numbers">
+<div style="text-align: justify;">
+<pre><code>body { 
+background-color: lightblue; 
+}
+ p {
+ font-family: verdana; font-size: 20px; 
+}</code></pre>
+</div>
+</div>
+<h2>Javascript.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez la página web se encuentra en el cliente, se ha pintado en el navegador y aplicado los estilos es necesario realizar diferentes cálculos, operaciones o modificar el código HTML como puede ser añadir nuevas imágenes de forma dinámica a la página. Para estas y otras tareas se utiliza un lenguaje de programación denominado Javascript.</span></p>
+<p><span style="font-weight: 400;">Javascript es uno de los lenguajes más utilizado en la actualidad, existiendo multitud de Frameworks para facilitar el desarrollo de aplicaciones. Un ejemplo de página web con JavaScript:</span></p>
+<div class="highlighted-code language-js line-numbers">
+<div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;My First JavaScript&lt;/h2&gt;
+&lt;button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()"&gt;
+Click me to display Date and Time.&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id218">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta218_129" class="block iDevice_content">
+<p><span style="font-weight: 400;">El desarrollo de aplicaciones web del lado cliente se realiza actualmente utilizando la combinación de estas tres tecnologías principalmente, aunque han evolucionado a nuevos frameworks, herramientas y tecnologías como <a href="https://jquery.com/" target="_blank" title="jQuery write less, do more" rel="noopener">jQuery</a>, <a href="https://getbootstrap.com/" target="_blank" title="Bootstrap. The most popular HTML, CSS, JS library in the world" rel="noopener">Boostrap</a>, <a href="https://angular.io/" target="_blank" title="Angular" rel="noopener">Angular,</a><a href="https://sass-lang.com/" target="_blank" title="SASS: Syntactically Awesome Style Sheets" rel="noopener"> SASS</a> o <a href="https://vuejs.org/" target="_blank" title="vue.js The Progressive JavaScript Framework" rel="noopener">Vue.</a></span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id219">
+<div class="iDevice emphasis0">
+<div id="ta219_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">El cliente recibe el HTML, el CSS y Javascript de un equipo o conjunto de equipos denominados servidor o servidores. Inicialmente los elementos enviados eran simplemente ficheros estáticos, pero surgió la necesidad de a partir de los datos enviados por el cliente, por ejemplo el identificador único del cliente en Facebook generar un código <em>html/css/javascript</em> <strong>personalizado</strong> para la petición, por ejemplo al entrar en Instagram aparecen las fotos del usuario y no otras.</span></p>
+<p>En cuanto las tecnologías de servidor.</p>
+<div class="exe-fx exe-accordion">
+<h2>Lenguajes de programación en el servidor.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para realizar esta personalización se utilizan diferentes lenguajes de programación entre los que destacan:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-weight: 400;"> </span><span style="font-weight: 400;"> PHP.</span></li>
+<li><span style="font-weight: 400;"> </span><span style="font-weight: 400;"> Java.(JSP).</span></li>
+<li><span style="font-weight: 400;"> </span><span style="font-weight: 400;"> Node.js (Basado en Javascript, pero en el servidor)</span></li>
+<li><span style="font-weight: 400;"> </span><span style="font-weight: 400;"> C#.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Estos lenguajes utilizan indicadores para que el servidor intérprete en el servidor lo necesario, por ejemplo en <a href="https://www.php.net/" target="_blank" title="PHP: Hypertext Processor" rel="noopener">PHP</a> se utilizan los delimitadores <em><strong>&lt;?</strong></em> y <em><strong>?&gt;</strong></em> o <em><strong>&lt;?php</strong></em>, un ejemplo de uso:</span></p>
+<div class="highlighted-code language-php line-numbers">
+<div style="text-align: justify;">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+echo "My first PHP script!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+</div>
+<h2>Base de datos.</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las bases de datos son utilizadas en prácticamente todas las aplicaciones tanto de escritorio como web, aunque no forman parte directa de las aplicaciones se utilizan ampliamente para el almacenamiento de los datos de las aplicaciones web, pudiendo estar en equipos diferentes, además las bases de datos pueden ser utilizados por más de una aplicación, ya sea web o de escritorio.</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="12_versiones_del_protocolo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

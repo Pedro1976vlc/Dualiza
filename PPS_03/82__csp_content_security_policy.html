@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.2. - CSP (Content Security Policy) | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-132"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="current-page-parent daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul>
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li id="active"><a href="82__csp_content_security_policy.html" class="active no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="81__hsts_http_strict_transport_security.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="83__captchas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">8.2. - CSP (Content Security Policy)</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id305">
+<div class="iDevice emphasis0" >
+<div id="ta305_305_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">La </span><b>Política de Seguridad de Contenido (CSP)</b><span style="font-weight: 400;"> es un estándar de seguridad informática ideado para evitar o </span><span style="font-weight: 400;">mitigar ataques que involucran </span><b>inyección</b><span style="font-weight: 400;"> de contenido o </span><b>código</b><span style="font-weight: 400;">, como </span><b>ataques de secuencias de comandos en sitios cruzados (XSS)</b><span style="font-weight: 400;">, ataques que requieren incrustar un recurso malicioso, ataques que involucran el uso malicioso de </span><b>iframes</b><span style="font-weight: 400;">, como ataques de </span><b><i>clickjacking</i></b><span style="font-weight: 400;"> y otros.</span><span style="font-weight: 400;"> Este estándar permite a los desarrolladores controlar los lugares de origen desde donde  el navegador del cliente puede cargar recursos procedentes de otros sitios web.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una política se describe utilizando una serie de directivas de políticas, cada una de las cuales describe la política para un determinado tipo de recurso o área de política.</span><span style="font-weight: 400;"></span></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id306">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Directivas y palabras clave CSP</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta306_306_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">CSP ofrece una gran cantidad de directivas configurables. A continuación se presentan algunas de las más importantes:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>base-uri:</h2>
+<p><span style="font-weight: 400;">Define la <strong>URI (<span>Uniform Resource Identifier, </span></strong>es una cadena que permite identificar la localización de un recurso<strong>) base</strong> para la <strong>URI relativa</strong>.</span></p>
+<h2>default-src:</h2>
+<p><span style="font-weight: 400;">Define la política de carga para <strong>todos los tipos de recursos</strong> en caso de que una directiva dedicada de tipo de recurso no esté definida.</span><span style="font-weight: 400;"></span></p>
+<h2>script-src</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Define qué <strong><em>scripts</em></strong> puede ejecutar el recurso protegido.</span></p>
+<h2>object-src:</h2>
+<p><span style="font-weight: 400;">Define </span>desde dónde el recurso protegido puede cargar complementos.</p>
+<h2>style-src:</h2>
+<p><span style="font-weight: 400;">Define los orígenes desde donde se pueden cargar las <strong>hojas de </strong></span><strong>estilos CSS</strong>. </p>
+<h2>img-src:</h2>
+<p style="text-align: justify;">Define desde dónde el recurso protegido puede cargar <strong>imágenes</strong>.</p>
+<h2>media-src:</h2>
+<p><span style="font-weight: 400;">Define </span>desde dónde el recurso protegido puede cargar recursos <strong>multimedia: videos y audios</strong>.</p>
+<h2>child-src:</h2>
+<p>Define desde dónde el recurso protegido puede incrustar <strong>marcos</strong>.</p>
+<p style="text-align: justify;">Por ejemplo: <em><strong>child-src https://youtube.com</strong></em> habilitaría la incorporación de videos desde YouTube, pero no de otros orígenes. Emplee esta directiva en lugar de la obsoleta <em><strong>frame-src</strong></em>.</p>
+<h2>font-src:</h2>
+<p><span style="font-weight: 400;">Define </span>desde dónde el recurso protegido puede cargar fuentes.</p>
+<h2>connect-src:</h2>
+<p><span style="font-weight: 400;">Define </span>qué <strong>URI</strong> puede cargar el recurso protegido mediante interfaces de <em><strong>script</strong></em>.</p>
+<h2>manifest-src:</h2>
+<p>Define desde dónde el recurso protegido puede cargar <strong>manifiestos</strong>.</p>
+<h2>form-action:</h2>
+<p style="text-align: justify;"><strong></strong>Enumera los terminales para envíos a partir de etiquetas <em><strong>&lt;form&gt;</strong></em>.</p>
+<h2>form-ancestors:</h2>
+<p style="text-align: justify;"><strong></strong>E<span style="font-size: 16.8px; text-align: left;">specifica los recursos que pueden incorporar a la página actual. Esta directiva se aplica a las etiquetas</span><span style="font-size: 16.8px; text-align: left;"> <em><strong>&lt;frame&gt;, &lt;iframe&gt;, &lt;embed&gt;</strong></em> y <em><strong>&lt;applet&gt;</strong></em>. Esta directiva no puede usarse en etiquetas <em><strong>&lt;meta&gt;</strong></em> y se aplica solo a recursos que no sean HTML.</span></p>
+<h2>upgrade-insecure-requests:</h2>
+<p style="text-align: justify;"><strong></strong><span style="font-size: 16.8px; text-align: left;">Indica a los usuario-agentes que modifiquen los esquemas de URL, cambiando HTTP por HTTPS. Esta directiva es para sitios web con grandes cantidades de URL antiguas que necesitan modificarse.</span><span style="font-size: 16.8px; text-align: left;"></span></p>
+</div>
+<p style="text-align: justify;"><span>La lista de fuentes de contenido acepta cuatro palabras clave:</span></p>
+<div class="exe-fx exe-tabs">
+<h2>none</h2>
+<p style="text-align: justify;">C<span style="font-size: 16.8px;">omo su nombre indica, que no coincida nada.</span><code></code>.</p>
+<h2>self</h2>
+<p style="text-align: justify;">Coincide con la fuente actual, normalmente la propia web, pero no con sus subdominios.</p>
+<h2>unsafe-inline</h2>
+<p style="text-align: justify;">Permite JavaScript y CSS incrustados procedentes de fuentes externas.</p>
+<h2>unsafe-eval</h2>
+<p style="text-align: justify;">Permiten mecanismos texto-a-JavaScript como <em><strong>eval.</strong></em></p>
+</div>
+<p style="text-align: justify;">Estas directivas son solo algunos ejemplos. En cada nueva versión CSP va modificando e incorporando nuevas directivas. La lista completa y actualizada puede consultarse en <a href="https://www.w3.org/TR/CSP/#framework-directive-source-list" title="Lista de directivas CSP disponible en https://www.w3.org/TR/CSP">la web específica del W3C sobre CSP</a>.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper RecomendacionfpdIdevice em_iDevice em_iDevice_recomendacionfpd" id="id307">
+<div class="iDevice emphasis_recomendacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Recomendación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta307_131" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">En Internet existe una gran cantidad  de generadores de Content Security Policy, con ellos es posible crear cabeceras CSP de un modo muy sencillo y eficaz. A continuación, se presentan algunos de los generadores más utilizados:</span></p>
+<ul>
+<li style="text-align: justify;"><a href="https://www.cspisawesome.com/"><span style="font-weight: 400;">CSP Is Awesome</span></a><span style="font-weight: 400;">. </span></li>
+<li style="text-align: justify;"><a href="https://report-uri.com/home/generate" style="font-size: 16.8px; text-align: left;"><span>Report URI</span></a>.</li>
+<li style="text-align: justify;"><a href="https://csper.io/" title="The most advance set of Content Security Policy tools. Built for engineers who care deeply about user security">Csper (Secure Content Security Policy)</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id310">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta310_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/1-sx4AmjGCI" allowfullscreen="allowfullscreen"></iframe><iframe width="500" height="314" src="https://www.youtube.com/embed/7f83CYhpWbY" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeos educativos donde se presentan las principales etiquetas de configuración de CSP. Además, se presenta el funcionamiento de <a href="csper.io" title="csper.io: CSP Tools">csper.io</a>.</p>
+</div>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice em_iDevice_ejercicioresueltofpd" id="id309">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Ejercicios Resueltos</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta309_148" class="block story iDevice_content">
+<p>A continuación, se presentan una serie de ejercicios prácticos resueltos mediante los cuales se ilustran la construcción de CSP.</p>
+</section>
+<section id="taquesQuestion0b309" class="block iDevice_content">
+<h3 style="text-align: justify;">Ejemplo 1:</h3>
+<p style="text-align: justify;">Un sitio requiere que todo su contenido provenga de su propio dominio:</p>
+</section>
+<form name="feedback-form-quesFeedback0b309" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b309text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b309" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b309" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="pre-code">
+<div>
+<pre><code>X-Content-Security-Policy: allow 'self'</code></pre>
+</div>
+</div></section>
+</form>
+<section id="taquesQuestion1b309" class="block iDevice_content">
+<h3 style="text-align: justify;">Ejemplo 2:</h3>
+<p style="text-align: justify;">Los administradores del servidor quieren rechazar todos los <em>scripts</em> de terceros para el sitio, y un grupo de proyecto determinado también quiere rechazar los medios de otros sitios (el encabezado proporcionado por los administradores de sistemas y el encabezado proporcionado por el grupo del proyecto están presentes):</p>
+</section>
+<form name="feedback-form-quesFeedback1b309" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback1b309text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback1b309" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback1b309" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="pre-code">
+<div>
+<pre><code>X-Content-Security-Policy: allow *; script-src 'self' 
+X-Content-Security-Policy: allow *; script-src 'self'; media-src 'self';</code></pre>
+</div>
+</div>
+<p></p></section>
+</form>
+<section id="taquesQuestion2b309" class="block iDevice_content">
+<h3 style="text-align: justify;">Ejemplo 3:</h3>
+<p><span style="font-weight: 400;">Un desarrollador web quiere protegerse su sitio contra los ataques de secuencias de comandos entre sitios. Pueden mitigar el riesgo de inyección de </span><i><span style="font-weight: 400;">scripts</span></i><span style="font-weight: 400;"> asegurándose de que su CDN de confianza sea el único origen desde el que se puede cargar y ejecutar el </span><i><span style="font-weight: 400;">script</span></i><span style="font-weight: 400;">. Además, desean asegurarse de que ningún complemento pueda ejecutarse en los contextos de sus páginas. Especifique una política de seguridad que  tenga ese efecto:</span></p>
+</section>
+<form name="feedback-form-quesFeedback2b309" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback2b309text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback2b309" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback2b309" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="pre-code">
+<div>
+<pre><code>Content-Security-Policy: script-src https://cdn.foo.com/scripts/; object-src 'none'</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="81__hsts_http_strict_transport_security.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="83__captchas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

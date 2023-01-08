@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.8. - Deserialización insegura. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-114"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li class="current-page-parent"><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="current-page-parent daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul>
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li id="active"><a href="38__deserializacin_insegura.html" class="active no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="37__crosssite_scriptingxss.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.8. - Deserialización insegura.</h1></header>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id286">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta286_129" class="block iDevice_content">
+<p><span style="font-weight: 400;">La <strong>serialización</strong> es un proceso de codificación de un objeto en un medio de almacenamiento (como puede ser un archivo, o un <em><strong>buffer</strong></em> de memoria) con el fin de transmitirlo a través de una conexión en red como una <strong>serie de <em>bytes</em></strong> o formatos textuales como <strong>XML</strong> o <strong>JSON</strong>, entre otros. </span></p>
+<p><span style="font-weight: 400;">La <strong>serialización</strong> es un mecanismo ampliamente usado para transportar objetos a través de una red, para hacer persistente un objeto en un archivo o base de datos, o para distribuir objetos idénticos a varias aplicaciones o localizaciones.</span></p>
+<p><span style="font-weight: 400;">La <strong>serialización</strong> puede ser utilizada en aplicaciones para:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Comunicación remota e Inter-Procesos (<strong>RPC/IPC</strong>).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Protocolo de comunicaciones, <em><strong>Web Services</strong></em> y <strong><em>Brokers</em></strong> de mensajes.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><strong><em>Caching</em></strong> y <strong>Persistencia</strong>.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Bases de datos, servidores de caché y sistemas de archivos.</span></li>
+</ul>
+<p><span style="font-weight: 400;"></span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id287">
+<div class="iDevice emphasis0" >
+<div id="ta287_287_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">Estos defectos ocurren cuando una aplicación recibe objetos serializados dañinos y estos objetos pueden ser manipulados o borrados por el atacante para realizar </span><b>ataques de repetición</b><span style="font-weight: 400;">, </span><b>inyecciones</b><span style="font-weight: 400;"> o </span><b>elevar</b><span style="font-weight: 400;"> sus </span><b>privilegios de ejecución</b><span style="font-weight: 400;">. En el peor de los casos, la deserialización insegura puede conducir a la </span><b>ejecución remota de código en el servidor</b><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Las aplicaciones y APIs serán  vulnerables si deserializan objetos hostiles que pueden ser manipulados por un atacante. Habitualmente se pueden producir dos tipos de ataques: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ataques relacionados con la estructura de datos y objetos; donde el atacante modifica la lógica de la aplicación o logra una ejecución remota de código que puede cambiar el comportamiento de la aplicación durante o después de la deserialización.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ataques típicos de manipulación de datos; como ataques relacionados con el control de acceso, en los que se utilizan estructuras de datos existentes pero se modifica su contenido.</span><span style="font-weight: 400;"></span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 500px;"><a href="A8_Deserializacion_insegura.png" onclick="window.open('A8_Deserializacion_insegura.png','Deserialización Insegura','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img src="A8_Deserializacion_insegura.png" alt="Valoración de factores de la vulnerabilidad." width="500" height="168" /></a>
+<figcaption class="figcaption"><a href="https://owasp.org" target="_blank" class="author" rel="noopener">OWASP Fundation</a>. <span class="title"><em>Valoración de factores de la vulnerabilidad.</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id288">
+<div class="iDevice emphasis0" >
+<div id="ta288_288_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">El único patrón seguro para hacer frente a la </span><b>deserialización insegura</b><span style="font-weight: 400;"> es no aceptar objetos serializados de fuentes no confiables o utilizar medios de serialización que sólo permitan tipos de datos primitivos.</span></p>
+<p><span style="font-weight: 400;">Si esto no fuera posible, es recomendable tener presente las siguientes recomendaciones:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Implementar mecanismos de </span><b>verificación de integridad</b><span style="font-weight: 400;"> (p.e. firmas digitales) en cualquier objeto serializado, con el fin de detectar modificaciones no autorizadas.</span></li>
+<li style="font-weight: 400;" aria-level="1"><b>Ejecutar el código</b><span style="font-weight: 400;"> que realiza la </span><b>deserialización</b> <b>en un entorno con</b><span style="font-weight: 400;"> los </span><b>mínimos privilegios</b><span style="font-weight: 400;"> posibles.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Registra las excepciones y fallas en la deserialización. </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Monitorice los procesos de deserialización, alertando si un usuario deserializa constantemente.</span></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id289">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta289_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/u0ooua1HNfM" allowfullscreen="allowfullscreen"></iframe><iframe width="500" height="314" src="https://www.youtube.com/embed/jttJM2qQ95w" allowfullscreen="allowfullscreen"></iframe><br /><br /></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p><span style="font-weight: 400;">Vídeo de carácter educativo donde se explican desde el punto de vista teórico y práctico los fundamentos de la Deserialización Insegura</span>.</p>
+<p></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper CasopracticofpdIdevice em_iDevice em_iDevice_casopracticofpd" id="id290">
+<div class="iDevice emphasis_casopracticofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Caso práctico</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta290_147" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/nvXE6iZ37pU" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeo educativo donde se explica como aprovechar y explotar las posibilidades que ofrece la Deserialización Insegura para la ejecución de código malicioso de forma remota con Node.js.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="37__crosssite_scriptingxss.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

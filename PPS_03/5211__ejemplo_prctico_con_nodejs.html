@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.1.1. - Ejemplo práctico con NodeJs. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-140"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="current-page-parent daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul>
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li class="current-page-parent"><a href="52__estndares.html" class="current-page-parent daddy">5.2. - Estándares.</a>
+      <ul>
+         <li class="current-page-parent"><a href="521__tokens_jwt.html" class="current-page-parent daddy">5.2.1. - Tokens JWT</a>
+         <ul>
+            <li id="active"><a href="5211__ejemplo_prctico_con_nodejs.html" class="active no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="521__tokens_jwt.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="522__oath.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.2.1.1. - Ejemplo práctico con NodeJs.</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id356">
+<div class="iDevice emphasis0">
+<div id="ta356_85" class="block iDevice_content">
+<p>En el siguiente ejemplo se utiliza la librería <a href="https://jwt.io/" target="_blank" rel="noopener">JWT</a> para el uso del servicio anterior. Se crea el servicio login al que se le pasa un usuario y una contraseña usando el método POST.</p>
+<div class="highlighted-code language-js line-numbers">
+<div>
+<pre><code>var usuario = "paco"
+var clave = "secreto"
+var privadaJWT = "Mq@45oP!2"
+router.post("/login",
+  check('usuario').exists().withMessage('Necesario el usuario').customSanitizer((value) =&gt; {
+    if (value != undefined)
+      value = value.replace(regEx_sanityze, "")
+    return value;
+  }),
+  check('clave').exists().withMessage('Necesaria la clave').customSanitizer((value) =&gt; {
+    if (value != undefined)
+      value = value.replace(regEx_sanityze, "")
+    return value;
+  }),
+  (req, res) =&gt; {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    if (req.body.usuario = usuario &amp;&amp; req.body.clave == clave) {
+      var token = jwt.sign({ usuario: 'paco' }, privadaJWT, { algorithm: 'HS512', expiresIn: 86400 });
+      return res.json(token);
+    } else {
+      return res.json({ errors: [{ msg: "usuario o clave incorrectos", param: "todos", location: "body" }] })
+    }
+
+  })</code></pre>
+</div>
+</div>
+<ul>
+<li>Se comprueba en primer lugar si los parámetros que se le facilitan son válidos y se desinfectan.<br /><span style="color: #3a4749; font-size: 1.05em;">En la línea 20 se comprueba si el usuario y la clave son correctos (en un caso real se obtendrá de una base de datos, otro servicio, LDAP...).</span></li>
+<li>En la 21, si es correcto se genera en token, al que se le proporciona los datos en JSON a almacenar en el token, la clave y las opciones que en este caso son el algoritmo y el tiempo de vida del token.</li>
+<li>En la 22 se envía.</li>
+</ul>
+<p>Al enviar los parámetros correctamente se devuelve el token, que la aplicación almacenará para enviarlo en cada petición que lo requiera. Usando POSTMAN se obtiene:</p>
+<figure class="exe-figure exe-image position-center" style="width: 399px;"><a href="postman_token_generate.png" target="_blank" rel="noopener"><img src="postman_token_generate.png" alt="Login con token JWT" width="399" height="182" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" /></a>
+<figcaption class="figcaption"><span class="title"><em>Pulsar para ampliar</em></span></figcaption>
+</figure>
+<p>Es necesario por último comprobar cuando se utiliza un servicio protegido (o una página) que se envía el token, que es válido y obtener la información almacenada en el mismo (evitar acceso a la base de datos). Express el framework usado en el ejemplo para Node permite añadir métodos y funciones previos a la ejecución de la petición de forma sencilla, se define la función <strong>recursoprotegido</strong> que se ejecuta previamente a la validación de datos y al propio método para comprobar si se tiene permisos. Se puede ejecutar en todo el controlado o simplemente en los métodos que lo necesitan:</p>
+<div class="highlighted-code language-js line-numbers">
+<div>
+<pre><code>function recursoprotegido(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).json({ errors: [{ msg: "Petición sin token" }] });
+  }
+  const token = req.headers.authorization.split(" ")[1];
+  jwt.verify(token, privadaJWT, (err, decoded) =&gt; {
+    if (err) {
+      return res.status(403).json({ errors: [{ msg: "token incorrecto", param: "token", location: "body" }] })
+    } else {
+      //se almacena en la petición para su uso en el método
+      req.decoded = decoded;
+      next();
+    }
+  });
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id357">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta357_128" class="block iDevice_content">
+<p>Cabecera Autorization de HTTP: </p>
+<p style="text-align: center;"><a href="https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization">https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id358">
+<div class="iDevice emphasis0">
+<div id="ta358_154" class="block iDevice_content">
+<p>Para validar las peticiones añadir en el método la llamada a la función:</p>
+<p></p>
+<div class="highlighted-code language-js line-numbers">
+<div>
+<pre><code>router.get("/", <strong>recursoprotegido</strong>, (req, res) =&gt; {
+  return res.json({ usuario: req.decoded.usuario, almacen: almacen })
+})</code></pre>
+</div>
+</div>
+<p>Un ejemplo de petición con Postman:</p>
+<figure class="exe-figure exe-image position-center" style="width: 399px;"><a href="peticion_jwt.png" target="_blank" rel="noopener"><img src="peticion_jwt.png" alt="Ejemplo autenticación con JWT" width="399" height="229" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" /></a>
+<figcaption class="figcaption"><span class="title"><em>Pulsar para ampliar</em></span></figcaption>
+</figure>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id359">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-359_141" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion359_141" class="block question iDevice_content">
+<p><span>Consultando la documentación de JWT, de los siguientes algoritmos. ¿Cuál no se define para JWT?</span></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i359_144" class="sr-av"><a href="#answer-359_144">Opción 1</a></label><input type="radio" name="option359_141" id="i359_144" class="exe-radio-option exe-radio-option-0-4-359_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-359_144"><div id="taans359_144" class="block iDevice_content">
+<p>3DES</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i359_2025" class="sr-av"><a href="#answer-359_2025">Opción 2</a></label><input type="radio" name="option359_141" id="i359_2025" class="exe-radio-option exe-radio-option-1-4-359_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-359_2025"><div id="taans359_2025" class="block iDevice_content">
+<p>RSA256</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i359_2028" class="sr-av"><a href="#answer-359_2028">Opción 3</a></label><input type="radio" name="option359_141" id="i359_2028" class="exe-radio-option exe-radio-option-2-4-359_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-359_2028"><div id="taans359_2028" class="block iDevice_content">
+<p>HS512</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i359_2031" class="sr-av"><a href="#answer-359_2031">Opción 4</a></label><input type="radio" name="option359_141" id="i359_2031" class="exe-radio-option exe-radio-option-3-4-359_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-359_2031"><div id="taans359_2031" class="block iDevice_content">
+<p>ES256</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b359_141" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa1b359_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa2b359_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b359_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-359_144">Opción correcta</a><span> (<a href="#sa0b359_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-359_2025">Incorrecto</a><span> (<a href="#sa1b359_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-359_2028">Incorrecto</a><span> (<a href="#sa2b359_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-359_2031">Incorrecto</a><span> (<a href="#sa3b359_141">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="521__tokens_jwt.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="522__oath.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

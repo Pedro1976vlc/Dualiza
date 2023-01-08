@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.3. - CAPTCHAs | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-133"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="current-page-parent daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul>
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li id="active"><a href="83__captchas.html" class="active no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="82__csp_content_security_policy.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">8.3. - CAPTCHAs</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id311">
+<div class="iDevice emphasis0" >
+<div id="ta311_311_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><b><i>Completely Automated Public Turing test to tell Computers and Humans Apart.​</i></b><span style="font-weight: 400;"> Son pruebas desafío-respuesta controladas por máquinas que son utilizadas para determinar cuándo el usuario es un humano o un programa automático. Usada por muchas aplicaciones Web para asegurarse que la respuesta no es generada de forma automática por una computadora. </span></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id312">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Utilidad de los CAPTCHAs</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta312_312_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Aunque <strong>CAPTCHA</strong> no es un control de autenticación, su uso <strong>resulta</strong> muy <strong>útil para evitar o mitigar</strong>:</span></p>
+<div class="exe-fx exe-accordion">
+<h2>Ataques de enumeración</h2>
+<p style="text-align: justify;">Los a<b>taques de enumeración </b>p<span style="font-weight: 400;">ermiten a un atacante comprobar si existe un nombre de usuario está dado de alta en la base de datos. Esto no permitirá al ciberdelincuente acceder de forma inmediata, pero sí le proporciona la información para preparar un ataque posterior. Por ejemplo, mediante un ataque de fuerza bruta, donde no será necesario buscar las parejas formadas por nombres de usuario y contraseñas, sino que simplemente bastará encontrar la contraseña emparejada con el nombre de usuario previamente verificado. El uso de CAPTCHAs puede ser útil frente este tipo de ataques al dificultar y retrasar el proceso de obtención de  nombres de usuario válidos, números telefónicos o cualquier otra información que pueda resultar útil a un atacante.</span></p>
+<h2>Envio automático de peticiones GET/POST</h2>
+<p style="text-align: justify;">Los CAPTCHAs son muy eficaces para evitar o retrasar el <b style="font-size: 16.8px;"> envío automático de muchas peticiones GET/POST. </b><span style="font-weight: 400;">Esto es especialmente útil cuando se desea <strong>evitar la  inundación</strong> de mensajes <strong>SMS, MMS</strong>, o <strong>e-mails</strong> de forma automatizada. </span><span style="font-weight: 400;">Los hackers malintencionados pueden crear "bots" que introducen direcciones de correo electrónico,números de teléfono móvil de forma automatizada en formularios en línea. Eso puede desencadenar el bloqueo, la inhabilitación de los propios formularios de registro o  la inundación de los de los servidores de correo o mensajería. Agregar CAPTCHA a todos los formularios. Esto resuelve el problema. A los  bots les resulta muy complicado completar una prueba de CAPTCHA con lo que se  evita la inundación mediante el envío de muchas peticiones GET/POST en poco tiempo.</span></p>
+<h2>Creación o uso de cuentas para la difusión de SPAM</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La <strong>creación o uso automatizado de cuentas de correo web</strong>, es una práctica habitual de los piratas informáticos. Generalmente las cuentas de correo web son utilizadas para difundir desde ellos mensajes de <strong>correo basura</strong> o <strong>SPAM</strong> con los que inundar la red. Esta práctica puede causar un enorme perjuicio al agotar el espacio libre disponible en los servidores de correo. Los robots pueden utilizarse tanto para detectar y secuestrar cuentas legales que han sido dado de alta previamente por usuarios legítimos, como para crear nuevas cuentas haciéndose pasar por usuarios ficticios que se registran en los  en los formularios de alta de los servidores de webmail. El empleo de CAPTCHAs supone un freno, que dificulta la actuación de los programas automáticos especializados en la localización o registro de cuentas de correo electrónico.</span></p>
+<h2>Generación publicaciones automáticas en blogs, foros o wikis</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">La <b>publicación no autorizada de forma automática en blogs, foros o wikis.</b> En muchas ocasiones esta situación es resultado de campañas de acoso, intimidación, vandalismo o incluso promoción agresiva de productos comerciales.</span></p>
+<h2><b>Registros masivos en eventos gratuitos o compra indiscriminada de artículos</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">L</span>os CAPTCHAs pueden utilizarse para evitar inscripciones falsas  en eventos gratuitos. También <span style="font-weight: 400;">pueden ser empleados por los sistemas de venta para frenar la especulación, evitando la utilización de bots en procesos de compra masiva, que provocan la escasez o agotamiento de productos altamente demandados (por ejemplo, entradas para eventos deportivos, actuaciones, conciertos, tarjetas gráficas, ediciones limitadas, y otros productos exclusivos) que posteriormente son revendidos a precios desorbitados.</span></p>
+<h2><b>Falsificación de consultas, votaciones o encuestas electrónicas</b></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los CAPTCHAs pueden ser útiles para mantener la exactitud en los procesos de consulta a través de Internet. Asegurando que en los procesos de consulta únicamente participen humanos. Dificultando la emisión de votos múltiples de forma automatizada.</span></p>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id313">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Tipos de CAPTCHAs</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta313_313_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Existen diferentes  tipos de <strong>CAPTCHA</strong>,   a grandes rasgos es posible agruparlos basados en <strong>texto</strong>, <strong>gráficos</strong>, <strong>auditivos</strong>, <strong>matemáticos</strong>, <strong>lógicos</strong> y <strong>lúdicos</strong>. A continuación se presentan las características de los tipos de <strong>CAPTCHA</strong> más comunes:</span></p>
+<div class="exe-fx exe-tabs">
+<h2>CAPTCHA basado en texto</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Consiste en que el usuario introduzca correctamente un conjunto de caracteres, palabras o combinaciones alfanuméricas que se muestran en una imagen distorsionada que aparece en pantalla. El usuario debe descifrar la palabra o frase que se muestra en pantalla y escribirla con el teclado en el campo de respuesta.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 450px;"><img src="UD3_9_3_yahoo-game-text_captcha.jpg" alt="Text CAPTCHA in use at Yahoo Games." title="Text CAPTCHA in use at Yahoo Games." width="450" height="253" />
+<figcaption class="figcaption"><a href="https://es.yahoo.com/" target="_blank" class="author" rel="noopener">Yahoo!</a>. <span class="title"><em>Text CAPTCHA in use at Yahoo Games</em></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para la creación de CAPTCHAs de texto habitualmente se emplean las siguientes técnicas:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Gimpy:</b><span style="font-weight: 400;"> se elige un número arbitrario de palabras de un diccionario con una gran cantidad de palabras; a continuación se proporcionan esas palabras de forma distorsionada.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>EZ-Gimpy:</b><span style="font-weight: 400;"> es una variación de Gimpy que utiliza sólo una palabra.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Gimpy-r:</b><span style="font-weight: 400;"> se escogen letras al azar, se distorsionan y añade ruido de fondo a los caracteres.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><b>Simard’s HIP:</b><span style="font-weight: 400;"> se seleccionan letras y números al azar; para distorsionar los caracteres se utilizan arcos y colores.</span></li>
+</ul>
+<h2>CAPTCHA basado en imágenes<span style="font-weight: 400;"></span></h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los captchas gráficos son la alternativa ideal a los captchas de texto. En vez de utilizar una secuencia de caracteres alfanuméricos alterada, que puede ser difícilmente reconocible por algunos usuarios, los captchas visuales se apoyan en elementos gráficos que pueden ser fácilmente reconocible a simple vista. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para la mayoría de usuarios resolver este tipo de retos no entraña una dificultad excesiva. Sin embargo, la capacidad de los programas informáticos actuales para hacer frente a este tipo de retos es muy limitada. Por lo que los captchas gráficos son considerados actualmente mucho más eficaces que basados en texto.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Suele ser habitual pedir al usuario que reconozca determinadas imágenes cotidianas:</span></p>
+<p style="text-align: center;"><img src="gato_grafico_captcha.png" alt="CAPTCHA basado en imagenes - Gatos" title="CAPTCHA basado en imágenes - Gatos" width="250" height="410" /> <img src="Captcha3.png" alt="CAPTCHA basado en imágenes" title="CAPTCHA basado en imágenes" width="250" height="362" /></p>
+<figure class="exe-figure exe-image position-center" style="width: 250px;">
+<figcaption class="figcaption"><a href="https://upload.wikimedia.org/wikipedia/en/8/80/Images_Recaptcha.png" target="_blank" class="author" rel="noopener">Google</a> - <a href="Ejemplo CAPTCHA gráfico" target="_blank" class="title" rel="noopener"><em>Ejemplo CAPTCHA gráfico</em></a></figcaption>
+</figure>
+<h2>CAPTCHA de audio</h2>
+<p style="text-align: justify;">Para garantizar la accesibilidad de aquellos usuarios con discapacidad visual se idearon los CAPTCHAs de audio. Estos se utilizan a menudo en combinación con CAPTCHAs basados en texto o en imágenes. Contienen una grabación sonora con la secuencia alfanumérica que el usuario debe introducir a continuación, generalmente acompañada de un ruido de fondo para dificultar su reconocimiento por parte de los bots.</p>
+<figure class="exe-figure exe-image position-center" style="width: 314px;"><img src="UD3_9_3_recaptcha-example_audio.gif" alt="Ejemplo de reCAPTCHA con audio" title="Ejemplo de reCAPTCHA con audio" width="314" height="125" />
+<figcaption class="figcaption"><a href="http://www.captcha.net/" target="_blank" class="author" rel="noopener">reCAPTCHA - captcha.net</a>. <span class="title"><em>ReCAPTCHA con audio</em></span></figcaption>
+</figure>
+<h2>CAPTCHA matemáticos o lógicos</h2>
+<p style="text-align: justify;">Uno de los tipos de CAPTCHAs más populares son aquellos que solicitan la resolución de problemas matemáticos sencillos, como por ejemplo:”3+2” o “15-3”.</p>
+<figure class="exe-figure exe-image position-center" style="width: 250px;"><img src="UD3_9_3_Basic-Math-Captcha-Plugin.jpg" alt="CAPTCHAs matemáticos" title="CAPTCHAs matemáticos" width="250" height="185" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><a href="https://www.jqueryscript.net/images/Basic-Math-Captcha-Plugin.jpg" target="_blank" class="author" rel="noopener">jqueryscript.net</a>. <span class="title"><em>CAPTCHA Matemático básico</em></span></figcaption>
+</figure>
+<p style="text-align: justify;">Otra variantes son las que plantean una cuestión lógica o una pregunta de cultura general. Algunas preguntas de este tipo son:</p>
+<ul>
+<li style="text-align: justify;">¿De qué color es el caballo blanco de Santiago?</li>
+<li style="text-align: justify;">¿Dónde se encuentra la Estatua de la Libertad?</li>
+</ul>
+<figure class="exe-figure exe-image position-center" style="width: 406px;"><img src="UD3_9_3_CAPTCHA_logico.png" alt="CAPTCHA lógico" title="CAPTCHA lógico" width="406" height="206" />
+<figcaption class="figcaption"><a href="https://www.drupal.org/project/riddler" target="_blank" class="author" rel="noopener">riddler</a>. <span class="title"><em>CAPTCHA lógico</em></span></figcaption>
+</figure>
+<h2>CAPTCHA lúdico</h2>
+<p style="text-align: justify;">Con el objetivo de evitar que los CAPTCHAs resulten complejos, crípticos o difíciles de entender, la tendencia actual es ofrecer a los usuarios juegos sencillos que se puedan integrar en los retos, conocidos como <strong>SweetCaptcha</strong> o <strong>FunCaptcha</strong>. Este tipo de pruebas plantea tareas fáciles de realizar para un humano, pero extremadamente complicadas para un robot; como por ejemplo, mover una barra de desplazamiento o arrastrar un elemento de la pantalla hasta una posición concreta.</p>
+<figure class="exe-figure exe-image position-center" style="width: 404px;"><img src="SweetCaptcha_Elvis.png" alt="SweetCaptcha Elvis" title="SweetCaptcha Elvis" width="404" height="178" />
+<figcaption class="figcaption"><a href="https://twitter.com/sweetcaptcha" target="_blank" class="author" rel="noopener">sweetCaptcha</a>. <span class="title"><em>SweetCaptcha Elvis</em></span></figcaption>
+</figure>
+<h2>Honeypot</h2>
+<p>Un honeypot, sistema trampa​ o señuelo tiene como objetivo engañar a los robots para detectar su presencia para impedir su actuación. Habitualmente, suelen ocultarse múltiples campos invisibles en la pantalla. Campos que los bots detectan y rellenan inmediatamente, confirmando de este modo que quien está accediendo a la web no es un humano, sino una aplicación automatizada; consecuentemente, se bloquea su acceso a la web.</p>
+<h2>Inicio de sesión en redes sociales</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Actualmente, muchos sitios web para descartar la presencia de robots, solicitan a los usuarios que <strong>inicien sesión</strong> utilizando su cuenta de redes sociales: como:  <strong>Google</strong>, <strong>Facebook, LinkedIn </strong>o <strong>Twitter</strong>. De este modo, el usuario no necesita introducir ninguna información adicional.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 300px;"><img src="inicio_de_sesion.png" alt="Autenticación mediante inicio sesión en redes sociales" title="Autenticación mediante inicio sesión en redes sociales" width="300" height="218" />
+<figcaption class="figcaption"><span class="title"><em>Social Networking Sites Authentication</em></span></figcaption>
+</figure>
+<h2>Google reCAPTCHA</h2>
+<p><span style="font-weight: 400;"><a href="https://www.google.com/recaptcha/about/" title="Google reCAPTCHA"><strong>Google reCAPTCHA</strong></a> fue introducido en el año 2014. Habitualmente se solicita al usuario que haga clic en una casilla rotulada con  <em><strong>“No soy un robot”</strong></em>. El <strong>CAPTCHA</strong> rastrea el movimiento del ratón, el clic y las cookies del usuario, además de otros parámetros, y determina si el usuario es un robot o no. En caso de que el sistema no fuese capaz de diferenciar si se trata de un humano o un robot, mostrará una segunda prueba alternativa.</span></p>
+<figure class="exe-figure exe-image position-center" style="width: 349px;"><img src="Recaptcha_anchor2x.gif" alt="Ejemplo Google reCAPTCHA" title="Ejemplo Google reCAPTCHA" width="349" height="93" />
+<figcaption class="figcaption"><a href="https://www.google.com/recaptcha/about/" target="_blank" class="author" rel="noopener">Google</a>. <span class="title"><em>Google reCAPTCHA - I am not a robot</em></span></figcaption>
+</figure>
+<p style="text-align: center;"><br /><br /></p>
+<h2>reCAPTCHA invisible</h2>
+<p><span style="font-weight: 400;">Es una mejora del sistema de Google reCAPTCHA anterior. Su ventaja es que no requiere de la intervención directa del usuario. Simplemente se monitorean los patrones de navegación, y con ello consigue diferenciar a un humano de un bot sin que el usuario tenga que interactuar.</span><span style="font-weight: 400;"></span></p>
+<p style="text-align: right;"><span style="font-weight: 400;"></span></p>
+</div>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id314">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta314_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/VUPSg8Jp_Es" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Video educativo sobre los orígenes de los CAPTCHAs y su uso en la web.</span></p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id315">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta315_151" class="block iDevice_content">
+<h2 style="text-align: justify;"><span>¿Cómo instalar un CAPTCHA en un formulario?</span></h2>
+<p style="text-align: justify;"><span>Para instalar <strong>ReCAPTCHA</strong> en un formulario de contacto o en los comentarios de tu blog personal, debes empezar por <a href="https://dinahosting.com/ayuda/como-conseguir-las-claves-de-google-recaptcha/" target="_blank" rel="noopener noreferrer"><strong>conseguir las claves de Google reCAPTCHA</strong></a>. </span></p>
+<p style="text-align: justify;"><span>Dependiendo si la el framework utilizado es <strong>WordPress</strong>, <strong>PrestaShop</strong> o si tienes una <strong>web diseñada a medida</strong>, deberás seguir diferentes pasos:</span></p>
+<ul>
+<li><a href="https://dinahosting.com/ayuda/como-anadir-google-recaptcha-a-tu-wordpress/" target="_blank" rel="noopener noreferrer"><span>Cómo añadir Google reCAPTCHA a tu web en WordPress</span></a></li>
+<li><a href="https://dinahosting.com/ayuda/como-anadir-google-recaptcha-a-prestashop-1-7/" target="_blank" rel="noopener noreferrer"><span>Cómo implementar Google reCAPTCHA en tu PrestaShop 1.7</span></a></li>
+<li><a href="https://dinahosting.com/ayuda/implementar-google-recaptcha-en-un-formulario-php/" target="_blank" rel="noopener noreferrer"><span>Cómo introducir Google reCAPTCHA en un formulario PHP</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EleccionmultiplefpdIdevice em_iDevice em_iDevice_autoevaluacionfpd" id="id318">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Autoevaluación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-318_141" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion318_141" class="block question iDevice_content">
+<p style="text-align: justify;">Indique dentro de que categoría situaría el siguiente CAPTCHA.</p>
+<figure class="exe-figure exe-image position-center" style="width: 181px;"><img src="math_captcha.png" alt="Imágen CAPTCHA: 11+3" title="Imágen CAPTCHA: 11+3" width="181" height="80" />
+<figcaption class="figcaption"><span class="title"><em>CAPTCHA.</em></span></figcaption>
+</figure>
+<p style="text-align: center;"></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i318_144" class="sr-av"><a href="#answer-318_144">Opción 1</a></label><input type="radio" name="option318_141" id="i318_144" class="exe-radio-option exe-radio-option-0-4-318_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-318_144"><div id="taans318_144" class="block iDevice_content">
+<p>Texto.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i318_1580" class="sr-av"><a href="#answer-318_1580">Opción 2</a></label><input type="radio" name="option318_141" id="i318_1580" class="exe-radio-option exe-radio-option-1-4-318_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-318_1580"><div id="taans318_1580" class="block iDevice_content">
+<p>Lúdico.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i318_1583" class="sr-av"><a href="#answer-318_1583">Opción 3</a></label><input type="radio" name="option318_141" id="i318_1583" class="exe-radio-option exe-radio-option-2-4-318_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-318_1583"><div id="taans318_1583" class="block iDevice_content">
+<p>Matemático.</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i318_1586" class="sr-av"><a href="#answer-318_1586">Opción 4</a></label><input type="radio" name="option318_141" id="i318_1586" class="exe-radio-option exe-radio-option-3-4-318_141-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-318_1586"><div id="taans318_1586" class="block iDevice_content">
+<p>ReCAPTCHA.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b318_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa1b318_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa2b318_141" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa3b318_141" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-318_144">Incorrecto</a><span> (<a href="#sa0b318_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-318_1580">Incorrecto</a><span> (<a href="#sa1b318_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-318_1583">Opción correcta</a><span> (<a href="#sa2b318_141">Retroalimentación</a>)</span></li>
+<li><a href="#answer-318_1586">Incorrecto</a><span> (<a href="#sa3b318_141">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id320">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta320_128" class="block iDevice_content">
+<p style="text-align: justify;">Los  CAPTCHAS que normalmente se emplean presentan problemas de accesibilidad para algunos grupos de usuarios. En concreto, los CAPTCHA bloquean el acceso a muchos usuarios que padecen algún tipo de discapacidad.</p>
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/T2hBbdLwR5o" allowfullscreen="allowfullscreen"></iframe> <iframe width="500" height="314" src="https://www.youtube.com/embed/6BbfcGs2VLI" allowfullscreen="allowfullscreen"></iframe><br /><br /></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p>Vídeos educativos donde se presentan los problemas de accesibilidad asociados a los CAPTCHAS.</p>
+</div>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="82__csp_content_security_policy.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

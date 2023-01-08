@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.1. - Tokens JWT | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-129"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="current-page-parent daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul>
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li class="current-page-parent"><a href="52__estndares.html" class="current-page-parent daddy">5.2. - Estándares.</a>
+      <ul>
+         <li id="active"><a href="521__tokens_jwt.html" class="active daddy">5.2.1. - Tokens JWT</a>
+         <ul>
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="52__estndares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5211__ejemplo_prctico_con_nodejs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.2.1. - Tokens JWT</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id256">
+<div class="iDevice emphasis0">
+<div id="ta256_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">El estándar más extendido es JWT, que se basa en la aplicación de diferentes algoritmos como RS256 y ES51 siendo el más utilizado HMACSHA256. Este aplica al mensaje 2 dos veces la función hash SHA256 combinada con la clave secreta.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id257">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta257_129" class="block iDevice_content">
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><iframe width="500" height="314" data-mce-fragment="1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/WKuQXVzn1ew"></iframe>
+<figcaption class="figcaption"><span class="title"><em>Fundamentos de las funciones HASH. UPV</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Base teórica de las funciones HASH o resumen, uno de los fundamentos de JWT, por la UPV.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id258">
+<div class="iDevice emphasis0">
+<div id="ta258_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">Un token JWT independientemente del algoritmo utilizado se compone de 3 elementos expresados con JSON:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><b>Cabecera</b><span style="font-weight: 400;">: Indica el algoritmo de firma.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Cuerpo/payload/carga útil</b><span style="font-weight: 400;">. Almacena la información a transmitir, dividiéndose a su vez en partes:</span>
+<ul>
+<li aria-level="2" style="font-weight: 400;"><b>Registros recomendados</b><span style="font-weight: 400;"> pero no obligatoria del estándar como emisor (iss), tiempo de vencimiento(exp) entre otros.</span></li>
+<li aria-level="2" style="font-weight: 400;"><b>Elementos públicos</b><span style="font-weight: 400;">. Registros que se incluyen en función de la aplicación pero que han de ser los definidos en el estándar</span><a href="https://www.iana.org/assignments/jwt/jwt.xhtml"><span style="font-weight: 400;"> JWT de IANA</span></a><span style="font-weight: 400;">, algunos ejemplos son profiel, website o phone_number.</span></li>
+<li aria-level="2" style="font-weight: 400;"><b>Elementos privados</b><span style="font-weight: 400;">: Se definen para cubrir necesidades no especificadas en los registros anteriores, por ejemplo el rol en una aplicación concreta.</span></li>
+</ul>
+</li>
+<li aria-level="1" style="font-weight: 400;"><b>Firma</b><span style="font-weight: 400;">: Este elemento permite garantizar la identidad del emisor, ya que codifica los elementos anteriores con un algoritmo criptográfico (normalmente HMACSHA256, aunque existen muchos otros como RS256,ES512...). A este algoritmo se le facilita concatenados por . la cabecera codificada en base64Url, la carga útil codificada en base64url y el secreto. En la web </span><a href="https://jwt.io/#debugger-io"><span style="font-weight: 400;">https://jwt.io/#debugger-io</span></a><span style="font-weight: 400;"> se pueden generar token JWT con diferentes algoritmos. Un ejemplo:</span></li>
+<li aria-level="1" style="font-weight: 400;">
+<figure class="exe-figure exe-image position-center" style="width: 500px;"><a onclick="window.open(this.href,'eXeLearningPopup','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;" href="jwt.png"><img width="500" height="357" alt="Ejemplo formato token en JWT" src="jwt.png" /></a>
+<figcaption class="figcaption"><span class="title"><em>Ejemplo formato token en JWT</em></span></figcaption>
+</figure>
+<span style="font-weight: 400;"><br /></span></li>
+</ul>
+<p><span style="font-weight: 400;">Además esa misma </span><a href="https://jwt.io/#libraries-io"><span style="font-weight: 400;">página</span></a><span style="font-weight: 400;"> ofrece librerías con JWT implementado para la mayoría de los lenguajes de programación. </span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id259">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta259_129" class="block iDevice_content">
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><iframe width="500" height="314" data-mce-fragment="1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/qXJ9jV-0wQ4"></iframe>
+<figcaption class="figcaption"><span class="title"><em>Fundamentos JWT. OpenWebinars</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p><span style="background-color: #ffffff;">Fundamentos JWT. OpenWebinars</span>. Explica el formato de JWT, sus elementos y su funcionamiento.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id260">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta260_151" class="block iDevice_content">
+<p><span style="font-weight: 400;">En cada petición HTTP, ya sea para código HTML, acceso a servidor REST o Web o vídeo el cliente envía el token al servidor en una cabecera del mensaje HTTP, se recomienda la cabecera Authorization que posee el siguiente formato:</span></p>
+<div class="highlighted-code language-php">
+<div>
+<pre><code> Authorization: &lt;type&gt; &lt;credentials&gt;</code></pre>
+</div>
+</div>
+<p><span style="font-weight: 400;">donde type puede tomar los valores: Basic,Bearer,Digest,HOBA ,AWS4, recomendado para JSW Bearer-</span></p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id261">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta261_128" class="block iDevice_content">
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><iframe width="500" height="314" data-mce-fragment="1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/TvlHDA0J7QM"></iframe>
+<figcaption class="figcaption"><span class="title"><em>Codifiicación base64. UPM</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p>Fundamentos de la codificación base64 utilizada ampliamente en las comunicaciones web y en los correos electrónicos para la transmisión de textos y ficheros. UPV..</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="52__estndares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5211__ejemplo_prctico_con_nodejs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. - Robo de sesión. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-124"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="6__robo_de_sesin.html" class="active no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="522__oath.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7__almacenamiento_seguro_de_contraseas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6. - Robo de sesión.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id266">
+<div class="iDevice emphasis0">
+<div id="ta266_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones web tienen en la base de su funcionamiento un problema de seguridad derivado de la característica de utilizarse sobre un protocolo sin estado, HTTP. Esto hace que  tal como se ha visto durante el desarrollo del tema se han definido diferentes técnicas para hacer que sobre un protocolo sin estado se tenga aplicaciones con la capacidad de autenticación y autorización.</span></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Exceptuando la comunicación con certificados digitales emitidos por entidades certificadoras de confianza tanto para el cliente como para el servidor (he incluso en ocasiones ni esto es suficiente, por ejemplo dos certificados válidos para el mismo sitio ha llegado a darse) el resto de los métodos se basan en el envió de algún elemento por parte del servidor al cliente una vez identificado correctamente que normalmente se ha de enviar en cada solicitud de recursos.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Tanto el uso de cookies, sesiones, JWT o Auth o cualquier otro sistema que implique la transmisión de autenticación si sistemas de criptografía asimétricos con sitios de confianza se encuentran expuestos al robo de dicha autenticación y la suplantación de identidad.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las técnicas utilizadas para el robo de sesión son:</span></p>
+<ul style="text-align: justify;">
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">XSS de forma que se pueda enviar la sesión, el token o cualquier información a un servidor externo.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Fuerza bruta. En caso de usar algoritmos de generación o codificación de la sesiones/tokes inseguros por ejemplo ,MD5 en funciones hash o DES en cuanto a su funcionamiento, o por codificación ineficiente de claves en cuanto a la longitud o el número de símbolo.s</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Men in the Middle. Se interpone un elemento intermedio entre cliente y servidor, siendo lo más sencillo escuchar y analizar el tráfico entre ambos elementos, existiendo técnicas más avanzadas como suplantación de identidad de cliente y de servidor, aunque este último caso es extremadamente complicado técnicamente.</span></li>
+</ul>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para evitar los robos de sesiones se recomienda:</span></p>
+<ul style="text-align: justify;">
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Por supuesto la comunicación se ha de realizar sobre HTTPS.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">El tiempo de vida de la sesión o token a de adaptarse a un uso medio por parte de los usuarios del sitio.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Establecer medidas para evitar los ataque de secuencia de comandos cruzados XSS como la desinfección de texto en el cliente y servidor y evitar la inyección de código.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Encriptar las “cookies” de sesión para evitar modificaciones.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Al igual que en puntos anteriores la fundación OWASP en su guía para testeo de aplicaciones web establece en su capítulo 4 sección 6 requerimientos de validación relacionados con la las pruebas para gestión de la identidad, por ejemplo el cierre de sesión o el tiempo de vida.</span></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="522__oath.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7__almacenamiento_seguro_de_contraseas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

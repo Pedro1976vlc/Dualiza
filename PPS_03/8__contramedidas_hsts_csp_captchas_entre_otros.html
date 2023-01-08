@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-128"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="active daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul>
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="81__hsts_http_strict_transport_security.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id297">
+<div class="iDevice emphasis0" >
+<div id="ta297_297_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">A lo largo de este tema se ha observado que muchos de los problemas de seguridad derivan del protocolo base utilizado: <strong>HTTP</strong> y de los diferentes métodos para conseguir transformar un protocolo sin estado a otro con estado en el que para conseguir la <strong>autenticación</strong> de uno de los extremos (el cliente, la autenticación del servidor se puede conseguir fácilmente con <strong>HTTPS</strong>) es necesario enviar las credenciales a través de la red, de la misma forma que para comprobar la autorización del cliente se ha de enviar información que permita identificarlo.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Si bien se han desarrollado protocolos que mejoran la seguridad del proceso como <strong><em>tokens</em></strong> o desinfección de datos enviados no resuelven todos los problemas de las aplicaciones web, algunos derivados de las tecnologías utilizadas en el cliente sobre HTTP. Las contramedidas son técnicas específicas contra amenazas, tratándose:</span></p>
+<ul>
+<li style="text-align: justify;"><b>HSTS</b><span style="font-weight: 400;">. <em><strong>(HTTP Strict Transport Security)</strong></em>. <strong>HTTP</strong> es un protocolo inseguro que transmite la información en texto plano, si se consigue que la comunicación entre servidor y cliente pase de <strong>HTTPS</strong> a <strong>HTTP</strong> toda la información transmitida (usuarios, contraseñas, datos bancarios…) puede verse comprometida.</span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">CSP </b><em><strong>(</strong></em><span style="font-weight: 400;"><em><strong>Content Security Policy)</strong></em>. Evita principalmente los ataques <strong>XSS</strong>, el servidor indica al navegador las fuentes que son seguras, por ejemplo las URL desde los que se permite cargar ficheros <strong>Javascript</strong> o <strong>CSS</strong>, además puede forzar el protocolo para acceder esas URLs.</span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">CAPTCHAs </b><strong><em>(</em></strong><span style="font-weight: 400;"><strong><em>Completely Automated Public Turing test to tell Computers and Humans Apart)</em></strong>. Es relativamente sencillo crear programas o guiones que realicen peticiones masivas a servidores para romper claves por fuerza bruta o tramitar el alta masiva de cuentas. Los <strong>CAPTCHAs</strong> son retos con cierta complejidad que los programas no son capaces de solucionar o requieren de un alto coste computacional, sin embargo que para los humanos son sencillos.</span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">CORS <em>(Control de acceso HTTP)</em>. </b><span style="font-weight: 400;">Las aplicaciones web han evolucionado y muchas de ellas utilizan servicios de otros sitios desde el cliente, al igual que un servidor puede tener que servir recursos a una web que no forma parte de su dominio  mediante por <em><strong>XMLRequest</strong></em>, por defecto no es posible realizar peticiones <strong>HTTP</strong> desde un cliente con una URL distinta a la del servidor que originó la web . Configurando en el servidor en caso de disponer de interfaces API es posible limitar el acceso a las URL seleccionadas. </span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">Subresource Integrity.</b><span style="font-weight: 400;"> Las aplicaciones web cargan recursos de otros sitios, aunque se ha de evitar en la medida de lo posible, utilizando recursos alojados en el propio servidor. Estos recursos pueden haberse visto comprometidos y modificados, cargando código malicioso. Para evitarlo se ha de añadir algún método que garantice que el recurso es válido y no se ha modificado. </span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">SameSite cookies.</b><span style="font-weight: 400;"> El almacén de “cookies” es común para todos los sitios web que se visitan, es decir, un sitio web puede solicitar cualquiera de las “cookies” existentes en el navegador, con SameSite se puede indicar que una cookie se restringirse a un contexto propio o del mismo sitio.</span></li>
+<li style="text-align: justify;"><b style="font-size: 16.8px;">Otros</b><span style="font-weight: 400;">: X-Content-Type-Options, X-Frame-Options, HPKP (similar a SSH pero se pasa la clave al cliente)</span></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="81__hsts_http_strict_transport_security.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.-Desarrollo seguro de aplicaciones web. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-70"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="active no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="13_tecnologas_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.-Desarrollo seguro de aplicaciones web.</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id160">
+<div class="iDevice emphasis0" >
+<div id="ta160_119_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">Las aplicaciones web se han convertido en unas de las más utilizadas en la actualidad, ya sea a través del navegador o utilizando librerías como Cordova o Ionic que hacen uso de las tecnologías web para desarrollar aplicaciones para dispositivos concretos, denominándose aplicaciones híbridas aquellas que pueden funcionar en diferentes plataformas. Los bancos, las plataformas de vídeo, las empresas de comida para llevar o la gestión de servidores empresariales entre otras muchas acciones se realizan utilizando aplicaciones web y lo que es más importante accediendo a datos sensibles como son los números de cuenta bancaria o tarjetas de crédito.</span></p>
+<p><span style="font-weight: 400;">A la hora de desarrollar una aplicación web es necesario garantizar unos niveles de seguridad mínimos que dependen del tipo de aplicación y sector que permitan su utilización. El nivel de seguridad es un elemento difícilmente medible, pero tal y como se trató en el tema anterior es posible certificar el nivel que una aplicación alcanza en este caso seguridad.</span></p>
+<p><span style="font-weight: 400;">Se hace imprescindible introducir en la fase de desarrollo del software, en este caso la web elementos que permitan comprobar cómo de segura es la aplicación que se está desarrollando de forma que a la finalización de la misma se pueda al menos garantizar su buen funcionamiento ante cierto tipo de ataques y la no existencia de algunas vulnerabilidades. Esta integración se fundamenta en dos elementos:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><b>Casos de prueba</b><span style="font-weight: 400;">: Se han de definir, implementar, probar y documentar las diferentes pruebas que se realiza a la aplicación web, por ejemplo que no se envían datos sensibles por “querystring” o que no se exponen servicios web públicamente cuando su uso se debe de realizar una vez autenticado. La superación de los casos de prueba permiten medir lo segura o insegura que es una aplicación.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Conocimiento técnico de las aplicaciones web</b><span style="font-weight: 400;">: Es necesario tener conocimientos técnicos del funcionamiento de las tecnologías, los ataques y las vulnerabilidades para  codificar la aplicación de forma que cumpla con el nivel de seguridad requerido.</span></li>
+</ul>
+<p><span style="font-weight: 400;">El tema anterior se basó en el conocimiento de determinación de cómo de segura es una aplicación, es decir a conocer el nivel de seguridad, en concreto con el estándar marcado por la fundación OWASP. Este tema se centra en poder diseñar, implementar, modificar y mantener código y configurar los elementos que intervienen en la aplicación como servidores de forma que puedan cumplir con los niveles establecidos en el estándar para aplicaciones web.</span></p>
+<p><span style="font-weight: 400;">Indicar el desarrollo seguro de aplicaciones web es uno de los aspectos que más conocimientos técnicos necesita en el desarrollo software actual, es necesario tener conocimientos avanzados de:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Protocolo HTTP.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">HTML y CSS</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Lenguajes de cliente, principalmente Javascript, aunque en framework más reciente también Typescript.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Programación asíncrona.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Lenguajes de servidor como PHP, javascript del lado del servidor como node.js o python.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Entornos de trabajo existentes en cada uno de los lenguajes y patrones de diseño utilizado (<a title="Modelo, vista, controlador. | " class="exe-tooltip definition-tt titled-tt" id="link200b1d5d-0614-0ebc-f66e-04b8734f1f1f" href="#t200b1d5d-0614-0ebc-f66e-04b8734f1f1f">MVC</a>, MVVC…) como Laravel, CakePHP en PHP, Django en Python del lado del servidor o Vue y Angular en el lado del cliente.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Conocimientos avanzados de SQL.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Configuración avanzada de servidores web.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Uso de gran variedad de herramientas informáticas como curl, postman o herramienta desarrollador de navegadores.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Estos requerimientos implica la necesidad de disponer de personal especializado en los puntos anteriores, siendo complicado que una única persona pueda desarrollar una aplicación completa en un tiempo razonable con un nivel aceptable de seguridad, estableciéndose en el mercado laboral diversos perfiles técnicos especializados en los elementos anteriores, principalmente:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><b>Desarrollador back-end:</b><span style="font-weight: 400;"> Encargado de la arquitectura y código del servidor. Dependiendo del tamaño de la aplicación también puede ser el responsable de la gestión de la base de datos.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Desarrollador front-end:</b><span style="font-weight: 400;"> Su función principal es la del desarrollo de la parte gráfica en el cliente, aunque también incluye cierta lógica de la aplicación como la validación de formularios.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Administrador de base de datos</b><span style="font-weight: 400;">: Gestiona el almacenamiento de los datos de la aplicación, optimizando la misma, creando procedimientos almacenados o gestionando permisos y usuarios entre otros.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Administrador de sistemas</b><span style="font-weight: 400;">: Se encarga de la configuración de la infraestructura necesaria para la ejecución de back-end como es el servidor web, las copias de seguridad, el nivel de tolerancia a fallos o la escalabilidad de la aplicación del lado del servidor.</span></li>
+<li aria-level="1" style="font-weight: 400;"><b>Testeador</b><span style="font-weight: 400;">: Encargado de diseñar, implementar y probar los casos de prueba y el software, colabora con los desarrolladores como con los administradores.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Existen otros perfiles como analistas, jefes de proyecto, desarrolladores de interfaces o expertos en <a title="SEO | " class="exe-tooltip definition-tt titled-tt" id="link461a0e59-f3c4-90f3-952d-bc73ca9dd8be" href="#t461a0e59-f3c4-90f3-952d-bc73ca9dd8be">SEO</a>, la existencia de estos perfiles depende del tamaño de la aplicación, aunque los primeros son los más relacionados con el desarrollo seguro.</span></p>
+<div class="exe-tooltip-text" id="t200b1d5d-0614-0ebc-f66e-04b8734f1f1f">
+<p>Modelo, vista, controlador: Patrón software que separa la aplicación en Modelo, vista y controlador, muy utilizado en el desarrollo web. MVVM: modelo–vista–modelo de vista, variación del MVC que intentan independizar aún más la presentación del resto del elementos de la aplicación</p>
+</div>
+<div class="exe-tooltip-text" id="t461a0e59-f3c4-90f3-952d-bc73ca9dd8be">
+<p>Profesionales que empleando diferentes técnicas permiten mejorar el posiciomiento en los buscadores, en especial Google.</p>
+</div></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="13_tecnologas_web.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

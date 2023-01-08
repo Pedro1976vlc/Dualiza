@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1. - Elementos de un sistema de autenticación y autorización básico. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-122"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul class="other-section">
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="current-page-parent daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul>
+      <li id="active"><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="active no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="5__estndares_de_autenticacin_y_autorizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.1. - Elementos de un sistema de autenticación y autorización básico.</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id249">
+<div class="iDevice emphasis0">
+<div id="ta249_154" class="block iDevice_content">
+<p><span style="font-weight: 400;">El protocolo HTTP sobre el que se basan las aplicaciones web es de tipo petición respuesta y en su creación no se tuvo en cuenta un sistema de autenticación y autorización nativo incluido en el protocolo. A medida que se popularizan las páginas web surge la necesidad de restringir el acceso a ciertos usuarios, gracias a la aparición de las “cookies” en el navegador Netscape se hace posible la gestión de usuarios.</span></p>
+<p><span style="font-weight: 400;">Gracias a las “cookies” y el concepto de sesión que permite obtener utilizando las galletas información en el servidor asociada de forma única a dicha usuario y limitar el acceso, inicialmente con los <a class="exe-tooltip definition-tt" id="linka2392ac9-7ff4-e25d-0703-8d70b0dcdac2" href="#ta2392ac9-7ff4-e25d-0703-8d70b0dcdac2">CGI</a> (cuya gestión de “cookies” y sesiones era una tarea artesanal y casi de orfebrería ) y posteriormente con PHP, ASP y JSP.</span></p>
+<div class="exe-tooltip-text" id="ta2392ac9-7ff4-e25d-0703-8d70b0dcdac2">
+<p>Common Gateway Interface, programas que se ejecutan en el servidor , normalmente compilado que puede ser escrito en C,C++ o incluso Shell Script</p>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id250">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta250_128" class="block iDevice_content">
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><iframe width="500" height="314" data-mce-fragment="1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/r-TbdfuRa0Y"></iframe>
+<figcaption class="figcaption"><span class="title"><em>Explicación del concepto y uso de Cookies UPV</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p><span style="background-color: #ffffff;">Explicación del concepto y uso de Cookies UPV</span></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id251">
+<div class="iDevice emphasis0">
+<div id="ta251_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Los sistemas basados en “cookies” y sesiones se han utilizado durante más de 20 años y actualmente se siguen utilizando, sirviendo además como base para los estándares más modernos pero adolecen de ciertas limitaciones:</span></p>
+<ul style="text-align: justify;">
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Robo de la galleta que identifica la sesión.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Codificación de dicha galleta.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Identificación ante terceros</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Sistema de gestión de permisos no estandarizado.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Uso únicamente en aplicaciones web. </span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">A pesar de estas limitaciones muchas de las aplicaciones actuales y entornos de trabajo gestionan la autenticación y autorización con sesiones y galletas. Dicha gestión puede ser desarrollada desde 0 o bien si se utilizan framework utilizar las herramientas que proporciona, existiendo gran diversidad en cómo se realiza dicha gestión, aunque los elementos se pueden esquematizar en:</span></p>
+<ul style="text-align: justify;">
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Punto de entrada. Permite entrar en el sistema, presentando ante el sistema las credenciales del usuario, ya sea usuario y contraseña o cualquier otro método. Pudiendo establecer mecanismos de seguridad adicionales como doble validación o medidas ante “bots”</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Punto de comprobación de autenticación y autorización previo al acceso al recurso. Cuando se solicita un recurso, se envía una “cookie” que permite al servidor acceder a la sesión creada para el usuario, en caso de no existir el usuario ni tan siguiera se ha autenticado, a continuación es necesario comprobar si el usuario autenticado tiene autorización para el acceso al recurso. </span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Este punto puede ser un simple “if” en el código o complicarse de tal forma que pueda considerarse un sistema independiente, por ejemplo definir grupos, roles, establecer para cada rol una serie de recursos a los que se tiene acceso, integrar con otras herramientas como LDAP o Kerberos. Una solución intermedia  es definir usuarios y roles almacenados en una base de datos y estableciendo en cada uno de los recursos los roles que pueden acceder al mismo. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Dependiendo del lenguaje utilizado esta tarea será más o menos sencilla, la más sencilla es definir una función que compruebe si se tiene permiso o no, pero es necesario realizar la llamada en cada recurso, muchos frameworks optan por definir anotaciones que facilite el mantenimiento del código como el framework </span><a href="https://symfony.com/"><span style="font-weight: 400;">Symfony</span></a><span style="font-weight: 400;">, o la utilización de funciones lambda como </span><a href="https://expressjs.com/es/"><span style="font-weight: 400;">Express</span></a><span style="font-weight: 400;"> para nodejs.</span></p>
+<ul>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">Gestión de autorización, a nivel de usuario, grupo, roles o recurso entre otros. Se hace necesario gestionar de forma dinámica el sistema de autenticación y autorización de la aplicación, necesitando un usuario o un rol que permita modificar los permisos del resto de los usuarios de la aplicación. De la misma forma que el punto anterior, esta gestión puede ser la edición del código fuente directamente o la modificación de un fichero de configuración (estos dos métodos totalmente desaconsejados) hasta el desarrollo de elementos de la aplicación que permiten la gestión de los permisos. Algunos frameworks como Django proveen de clases y herramientas para generar de forma automática un sistema de gestión de usuarios</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Auditoría. Por último es importante conocer y poder analizar los acceso al sistema, los acceso a los recursos y los accesos no permitidos de forma que se puedan realizar análisis posteriores ante problemas o intentos de ataque. La forma más sencilla y utilizada es la utilización de herramientas de logs del propio lenguaje, de librerías externas o con elementos de los frameworks más utilizados.</span></li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id252">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta252_128" class="block iDevice_content">
+<p>Enlace a gestión de autenticación y autorización en Symfony con <strong>anotaciones</strong>:</p>
+<p style="text-align: center;"><a href="https://symfony.com/doc/4.2/best_practices/security.html#the-security-annotation"><span style="font-weight: 400;">https://symfony.com/doc/4.2/best_practices/security.html#the-security-annotation</span></a></p>
+<p><span style="font-weight: 400;">Autenticación y permisos de usuarios con el framework Django:</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><span style="background-color: #ffffff;"><a href="https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Authentication">https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Authentication</a></span></span></p>
+<p><span style="font-weight: 400;"><span style="background-color: #ffffff;">Tutorial de gestión de usuarios con Django:</span></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><span style="background-color: #ffffff;"><a href="https://www.youtube.com/watch?v=wwAcsIW86UQ">https://www.youtube.com/watch?v=wwAcsIW86UQ</a></span></span><span style="font-weight: 400;"><span style="background-color: #ffffff;"></span></span></p>
+<p><span style="font-weight: 400;"><a href="https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Authentication"></a><a href="https://www.youtube.com/watch?v=wwAcsIW86UQ"></a></span></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="5__estndares_de_autenticacin_y_autorizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

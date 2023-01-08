@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.4. - Entidades externas XML (XXE). | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-110"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li class="current-page-parent"><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="current-page-parent daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul>
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li id="active"><a href="34__entidades_externas_xml_xxe.html" class="active no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="33__exposicin_de_datos_sensibles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35_prdida_de_control_de_acceso.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.4. - Entidades externas XML (XXE).</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id228">
+<div class="iDevice emphasis0">
+<div id="ta228_154" class="block iDevice_content">
+<p style="text-align: justify;"><span style="font-weight: 400;">Las aplicaciones y, en particular servicios web basados en XML, o integraciones que utilizan XML, pueden ser vulnerables a este ataque sí:</span></p>
+<ul>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">La aplicación acepta XML directamente, carga XML desde fuentes no confiables o inserta datos no confiables en documentos XML. Por último, estos datos son analizados sintácticamente por un procesador XML.</span></li>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">Cualquiera de los procesadores XML utilizados en la aplicación o los servicios web basados en SOAP, poseen habilitadas las definiciones de tipo de documento (DTDs).</span></li>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">La aplicación utiliza SAML para el procesamiento de identidades. SAML utiliza XML para garantizar la identidad de los usuarios y puede ser vulnerable.</span></li>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">La aplicación utiliza SOAP en una versión previa a la 1.2 y, si las entidades XML son pasadas a la infraestructura SOAP, probablemente sea susceptible a ataques XXE.</span></li>
+<li aria-level="1" style="text-align: justify; font-weight: 400;"><span style="font-weight: 400;">Ser vulnerable a ataques XXE significa que probablemente la aplicación también es vulnerable a ataques de denegación de servicio, incluyendo el ataque </span><b><i>Billion Laughs</i></b><span style="font-weight: 400;">.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 498px;"><a href="A4_XXE.png" onclick="window.open('A4_XXE.png','Entidades Externas XML','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img src="A4_XXE.png" alt="Valoración de factores la vulenerabilidad" width="498" height="167" /></a>
+<figcaption class="figcaption"><a href="https://owasp.org" target="_blank" class="author" rel="noopener">OWASP Fundation</a>. <span class="title"><em>Valoración de factores de la vulnerabilidad</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id229">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta229_128" class="block iDevice_content">
+<h2><strong>Billion Laughs Attack.:</strong></h2>
+<p><span style="font-weight: 400;">Es un tipo de ataque de denegación-de-servicio (DoS) que apunta a parsers de documentos XML. Es también referido a como una bomba de XML o como un ataque de expansión de entidad exponencial.​</span><span style="font-weight: 400;"> (</span><a href="https://es.wikipedia.org/wiki/Mil_millones_de_risas"><span style="font-weight: 400;">https://es.wikipedia.org/wiki/Mil_millones_de_risas</span></a><span style="font-weight: 400;">).</span></p>
+<figure class="exe-figure exe-media position-center" style="width: 500px;"><iframe width="500" height="314" data-mce-fragment="1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/WQUiub2hc0c"></iframe>
+<figcaption class="figcaption"><span class="title"><em>Explicación bomba XML</em></span></figcaption>
+</figure>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa.</h2>
+<p><span style="background-color: #ffffff;">Explicación bomba XML</span> junto con un ejemplo de la misma.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id230">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta230_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/g2ey7ry8_CQ" allowfullscreen="allowfullscreen"></iframe><iframe width="500" height="314" src="https://www.youtube.com/embed/iGDJ695dUEM" allowfullscreen="allowfullscreen"></iframe><br /><br /></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeos en los que se explica de forma teórica y con ejemplos  prácticos la vulnerabilidad.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DestacadofpdIdevice" id="id232">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta232_151" class="block iDevice_content">
+<p><span style="font-weight: 400;">La experiencia del desarrollador resulta fundamental para evitar Ataques Externos XML para identificar y mitigar los defectos XXE.  Aparte de esto, prevenir XXE requiere:</span></p>
+<ul>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">De ser posible, utilizar formatos de datos sencillos como JSON y evitar la serialización de datos confidenciales.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Actualizar los procesadores y bibliotecas XML que utilizan la aplicación o el sistema subyacente.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Deshabilitar las entidades externas de XML y procesamiento DTD en todos los analizadores sintácticos XML en su aplicación, según se indica en la hoja de trucos para prevención de XXE de OWASP.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Validar y filtrar  la entrada de datos dañinos en el servidor. </span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Verificar la funcionalidad de carga de archivos XML o XSL validar el XML entrante, usando validación XSD o similar.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Las herramientas SAST pueden ayudar a detectar XXE en el código fuente, aunque la revisión manual de código es la mejor alternativa en aplicaciones grandes y complejas.</span></li>
+<li aria-level="1" style="font-weight: 400;"><span style="font-weight: 400;">Si estos controles no son posibles, considere usar parcheo virtual, gateways de seguridad de API, o Firewalls de </span><span style="font-weight: 400;">de control de acceso.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice em_iDevice_parasabermasfpd" id="id233">
+<div class="iDevice emphasis_parasabermasfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Para saber más</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta233_128" class="block iDevice_content">
+<p style="text-align: left;"><span style="font-weight: 400;">Hoja de trucos para prevención XXE de OWASP: </span></p>
+<p style="text-align: center;"><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html"><span style="font-weight: 400;">https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="33__exposicin_de_datos_sensibles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35_prdida_de_control_de_acceso.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

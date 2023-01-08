@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.9. - Componentes con vulnerabilidades conocidas. | UD 3: Detección y corrección de vulnerabilidades en aplicaciones web </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Pedro Antonio Santiago Santiago y José Gaspar Sánchez García" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-115"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD 3: Detección y corrección de vulnerabilidades en aplicaciones web</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD3. DETECCIÓN Y CORRECCIÓN DE VULNERABILIDADES DE APLICACIONES WEB</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="1_protocolo_http.html" class="daddy">1.- Protocolo HTTP.</a>
+   <ul class="other-section">
+      <li><a href="11_formato_del_mensaje_http.html" class="no-ch">1.1.- Formato del mensaje HTTP.</a></li>
+      <li><a href="12_versiones_del_protocolo.html" class="no-ch">1.2.- Versiones del protocolo.</a></li>
+      <li><a href="13_tecnologas_web.html" class="no-ch">1.3. -Tecnologías Web.</a></li>
+   </ul>
+   </li>
+   <li><a href="2desarrollo_seguro_de_aplicaciones_web.html" class="no-ch">2.-Desarrollo seguro de aplicaciones web.</a></li>
+   <li class="current-page-parent"><a href="3_listas_pblicas_de_vulnerabilidades_de_aplicaciones_web_owasp_top_ten.html" class="current-page-parent daddy">3.- Listas públicas de vulnerabilidades de aplicaciones web. OWASP Top Ten.</a>
+   <ul>
+      <li><a href="31__inyeccin.html" class="no-ch">3.1. - Inyección.</a></li>
+      <li><a href="32__prdida_de_autenticacin.html" class="no-ch">3.2. - Pérdida de autenticación.</a></li>
+      <li><a href="33__exposicin_de_datos_sensibles.html" class="no-ch">3.3. - Exposición de datos sensibles.</a></li>
+      <li><a href="34__entidades_externas_xml_xxe.html" class="no-ch">3.4. - Entidades externas XML (XXE).</a></li>
+      <li><a href="35_prdida_de_control_de_acceso.html" class="no-ch">3.5. -Pérdida de Control de Acceso.</a></li>
+      <li><a href="36_configuracin_de_seguridad_incorrecta.html" class="no-ch">3.6. -Configuración de seguridad incorrecta.</a></li>
+      <li><a href="37__crosssite_scriptingxss.html" class="no-ch">3.7. - Cross-Site Scripting(XSS).</a></li>
+      <li><a href="38__deserializacin_insegura.html" class="no-ch">3.8. - Deserialización insegura.</a></li>
+      <li id="active"><a href="39__componentes_con_vulnerabilidades_conocidas.html" class="active no-ch">3.9. - Componentes con vulnerabilidades conocidas.</a></li>
+      <li><a href="310__registro_y_monitoreo_insuficientes.html" class="no-ch">3.10. - Registro y monitoreo insuficientes.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_entrada_basada_en_formularios_inyeccin_validacin_de_la_entrada.html" class="daddy">4.- Entrada basada en formularios. Inyección. Validación de la entrada.</a>
+   <ul class="other-section">
+      <li><a href="41__validacin_en_el_cliente.html" class="daddy">4.1. - Validación en el cliente.</a>
+      <ul class="other-section">
+         <li><a href="411_ejemplo_prctico_con_angular.html" class="no-ch">4.1.1.- Ejemplo práctico con Angular.</a></li>
+      </ul>
+      </li>
+      <li><a href="42__validacin_en_el_servidor.html" class="daddy">4.2. - Validación en el servidor.</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_prctico_con_nodejs.html" class="no-ch">4.2.1.- Ejemplo práctico con NodeJs</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__estndares_de_autenticacin_y_autorizacin.html" class="daddy">5. - Estándares de autenticación y autorización.</a>
+   <ul class="other-section">
+      <li><a href="51__elementos_de_un_sistema_de_autenticacin_y_autorizacin_bsico.html" class="no-ch">5.1. - Elementos de un sistema de autenticación y autorización básico.</a></li>
+      <li><a href="52__estndares.html" class="daddy">5.2. - Estándares.</a>
+      <ul class="other-section">
+         <li><a href="521__tokens_jwt.html" class="daddy">5.2.1. - Tokens JWT</a>
+         <ul class="other-section">
+            <li><a href="5211__ejemplo_prctico_con_nodejs.html" class="no-ch">5.2.1.1. - Ejemplo práctico con NodeJs.</a></li>
+         </ul>
+         </li>
+         <li><a href="522__oath.html" class="no-ch">5.2.2. - OAth.</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6__robo_de_sesin.html" class="no-ch">6. - Robo de sesión.</a></li>
+   <li><a href="7__almacenamiento_seguro_de_contraseas.html" class="daddy">7. - Almacenamiento seguro de contraseñas.</a>
+   <ul class="other-section">
+      <li><a href="71_ejemplo_almacenamiento_seguro_nodejs.html" class="no-ch">7.1.- Ejemplo almacenamiento seguro NodeJs.</a></li>
+   </ul>
+   </li>
+   <li><a href="8__contramedidas_hsts_csp_captchas_entre_otros.html" class="daddy">8. - Contramedidas. HSTS, CSP, CAPTCHAs, entre otros.</a>
+   <ul class="other-section">
+      <li><a href="81__hsts_http_strict_transport_security.html" class="no-ch">8.1. - HSTS (HTTP Strict Transport Security)</a></li>
+      <li><a href="82__csp_content_security_policy.html" class="no-ch">8.2. - CSP (Content Security Policy)</a></li>
+      <li><a href="83__captchas.html" class="no-ch">8.3. - CAPTCHAs</a></li>
+   </ul>
+   </li>
+   <li><a href="9__seguridad_de_portales_y_aplicativos_web_soluciones_wafweb_application_firewall.html" class="no-ch">9. - Seguridad de portales y aplicativos web. Soluciones WAF(Web Application Firewall).</a></li>
+   <li><a href="caso_prctico.html" class="no-ch">Caso práctico.</a></li>
+   <li><a href="glosario.html" class="no-ch">Glosario</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="38__deserializacin_insegura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="310__registro_y_monitoreo_insuficientes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.9. - Componentes con vulnerabilidades conocidas.</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id291">
+<div class="iDevice emphasis0" >
+<div id="ta291_291_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-weight: 400;">Las aplicaciones y API que utilizan componentes con vulnerabilidades conocidas pueden debilitar las defensas de las aplicaciones y permitir diversos ataques. Si se explota un componente vulnerable, el ataque puede provocar una pérdida de datos o facilitar la toma de control del servidor. </span></p>
+<p><span style="font-weight: 400;">Algunas ejemplificaciones de situaciones que ilustran el uso de vulnerabilidades conocidas son:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">El software es vulnerable, no posee soporte o se encuentra desactualizado. Esto incluye el sistema operativo, servidor web o de aplicaciones, </span><span style="color: #0000ff;"><a href="#t93aa4456-c205-8863-d332-ffe9021a14cb" id="link93aa4456-c205-8863-d332-ffe9021a14cb" title="DBMS | Glosario" class="exe-tooltip definition-tt titled-tt" style="color: #0000ff;"><b>DBMS</b></a></span><span style="font-weight: 400;">, APIs y todos los componentes, ambientes de ejecución y bibliotecas.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">No se analizan los componentes periódicamente ni se realiza seguimiento de los boletines de seguridad de los componentes utilizados.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">No se parchea o actualiza la plataforma subyacente, <em>frameworks</em> y dependencias, con un </span><b>enfoque basado en riesgos</b><span style="font-weight: 400;">. Esto sucede comúnmente en ambientes en los cuales la aplicación de parches se realiza de forma mensual o trimestral bajo control de cambios, lo que deja a la organización expuesta innecesariamente durante varios días o meses de exposición a vulnerabilidades ya solucionadas.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">No se realiza adecuadamente la configuración correcta de seguridad de los componentes.</span></li>
+</ul>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 498px;"><a href="A9_Vulnerabilidades_conocidas.png" onclick="window.open('A9_Vulnerabilidades_conocidas.png','Uso de componentes con vulnerabilidades conocidas ','scrollbars=yes,resizable=yes,width=800,height=600,left='+(screen.availWidth/2-400)+',top='+(screen.availHeight/2-300)+'');return false;"><img src="A9_Vulnerabilidades_conocidas.png" alt="Validación de factores de la vulnerabilidad." width="498" height="167" /></a>
+<figcaption class="figcaption"><a href="https://owasp.org" target="_blank" class="author" rel="noopener">OWASP Fundation.</a> <span class="title"><em>Validación de factores de la vulnerabilidad.</em></span> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure>
+<div id="t93aa4456-c205-8863-d332-ffe9021a14cb" class="exe-tooltip-text">
+<p>Sistema gestor de base de datos (SGBD o DBMS), es un conjunto de programas que permiten el almacenamiento, modificación y extracción de la información en una base de datos.</p>
+</div></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id292">
+<div class="iDevice emphasis0" >
+<div id="ta292_292_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-weight: 400;">Cada organización debe asegurar la existencia de un plan para monitorear, evaluar y aplicar actualizaciones o cambios de configuraciones durante el ciclo de vida de las aplicaciones. Algunas de la principales acciones que se pueden adoptar para prevenir estas vulnerabilidades son:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Eliminar dependencias, funcionalidades, componentes, archivos y documentación innecesaria y no utilizada.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Utilizar una herramientas para inventariar las versiones de componentes. Como por ejemplo: </span><b>Dependency Check</b><span style="font-weight: 400;"> y </span><b>retire.js</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Monitorizar continuamente fuentes como </span><b>CVE</b><span style="font-weight: 400;"> (</span><b><i>Common Vulnerabilities and Exposures</i></b><span style="font-weight: 400;">) y </span><b>NVD</b><span style="font-weight: 400;"> (</span><b><i>NIST - National Vulnerabilities Database</i></b><span style="font-weight: 400;">) en búsqueda de vulnerabilidades en los componentes utilizados. Utilizar herramientas de análisis automatizados. Suscribirse a alertas de seguridad de los componentes utilizados.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Obtener componentes únicamente de orígenes oficiales utilizando canales seguros. Utilizar preferentemente paquetes firmados con el fin de reducir las probabilidades de uso de versiones manipuladas maliciosamente.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Supervisar bibliotecas y componentes que no poseen mantenimiento o no liberan parches de seguridad para sus versiones obsoletas o sin soporte.</span></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice em_iDevice_debesconocerfpd" id="id295">
+<div class="iDevice emphasis_debesconocerfpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Debes conocer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta295_129" class="block iDevice_content">
+<p style="text-align: center;"><iframe width="500" height="314" src="https://www.youtube.com/embed/DBebuppnsOY?autoplay=1" allowfullscreen="allowfullscreen"></iframe></p>
+<div class="exe-fx exe-accordion">
+<h2>Descripción textual alternativa</h2>
+<p style="text-align: justify;">Vídeo educativo en el que se explica como explotar componentes con vulnerabilidades conocidas. Se aborda de forma teórica y práctica el punto A9 de la lista OWASP Top Ten 2017.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="38__deserializacin_insegura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="310__registro_y_monitoreo_insuficientes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
